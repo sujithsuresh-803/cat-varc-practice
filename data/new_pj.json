@@ -1,0 +1,503 @@
+[
+{
+"d": "m",
+"c": [
+"For most of the twentieth century, economists treated the household as a single decision-making unit with one set of preferences.",
+"This 'unitary' model was convenient, but it assumed away the possibility that spouses might want different things.",
+"Field studies soon showed that it mattered a great deal whose hands income passed through.",
+"Money given to mothers, for instance, was spent far more on children's food and schooling than identical sums given to fathers."
+],
+"e": "{1} states the old assumption. {2} names it ('This unitary model') and flags its flaw. {3} gives the evidence against it. {4} is a specific example ('for instance') of {3}'s general finding."
+},
+{
+"d": "m",
+"c": [
+"Early cartographers faced an impossible task: representing a curved surface on a flat page.",
+"Every projection they devised therefore distorted something — area, shape, distance or direction.",
+"The Mercator projection, for example, preserves angles, which made it invaluable to sailors.",
+"But it does so by grossly inflating the size of regions near the poles, making Greenland look as large as Africa."
+],
+"e": "{1} sets up the problem. {2} draws the consequence ('therefore distorted'). {3} offers an example of one projection. {4} gives the trade-off of that same projection ('But it does so')."
+},
+{
+"d": "m",
+"c": [
+"The idea of a 'library' has changed more in the past thirty years than in the previous three hundred.",
+"Once valued primarily as storehouses of books, libraries now compete with search engines that answer questions instantly.",
+"In response, many have reinvented themselves as community spaces, offering classes, maker labs and internet access.",
+"Critics worry that, in becoming everything, libraries risk losing the quiet that made them distinctive."
+],
+"e": "{1} is the broad thesis. {2} explains the old role and the new competitor. {3} describes the response ('In response'). {4} raises the critique of that response."
+},
+{
+"d": "m",
+"c": [
+"Bamboo is technically a grass, not a tree.",
+"Yet some species can grow nearly a metre in a single day, faster than any other plant on earth.",
+"This extraordinary growth rate has made bamboo attractive as a sustainable building material.",
+"Engineers, however, have struggled with its tendency to split and its vulnerability to insects."
+],
+"e": "{1} introduces bamboo. {2} contrasts ('Yet') with a striking fact. {3} refers back to that fact ('This extraordinary growth rate'). {4} introduces the counterpoint ('however')."
+},
+{
+"d": "m",
+"c": [
+"A placebo is, by definition, an inert substance.",
+"And yet patients given one often report real relief from pain.",
+"Researchers once dismissed this as mere suggestion or wishful reporting.",
+"Brain-imaging studies, however, show that placebos can trigger the release of the body's own painkilling chemicals."
+],
+"e": "{1} defines the term. {2} gives the paradox. {3} states the old dismissive explanation of 'this'. {4} overturns that explanation with new evidence ('however')."
+},
+{
+"d": "m",
+"c": [
+"In 1854, a cholera outbreak killed over five hundred people in a single London neighbourhood within ten days.",
+"Most doctors of the time blamed 'miasma', or bad air.",
+"John Snow, a local physician, suspected the water instead and mapped every death in the area.",
+"The deaths clustered tightly around a single public pump on Broad Street, and removing its handle helped end the outbreak."
+],
+"e": "Chronological narrative: event ({1}), prevailing view ({2}), the dissenter's method ({3}), the result ({4}). {4}'s 'The deaths' refers to the deaths Snow mapped in {3}."
+},
+{
+"d": "m",
+"c": [
+"Many companies now offer employees unlimited paid leave.",
+"On paper, this looks like a generous benefit.",
+"In practice, studies suggest workers with unlimited leave often take fewer days off than those with a fixed allowance.",
+"Without a clear entitlement, employees fear that taking time off will signal a lack of commitment."
+],
+"e": "{1} introduces the policy. {2} gives the apparent view ('On paper'). {3} contrasts with reality ('In practice'). {4} explains why."
+},
+{
+"d": "m",
+"c": [
+"Honeybees cannot see the colour red.",
+"They can, however, see ultraviolet light, which is invisible to humans.",
+"Many flowers that look plain to us are, in ultraviolet, marked with vivid patterns.",
+"These 'nectar guides' function like landing strips, directing bees toward the flower's centre."
+],
+"e": "{1} states a limitation, {2} the compensating ability ('however'). {3} shows the consequence for flowers. {4} names those patterns ('These nectar guides') and their function."
+},
+{
+"d": "m",
+"c": [
+"Inflation is often described as a hidden tax.",
+"When prices rise, the real value of money held in savings falls, even though no one has formally taken anything away.",
+"Those hit hardest tend to be people who hold most of their wealth in cash.",
+"The wealthy, by contrast, typically own assets such as property and shares, whose prices often rise along with inflation."
+],
+"e": "{1} gives the metaphor; {2} explains it; {3} identifies who suffers most; {4} contrasts with those who don't ('by contrast')."
+},
+{
+"d": "m",
+"c": [
+"The Silk Road was never a single road.",
+"It was a shifting network of routes connecting China with Central Asia, Persia and the Mediterranean.",
+"Along these routes travelled not just silk but spices, glassware, religions and diseases.",
+"Indeed, historians now believe the Black Death reached Europe partly along these same trade networks."
+],
+"e": "{1} corrects a misconception; {2} gives the correct description; {3} lists what moved along 'these routes'; {4} intensifies ('Indeed') with the most dramatic example — disease."
+},
+{
+"d": "m",
+"c": [
+"Ride-hailing apps promised to reduce urban traffic by making car ownership unnecessary.",
+"The logic was simple: fewer private cars would mean fewer vehicles on the road.",
+"Data from several American cities suggests the opposite has happened.",
+"Many trips that would have been made by bus, bicycle or on foot are now made by car instead."
+],
+"e": "{1} states the promise; {2} explains its logic; {3} reports the contrary evidence; {4} explains why traffic increased."
+},
+{
+"d": "m",
+"c": [
+"Language learners often feel that they understand far more than they can say.",
+"This gap between comprehension and production is entirely normal.",
+"Recognising a word requires only matching it to a meaning already stored in memory.",
+"Producing it, by contrast, demands retrieving it unprompted, under time pressure, along with the grammar to deploy it."
+],
+"e": "{1} states the experience; {2} names it ('This gap') and normalises it; {3} and {4} form a contrast pair explaining why ('Recognising' vs 'Producing … by contrast')."
+},
+{
+"d": "m",
+"c": [
+"Medieval cathedrals often took more than a century to build.",
+"Their original architects therefore rarely lived to see them finished.",
+"Successive generations of builders inherited plans they had not drawn and frequently altered them to suit new tastes.",
+"This is why many cathedrals combine sharply contrasting styles within a single structure."
+],
+"e": "{1}: the fact; {2}: consequence ('therefore'); {3}: what followed; {4}: the visible result ('This is why')."
+},
+{
+"d": "m",
+"c": [
+"The term 'introvert' is widely misunderstood.",
+"It does not mean shy or socially anxious.",
+"Rather, it describes someone who finds social interaction draining and recovers energy in solitude.",
+"An introvert may therefore be perfectly confident in company, yet still need time alone afterward."
+],
+"e": "{1}: the misunderstanding; {2}: what it doesn't mean; {3}: 'Rather' — the correct definition; {4}: implication ('therefore')."
+},
+{
+"d": "m",
+"c": [
+"The printing press did not immediately produce a more informed public.",
+"In its first decades, it was used to churn out sensational pamphlets, astrological almanacs and religious polemics.",
+"Misinformation spread as quickly as knowledge, sometimes faster.",
+"Only gradually did norms such as editorial review and scholarly citation emerge to separate the reliable from the fraudulent."
+],
+"e": "{1} is the counter-intuitive thesis; {2} gives evidence; {3} draws the implication; {4} describes the eventual corrective ('Only gradually')."
+},
+{
+"d": "m",
+"c": [
+"Octopuses have roughly five hundred million neurons.",
+"Strikingly, about two-thirds of them are located not in the brain but in the arms.",
+"Each arm can thus taste, touch and even make simple decisions semi-independently.",
+"This distributed intelligence makes the octopus a fascinating test case for theories of what a 'mind' requires."
+],
+"e": "{1}: the fact; {2}: 'them' = the neurons, with the surprising distribution; {3}: consequence ('thus'); {4}: 'This distributed intelligence' sums up {2}–{3} and draws the larger implication."
+},
+{
+"d": "m",
+"c": [
+"Fast fashion has made clothing cheaper than ever before.",
+"The average consumer now buys far more garments than a generation ago and keeps each for about half as long.",
+"Much of this discarded clothing ends up in landfills or is shipped to developing countries.",
+"There it often overwhelms local markets and is eventually burned or dumped."
+],
+"e": "{1}: cause; {2}: behavioural effect; {3}: 'this discarded clothing' — where it goes; {4}: 'There' refers to the developing countries in {3}."
+},
+{
+"d": "m",
+"c": [
+"Sleep was once thought to be a period of near-total inactivity for the brain.",
+"We now know that the sleeping brain is extraordinarily busy.",
+"During deep sleep, for example, it replays the day's experiences and consolidates them into long-term memory.",
+"It also flushes out metabolic waste that accumulates during waking hours."
+],
+"e": "{1}: old belief; {2}: current understanding; {3}: first example ('for example'); {4}: second function ('also')."
+},
+{
+"d": "m",
+"c": [
+"Microloans were hailed in the 1990s as a cure for global poverty.",
+"Small, collateral-free loans would let the poor start businesses and work their way up.",
+"Rigorous trials conducted two decades later painted a more modest picture.",
+"Borrowers did start more businesses, but average household incomes barely changed."
+],
+"e": "{1}: initial enthusiasm; {2}: the mechanism behind it; {3}: later, more sober evidence; {4}: the specifics of that evidence."
+},
+{
+"d": "m",
+"c": [
+"Most people assume that memory works like a video recording.",
+"In fact, every act of remembering is an act of reconstruction.",
+"The brain stitches together fragments and fills in gaps with plausible guesses.",
+"This is why confident eyewitnesses can be completely, and sincerely, wrong."
+],
+"e": "{1}: common assumption; {2}: correction ('In fact'); {3}: mechanism; {4}: real-world implication ('This is why')."
+},
+{
+"d": "m",
+"c": [
+"Cities have always generated more heat than the surrounding countryside.",
+"Asphalt and concrete absorb sunlight during the day and release it slowly at night.",
+"As a result, urban temperatures can be several degrees higher than those of nearby rural areas.",
+"Planting trees and painting roofs white are among the cheapest ways to reduce this 'heat island' effect."
+],
+"e": "{1}: phenomenon; {2}: cause; {3}: result ('As a result'); {4}: remedy for 'this heat island effect'."
+},
+{
+"d": "m",
+"c": [
+"The Green Revolution of the 1960s dramatically increased grain yields across Asia.",
+"High-yielding seed varieties, combined with fertiliser and irrigation, helped avert widely predicted famines.",
+"Its success, however, came at an ecological cost.",
+"Groundwater tables fell sharply, and decades of heavy fertiliser use degraded the soil."
+],
+"e": "{1}: introduces the event; {2}: explains how it succeeded; {3}: 'Its success, however' pivots; {4}: specifies the costs."
+},
+{
+"d": "m",
+"c": [
+"Chess engines now routinely defeat the strongest human players.",
+"Yet chess itself has never been more popular.",
+"Far from making the game obsolete, engines have become training partners, helping players study positions in unprecedented depth.",
+"Online platforms have meanwhile turned top players into celebrities with millions of followers."
+],
+"e": "{1}: fact; {2}: paradox ('Yet'); {3}: first explanation ('Far from making …'); {4}: additional factor ('meanwhile')."
+},
+{
+"d": "m",
+"c": [
+"Coral reefs cover less than one per cent of the ocean floor.",
+"Yet they support roughly a quarter of all known marine species.",
+"This concentration of life makes reefs exceptionally valuable — and exceptionally vulnerable.",
+"A single bleaching event, triggered by a few weeks of unusually warm water, can wipe out a reef that took centuries to grow."
+],
+"e": "{1} and {2} form a contrast pair; {3} 'This concentration of life' draws the implication; {4} illustrates the vulnerability."
+},
+{
+"d": "m",
+"c": [
+"Open-plan offices were designed to encourage collaboration.",
+"Removing walls, the theory went, would lead to more spontaneous conversations between colleagues.",
+"A Harvard study tracking employees who moved into open-plan spaces found that face-to-face interaction actually fell by about seventy per cent.",
+"Workers, it seems, retreated into headphones and email to recover the privacy the walls had once provided."
+],
+"e": "{1}: purpose; {2}: underlying theory; {3}: contradicting evidence; {4}: explanation ('it seems')."
+},
+{
+"d": "h",
+"c": [
+"To call a technology 'neutral' is to imagine that it merely awaits our choices.",
+"But tools are never simply means to ends we have already chosen; they quietly reshape what we take our ends to be.",
+"The bathroom scale, for instance, did not just measure an existing concern with weight — it helped manufacture one.",
+"Seen this way, the question is not only what we do with our technologies, but what they make of us."
+],
+"e": "{1} states the view under attack. {2} rebuts it ('But'). {3} exemplifies the rebuttal ('for instance'). {4} generalises ('Seen this way'). A tempting wrong opener is {2}, but its 'But' needs a prior claim."
+},
+{
+"d": "h",
+"c": [
+"Every translation is, in a sense, an interpretation.",
+"The translator must decide which of a word's many shades to preserve and which to sacrifice.",
+"These decisions accumulate, so that two faithful translations of the same poem can read like different poems.",
+"The reader of a translation, then, is never reading only the author, but also the translator's sustained argument about what the author meant."
+],
+"e": "{1}: thesis; {2}: why ('must decide'); {3}: 'These decisions' accumulate; {4}: conclusion ('then'). The pronoun/demonstrative chain ({2}→{3}) and the concluding 'then' fix the order."
+},
+{
+"d": "h",
+"c": [
+"Historians of science once told a tidy story in which reason steadily triumphed over superstition.",
+"Newton, in that story, was the first great modern.",
+"The discovery of his voluminous alchemical and theological manuscripts complicated the picture considerably.",
+"It now seems more accurate to say that Newton straddled two worlds, and that his physics grew from the same soil as his occult pursuits."
+],
+"e": "{1} presents the old narrative; {2} places Newton within 'that story'; {3} introduces the complicating evidence ('his' = Newton's); {4} gives the revised view. {2} must directly follow {1} because 'that story' needs its antecedent."
+},
+{
+"d": "h",
+"c": [
+"Scarcity, economists insist, is the fundamental condition of economic life.",
+"Yet some of the most valuable goods of the digital age — software, recorded music, encyclopaedic knowledge — can be copied endlessly at almost no cost.",
+"Markets built on scarcity have responded by manufacturing it artificially, through patents, paywalls and digital locks.",
+"Whether such artificial scarcity serves the public good, or merely preserves old business models, is one of the defining policy questions of our time."
+],
+"e": "{1}: the premise; {2}: the challenge ('Yet'); {3}: the market's response; {4}: the open question about 'such artificial scarcity' — which must follow {3}."
+},
+{
+"d": "h",
+"c": [
+"The modern museum presents objects as if they had always been meant for display.",
+"A ritual mask hung under glass appears to us as sculpture, valued for its form.",
+"For the community that made it, however, it was an instrument — something worn, danced and perhaps deliberately destroyed after use.",
+"The museum's quiet transformation of tool into artwork is so complete that we rarely notice it has happened at all."
+],
+"e": "{1}: general claim; {2}: example ('A ritual mask'); {3}: the contrast ('however') with original use — 'it' = the mask; {4}: concluding reflection on 'the museum's transformation'."
+},
+{
+"d": "h",
+"c": [
+"Social scientists have long struggled with a peculiar problem: their subjects can read.",
+"A theory about how people behave, once published, can change how people behave.",
+"Economic forecasts may thus become self-fulfilling, or self-defeating, simply by being believed.",
+"Physicists face no such difficulty — electrons do not adjust their orbits after reading the latest journal."
+],
+"e": "{1}: puzzle; {2}: explanation; {3}: consequence ('thus'); {4}: contrast with natural science ('no such difficulty' refers back to the problem). {4} could seem an opener but 'no such difficulty' needs an antecedent."
+},
+{
+"d": "h",
+"c": [
+"Nostalgia was first diagnosed in the seventeenth century as a disease afflicting Swiss mercenaries far from home.",
+"Its symptoms were said to include fever, fainting and even death.",
+"Over time, the word drifted from medicine to sentiment, coming to mean a bittersweet longing for the past rather than for a place.",
+"This shift from space to time is revealing: modern life uproots us less from places than from the eras we grew up in."
+],
+"e": "Historical origin ({1}), symptoms ({2} — 'Its' = the disease), semantic drift ({3}), interpretation ({4}, 'This shift from space to time' = {3}'s change)."
+},
+{
+"d": "h",
+"c": [
+"The danger of statistical averages is that they describe no one in particular.",
+"When the US Air Force measured thousands of pilots in 1950 to design a cockpit for the 'average' pilot, it found that not one pilot was average on all ten key dimensions.",
+"The cockpit built for everyone, in other words, fitted no one.",
+"The solution — adjustable seats and pedals — now seems obvious, but it required abandoning the ideal of the average itself."
+],
+"e": "{1}: principle; {2}: illustration; {3}: restatement ('in other words'); {4}: resolution. {4}'s 'The solution' requires the problem in {3}."
+},
+{
+"d": "h",
+"c": [
+"It is tempting to see the decline of handwritten letters as a simple loss.",
+"Letters, after all, preserved a slowness and intimacy that email seems to lack.",
+"But letter-writing was also, for most of its history, an elite practice, requiring literacy, leisure and costly postage.",
+"The democratisation of written communication may therefore have done more for intimacy than its critics allow, simply by extending it to millions who never had it."
+],
+"e": "{1}: the tempting view; {2}: supports it ('after all'); {3}: counter ('But'); {4}: the author's conclusion ('therefore'). The structure is concession–rebuttal."
+},
+{
+"d": "h",
+"c": [
+"Philosophers distinguish between knowing that and knowing how.",
+"I can know that a bicycle stays upright through a combination of momentum and steering without being able to ride one.",
+"Conversely, a child may ride perfectly well while having no idea why she does not fall.",
+"Much of what we call expertise, it turns out, is the second kind of knowledge masquerading as the first."
+],
+"e": "{1}: distinction; {2}: example of knowing-that without knowing-how; {3}: 'Conversely' — the reverse case; {4}: conclusion using 'the second kind' and 'the first', which presuppose {1}."
+},
+{
+"d": "h",
+"c": [
+"In most democracies, voter turnout among the young is markedly lower than among the old.",
+"Politicians, being rational, respond by tailoring their promises to older voters.",
+"Young people, seeing little in politics that addresses their concerns, become even less inclined to vote.",
+"The result is a self-reinforcing cycle that is easy to describe and remarkably hard to break."
+],
+"e": "A causal chain: fact ({1}) → politicians' response ({2}) → effect on the young ({3}) → summary ('The result … cycle', {4})."
+},
+{
+"d": "h",
+"c": [
+"The ancient Greeks had no word that maps neatly onto our 'art'.",
+"Their term techne covered shoemaking and shipbuilding as readily as sculpture and poetry.",
+"The idea that certain crafts are 'fine arts', set apart from mere usefulness, is an eighteenth-century European invention.",
+"To read that later distinction back into the ancient world is to misunderstand both."
+],
+"e": "{1}: claim; {2}: evidence about 'Their term'; {3}: contrast with the later idea; {4}: 'that later distinction' refers to {3}."
+},
+{
+"d": "h",
+"c": [
+"A curious feature of expert judgement is that confidence and accuracy are only loosely related.",
+"In fields with rapid, clear feedback, such as weather forecasting, experts become well calibrated over time.",
+"In fields where feedback is slow or ambiguous, such as long-term political forecasting, experts can remain highly confident for entire careers while performing barely better than chance.",
+"What distinguishes reliable expertise, then, is less the expert than the environment in which the expertise was learned."
+],
+"e": "{1}: puzzle; {2} and {3}: contrasting cases (fast vs slow feedback); {4}: conclusion ('then'). {2} must precede {3}, which sets the less-flattering case up for the conclusion."
+},
+{
+"d": "h",
+"c": [
+"Every map of a city tells a story about who the city is for.",
+"Tourist maps foreground monuments and shopping streets, while omitting the neighbourhoods where most residents actually live.",
+"Transit maps are no more neutral: they distort geography to emphasise connections, quietly shrinking the outer suburbs.",
+"To read a map critically, therefore, is to ask not only what it shows, but whose city it imagines."
+],
+"e": "Thesis ({1}), first example ({2}), second example ({3}) — whose 'no more neutral' presupposes a previous non-neutral example — and conclusion ({4}, 'therefore')."
+},
+{
+"d": "h",
+"c": [
+"The Industrial Revolution is usually told as a story of machines.",
+"Yet the steam engine mattered less in its first decades than a quieter transformation: the reorganisation of work around the clock.",
+"Factory owners imposed strict hours, fines for lateness and bells to mark shifts.",
+"Workers who had once laboured by the task and the season now had to learn to labour by the hour — a discipline we have long since forgotten was ever learned."
+],
+"e": "{1}: conventional view; {2}: author's correction ('Yet'); {3}: details of the 'transformation'; {4}: its human consequence."
+},
+{
+"d": "h",
+"c": [
+"Moral philosophers sometimes speak of 'moral luck'.",
+"A drunk driver who reaches home safely and one who kills a pedestrian made the same reckless choice.",
+"Yet we judge the second far more harshly, as though an accident of circumstance had altered the moral quality of the act.",
+"Whether this intuition reflects a deep truth about responsibility or a simple failure of consistency remains fiercely contested."
+],
+"e": "Concept ({1}), illustration ({2}), the puzzle ('Yet we judge', {3}), the open debate about 'this intuition' ({4})."
+},
+{
+"d": "h",
+"c": [
+"The rise of the novel in eighteenth-century England coincided with a new ideal of private life.",
+"Domestic interiors were rearranged to provide individual rooms, and reading itself became a silent, solitary act.",
+"The novel, with its intimate access to characters' inner thoughts, was perfectly suited to this new reader.",
+"It is no exaggeration to say that the genre both reflected and helped create the modern sense of an inner self."
+],
+"e": "{1}: correlation; {2}: details of the private-life ideal; {3}: why the novel fit 'this new reader'; {4}: concluding claim about 'the genre'."
+},
+{
+"d": "h",
+"c": [
+"Biodiversity loss is often framed as a problem of extinction.",
+"But a species need not vanish entirely to cease mattering ecologically.",
+"When a population falls below a certain threshold, it can no longer perform its role — dispersing seeds, controlling prey, pollinating crops — even though some individuals survive.",
+"Conservationists increasingly speak, therefore, of 'functional extinction', a quieter crisis that precedes the final one."
+],
+"e": "Framing ({1}), objection ('But', {2}), mechanism ({3}), new concept ({4}, 'therefore')."
+},
+{
+"d": "h",
+"c": [
+"Behavioural economists have catalogued dozens of cognitive biases.",
+"The catalogue itself, however, raises a troubling question.",
+"If human judgement is riddled with systematic errors, what entitles the economists to trust their own judgement about which behaviours count as errors?",
+"Defenders reply that biases are identified against objective standards like probability theory, not against anyone's intuitions — though critics doubt the standards are always so objective."
+],
+"e": "{1} introduces the catalogue; {2} 'The catalogue itself' raises 'a troubling question'; {3} states it; {4} gives the reply and counter-reply."
+},
+{
+"d": "h",
+"c": [
+"When a language dies, it is common to lament the loss of its words.",
+"The deeper loss, linguists argue, lies in its grammar.",
+"Some languages, for example, require speakers to mark whether they witnessed an event directly or learned of it second-hand.",
+"A grammar like this encodes a whole theory of knowledge, one that no dictionary of individual words can preserve."
+],
+"e": "{1}: common view; {2}: author's deeper claim; {3}: example of a grammatical feature; {4}: 'A grammar like this' — the implication."
+},
+{
+"d": "h",
+"c": [
+"Shame and guilt are often treated as synonyms.",
+"Psychologists, however, draw a sharp line between them.",
+"Guilt focuses on an action — 'I did a bad thing' — and tends to motivate repair.",
+"Shame focuses on the self — 'I am bad' — and tends to provoke hiding, denial or aggression instead."
+],
+"e": "Common view ({1}), the psychologists' distinction ({2}, 'between them'), then the two terms defined in turn ({3}, {4}). {4} closes the paragraph because its 'instead' contrasts directly with {3}'s 'tends to motivate repair'."
+},
+{
+"d": "h",
+"c": [
+"Few scientific ideas have been as misused as 'survival of the fittest'.",
+"The phrase, coined by Herbert Spencer rather than Darwin, was quickly enlisted to justify laissez-faire capitalism and colonial conquest.",
+"Yet in evolutionary biology, 'fitness' means nothing more than reproductive success in a particular environment.",
+"A species of parasite or a cooperative colony of ants can be supremely 'fit' — a fact that rather undercuts the social Darwinists' celebration of strength."
+],
+"e": "{1}: claim; {2}: history of the misuse ('The phrase'); {3}: the actual meaning ('Yet'); {4}: illustration that undermines the misuse."
+},
+{
+"d": "h",
+"c": [
+"A constitution is often imagined as a fixed text that settles disputes once and for all.",
+"In practice, its most important clauses are written in deliberately open language — 'due process', 'equal protection', 'reasonable restrictions'.",
+"Each generation must therefore decide what these phrases demand in circumstances their drafters could not have foreseen.",
+"Seen this way, a constitution is less a final answer than a framework for a continuing argument."
+],
+"e": "Common view ({1}), correction ('In practice', {2}), consequence ('therefore', {3}), reconceptualisation ('Seen this way', {4})."
+},
+{
+"d": "h",
+"c": [
+"Advertising once sold products by describing them.",
+"Over the twentieth century, it learned instead to sell identities, attaching soap and cigarettes to visions of the kind of person one might become.",
+"Social media has taken this logic a step further.",
+"Users now advertise themselves, curating their lives into a brand while the platforms sell the resulting attention to the highest bidder."
+],
+"e": "Historical progression: {1} → {2} ('instead … identities') → {3} ('this logic a step further') → {4} (how)."
+},
+{
+"d": "h",
+"c": [
+"Economists have long puzzled over why people tip in restaurants they will never visit again.",
+"A purely self-interested diner, after all, gains nothing from rewarding service already received.",
+"One explanation is that tipping is enforced not by future benefit but by present emotion — the discomfort of being seen as ungenerous.",
+"Another holds that social norms, once internalised, operate even when no one is watching.",
+"Both accounts suggest that the textbook model of the rational consumer leaves out much of what actually drives behaviour."
+],
+"e": "{1}: the puzzle; {2}: why it is puzzling ('after all'); {3}: 'One explanation'; {4}: 'Another'; {5}: 'Both accounts' — must come last."
+}
+]

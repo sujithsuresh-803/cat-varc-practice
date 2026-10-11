@@ -1,0 +1,602 @@
+[
+{
+"d": "m",
+"s": "Universities increasingly market degrees by citing graduates' average starting salaries. The figure is easy to understand and easy to compare. But it conceals as much as it reveals: students who enrol in elite programmes were often already advantaged, with networks and preparation that would have served them anywhere. _______",
+"o": [
+"Salary data should therefore be banned from university marketing altogether.",
+"The salary premium, in other words, may measure who gets in more than what the programme adds.",
+"Elite programmes are thus clearly overrated by employers.",
+"Starting salaries are the only reliable indicator of a degree's worth."
+],
+"a": "B",
+"e": "The paragraph's logic is selection bias: outcomes reflect who is admitted. B states this conclusion precisely. A overreaches into a policy prescription; C introduces employers' views, which are not discussed; D contradicts the paragraph's scepticism."
+},
+{
+"d": "m",
+"s": "For centuries, sailors navigated by the stars. The method worked well at latitude — the angle of the pole star gave it directly — but longitude was another matter, since it required knowing the exact time at a reference point while far out at sea. _______ The marine chronometer, perfected by John Harrison in the eighteenth century, finally solved the problem.",
+"o": [
+"Pendulum clocks, the most accurate of the day, were useless on a rolling ship.",
+"Sailors therefore preferred to stay close to coastlines.",
+"The pole star is not visible from the southern hemisphere.",
+"Many governments offered cash prizes for better telescopes."
+],
+"a": "A",
+"e": "The gap must explain why keeping time at sea was hard, setting up the chronometer as the solution. A does exactly this. B is a possible consequence but doesn't bridge to the chronometer; C is about latitude, already settled; D mentions telescopes, which aren't relevant to timekeeping."
+},
+{
+"d": "m",
+"s": "Recommendation algorithms are often blamed for trapping users in 'filter bubbles' of agreeable content. Yet several large studies find that most people encounter a wider range of political views online than offline, where neighbours, colleagues and friends tend to share their outlook. _______",
+"o": [
+"Algorithms are, therefore, entirely harmless to democratic discourse.",
+"The bubble, if it exists, may be less a product of technology than of the social lives people already lead.",
+"Users should therefore abandon social media in favour of local newspapers.",
+"These studies prove that online debate is always more civil than offline conversation."
+],
+"a": "B",
+"e": "The evidence shifts the source of homogeneity from algorithms to offline social life — B. A overstates ('entirely harmless'); C is an unsupported prescription; D introduces civility, which the paragraph never discusses."
+},
+{
+"d": "m",
+"s": "A company that cuts its research budget will usually see profits rise in the short term. Analysts applaud, and the share price climbs. The costs of the decision arrive only years later, when the products that research would have produced fail to appear. _______",
+"o": [
+"By then, the executives responsible have often moved on, and the connection is rarely made.",
+"Research is therefore the most important function of any business.",
+"Share prices are, in fact, an accurate measure of long-term value.",
+"Analysts are generally more intelligent than executives."
+],
+"a": "A",
+"e": "The paragraph describes a time lag between decision and cost; A completes the thought by explaining why accountability is lost. B overgeneralises; C contradicts the implied critique of short-termism; D is irrelevant."
+},
+{
+"d": "m",
+"s": "Many cities have tried to revive declining downtowns by building stadiums. The logic seems sound: a stadium draws tens of thousands of visitors, who will surely spend money nearby. Economists who have studied these projects, however, are almost unanimous in their scepticism. _______",
+"o": [
+"Stadiums are architecturally unappealing and spoil city skylines.",
+"Spending on games largely substitutes for spending residents would have made elsewhere in the same city, rather than adding to it.",
+"Sports fans typically come from wealthy suburbs.",
+"Most cities lack the land needed for a stadium."
+],
+"a": "B",
+"e": "The gap must explain why economists are sceptical of the spending logic. B supplies the substitution effect. A is aesthetic, not economic; C is a demographic detail that doesn't explain the scepticism; D is about feasibility, not impact."
+},
+{
+"d": "m",
+"s": "_______ Some species of fig can be pollinated only by a single species of tiny wasp, which in turn can reproduce only inside that fig. If either partner disappears, the other is doomed. Such tight mutual dependence makes these pairs fascinating to biologists and alarming to conservationists.",
+"o": [
+"Figs are among the oldest cultivated fruits in human history.",
+"Not all relationships in nature are competitive; some are so interdependent that neither partner can survive alone.",
+"Wasps are generally considered pests by farmers.",
+"Conservationists have successfully saved many endangered species."
+],
+"a": "B",
+"e": "An opening sentence must introduce the theme of mutual dependence that the example illustrates. B does so. A and C focus on the wrong aspects of figs/wasps; D jumps ahead and contradicts the 'alarming' tone."
+},
+{
+"d": "m",
+"s": "The four-day work week has been trialled by hundreds of companies in recent years. Most report stable or improved productivity, and employees overwhelmingly prefer it. Sceptics point out, however, that the firms volunteering for trials were likely those best suited to the change. _______",
+"o": [
+"The four-day week should therefore be mandated by law immediately.",
+"Whether the results would hold across the economy as a whole remains an open question.",
+"Employees who prefer it are simply lazy.",
+"Productivity is impossible to measure accurately."
+],
+"a": "B",
+"e": "The sceptics' point is self-selection; the natural conclusion is uncertainty about generalisation — B. A ignores the caveat; C is an unwarranted judgement; D is an extreme claim unrelated to the self-selection point."
+},
+{
+"d": "m",
+"s": "Early critics of photography warned that it would destroy painting. Why, they asked, would anyone commission a portrait when a camera could capture a likeness perfectly? _______ Freed from the burden of mere resemblance, artists turned to colour, light and abstraction — giving rise to Impressionism and much of modern art.",
+"o": [
+"The prediction proved half right: photography did end painting's monopoly on likeness, but this liberated rather than destroyed it.",
+"Photography was, in fact, extremely expensive in its early years.",
+"Portrait painters were usually poorly paid.",
+"Most early photographs have since faded beyond recognition."
+],
+"a": "A",
+"e": "The gap must bridge the prediction and the 'freed from … resemblance' outcome. A explicitly does so. B, C and D are side details that don't connect to the liberation the next sentence describes."
+},
+{
+"d": "m",
+"s": "In negotiations, the first number put on the table exerts a surprisingly strong pull. Even when both sides know it is arbitrary, subsequent offers tend to cluster around it. _______",
+"o": [
+"Experienced negotiators therefore try to make the first offer, or to explicitly reject an opponent's anchor before discussing it.",
+"Negotiations are always won by the more aggressive party.",
+"Numbers have no real effect on how people think.",
+"Most negotiations end without any agreement."
+],
+"a": "A",
+"e": "Anchoring implies a practical lesson; A draws it. B overgeneralises; C contradicts the paragraph; D is irrelevant."
+},
+{
+"d": "m",
+"s": "Plastic was once celebrated as a miracle material: cheap, durable and endlessly versatile. _______ Plastic bottles discarded today will persist in the environment for centuries, fragmenting into ever-smaller particles that now turn up in fish, drinking water and even human blood.",
+"o": [
+"Its very durability, the quality that made it so useful, has become its greatest liability.",
+"Plastic was invented in the early twentieth century.",
+"Glass is a far better material for most purposes.",
+"Many countries have banned single-use plastic bags."
+],
+"a": "A",
+"e": "The missing sentence must pivot from praise to the problem of persistence described next. A does so by turning 'durable' into the liability. B is a dated fact; C introduces an unsupported comparison; D jumps to policy."
+},
+{
+"d": "m",
+"s": "The success of a reintroduced species depends on more than releasing animals into a suitable habitat. Wolves returned to a forest must learn to hunt local prey; birds must learn migration routes that their captive-bred parents never flew. _______",
+"o": [
+"Reintroduction programmes therefore increasingly include training, or pair captive animals with wild mentors.",
+"Wolves are more intelligent than birds.",
+"Most reintroductions fail because habitats are too small.",
+"Captive breeding should be abandoned entirely."
+],
+"a": "A",
+"e": "The paragraph stresses learned behaviour; A gives the logical response. B is an irrelevant comparison; C introduces a new cause; D is an extreme overreach."
+},
+{
+"d": "m",
+"s": "Many of history's 'lone geniuses' were, on closer inspection, nothing of the kind. Edison ran a laboratory employing dozens of engineers; Darwin corresponded with hundreds of naturalists who supplied data and specimens. _______",
+"o": [
+"Genius, in other words, is often less a solitary spark than the visible tip of a collaborative network.",
+"Edison was a better businessman than inventor.",
+"Darwin's theory of evolution has been disproved.",
+"Modern scientists are less creative than those of the past."
+],
+"a": "A",
+"e": "The examples support a general reframing of genius as collaborative — A. B and C are unsupported claims about the individuals; D introduces a comparison the paragraph doesn't make."
+},
+{
+"d": "m",
+"s": "Lie detectors measure physiological signs of stress — heart rate, sweating, breathing. The problem is that stress is not the same as deception. _______ Conversely, a practised liar who feels no anxiety may pass the test with ease.",
+"o": [
+"An innocent person who is frightened of being disbelieved may well fail.",
+"Lie detectors are therefore used widely by police around the world.",
+"Heart rate is the most reliable of the three measures.",
+"Most people find lying uncomfortable."
+],
+"a": "A",
+"e": "'Conversely' signals that the missing sentence is the mirror case: a false positive. A provides exactly that. B ignores the critique; C introduces an unsupported comparison; D supports the instrument rather than setting up the contrast."
+},
+{
+"d": "m",
+"s": "Rising sea levels are often discussed in terms of averages: a few millimetres a year. But damage is rarely done by averages. _______",
+"o": [
+"It is done by storm surges riding on top of those higher seas, which turn once-a-century floods into once-a-decade events.",
+"Sea levels have risen and fallen many times in Earth's history.",
+"Coastal cities are generally wealthier than inland ones.",
+"Millimetres are too small to notice."
+],
+"a": "A",
+"e": "'Damage is rarely done by averages' demands a sentence identifying what does the damage — extremes. A does this. B is a historical aside; C is irrelevant; D contradicts the paragraph's concern."
+},
+{
+"d": "m",
+"s": "Traditional performance reviews, conducted once a year, are falling out of favour in many large companies. Managers complain that they consume enormous time; employees find them anxiety-inducing and often unfair. _______",
+"o": [
+"In their place, firms are experimenting with frequent, informal check-ins focused on development rather than ratings.",
+"Performance reviews were invented by the military.",
+"Employees should never receive feedback.",
+"Managers are generally poor judges of performance."
+],
+"a": "A",
+"e": "After describing the decline and complaints, the natural next step is what replaces reviews — A. B is a trivia aside; C is absurdly extreme; D overgeneralises a single complaint."
+},
+{
+"d": "m",
+"s": "Antibiotics are among the most important medicines ever developed, yet pharmaceutical companies have largely abandoned research into new ones. _______ A new antibiotic must be held in reserve, used only when older drugs fail, so that resistance does not develop — which means it will sell in tiny quantities.",
+"o": [
+"The reason is not scientific but economic.",
+"Bacteria evolve resistance extremely slowly.",
+"Antibiotics are easy and cheap to discover.",
+"Most infections are caused by viruses rather than bacteria."
+],
+"a": "A",
+"e": "The next sentence explains a market problem (small sales), so the gap must announce an economic reason — A. B contradicts the resistance concern; C contradicts the abandonment puzzle; D is irrelevant."
+},
+{
+"d": "m",
+"s": "Classical music audiences are ageing in most Western countries, and orchestras worry about their future. Some have responded by playing film scores and pop arrangements to attract younger listeners. _______",
+"o": [
+"Purists object that this risks winning an audience for the orchestra while losing one for the music it exists to play.",
+"Film scores are more difficult to perform than symphonies.",
+"Young people do not like music.",
+"Orchestras were first formed in the seventeenth century."
+],
+"a": "A",
+"e": "After the strategy, the paragraph needs a response or tension — A. B is a dubious comparison; C is absurd; D is an irrelevant historical fact."
+},
+{
+"d": "m",
+"s": "Before the invention of refrigeration, ice was harvested from frozen lakes in New England and shipped as far as India. _______ Insulated with sawdust, a substantial portion of the cargo survived months at sea, and the trade made fortunes for its pioneers.",
+"o": [
+"The idea sounded absurd to many contemporaries.",
+"Ice is formed when water drops below zero degrees Celsius.",
+"India has a hot climate.",
+"New England is famous for its autumn foliage."
+],
+"a": "A",
+"e": "The following sentence describes how the trade succeeded despite apparent impossibility, so the gap sets up scepticism — A. B and C are trivial facts that don't advance the narrative; D is irrelevant."
+},
+{
+"d": "m",
+"s": "A ban on a product does not eliminate demand for it. When the United States prohibited alcohol in the 1920s, consumption fell but did not disappear; instead, supply shifted to criminal networks that grew rich and violent. _______",
+"o": [
+"Policymakers considering bans, therefore, must weigh not only the harms of the product but the harms of the market a ban creates.",
+"Alcohol is more harmful than any other drug.",
+"Criminal networks existed only in the United States.",
+"Prohibition was popular with most Americans throughout the 1920s."
+],
+"a": "A",
+"e": "The paragraph's lesson is about unintended consequences of bans; A generalises it. B overreaches; C is false and irrelevant; D is a historical claim not supported."
+},
+{
+"d": "m",
+"s": "Recycling rates are often cited as a measure of environmental progress. But recycling is the third of the three familiar R's, not the first. _______",
+"o": [
+"Reducing consumption and reusing goods save far more resources than recycling them after use.",
+"Recycling plants are often located in industrial zones.",
+"Plastic is harder to recycle than glass.",
+"Many people do not know how to recycle correctly."
+],
+"a": "A",
+"e": "The pointed reminder that recycling is 'third, not first' requires a sentence explaining why reduce and reuse matter more — A. The others are true-sounding details that don't complete the argument."
+},
+{
+"d": "m",
+"s": "The success of a vaccination campaign can make it look unnecessary. As diseases like measles disappear from daily life, parents no longer see their devastating effects. _______",
+"o": [
+"Vaccine hesitancy then rises, and the diseases return — a cycle public health experts call the paradox of prevention.",
+"Measles was first identified in the ninth century.",
+"Vaccines are developed through a long process of clinical trials.",
+"Parents generally make good decisions about their children's health."
+],
+"a": "A",
+"e": "The logic leads to complacency and resurgence — A, which also names the paradox. B and C are off-topic facts; D undercuts the paragraph's concern."
+},
+{
+"d": "m",
+"s": "A growing body of research suggests that time spent in nature improves mood and concentration. _______ Even a view of trees from a hospital window has been linked to faster recovery after surgery.",
+"o": [
+"The effects appear even with remarkably brief or indirect exposure.",
+"Forests cover about thirty per cent of the Earth's land area.",
+"Many people prefer cities to the countryside.",
+"Hospitals are often built far from natural areas."
+],
+"a": "A",
+"e": "'Even a view of trees' is an intensifying example of brief/indirect exposure, so the gap must introduce that idea — A. B is a statistic; C contradicts; D is irrelevant."
+},
+{
+"d": "m",
+"s": "Online reviews were supposed to empower consumers by replacing marketing with honest peer opinion. _______ Platforms now struggle with fake reviews bought in bulk, while genuine reviewers tend to post only when delighted or furious.",
+"o": [
+"The reality has proved messier.",
+"Consumers have always trusted advertisements.",
+"Most products receive five-star ratings.",
+"Reviews were invented by newspapers."
+],
+"a": "A",
+"e": "The paragraph contrasts promise and outcome; A is the pivot sentence. B contradicts; C is a detail that doesn't serve as a transition; D is irrelevant."
+},
+{
+"d": "m",
+"s": "Monarch butterflies migrate up to four thousand kilometres from Canada to central Mexico. Remarkably, no individual butterfly makes the round trip; the journey spans several generations. _______",
+"o": [
+"The butterflies that arrive in Mexico have therefore never been there before, yet they find the same forests their great-grandparents left.",
+"Monarch butterflies are orange and black.",
+"Mexico has a warmer climate than Canada.",
+"Many birds also migrate long distances."
+],
+"a": "A",
+"e": "The multigenerational detail sets up the puzzle of navigation — A draws it out. The rest are trivia or tangents."
+},
+{
+"d": "m",
+"s": "Governments often justify subsidies for fossil fuels as a way of protecting poor households from high energy prices. _______ Since richer households consume far more energy, the bulk of the subsidy flows to them.",
+"o": [
+"Studies of such subsidies, however, find them a remarkably inefficient way of doing so.",
+"Fossil fuels are the main cause of climate change.",
+"Energy prices have generally fallen over the past century.",
+"Poor households rarely own cars."
+],
+"a": "A",
+"e": "The next sentence explains why the subsidy is poorly targeted, so the gap must assert inefficiency — A. B changes topic; C is unsupported; D is a detail that doesn't function as the claim being supported."
+},
+{
+"d": "h",
+"s": "There is a familiar complaint that modern philosophy has become a technical specialism, its debates conducted in a jargon unintelligible to outsiders. The complaint has force. But it assumes that philosophy was once different — that Kant or Aristotle wrote for the general reader. _______",
+"o": [
+"They did not; the difficulty of philosophy is not a modern corruption but a feature of thinking carefully about hard questions.",
+"Kant and Aristotle were the greatest philosophers who ever lived.",
+"Modern philosophers should therefore write only for specialists.",
+"The general reader has, in any case, lost interest in philosophy."
+],
+"a": "A",
+"e": "The paragraph sets up a hidden assumption to be challenged; A challenges it and draws the implication. B is evaluative and off-point; C is a prescription the paragraph doesn't support; D introduces a new claim."
+},
+{
+"d": "h",
+"s": "A map that showed every detail of the territory would have to be as large as the territory itself — and would therefore be useless. The value of a model, whether in cartography or economics, lies precisely in what it leaves out. _______",
+"o": [
+"The real question is never whether a model is simplified, but whether it has simplified away the features that matter for the question at hand.",
+"Economists should therefore stop using models entirely.",
+"Maps are more accurate than economic models.",
+"The most detailed models are always the most useful."
+],
+"a": "A",
+"e": "Having established that simplification is necessary, the paragraph needs the criterion for a good model — A. B and D contradict the logic; C introduces an unsupported comparison."
+},
+{
+"d": "h",
+"s": "The historian's task, it is often said, is to understand the past on its own terms. Yet the questions historians ask are inevitably shaped by the concerns of their own time; histories of women, of the environment and of disease proliferated precisely when those subjects became urgent in the present. _______",
+"o": [
+"This is not a failure of objectivity so much as the condition of historical inquiry: the present determines which parts of the past become visible.",
+"Historians should therefore ignore present concerns entirely.",
+"Histories of women are more important than political histories.",
+"The past can never be understood at all."
+],
+"a": "A",
+"e": "The paragraph presents a tension; the best completion reframes it as a constitutive condition — A. B is impossible given the argument; C is an unsupported ranking; D is an extreme overreach the paragraph does not endorse."
+},
+{
+"d": "h",
+"s": "Advocates of meritocracy argue that rewarding talent and effort is both efficient and fair. Critics have noted a less obvious cost. _______ Those who fail, meanwhile, are left with no consolation, for in a meritocracy failure is by definition deserved.",
+"o": [
+"Those who succeed in a meritocracy tend to believe they owe their position entirely to their own virtue, and may feel little obligation to others.",
+"Meritocracies are less efficient than aristocracies.",
+"Talent cannot be measured reliably.",
+"Most societies are not truly meritocratic."
+],
+"a": "A",
+"e": "'Those who fail, meanwhile' requires a preceding sentence about those who succeed, describing the psychological cost — A. C and D are different critiques that don't set up 'meanwhile'; B contradicts the advocates' efficiency claim without support."
+},
+{
+"d": "h",
+"s": "When a scientific consensus is challenged by a lone dissenter, we like to recall Galileo. The comparison flatters the dissenter but misleads the rest of us. _______",
+"o": [
+"For every Galileo there were hundreds of dissenters who were simply wrong, and history remembers only the ones who were vindicated.",
+"Galileo was in fact wrong about the tides.",
+"Scientific consensus is always correct.",
+"Most dissenters are motivated by money."
+],
+"a": "A",
+"e": "The paragraph criticises the Galileo comparison; A gives the reason (survivorship bias). B is a true but irrelevant detail; C is an absolute overreach; D introduces an unsupported motive."
+},
+{
+"d": "h",
+"s": "_______ The word 'robot' was coined in a 1920 Czech play about artificial workers who rise up against their makers. 'Cyberspace' was invented by a science-fiction novelist years before the internet became public. Fiction does not merely anticipate technology; it supplies the vocabulary, and often the anxieties, through which we come to understand it.",
+"o": [
+"Science fiction is often dismissed as escapism, but its influence on how we think about technology is hard to overstate.",
+"Czech literature is underappreciated internationally.",
+"Most science-fiction predictions turn out to be wrong.",
+"Robots are now used widely in manufacturing."
+],
+"a": "A",
+"e": "The paragraph argues for fiction's influence on technological thinking; A frames that argument and its examples. B is too narrow; C contradicts the drift; D is a tangent."
+},
+{
+"d": "h",
+"s": "Economists measure a nation's prosperity by its gross domestic product, the total value of goods and services sold. GDP rises when a forest is felled for timber, but not when it stands, purifying air and water. _______",
+"o": [
+"It counts the money spent cleaning up an oil spill as a gain, and the unpaid care of children and the elderly as nothing at all.",
+"GDP was first calculated in the 1930s.",
+"Forests are important for biodiversity.",
+"Most countries now have higher GDP than a century ago."
+],
+"a": "A",
+"e": "The paragraph is building a list of GDP's perverse blind spots; A continues it in parallel. B is a dated fact; C is a tangent about forests; D is irrelevant to the critique."
+},
+{
+"d": "h",
+"s": "Grief, many psychologists once held, proceeds through fixed stages: denial, anger, bargaining, depression and acceptance. The model was intuitive and widely taught. _______ Many bereaved people never experience some stages at all, and most move back and forth between emotions in no particular order.",
+"o": [
+"It was also, as later research made clear, largely unsupported by evidence.",
+"It was first proposed in a book about terminally ill patients, not the bereaved.",
+"Psychologists have since developed better treatments for depression.",
+"Acceptance is the most important stage of grief."
+],
+"a": "A",
+"e": "The next sentence presents evidence against the model, so the gap must announce that verdict — A. B is a true historical detail but doesn't prepare for the empirical refutation; C and D are off-point."
+},
+{
+"d": "h",
+"s": "The Library of Alexandria is usually remembered as destroyed in a single catastrophic fire. Historians now think its decline was slower and less dramatic: funding dried up, scholars were expelled during political purges, and the collection was neglected over centuries. _______",
+"o": [
+"The myth of the fire endures, perhaps, because sudden catastrophe is easier to mourn than slow institutional neglect — and less uncomfortable to recognise in ourselves.",
+"The library contained hundreds of thousands of scrolls.",
+"Fires were common in ancient cities.",
+"Alexandria was founded by Alexander the Great."
+],
+"a": "A",
+"e": "A completion that reflects on why the myth survives, with a pointed contemporary implication, fits the paragraph's revisionist arc. B, C and D are factual asides that don't complete the thought."
+},
+{
+"d": "h",
+"s": "Free speech is often defended on the grounds that truth will win out in an open marketplace of ideas. But markets can fail. They reward what sells, not what is true, and falsehoods that flatter their audience may out-compete truths that discomfort it. _______",
+"o": [
+"None of this necessarily justifies censorship, but it does suggest that the marketplace metaphor cannot, on its own, bear the weight its defenders place on it.",
+"Free speech should therefore be abolished.",
+"Truth always wins in the end.",
+"Markets are the best way to allocate economic resources."
+],
+"a": "A",
+"e": "The paragraph critiques one justification without rejecting free speech; A preserves that nuance. B overreaches; C contradicts; D shifts to economics."
+},
+{
+"d": "h",
+"s": "Self-driving cars must sometimes be programmed to choose between harms: swerve and endanger the passenger, or continue and endanger a pedestrian. Surveys show that most people want other people's cars to minimise total harm. _______",
+"o": [
+"When asked which car they would buy, however, most prefer one that protects its passengers at all costs.",
+"Self-driving cars will eliminate all road accidents.",
+"Pedestrians are more vulnerable than passengers.",
+"Most surveys are poorly designed."
+],
+"a": "A",
+"e": "'Other people's cars' sets up a self-interest contrast; A supplies the 'however'. B is unrealistic; C is a factual aside; D undermines the paragraph's data without reason."
+},
+{
+"d": "h",
+"s": "It is commonly assumed that the more choice consumers have, the better off they are. Experiments complicate the picture. Shoppers offered twenty-four varieties of jam were far less likely to buy any than those offered six. _______",
+"o": [
+"Beyond a certain point, choice may become a burden, inducing paralysis rather than satisfaction.",
+"Jam is a popular breakfast food.",
+"Consumers should be offered only one product at a time.",
+"Most shoppers dislike jam."
+],
+"a": "A",
+"e": "The experiment supports a qualified conclusion — A ('beyond a certain point'). C overreaches to an extreme; B and D are irrelevant."
+},
+{
+"d": "h",
+"s": "The ruins of ancient cities are often taken as warnings about collapse. Yet the inhabitants of many such cities did not vanish; they simply moved elsewhere, adapting to drought or shifting trade routes. _______",
+"o": [
+"What looks to us like collapse may, from their perspective, have been a successful adaptation.",
+"Ancient cities were generally smaller than modern ones.",
+"Drought is the single cause of all historical collapses.",
+"Archaeologists have excavated many ruined cities."
+],
+"a": "A",
+"e": "The paragraph reframes abandonment as adaptation; A states that reframing. C is an absolute claim; B and D are tangents."
+},
+{
+"d": "h",
+"s": "Many of the world's languages lack words for 'left' and 'right', using absolute directions — north, south, east, west — instead. Speakers of such languages maintain a constant sense of orientation that most English speakers find astonishing. _______",
+"o": [
+"Whether the language produces the skill, or the skill the language, is a question linguists still debate.",
+"English is the most widely spoken language in the world.",
+"Languages without 'left' and 'right' are more primitive.",
+"Most people have a poor sense of direction."
+],
+"a": "A",
+"e": "The correlation invites the causation question — A. C is an unjustified value judgement; B and D are off-topic or overgeneralised."
+},
+{
+"d": "h",
+"s": "Inequality is often measured by income. Yet two households with identical incomes can lead very different lives if one owns its home and the other rents, or if one can call on wealthy relatives in a crisis. _______",
+"o": [
+"Wealth, not income, may be the better measure of how secure — and how free — a household really is.",
+"Renting is always a poor financial decision.",
+"Most households own their homes.",
+"Income inequality has fallen in recent decades."
+],
+"a": "A",
+"e": "The examples (property, family support) point to wealth as a superior measure — A. B and C are overgeneralisations; D is an unsupported empirical claim."
+},
+{
+"d": "h",
+"s": "The paradox of the expert witness is that the qualities that make testimony credible to a jury — confidence, fluency, unwavering certainty — are not the qualities that make it reliable. _______",
+"o": [
+"Careful scientists hedge, qualify and acknowledge uncertainty, which juries may mistake for weakness.",
+"Expert witnesses are usually paid by one side of the case.",
+"Juries are generally made up of ordinary citizens.",
+"Most trials do not involve expert witnesses."
+],
+"a": "A",
+"e": "The paragraph contrasts credibility with reliability; A explains how genuine reliability (hedging) can backfire. B introduces a different issue (bias); C and D are tangential facts."
+},
+{
+"d": "h",
+"s": "Literary critics once sought the 'intended meaning' of a text — what its author meant to say. In the mid-twentieth century, a group of critics argued that this was a fallacy: the author's intentions are usually unknowable, and in any case a poem means what its words mean, not what its writer hoped. _______",
+"o": [
+"Later theorists pushed further, arguing that meaning resides not in the text at all but in the reader's encounter with it.",
+"Most authors write poetry rather than prose.",
+"Authors' intentions are always clearly stated in their letters.",
+"The mid-twentieth century produced little important literature."
+],
+"a": "A",
+"e": "The paragraph traces a sequence of theories; A continues the progression logically. C contradicts 'usually unknowable'; B and D are irrelevant."
+},
+{
+"d": "h",
+"s": "The invention of the lightbulb is usually credited to Edison. In fact, more than twenty inventors had produced working incandescent lamps before him. _______ His real achievement was a system — generators, wiring, meters and a long-lasting filament — that made electric light practical for ordinary homes.",
+"o": [
+"Edison's bulb was not the first, nor even the brightest.",
+"Edison was born in Ohio.",
+"Incandescent bulbs have now been largely replaced by LEDs.",
+"The other inventors were all European."
+],
+"a": "A",
+"e": "The sentence before the gap rejects 'first'; the sentence after describes his real achievement. A bridges by restating what he did not do. B and C are tangents; D is unsupported."
+},
+{
+"d": "h",
+"s": "A city that bans cars from its centre will see congestion fall there and often rise on the surrounding ring roads. _______ Over months, many drivers do not merely reroute but switch modes, combine trips or stop making some journeys altogether.",
+"o": [
+"Yet the predicted gridlock on those ring roads frequently fails to materialise.",
+"Cars are the main source of air pollution in cities.",
+"Most cities were not designed for cars.",
+"Ring roads are expensive to build."
+],
+"a": "A",
+"e": "The next sentence explains why traffic doesn't simply relocate ('traffic evaporation'), so the gap must assert that the expected gridlock fails to appear — A. The others are tangents."
+},
+{
+"d": "h",
+"s": "Folk wisdom holds that opposites attract. Research on long-term couples finds the reverse: partners tend to be similar in education, values and even personality. _______",
+"o": [
+"The appeal of the folk saying may lie in the drama of the exceptions, which are memorable precisely because they are rare.",
+"Couples who are similar never argue.",
+"Personality cannot be measured scientifically.",
+"Most people marry before the age of thirty."
+],
+"a": "A",
+"e": "Having refuted the folk belief, the best completion explains its persistence — A. B is an absolute claim; C undermines the research without basis; D is irrelevant."
+},
+{
+"d": "h",
+"s": "The ideal of objectivity in journalism — reporting facts without taking sides — is relatively recent. Nineteenth-century newspapers were openly partisan. _______ Objectivity, in other words, was as much a business strategy as an ethical principle.",
+"o": [
+"The shift came partly because publishers realised that a neutral paper could sell to readers of every party, multiplying its audience and its advertising revenue.",
+"Most nineteenth-century journalists were poorly educated.",
+"Partisan newspapers are now illegal in many countries.",
+"Objectivity is impossible to achieve."
+],
+"a": "A",
+"e": "'In other words … business strategy' requires a preceding sentence giving a commercial motive — A. B, C and D don't establish the commercial logic that the final sentence summarises."
+},
+{
+"d": "h",
+"s": "Conservation efforts tend to focus on charismatic animals — tigers, pandas, whales. _______ Yet the creatures that hold ecosystems together are more often insects, fungi and microbes, which attract a fraction of the funding.",
+"o": [
+"These species are effective at mobilising public sympathy and donations.",
+"Tigers are found only in Asia.",
+"Pandas eat mainly bamboo.",
+"Whales are the largest animals that have ever lived."
+],
+"a": "A",
+"e": "'Yet' contrasts a reason for focusing on charismatic animals with their lesser ecological importance; A supplies the reason. B, C and D are trivia that don't set up the contrast."
+},
+{
+"d": "h",
+"s": "Nations that discover large reserves of oil or minerals often grow more slowly, and govern themselves worse, than resource-poor neighbours. _______ Rulers who can fund the state from oil revenues need not tax their citizens, and so need not answer to them.",
+"o": [
+"Part of the explanation is political rather than economic.",
+"Oil prices fluctuate significantly from year to year.",
+"Resource-poor countries usually have larger populations.",
+"Minerals are found in almost every country."
+],
+"a": "A",
+"e": "The next sentence gives a political mechanism (taxation and accountability), so the gap must announce a political explanation — A. B names a real economic factor but doesn't prepare for the next sentence; C and D are irrelevant."
+},
+{
+"d": "h",
+"s": "The great twentieth-century planning disasters — collectivised farms, high-rise housing estates, purpose-built capital cities — were not failures of intelligence. Their designers were often brilliant. What they shared was a conviction that a society could be made legible from above and rearranged according to a rational plan. _______",
+"o": [
+"What that conviction overlooked was the practical, local knowledge — illegible to planners — on which ordinary life quietly depends.",
+"Brilliant designers are therefore always dangerous.",
+"High-rise housing is unsuitable for families with children.",
+"Most planned cities are located in developing countries."
+],
+"a": "A",
+"e": "The paragraph says the failures were not about intelligence but about a shared conviction; the completion must name what that conviction missed — A. B overgeneralises; C and D are narrow tangents."
+},
+{
+"d": "h",
+"s": "We tend to think of forgetting as a failure of memory. Neuroscientists increasingly see it as an essential function. A brain that retained every detail of every experience would struggle to generalise, unable to see the forest for the trees. _______",
+"o": [
+"Forgetting, on this view, is not memory's enemy but the editor that makes memory useful.",
+"Most people forget about half of what they learn within a day.",
+"Memory declines inevitably with age.",
+"Neuroscientists disagree about almost everything."
+],
+"a": "A",
+"e": "The paragraph reframes forgetting as functional; A crystallises that reframing. B is a detail; C shifts to ageing; D is an unsupported generalisation."
+}
+]

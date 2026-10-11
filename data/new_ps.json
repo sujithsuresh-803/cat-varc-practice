@@ -1,0 +1,602 @@
+[
+{
+"d": "m",
+"s": "Cities that build more housing see slower rent growth than those that restrict construction, even when demand is strong. Opponents of new development often argue that new units, typically priced at the top of the market, do nothing for affordability. But studies of 'filtering' show that when higher-income households move into new buildings, they vacate older units, which then become available to lower-income renters, easing pressure throughout the market.",
+"o": [
+"New housing is always priced at the top of the market and therefore benefits only the wealthy.",
+"Even expensive new housing can improve affordability by freeing up older units further down the market.",
+"Cities with strong demand should restrict construction to protect existing renters.",
+"Lower-income renters prefer older buildings to new ones."
+],
+"a": "B",
+"e": "B captures the paragraph's main claim (filtering makes new supply help affordability). A states the opponents' view the paragraph rebuts. C contradicts the evidence. D distorts the mechanism into a preference."
+},
+{
+"d": "m",
+"s": "Smartphones are often blamed for declining attention spans. The evidence is mixed. Laboratory studies show that the mere presence of a phone on a desk slightly reduces performance on cognitive tasks. Yet longitudinal studies have found little evidence of a lasting decline in people's underlying capacity to concentrate. What has changed may be less our ability to pay attention than our willingness to tolerate boredom.",
+"o": [
+"Smartphones have permanently damaged human attention spans.",
+"The presence of a phone on a desk slightly reduces cognitive performance.",
+"Evidence that phones erode our capacity to concentrate is weak; they may instead have lowered our tolerance for boredom.",
+"Longitudinal studies are more reliable than laboratory experiments."
+],
+"a": "C",
+"e": "C summarises both the mixed evidence and the paragraph's alternative explanation. A overstates. B is one detail — too narrow. D draws a methodological conclusion the paragraph doesn't make."
+},
+{
+"d": "m",
+"s": "Workplace wellness programmes — gym subsidies, health screenings, mindfulness sessions — have become a multibillion-dollar industry. Employers adopt them hoping to cut healthcare costs and boost productivity. A large randomised trial in the United States, however, found that after eighteen months, employees enrolled in such a programme were no healthier, no more productive and no less costly than those who were not. Earlier, more positive studies had mostly compared volunteers with non-volunteers — and those who volunteer for wellness programmes tend to be healthier to begin with.",
+"o": [
+"Wellness programmes have no effect on employee health, and earlier positive findings likely reflected who chose to participate.",
+"Employees who volunteer for wellness programmes are healthier than those who don't.",
+"Employers should cancel all wellness programmes immediately.",
+"Randomised trials are expensive and rarely conducted in workplaces."
+],
+"a": "A",
+"e": "A captures both the finding and the explanation for earlier results. B is a supporting detail only. C is a prescription the paragraph doesn't make. D is off-focus."
+},
+{
+"d": "m",
+"s": "The idea that people use only ten per cent of their brains is one of the most persistent myths in popular culture. Brain imaging shows that virtually every region is active over the course of a day, and damage to almost any area produces noticeable deficits. The myth survives, perhaps, because it is flattering: it implies that we all possess vast untapped potential waiting to be unlocked.",
+"o": [
+"Brain imaging is the most important tool in modern neuroscience.",
+"Although disproved by evidence, the ten per cent myth persists because it flatters our sense of untapped potential.",
+"Most people have vast untapped mental potential.",
+"Damage to any brain region produces noticeable deficits."
+],
+"a": "B",
+"e": "B combines the debunking with the explanation of persistence. A is off-focus; C endorses the myth's implication; D is one supporting detail."
+},
+{
+"d": "m",
+"s": "Tipping practices vary dramatically across countries. In the United States, a tip of fifteen to twenty per cent is effectively mandatory, and servers' wages assume it. In Japan, leaving a tip can be seen as mildly insulting, implying that good service is not already standard. Such differences suggest that tipping is less a natural expression of gratitude than a social convention, shaped by local history and labour arrangements.",
+"o": [
+"Tipping in the United States is excessive compared with other countries.",
+"Japanese restaurants provide better service than American ones.",
+"Variation in tipping customs shows that tipping is a social convention rather than a universal expression of gratitude.",
+"Servers in the United States are underpaid."
+],
+"a": "C",
+"e": "C states the general conclusion drawn from the examples. A and D are evaluative claims the paragraph doesn't make; B is an unsupported comparison."
+},
+{
+"d": "m",
+"s": "For decades, dietary guidelines warned against eating eggs because of their high cholesterol content. Later research found that, for most people, dietary cholesterol has only a modest effect on blood cholesterol, which is more strongly influenced by saturated fat and genetics. Guidelines have since been relaxed, though nutritionists caution that the earlier advice was based on the best evidence available at the time.",
+"o": [
+"Eggs are a healthy food and should be eaten daily.",
+"Nutritionists were wrong to warn against eggs and should apologise.",
+"Guidance against eggs has been relaxed as research showed dietary cholesterol matters less than once thought, though the old advice reflected the evidence then available.",
+"Saturated fat is the main cause of heart disease."
+],
+"a": "C",
+"e": "C captures the change in guidance, its reason, and the caveat. A and D go beyond the paragraph; B contradicts the nutritionists' defence."
+},
+{
+"d": "m",
+"s": "The bystander effect describes the tendency of individuals to be less likely to help a victim when others are present. Early research attributed this to a diffusion of responsibility: each person assumes someone else will act. More recent analyses of real-world CCTV footage, however, found that in most public conflicts at least one bystander intervened — and the more bystanders present, the more likely it was that someone would help.",
+"o": [
+"People are generally unwilling to help strangers in public.",
+"Real-world footage challenges the bystander effect, showing that intervention is common and more likely with larger crowds.",
+"Diffusion of responsibility explains why people do not help in emergencies.",
+"CCTV cameras should be installed in all public places."
+],
+"a": "B",
+"e": "B captures the paragraph's turn: new evidence challenges the classic effect. A and C restate the old view; D is an unsupported prescription."
+},
+{
+"d": "m",
+"s": "Many languages have dozens of words for kinship relations that English lumps together. Where English has 'uncle', Hindi distinguishes between a father's elder brother, a father's younger brother and a mother's brother, each with a different term. Such distinctions are not arbitrary: they typically mirror differences in the roles, obligations and inheritance rights these relatives hold within the family.",
+"o": [
+"Hindi has more words than English.",
+"English kinship terms are imprecise and should be reformed.",
+"Kinship vocabulary in different languages reflects the social roles and obligations relatives hold.",
+"The father's elder brother has the most authority in Indian families."
+],
+"a": "C",
+"e": "C states the general claim illustrated by the Hindi example. A is an unwarranted generalisation; B is an evaluation not made; D is too specific and unstated."
+},
+{
+"d": "m",
+"s": "Self-checkout machines were introduced to cut labour costs and speed up shopping. Retailers have since discovered unexpected downsides: rates of theft, both deliberate and accidental, are higher at self-checkouts, and customers often need staff assistance anyway. Some chains have begun reducing the number of machines or restricting them to small baskets.",
+"o": [
+"Self-checkout machines are a failure and will soon disappear.",
+"Customers prefer staffed checkouts.",
+"Unforeseen costs such as higher theft have led some retailers to scale back self-checkouts introduced to save labour.",
+"Theft is the biggest problem facing retailers today."
+],
+"a": "C",
+"e": "C captures the purpose, the downsides and the response. A overstates; B is unsupported; D overgeneralises."
+},
+{
+"d": "m",
+"s": "The phrase 'survival of the fittest' suggests that nature rewards strength and aggression. Yet cooperation is everywhere in the living world: cells within bodies, ants within colonies, and many species of birds and mammals that share food and raise one another's young. Evolutionary theory now recognises that cooperation can be favoured by natural selection just as competition can.",
+"o": [
+"Nature rewards strength and aggression above all else.",
+"Cooperation is as much a product of natural selection as competition is.",
+"Ants are the most cooperative species.",
+"The phrase 'survival of the fittest' was coined by Darwin."
+],
+"a": "B",
+"e": "B states the paragraph's main point. A is the view challenged; C is an unsupported superlative; D is a factual claim not made (and false)."
+},
+{
+"d": "m",
+"s": "Lotteries are sometimes described as a tax on the poor, since low-income households spend a larger share of their income on tickets. Defenders argue that buyers are not coerced and that the revenue funds education and other public goods. Critics reply that the voluntary nature of the purchase is undermined by heavy advertising aimed precisely at those most likely to overestimate their chances.",
+"o": [
+"Lotteries fund education and are therefore beneficial.",
+"The paragraph presents the debate over whether lotteries unfairly burden the poor, including the dispute over how voluntary ticket purchases really are.",
+"Low-income households should be banned from buying lottery tickets.",
+"Lottery advertising is always misleading."
+],
+"a": "B",
+"e": "The paragraph presents both sides; B captures the debate. A adopts only one side; C and D are extreme claims not made."
+},
+{
+"d": "m",
+"s": "The Great Barrier Reef is often described as a single structure. In fact, it consists of nearly three thousand individual reefs and hundreds of islands spread over an area larger than Italy. This fragmentation has implications for conservation: some reefs may recover from bleaching by drawing larvae from healthier neighbours, but only if the network of connections between them remains intact.",
+"o": [
+"The Great Barrier Reef is larger than Italy.",
+"The reef is a network of many reefs, and its resilience depends on maintaining connections among them.",
+"Bleaching is the only threat to the reef.",
+"The reef cannot recover from bleaching."
+],
+"a": "B",
+"e": "B captures the structural fact and its conservation implication. A is a detail (and a distortion — the area is larger, not the reef as a structure); C and D are extreme claims."
+},
+{
+"d": "m",
+"s": "Early electric cars, popular around 1900, were quiet, clean and easy to drive. They lost out to petrol cars not because they were inferior in every respect, but because petrol vehicles had far greater range, and cheap oil and the electric starter motor removed their main disadvantages. Today's revival of electric vehicles depends on overcoming the same range problem that defeated them a century ago.",
+"o": [
+"Electric cars were inferior to petrol cars in every respect.",
+"Electric cars lost out a century ago chiefly because of limited range — the same challenge their revival must now overcome.",
+"The electric starter motor was the most important invention in automotive history.",
+"Petrol cars are cleaner than electric cars."
+],
+"a": "B",
+"e": "B links the historical cause and present challenge. A contradicts 'not … inferior in every respect'; C overstates a detail; D is false according to the paragraph."
+},
+{
+"d": "m",
+"s": "Many organisations reward employees for individual performance. Yet in jobs requiring close collaboration, such incentives can backfire: employees may hoard information, avoid helping colleagues and compete for credit. Research suggests that team-based rewards, or a mix of individual and team incentives, produce better results where success depends on cooperation.",
+"o": [
+"Individual incentives always reduce productivity.",
+"Where work is collaborative, individual rewards can undermine cooperation, and team-based incentives tend to perform better.",
+"Employees naturally hoard information.",
+"Team-based rewards should replace all other forms of pay."
+],
+"a": "B",
+"e": "B preserves the condition ('in collaborative work'). A and D drop the condition and overstate; C is a distortion presenting a conditional behaviour as a natural trait."
+},
+{
+"d": "m",
+"s": "Volcanic eruptions are usually associated with destruction, but volcanic soils are among the most fertile on Earth. Ash weathers into soils rich in minerals such as potassium and phosphorus, which is why dense agricultural populations have long lived on the slopes of active volcanoes in Java, Italy and Central America, accepting the risks in exchange for the harvests.",
+"o": [
+"Volcanic eruptions are less dangerous than commonly believed.",
+"Fertile volcanic soils explain why people farm densely near active volcanoes despite the danger.",
+"Java has more volcanoes than any other island.",
+"Potassium and phosphorus are essential nutrients for plants."
+],
+"a": "B",
+"e": "B states the main point. A distorts — the paragraph accepts the danger. C is an unsupported detail; D is background, not the main point."
+},
+{
+"d": "m",
+"s": "Standardised tests are criticised for measuring only a narrow slice of ability. Their defenders concede the point but argue that the alternatives — interviews, essays, recommendation letters — are even more susceptible to bias, favouring applicants who have access to coaching and connections. A flawed but uniform measure, they contend, may be fairer than a richer but more manipulable one.",
+"o": [
+"Standardised tests measure all important abilities accurately.",
+"Defenders argue that despite their narrowness, standardised tests may be fairer than alternatives that are more open to bias.",
+"Interviews are the best way to assess applicants.",
+"Recommendation letters should be abolished."
+],
+"a": "B",
+"e": "B captures the defenders' argument including the concession. A contradicts the concession; C contradicts the argument; D is a prescription not made."
+},
+{
+"d": "m",
+"s": "Archaeologists once believed that agriculture spread across Europe as farming knowledge passed from one hunter-gatherer group to the next. Ancient DNA analysis has overturned this view. Genetic evidence shows that farming arrived largely with migrating populations from Anatolia, who gradually replaced or absorbed the existing hunter-gatherers.",
+"o": [
+"Hunter-gatherers in Europe quickly learned to farm from their neighbours.",
+"Ancient DNA shows farming spread into Europe mainly through migration of people, not merely through the transfer of ideas.",
+"Anatolia was the birthplace of agriculture.",
+"DNA analysis has solved every major question in archaeology."
+],
+"a": "B",
+"e": "B states the new finding and the contrast. A is the old view; C is an overstatement not made; D is an absurd overgeneralisation."
+},
+{
+"d": "m",
+"s": "Bilingual children sometimes start speaking slightly later than monolingual children and may initially have smaller vocabularies in each language. Parents sometimes take this as a sign of confusion. But when vocabulary in both languages is counted together, bilingual children typically match or exceed their monolingual peers, and the early lag disappears within a few years.",
+"o": [
+"Bilingualism confuses young children and delays their development.",
+"Apparent early delays in bilingual children largely disappear when both languages are considered together.",
+"Parents should speak only one language to their children.",
+"Bilingual children have larger vocabularies than adults."
+],
+"a": "B",
+"e": "B summarises the key reframing. A is the parents' misconception; C is an unwarranted prescription; D is absurd."
+},
+{
+"d": "m",
+"s": "Large dams were once seen as symbols of national progress, supplying electricity, irrigation and flood control. Over time, their costs have become clearer: displaced communities, silted reservoirs, damaged fisheries and, in some cases, significant methane emissions from decaying vegetation. Many countries now favour smaller, decentralised projects, though large dams continue to be built where demand for power is pressing.",
+"o": [
+"Large dams should never be built.",
+"Once celebrated, large dams are now viewed more critically because of their social and environmental costs, though they are still built where power needs are acute.",
+"Methane is the main environmental problem caused by dams.",
+"Smaller projects produce more electricity than large dams."
+],
+"a": "B",
+"e": "B captures the shift and the qualification. A is extreme; C overemphasises one detail; D is an unsupported claim."
+},
+{
+"d": "m",
+"s": "The 'Mozart effect' — the claim that listening to classical music makes children smarter — began with a small 1993 study showing a brief improvement in spatial reasoning among college students. The finding was quickly exaggerated in the media, and some governments even distributed classical CDs to new parents. Subsequent studies failed to replicate the effect, finding that any benefit was small, short-lived and attributable to improved mood or arousal.",
+"o": [
+"Classical music makes children more intelligent.",
+"A modest, short-lived finding was exaggerated into the 'Mozart effect', which later research did not support.",
+"Governments should not distribute CDs to parents.",
+"Mood has a strong effect on intelligence."
+],
+"a": "B",
+"e": "B traces the arc from small finding to exaggeration to non-replication. A states the myth; C and D are narrow or distorted inferences."
+},
+{
+"d": "m",
+"s": "In many countries, the share of people living alone has risen sharply over the past half-century. This is often presented as evidence of growing loneliness. But living alone and being lonely are not the same: many who live alone have rich social lives, while some people living with family feel profoundly isolated. Policies aimed at loneliness should therefore target social connection rather than household composition.",
+"o": [
+"Living alone causes loneliness.",
+"Since living alone is not the same as loneliness, policy should focus on social connection rather than household arrangements.",
+"People who live with family are lonelier than those who live alone.",
+"The number of people living alone has doubled."
+],
+"a": "B",
+"e": "B combines the distinction and its policy conclusion. A is the view challenged; C distorts the comparison; D is an unstated detail."
+},
+{
+"d": "m",
+"s": "Historians have long debated whether the Industrial Revolution improved living standards for ordinary workers. Real wages rose only slowly in its early decades, while working hours lengthened and urban mortality worsened. Over the longer term, however, industrialisation produced sustained growth in incomes and life expectancy unknown in earlier centuries.",
+"o": [
+"The Industrial Revolution harmed workers in the short run but led to long-term gains in living standards.",
+"Workers' living standards improved immediately with industrialisation.",
+"Urban mortality was the most important effect of industrialisation.",
+"Historians agree that the Industrial Revolution was harmful."
+],
+"a": "A",
+"e": "A captures both time frames. B contradicts the short-term evidence; C overstates a detail; D misstates the debate."
+},
+{
+"d": "m",
+"s": "Crowdfunding platforms have allowed thousands of independent creators to finance projects without studios, publishers or banks. But success on these platforms is highly uneven. A small number of campaigns raise the bulk of the money, often those by creators who already have large online followings. Rather than levelling the playing field, crowdfunding may partly reproduce existing inequalities of visibility.",
+"o": [
+"Crowdfunding has completely replaced traditional sources of finance.",
+"Though it bypasses traditional gatekeepers, crowdfunding tends to reward those already visible, partly reproducing existing inequalities.",
+"Creators with large followings should not use crowdfunding.",
+"Most crowdfunding campaigns are fraudulent."
+],
+"a": "B",
+"e": "B captures the promise and its limitation. A is an overstatement; C is a prescription not made; D is unsupported."
+},
+{
+"d": "m",
+"s": "Translation software has improved dramatically, producing fluent output for many common language pairs. Yet professional translators remain in demand for legal, medical and literary work. In these fields, a small error can have serious consequences, and fluency can disguise mistakes that only an expert would notice.",
+"o": [
+"Translation software has made human translators obsolete.",
+"Despite advances in machine translation, human experts remain essential where errors are costly and fluent output may hide mistakes.",
+"Literary translation is the most difficult kind.",
+"Machine translation is always inaccurate."
+],
+"a": "B",
+"e": "B states the main point with its reason. A contradicts; C is an unstated ranking; D is an absolute the paragraph rejects."
+},
+{
+"d": "m",
+"s": "Ancient Roman concrete has survived for two thousand years in harbour walls exposed to seawater, while much modern concrete degrades within decades. Researchers have found that Roman builders mixed volcanic ash with lime and seawater, triggering chemical reactions that actually strengthen the material over time. Engineers are now studying the recipe in hopes of creating more durable, lower-carbon cement.",
+"o": [
+"Roman concrete is stronger than modern concrete in every application.",
+"The unusual chemistry that makes Roman marine concrete so durable may help engineers design better modern cement.",
+"Modern concrete is poorly made.",
+"Volcanic ash is found only in Italy."
+],
+"a": "B",
+"e": "B combines the discovery and its application. A overstates; C is an unwarranted judgement; D is an irrelevant, unsupported claim."
+},
+{
+"d": "h",
+"s": "It is often said that history is written by the victors. The phrase captures something real — conquerors control archives, monuments and schoolbooks — but it obscures as much as it reveals. The defeated frequently write history too, sometimes more prolifically, since loss demands explanation in a way victory does not. The Lost Cause mythology of the American South, crafted by the defeated Confederacy, shaped popular understanding of the Civil War for a century.",
+"o": [
+"History is always written by the victors, who control archives and schoolbooks.",
+"The defeated, needing to explain loss, can shape historical memory as powerfully as the victors, complicating the familiar adage.",
+"The Lost Cause mythology was the most influential historical narrative of the twentieth century.",
+"Victors rarely bother to write history at all."
+],
+"a": "B",
+"e": "B captures the qualified critique of the adage. A restates the adage the paragraph complicates; C overstates the example; D reverses the claim into an extreme."
+},
+{
+"d": "h",
+"s": "Economists generally favour taxing pollution over regulating it directly. A tax lets each firm decide how much to cut emissions, so reductions happen where they are cheapest. Critics argue that this logic treats pollution as merely a cost to be priced rather than a harm to be prevented, and that it allows wealthy firms to 'buy' the right to pollute communities that are often poor. The economists' reply is that what matters to the atmosphere is the total quantity of emissions, not who emits them.",
+"o": [
+"Pollution taxes are more efficient than regulation, and critics who object to them misunderstand economics.",
+"The paragraph sets out the efficiency case for pollution taxes, the moral and distributional objection to them, and the economists' response.",
+"Wealthy firms should be banned from polluting poor communities.",
+"Total emissions are the only thing that matters in environmental policy."
+],
+"a": "B",
+"e": "The paragraph presents argument, objection and reply without endorsing either side; B reflects that structure. A takes sides; C is a prescription not made; D elevates the economists' reply into the paragraph's conclusion."
+},
+{
+"d": "h",
+"s": "The modern concept of childhood as a protected, distinct stage of life is often treated as natural and universal. Historians have argued, controversially, that it is largely a product of the early modern period, when schooling expanded and child labour began to decline. Critics of this view point out that parents in every era mourned their dead children and recognised the young as needing care; what changed, they argue, was not whether childhood existed but how long it lasted and how sharply it was separated from adulthood.",
+"o": [
+"Childhood did not exist before the early modern period.",
+"Parents in earlier eras did not love their children.",
+"Historians disagree over whether childhood was 'invented' in the early modern era or whether only its duration and separation from adulthood changed.",
+"Schooling is the main cause of modern childhood."
+],
+"a": "C",
+"e": "C captures both positions. A states one side in extreme form; B is a distortion contradicted by the critics' point; D overstates one factor."
+},
+{
+"d": "h",
+"s": "Placebos, by definition, contain no active ingredient. Yet a growing number of studies report that patients benefit even from 'open-label' placebos — pills they are told are inert. Researchers suggest that the ritual of treatment itself, the act of taking a pill under a clinician's care, may trigger expectations and bodily responses independent of deception. If so, the long-held assumption that placebos work only when patients are fooled may need revision.",
+"o": [
+"Placebos are as effective as real medicines.",
+"Benefits from placebos that patients know are inert suggest the treatment ritual itself may produce effects, challenging the view that placebos require deception.",
+"Doctors should prescribe placebos instead of active drugs.",
+"Patients who take placebos are easily fooled."
+],
+"a": "B",
+"e": "B combines the finding, the proposed mechanism and the implication. A and C overreach; D contradicts the open-label point."
+},
+{
+"d": "h",
+"s": "Moral philosophers have long distinguished between doing harm and allowing harm. Most people feel that pushing someone into a river is worse than failing to rescue a drowning stranger, even if the outcome is the same. Consequentialists dismiss this intuition as irrational: what matters is the result. Others defend it, arguing that a morality without the distinction would make impossible demands, requiring each of us to devote our lives to preventing every harm we could.",
+"o": [
+"Doing harm is always morally worse than allowing it.",
+"The distinction between doing and allowing harm, widely felt but disputed, is rejected by consequentialists and defended by others on the grounds that abandoning it would make morality impossibly demanding.",
+"Consequentialism is the most rational moral theory.",
+"People are morally obliged to prevent every harm they can."
+],
+"a": "B",
+"e": "B captures the intuition, the challenge and the defence. A asserts one side as fact; C endorses one position; D states the consequence the defenders reject."
+},
+{
+"d": "h",
+"s": "Measures of national happiness often show a puzzling pattern: within a country, richer people report greater life satisfaction, yet over decades, as countries grow richer, average happiness barely rises. One explanation is that people judge their well-being relative to others; when everyone's income rises, relative positions stay the same. Recent data, however, suggest that the pattern may be partly an artefact of measurement, since happiness scales have fixed upper limits that make long-term increases hard to detect.",
+"o": [
+"Money cannot buy happiness.",
+"Richer people are happier than poorer people in every country.",
+"The apparent failure of national growth to raise happiness may reflect relative comparisons, or partly the limits of happiness scales themselves.",
+"Happiness scales are useless for research."
+],
+"a": "C",
+"e": "C captures the puzzle and both proposed explanations. A is a cliché that oversimplifies; B is a detail; D is an extreme overstatement of the measurement caveat."
+},
+{
+"d": "h",
+"s": "Scientific revolutions, Thomas Kuhn argued, do not proceed by the steady accumulation of facts. A dominant paradigm guides research until anomalies accumulate that it cannot explain; eventually a new paradigm replaces it, not because it is proven superior by neutral criteria, but because it solves the problems that now seem most pressing and attracts a new generation of researchers. Critics charged that this made science sound irrational. Kuhn replied that he had described how science actually works, not argued that it was arbitrary.",
+"o": [
+"Science progresses by the steady accumulation of facts.",
+"Kuhn argued science advances through paradigm shifts driven partly by community judgement, a view critics called irrational but which Kuhn defended as descriptive rather than relativist.",
+"Kuhn proved that science is arbitrary.",
+"Younger scientists are more open-minded than older ones."
+],
+"a": "B",
+"e": "B captures Kuhn's thesis, the criticism and his reply. A is the view Kuhn rejected; C distorts and contradicts his reply; D overgeneralises a detail."
+},
+{
+"d": "h",
+"s": "Free trade, economists argue, raises overall national income. But the gains are diffuse, spread thinly across millions of consumers in the form of slightly lower prices, while the losses are concentrated among workers in particular industries and regions who lose their jobs. This asymmetry helps explain why trade remains politically contentious: those who lose are few but organised and acutely aware of their losses, while those who gain barely notice.",
+"o": [
+"Free trade harms national income.",
+"The diffuse gains and concentrated losses of trade explain why it remains politically divisive despite raising overall income.",
+"Workers who lose jobs to trade should be compensated by the government.",
+"Consumers do not benefit from free trade."
+],
+"a": "B",
+"e": "B captures the asymmetry and its political consequence. A and D contradict the paragraph; C is a prescription not made."
+},
+{
+"d": "h",
+"s": "The idea of wilderness — land untouched by human hands — has shaped conservation for over a century. Yet many landscapes celebrated as pristine, from the Amazon to the American West, were in fact shaped for millennia by indigenous peoples through burning, planting and hunting. Treating such lands as wilderness has sometimes justified evicting the very communities whose practices sustained them.",
+"o": [
+"The Amazon was entirely created by human activity.",
+"The ideal of untouched wilderness misreads landscapes long shaped by indigenous peoples and has been used to justify their displacement.",
+"Conservation has been a complete failure.",
+"Burning is the most effective conservation practice."
+],
+"a": "B",
+"e": "B captures the misreading and its consequence. A overstates; C is extreme; D is unsupported."
+},
+{
+"d": "h",
+"s": "Biographers of artists face a dilemma. Readers want to know how a life shaped the work, and the temptation is to read every painting or poem as a coded autobiography. Yet the most powerful art often transforms experience beyond recognition, and the attempt to trace it back to its sources can diminish what the artist made of them. The best biographies hold both truths in tension, illuminating the life without reducing the work to it.",
+"o": [
+"Biographies of artists are pointless.",
+"Every work of art is a coded autobiography.",
+"Good artistic biography connects life and work without reducing the work to a mere reflection of the life.",
+"Artists rarely draw on their own experiences."
+],
+"a": "C",
+"e": "C captures the balanced conclusion. A and D are extreme; B is the temptation the paragraph warns against."
+},
+{
+"d": "h",
+"s": "Measures of poverty based on income alone can mislead. A household may have income above the poverty line but lack access to clean water, healthcare or schooling; another may have little cash income but be adequately fed from its own land. Multidimensional poverty indices attempt to capture these deprivations directly, though critics argue that combining them into a single number involves arbitrary choices about how much each deprivation should count.",
+"o": [
+"Income-based poverty measures are completely useless.",
+"Multidimensional indices capture deprivations income measures miss, though weighting those deprivations into one figure involves contestable judgements.",
+"Households with their own land are never poor.",
+"Clean water is more important than income."
+],
+"a": "B",
+"e": "B captures the advantage and the criticism. A is extreme; C overgeneralises an example; D is an unstated ranking."
+},
+{
+"d": "h",
+"s": "In the nineteenth century, many doctors resisted the idea that they themselves were spreading infection. Ignaz Semmelweis showed that handwashing dramatically reduced deaths in maternity wards, yet his colleagues largely rejected his findings. Part of the resistance was scientific — germ theory had not yet been established — but part was professional pride: accepting the evidence meant accepting that physicians had been killing their patients.",
+"o": [
+"Semmelweis was the first scientist to discover germs.",
+"Doctors resisted Semmelweis's handwashing evidence partly for lack of a supporting theory and partly because it implicated them in their patients' deaths.",
+"Nineteenth-century doctors were generally incompetent.",
+"Handwashing is the single most important medical practice."
+],
+"a": "B",
+"e": "B captures both reasons for resistance. A misstates history; C overgeneralises; D is an unsupported superlative."
+},
+{
+"d": "h",
+"s": "Critics of social media argue that it has polarised politics. Yet polarisation in the United States began rising in the 1970s, long before the internet, and has risen fastest among older Americans, the group least likely to use social media. This does not mean social media has no effect, but it suggests that deeper forces — party realignment, partisan cable news, geographic sorting — may matter more.",
+"o": [
+"Social media has no effect on political polarisation.",
+"The timing and demographics of polarisation suggest social media is at most one factor among deeper and older causes.",
+"Older Americans are the most polarised group because they watch cable news.",
+"Polarisation began with the internet."
+],
+"a": "B",
+"e": "B captures the qualified conclusion. A contradicts 'does not mean social media has no effect'; C asserts a causal link not established; D contradicts the evidence."
+},
+{
+"d": "h",
+"s": "Traditional economics assumes that people have stable preferences, which markets then satisfy. But preferences are partly shaped by the very markets meant to satisfy them: advertising creates desires, and what we come to want depends on what is available and what others around us have. If so, the claim that markets simply give people what they want becomes circular.",
+"o": [
+"Advertising should be banned.",
+"If markets shape the preferences they claim to satisfy, the argument that they merely give people what they want loses its force.",
+"People's preferences never change.",
+"Markets are the best way to satisfy human needs."
+],
+"a": "B",
+"e": "B captures the argument and its conclusion. A is a prescription; C contradicts the paragraph; D is the claim the paragraph undermines."
+},
+{
+"d": "h",
+"s": "Archives are often imagined as neutral storehouses of the past. But every archive reflects decisions about what was worth keeping. Colonial archives, for instance, preserve the correspondence of administrators in exhaustive detail while recording the colonised mainly as subjects of taxation, law and policing. Historians who rely on them must read 'against the grain', attending to silences as carefully as to what is recorded.",
+"o": [
+"Colonial archives are worthless to historians.",
+"Because archives reflect choices about what to preserve, historians must read them critically, attending to their silences.",
+"Administrators kept detailed records of their correspondence.",
+"Archives should be destroyed to avoid bias."
+],
+"a": "B",
+"e": "B captures the claim and its methodological implication. A and D are extreme; C is a detail."
+},
+{
+"d": "h",
+"s": "The legal principle that ignorance of the law is no excuse made sense when laws were few and rooted in widely shared moral norms. Today, the volume of statutes and regulations is so vast that even lawyers cannot know them all, and many offences involve technical rules with no obvious moral content. Some legal scholars argue that the principle has become unfair, punishing people for violations they could not reasonably have known about.",
+"o": [
+"Ignorance of the law should always be accepted as an excuse.",
+"Lawyers do not understand the law.",
+"The growth and technicality of modern law have led some scholars to question the fairness of the principle that ignorance is no excuse.",
+"Modern laws have no moral basis."
+],
+"a": "C",
+"e": "C captures the historical contrast and the scholarly challenge. A is an extreme prescription; B is a distortion; D overgeneralises."
+},
+{
+"d": "h",
+"s": "Charity appeals typically feature a single identifiable victim — a named child, a photograph — rather than statistics about thousands in need. The strategy works: people give more to one identifiable person than to many statistical ones. Some ethicists find this troubling, arguing that it leads donors to fund causes that are emotionally compelling rather than those where their money would do the most good.",
+"o": [
+"Statistics are more persuasive than individual stories.",
+"Charities should stop using photographs.",
+"Appeals featuring identifiable victims raise more money, which some ethicists worry steers donations toward emotional rather than effective causes.",
+"Donors are generally irrational."
+],
+"a": "C",
+"e": "C captures the effect and the ethical concern. A contradicts the evidence; B is a prescription not made; D overgeneralises."
+},
+{
+"d": "h",
+"s": "Automation has historically destroyed specific jobs while creating new ones, leaving overall employment largely intact. Optimists expect the same pattern with artificial intelligence. Pessimists counter that previous technologies replaced physical or routine tasks, leaving humans to move into cognitive work, whereas AI targets cognition itself, potentially leaving fewer places for displaced workers to go.",
+"o": [
+"Artificial intelligence will destroy all jobs.",
+"Automation has always increased unemployment.",
+"Optimists expect AI to follow past automation in creating new jobs, while pessimists argue that because it targets cognition, the pattern may not hold.",
+"Cognitive work is safe from automation."
+],
+"a": "C",
+"e": "C presents both positions and the key distinction. A and B are extreme or contrary to the paragraph; D contradicts the pessimists' point."
+},
+{
+"d": "h",
+"s": "Words for colours vary widely across languages: some have only two or three basic terms, others a dozen. Early researchers concluded that colour perception itself differed between cultures. Later studies found that people perceive colour differences similarly regardless of language, though having separate words for two shades can make people slightly faster at telling them apart.",
+"o": [
+"Speakers of different languages see colours completely differently.",
+"Language has no effect at all on colour perception.",
+"Colour vocabulary varies across languages, but perception is largely shared, with language exerting only a modest effect on discrimination.",
+"Languages with more colour terms are more advanced."
+],
+"a": "C",
+"e": "C captures both the shared perception and the modest linguistic effect. A is the discredited early view; B ignores the modest effect; D is an unwarranted value judgement."
+},
+{
+"d": "h",
+"s": "National parks are often promoted as places to escape modern life. Yet the experience of 'wild' nature they offer depends on roads, visitor centres, ranger services and carefully managed trails. The more popular a park becomes, the more infrastructure it requires — and the further it moves from the untouched ideal that draws visitors in the first place.",
+"o": [
+"National parks should be closed to visitors.",
+"The experience of wilderness in national parks paradoxically depends on infrastructure that grows with popularity and erodes the ideal visitors seek.",
+"National parks are completely artificial.",
+"Roads are the main threat to national parks."
+],
+"a": "B",
+"e": "B captures the paradox. A is a prescription not made; C overstates; D is an unsupported narrowing."
+},
+{
+"d": "h",
+"s": "The bestseller lists of a century ago are dominated by books almost no one reads today, while some works that sold poorly in their time are now considered classics. This suggests that contemporary popularity is a poor predictor of lasting value. It may also suggest, less comfortably, that our own judgements of which contemporary books matter are just as likely to be overturned.",
+"o": [
+"Bestsellers are always poorly written.",
+"The gap between past popularity and lasting reputation suggests present judgements of literary value are also provisional.",
+"Classics always sell poorly when first published.",
+"Readers today have better taste than those of a century ago."
+],
+"a": "B",
+"e": "B captures the observation and its uncomfortable extension. A and C overgeneralise; D contradicts the paragraph's humility."
+},
+{
+"d": "h",
+"s": "Courts increasingly rely on algorithms to predict whether defendants will reoffend. Proponents argue that algorithms are more consistent than human judges, who may be swayed by fatigue or prejudice. Critics respond that algorithms trained on historical arrest data can reproduce the biases embedded in past policing, lending them a false appearance of objectivity.",
+"o": [
+"Algorithms are always fairer than human judges.",
+"Human judges should be replaced by algorithms.",
+"Algorithmic risk assessment promises consistency but may encode historical biases while appearing objective.",
+"Historical arrest data is completely accurate."
+],
+"a": "C",
+"e": "C captures both the promise and the critique. A and B take one side to an extreme; D contradicts the critics' point."
+},
+{
+"d": "h",
+"s": "The history of medicine is often told as a progression from superstition to science. But many traditional remedies contained active ingredients later confirmed by laboratory research: willow bark for pain, which led to aspirin; or sweet wormwood for fever, which led to a leading anti-malarial drug. At the same time, many traditional remedies were useless or harmful. The relationship between folk medicine and modern pharmacology is less a story of replacement than of selective testing and extraction.",
+"o": [
+"Traditional remedies are as effective as modern drugs.",
+"Modern medicine has no connection to traditional remedies.",
+"Rather than simply replacing folk medicine, modern pharmacology has tested it selectively, confirming some remedies and discarding others.",
+"Willow bark is the source of all modern painkillers."
+],
+"a": "C",
+"e": "C captures the nuanced conclusion. A and B are opposite extremes; D overgeneralises one example."
+},
+{
+"d": "h",
+"s": "Productivity statistics have puzzled economists for two decades: despite the spread of computers, smartphones and the internet, measured productivity growth in rich countries has been sluggish. Some argue that the new technologies are simply less transformative than electricity or the combustion engine. Others contend that their benefits — free search, free maps, free communication — are real but poorly captured by statistics built to measure goods sold for a price.",
+"o": [
+"Digital technologies have failed to improve human welfare.",
+"Sluggish measured productivity amid digital innovation may reflect either genuinely modest technologies or statistics ill-suited to capturing free digital benefits.",
+"Electricity was the most important invention in history.",
+"Productivity statistics are deliberately manipulated by governments."
+],
+"a": "B",
+"e": "B presents the puzzle and both explanations. A takes one side to an extreme; C is a tangent; D is an unsupported conspiracy claim."
+},
+{
+"d": "h",
+"s": "The habit of dividing history into neat periods — the Middle Ages, the Renaissance, the Enlightenment — is indispensable for teaching but treacherous for understanding. The labels were often coined by later writers with an agenda: 'Middle Ages' was invented by Renaissance humanists eager to cast the preceding millennium as a dark interval between classical glory and their own revival of it. Periodisation, in other words, smuggles in judgements under the guise of mere chronology.",
+"o": [
+"The Middle Ages were not as dark as commonly believed.",
+"Historical period labels are useful but can embed the evaluative agendas of those who coined them, disguised as neutral chronology.",
+"Renaissance humanists were the greatest historians of their age.",
+"History should not be divided into periods."
+],
+"a": "B",
+"e": "B captures the double point: useful yet value-laden. A is a related but narrower inference; C is unsupported; D contradicts 'indispensable for teaching'."
+}
+]

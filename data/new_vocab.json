@@ -1,0 +1,602 @@
+[
+{
+"d": "m",
+"s": "The minister's apology was so _______ — hedged with conditionals and passive constructions — that critics argued it amounted to no apology at all.",
+"o": [
+"contrite",
+"perfunctory",
+"mealy-mouthed",
+"effusive"
+],
+"a": "C",
+"e": "Mealy-mouthed means unwilling to speak plainly, evasive — matches 'hedged with conditionals and passive constructions'. Perfunctory (done with minimal effort) is close but describes lack of effort, not evasiveness. Contrite (genuinely remorseful) and effusive (gushing) contradict the critics' reading."
+},
+{
+"d": "m",
+"s": "What began as a minor procedural disagreement soon _______ into a full-blown constitutional crisis.",
+"o": [
+"abated",
+"metastasized",
+"coalesced",
+"dissipated"
+],
+"a": "B",
+"e": "Metastasized (spread and worsened uncontrollably) captures the escalation. Abated and dissipated mean lessened — the opposite. Coalesced means came together into one, which doesn't describe growth from small to large."
+},
+{
+"d": "m",
+"s": "The reviewer praised the novel's _______ prose, noting that not a single sentence felt superfluous.",
+"o": [
+"prolix",
+"spare",
+"florid",
+"turgid"
+],
+"a": "B",
+"e": "Spare means lean, without excess — the opposite of superfluous. Prolix (tediously lengthy), florid (over-ornate), and turgid (pompous, swollen) all imply excess."
+},
+{
+"d": "m",
+"s": "Far from being _______, the activist's demands had been carefully calibrated to what the legislature could realistically pass.",
+"o": [
+"pragmatic",
+"quixotic",
+"incremental",
+"measured"
+],
+"a": "B",
+"e": "'Far from being' signals contrast with 'carefully calibrated to what could realistically pass' — so the blank must mean unrealistic. Quixotic = idealistic and impractical. The other three describe exactly what the demands were, not what they were 'far from'."
+},
+{
+"d": "m",
+"s": "The historian's account was criticised as _______: it selected only the evidence that flattered the dynasty and ignored the rest.",
+"o": [
+"tendentious",
+"exhaustive",
+"dispassionate",
+"equivocal"
+],
+"a": "A",
+"e": "Tendentious means promoting a particular cause or point of view — fits selective, flattering use of evidence. Exhaustive and dispassionate are the opposite. Equivocal (ambiguous) doesn't fit a clearly one-sided account."
+},
+{
+"d": "m",
+"s": "Her _______ manner in negotiations — never raising her voice, never conceding a point — unnerved opponents who expected theatrics.",
+"o": [
+"imperturbable",
+"volatile",
+"obsequious",
+"diffident"
+],
+"a": "A",
+"e": "Imperturbable means calm and unable to be upset — fits never raising her voice. Volatile is the opposite. Obsequious (excessively eager to please) contradicts 'never conceding'. Diffident (shy, lacking confidence) doesn't fit someone who unnerves opponents."
+},
+{
+"d": "m",
+"s": "The committee's report was a _______ of jargon so dense that even specialists struggled to extract its recommendations.",
+"o": [
+"paragon",
+"farrago",
+"synopsis",
+"distillation"
+],
+"a": "B",
+"e": "Farrago means a confused mixture or hodgepodge — fits a dense, impenetrable jumble. Paragon (model of excellence), synopsis (summary) and distillation (essence) all imply clarity."
+},
+{
+"d": "m",
+"s": "Critics dismissed the policy as a _______: a symbolic gesture that addressed none of the underlying causes.",
+"o": [
+"panacea",
+"palliative",
+"catalyst",
+"linchpin"
+],
+"a": "B",
+"e": "A palliative relieves symptoms without curing the cause — exactly 'addressed none of the underlying causes'. A panacea is a cure-all (the opposite claim). Catalyst and linchpin imply real, central effect."
+},
+{
+"d": "m",
+"s": "The once-_______ town, crowded with pilgrims every summer, had become eerily quiet after the shrine closed.",
+"o": [
+"moribund",
+"teeming",
+"desolate",
+"sedate"
+],
+"a": "B",
+"e": "Teeming means full of people — fits 'crowded with pilgrims'. The 'once-' contrast with 'eerily quiet' requires a word meaning busy. Moribund, desolate and sedate describe the present quiet state, not the past bustle."
+},
+{
+"d": "m",
+"s": "His reputation for _______ meant that colleagues double-checked every figure he submitted.",
+"o": [
+"probity",
+"punctiliousness",
+"carelessness",
+"candour"
+],
+"a": "C",
+"e": "Colleagues double-check figures from someone known for errors — carelessness. Probity (honesty), punctiliousness (attention to detail) and candour would make double-checking unnecessary. The trap is choosing an impressive-sounding word over logic."
+},
+{
+"d": "m",
+"s": "The author's _______ toward the self-help industry is evident in her description of its gurus as 'merchants of manufactured hope'.",
+"o": [
+"ambivalence",
+"reverence",
+"disdain",
+"indifference"
+],
+"a": "C",
+"e": "'Merchants of manufactured hope' is openly contemptuous — disdain. Ambivalence (mixed feelings) and indifference (no feeling) are too mild; reverence is the opposite."
+},
+{
+"d": "m",
+"s": "Unlike his _______ predecessor, who had made decisions on a whim, the new director insisted on consultation and data before any change.",
+"o": [
+"methodical",
+"capricious",
+"circumspect",
+"deliberate"
+],
+"a": "B",
+"e": "Capricious means given to sudden, unaccountable changes — matches 'decisions on a whim'. The other three describe the new director, not the contrasting predecessor."
+},
+{
+"d": "m",
+"s": "The scientist was careful to _______ her claims, stressing that the results held only for the specific population studied.",
+"o": [
+"amplify",
+"qualify",
+"corroborate",
+"extrapolate"
+],
+"a": "B",
+"e": "To qualify a claim is to limit or restrict it — 'held only for the specific population'. Amplify and extrapolate extend claims; corroborate means confirm with evidence, which isn't what restricting scope does."
+},
+{
+"d": "m",
+"s": "Years of _______ funding had left the archive unable to digitise even a fraction of its holdings.",
+"o": [
+"munificent",
+"exiguous",
+"lavish",
+"copious"
+],
+"a": "B",
+"e": "Exiguous means very small in amount, meagre — explains the inability to digitise. Munificent, lavish and copious all mean generous or plentiful."
+},
+{
+"d": "m",
+"s": "The debate quickly descended into _______, with each side trading personal insults rather than arguments.",
+"o": [
+"invective",
+"exegesis",
+"rhetoric",
+"polemic"
+],
+"a": "A",
+"e": "Invective is abusive, insulting language — 'personal insults'. Polemic is a strong argumentative attack on ideas, which still involves argument. Rhetoric is persuasive language in general. Exegesis is critical interpretation of a text."
+},
+{
+"d": "m",
+"s": "Though the treaty was hailed as historic, its provisions were largely _______, binding no signatory to any concrete action.",
+"o": [
+"hortatory",
+"punitive",
+"enforceable",
+"stringent"
+],
+"a": "A",
+"e": "Hortatory means urging or encouraging rather than commanding — fits provisions that bind no one. Punitive, enforceable and stringent all imply binding force."
+},
+{
+"d": "m",
+"s": "The memoir's tone is _______: it mourns the lost village of the author's childhood while admitting that memory has gilded it.",
+"o": [
+"elegiac",
+"sardonic",
+"didactic",
+"jubilant"
+],
+"a": "A",
+"e": "Elegiac means expressing sorrow or lament for something lost — 'mourns the lost village'. Sardonic (mocking), didactic (instructive) and jubilant (joyful) miss the mournful tone."
+},
+{
+"d": "m",
+"s": "Rather than confront the board directly, the CEO chose to _______, letting the controversial proposal quietly lapse.",
+"o": [
+"temporise",
+"capitulate",
+"remonstrate",
+"prevaricate"
+],
+"a": "A",
+"e": "Temporise means to delay or avoid committing in order to gain time — letting a proposal 'quietly lapse'. Capitulate means surrender; remonstrate means protest forcefully; prevaricate means speak evasively/lie — about speech, not delay through inaction."
+},
+{
+"d": "m",
+"s": "The documentary was praised for its _______, presenting the warring factions' claims without editorial comment.",
+"o": [
+"partisanship",
+"even-handedness",
+"sensationalism",
+"credulity"
+],
+"a": "B",
+"e": "Presenting both sides without comment = even-handedness. Partisanship and sensationalism are opposite qualities; credulity (believing too readily) is unrelated."
+},
+{
+"d": "m",
+"s": "The firm's _______ in entering new markets — it waited until competitors had absorbed all the early risks — proved shrewd.",
+"o": [
+"temerity",
+"circumspection",
+"alacrity",
+"impetuosity"
+],
+"a": "B",
+"e": "Circumspection means caution, careful consideration of risks — waiting for others to absorb risk. Temerity, alacrity (eager speed) and impetuosity all imply rushing in."
+},
+{
+"d": "m",
+"s": "What the audience took for spontaneous wit was, in fact, a carefully _______ performance rehearsed for weeks.",
+"o": [
+"extemporised",
+"choreographed",
+"improvised",
+"haphazard"
+],
+"a": "B",
+"e": "Choreographed means carefully planned and arranged — contrasting with 'spontaneous'. Extemporised and improvised mean spontaneous; haphazard means random."
+},
+{
+"d": "m",
+"s": "Investors grew _______ of the startup's claims after three successive quarters of missed targets.",
+"o": [
+"enamoured",
+"chary",
+"credulous",
+"sanguine"
+],
+"a": "B",
+"e": "Chary means cautiously wary — the natural response to repeated missed targets. Enamoured, credulous and sanguine (optimistic) all suggest continued trust."
+},
+{
+"d": "m",
+"s": "The professor's lectures, though _______, were never dull: he could move from Kant to cricket within a single sentence.",
+"o": [
+"digressive",
+"focused",
+"pedantic",
+"monotonous"
+],
+"a": "A",
+"e": "Digressive means wandering from the main topic — 'from Kant to cricket'. 'Though … never dull' implies the blank is a potentially negative quality that is redeemed. Focused contradicts the example; monotonous contradicts 'never dull'; pedantic doesn't fit the example."
+},
+{
+"d": "m",
+"s": "The reform was _______ rather than radical: it adjusted existing rules instead of replacing them.",
+"o": [
+"incremental",
+"revolutionary",
+"sweeping",
+"seismic"
+],
+"a": "A",
+"e": "Incremental means proceeding in small steps — 'adjusted existing rules'. The others all describe radical change, which the sentence explicitly contrasts."
+},
+{
+"d": "m",
+"s": "Her critique was _______ but fair: it exposed every flaw in the argument without once descending into personal attack.",
+"o": [
+"trenchant",
+"anodyne",
+"fawning",
+"scurrilous"
+],
+"a": "A",
+"e": "Trenchant means vigorous, incisive — exposing every flaw. Anodyne (inoffensive, bland) and fawning (flattering) contradict exposing flaws. Scurrilous means scandalously abusive, contradicting 'without personal attack'."
+},
+{
+"d": "h",
+"s": "The essay's central irony is that a writer so _______ about the dangers of rhetoric should himself deploy it with such evident relish.",
+"o": [
+"sanguine",
+"censorious",
+"nonchalant",
+"agnostic"
+],
+"a": "B",
+"e": "Censorious means severely critical — the irony needs someone who strongly condemns rhetoric yet uses it. Sanguine (optimistic) and nonchalant (unconcerned) remove the irony; agnostic (non-committal) also weakens it."
+},
+{
+"d": "h",
+"s": "Choose the sentence in which the word 'fulsome' is used in its traditional (and CAT-preferred) sense.",
+"o": [
+"The chairman offered fulsome praise, so excessive that it embarrassed the honoree.",
+"The report gave a fulsome, comprehensive account of every transaction.",
+"She received a fulsome welcome, warm and entirely sincere.",
+"The meal was fulsome, leaving every guest satisfied."
+],
+"a": "A",
+"e": "Traditionally, 'fulsome' means excessive to the point of insincerity or distaste — option A. B, C and D use the popular but contested sense of 'abundant/generous', which careful usage treats as an error."
+},
+{
+"d": "h",
+"s": "The philosopher's argument is not so much wrong as _______: each step follows, but the conclusion is so hedged that it commits us to nothing.",
+"o": [
+"fallacious",
+"vacuous",
+"specious",
+"tautological"
+],
+"a": "B",
+"e": "Vacuous means empty of substance — a valid argument whose conclusion 'commits us to nothing'. Fallacious and specious imply faulty reasoning (contradicted by 'not so much wrong'; 'each step follows'). Tautological means saying the same thing twice — the problem here is emptiness, not repetition."
+},
+{
+"d": "h",
+"s": "Select the word that does NOT belong with the others in meaning.",
+"o": [
+"obdurate",
+"intransigent",
+"recalcitrant",
+"tractable"
+],
+"a": "D",
+"e": "Obdurate, intransigent and recalcitrant all mean stubbornly resistant to change or persuasion. Tractable means easily managed or influenced — the opposite."
+},
+{
+"d": "h",
+"s": "The biography resists the _______ impulse of its genre: rather than recasting every setback as a lesson, it leaves failures as failures.",
+"o": [
+"hagiographic",
+"iconoclastic",
+"revisionist",
+"picaresque"
+],
+"a": "A",
+"e": "Hagiographic means idealising the subject (originally, writing about saints) — the impulse to spin every failure into a lesson. Iconoclastic and revisionist mean attacking accepted views — the biography is doing that, not resisting it. Picaresque refers to episodic adventure narratives."
+},
+{
+"d": "h",
+"s": "Though the critic's tone was _______, the substance of his review was devastating — a velvet glove over an iron fist.",
+"o": [
+"emollient",
+"acerbic",
+"strident",
+"vituperative"
+],
+"a": "A",
+"e": "Emollient means soothing, softening — the 'velvet glove' over devastating substance. Acerbic, strident and vituperative are all harsh, which would remove the contrast the sentence is built on."
+},
+{
+"d": "h",
+"s": "Choose the sentence in which the word 'restive' is used correctly.",
+"o": [
+"After a long week, she spent a restive weekend sleeping late and reading.",
+"The crowd grew restive as the speaker's delay stretched past an hour.",
+"The restive music lulled the infant to sleep.",
+"His restive demeanour calmed the anxious patients."
+],
+"a": "B",
+"e": "Restive means unable to keep still, impatient or restless — a crowd waiting an hour. A, C and D confuse it with 'restful', which means the opposite."
+},
+{
+"d": "h",
+"s": "The government's _______ on the issue — supporting the policy in the capital and opposing it in the provinces — eventually cost it credibility in both.",
+"o": [
+"equanimity",
+"tergiversation",
+"forbearance",
+"rectitude"
+],
+"a": "B",
+"e": "Tergiversation means evasion or repeated change of position — saying opposite things to different audiences. Equanimity (calmness), forbearance (patient restraint) and rectitude (moral correctness) don't describe double-dealing."
+},
+{
+"d": "h",
+"s": "Her scholarship was _______ without being pedantic: she knew everything about the period but wore her learning lightly.",
+"o": [
+"erudite",
+"specious",
+"sciolistic",
+"jejune"
+],
+"a": "A",
+"e": "Erudite means having deep learning — 'knew everything about the period'. Sciolistic means having superficial knowledge (the opposite), jejune means naive or simplistic, specious means misleadingly plausible."
+},
+{
+"d": "h",
+"s": "Choose the pair in which the relationship between the words is most similar to: LACONIC : WORDS.",
+"o": [
+"frugal : money",
+"generous : gifts",
+"verbose : speech",
+"wealthy : assets"
+],
+"a": "A",
+"e": "A laconic person is sparing with words; a frugal person is sparing with money. Generous and wealthy imply abundance; verbose is excessive in speech — the reverse relation."
+},
+{
+"d": "h",
+"s": "The minister's denial was carefully _______: it rejected one specific allegation while leaving the broader charge untouched.",
+"o": [
+"categorical",
+"circumscribed",
+"unequivocal",
+"sweeping"
+],
+"a": "B",
+"e": "Circumscribed means limited, restricted in scope — fits denying only one specific allegation. Categorical, unequivocal and sweeping imply a total, unqualified denial."
+},
+{
+"d": "h",
+"s": "The novel's protagonist is less a hero than an _______ — a man to whom things happen rather than one who makes them happen.",
+"o": [
+"antagonist",
+"ingénue",
+"cipher",
+"iconoclast"
+],
+"a": "C",
+"e": "A cipher is a person of no influence or individuality, a nonentity — 'to whom things happen'. Antagonist is an opponent; ingénue is an innocent young woman; iconoclast attacks established beliefs (an active role)."
+},
+{
+"d": "h",
+"s": "Choose the word whose meaning is closest to 'inveigle'.",
+"o": [
+"denounce",
+"cajole",
+"inveigh",
+"investigate"
+],
+"a": "B",
+"e": "Inveigle means to persuade by flattery or deception — closest to cajole. Inveigh (protest strongly) is the classic sound-alike trap; denounce and investigate are unrelated."
+},
+{
+"d": "h",
+"s": "Far from being _______, the reform was the culmination of a decade of patient, largely invisible groundwork.",
+"o": [
+"an aberration",
+"an epiphenomenon",
+"an anomaly",
+"a bolt from the blue"
+],
+"a": "D",
+"e": "'Far from' + 'culmination of a decade of groundwork' requires a phrase meaning a sudden, unforeseen event — 'a bolt from the blue'. Aberration and anomaly mean deviations from the norm, not suddenness; an epiphenomenon is a secondary by-product."
+},
+{
+"d": "h",
+"s": "The witness's testimony was _______ in its details yet curiously vague on the one point that mattered.",
+"o": [
+"circumstantial",
+"perfunctory",
+"laconic",
+"nebulous"
+],
+"a": "A",
+"e": "'Circumstantial' in its older sense means full of detail, particular — the contrast is with vagueness on the key point. Perfunctory and laconic imply brevity; nebulous means vague — the opposite of what the first clause needs."
+},
+{
+"d": "h",
+"s": "Which word best completes the analogy: PALLIATE : PAIN :: MOLLIFY : _______",
+"o": [
+"anger",
+"illness",
+"grief",
+"fear"
+],
+"a": "A",
+"e": "Palliate means to lessen pain (without curing); mollify means to soothe or appease anger. Mollify specifically targets anger/hostility, making 'anger' the precise match."
+},
+{
+"d": "h",
+"s": "The reviewer called the debut 'promising but _______' — the work of a writer who had absorbed every influence but not yet found a voice.",
+"o": [
+"derivative",
+"seminal",
+"sui generis",
+"recondite"
+],
+"a": "A",
+"e": "Derivative means imitative of others' work — 'absorbed every influence but not yet found a voice'. Seminal (highly influential) and sui generis (unique) are opposites; recondite means obscure, little known."
+},
+{
+"d": "h",
+"s": "Choose the sentence in which 'enervate' is used correctly.",
+"o": [
+"The coach's speech enervated the team, who charged onto the field.",
+"Weeks of humid heat had enervated the workers, leaving them listless.",
+"The strong coffee enervated her before the exam.",
+"His enervating optimism inspired the whole office."
+],
+"a": "B",
+"e": "Enervate means to weaken or drain of energy — 'listless' workers. A, C and D use it as if it meant 'energise', a common error."
+},
+{
+"d": "h",
+"s": "The scholar's position was _______: she accepted the data but denied that it supported any of the conclusions drawn from it.",
+"o": [
+"nihilistic",
+"nuanced",
+"dogmatic",
+"credulous"
+],
+"a": "B",
+"e": "Accepting evidence while rejecting the inferences drawn from it is a nuanced (subtly differentiated) position. Dogmatic and credulous imply uncritical acceptance; nihilistic implies rejecting everything, including the data."
+},
+{
+"d": "h",
+"s": "Select the word most nearly OPPOSITE in meaning to 'pusillanimous'.",
+"o": [
+"timorous",
+"dauntless",
+"craven",
+"diffident"
+],
+"a": "B",
+"e": "Pusillanimous means cowardly, lacking courage. Dauntless (fearless) is the opposite. Timorous and craven are synonyms; diffident means shy — closer in meaning, not opposite."
+},
+{
+"d": "h",
+"s": "The author treats the old certainties with _______ — affectionate, but never forgetting that they were wrong.",
+"o": [
+"indulgent irony",
+"bitter contempt",
+"uncritical nostalgia",
+"studied indifference"
+],
+"a": "A",
+"e": "'Affectionate, but never forgetting that they were wrong' combines warmth with critical distance — indulgent irony. Bitter contempt lacks affection; uncritical nostalgia lacks the critical awareness; studied indifference lacks both."
+},
+{
+"d": "h",
+"s": "In the sentence 'The evidence militates against the hypothesis', 'militates' is closest in meaning to:",
+"o": [
+"mitigates",
+"weighs",
+"fights alongside",
+"is irrelevant to"
+],
+"a": "B",
+"e": "'Militate against' means to be a powerful factor against — the evidence weighs against the hypothesis. 'Mitigates' (lessens severity) is the classic confusion. 'Fights alongside' is a literal misreading; 'irrelevant to' is the opposite."
+},
+{
+"d": "h",
+"s": "The policy's defenders mistook its _______ for subtlety; in truth, it was ambiguous because its authors had never agreed on its purpose.",
+"o": [
+"opacity",
+"transparency",
+"rigour",
+"parsimony"
+],
+"a": "A",
+"e": "Opacity means obscurity, difficulty of understanding — the ambiguity defenders mistook for subtlety. Transparency is the opposite; rigour and parsimony don't connect to ambiguity."
+},
+{
+"d": "h",
+"s": "Choose the word that best describes an argument that appears sound on the surface but is actually flawed.",
+"o": [
+"specious",
+"spurious",
+"cogent",
+"sophomoric"
+],
+"a": "A",
+"e": "Specious means superficially plausible but actually wrong — exactly the definition. Spurious means false or fake, without the 'appears plausible' element. Cogent means genuinely convincing. Sophomoric means immature, not necessarily plausible."
+},
+{
+"d": "h",
+"s": "The general's victory was _______: it won the battle but so depleted his army that the war was lost within the year.",
+"o": [
+"Pyrrhic",
+"Herculean",
+"Sisyphean",
+"Promethean"
+],
+"a": "A",
+"e": "A Pyrrhic victory is won at such cost that it is tantamount to defeat. Herculean (requiring great strength), Sisyphean (endless and futile) and Promethean (boldly creative/defiant) don't describe a ruinously costly win."
+}
+]

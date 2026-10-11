@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAT VARC Practice</title>
+<meta name="description" content="CAT VARC practice: Reading Comprehension, Para Jumbles, Para Summary, Odd Sentence Out, Para Completion, Vocabulary and Grammar with timed sets and detailed reports.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232f5bd3'/><text x='16' y='22' font-size='15' font-family='Arial' font-weight='700' fill='white' text-anchor='middle'>V</text></svg>">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home" data-nav="home"><span class="logo">V</span><span>CAT VARC Practice</span></a>
+  <nav>
+    <a href="#home" data-nav="home">Practice</a>
+    <a href="#history" data-nav="history">Reports</a>
+    <button class="icon-btn" id="themeBtn" title="Toggle dark mode" aria-label="Toggle dark mode">◐</button>
+  </nav>
+</header>
+
+<main id="app">
+  <!-- HOME -->
+  <section id="view-home" class="view">
+    <div id="resumeBox"></div>
+
+    <div class="hero">
+      <div>
+        <h1>Today's VARC practice</h1>
+        <p class="muted" id="heroStats"></p>
+      </div>
+      <div class="today-chips" id="todayChips"></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2>1 · Pick today's topics</h2>
+        <div id="topicList" class="topic-list"></div>
+        <div class="row gap">
+          <button class="link" id="selAll">Select all</button>
+          <button class="link" id="selRC">RC only</button>
+          <button class="link" id="selNone">Clear</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>2 · Choose a mode</h2>
+        <div class="mode-tabs" role="tablist">
+          <button class="mode-tab active" data-mode="quick5">Quick 5</button>
+          <button class="mode-tab" data-mode="custom">Custom set</button>
+        </div>
+
+        <div class="mode-panel" data-panel="quick5">
+          <p class="muted small">Five random questions from your topics. RC is weighted higher.</p>
+          <div class="pattern-grid">
+            <label class="pattern"><input type="radio" name="pattern" value="hard" checked>
+              <span><b>Stretch</b><small>1 Easy · 2 Medium · 2 Hard</small></span></label>
+            <label class="pattern"><input type="radio" name="pattern" value="easy">
+              <span><b>Warm-up</b><small>2 Easy · 2 Medium · 1 Hard</small></span></label>
+          </div>
+          <label class="check"><input type="checkbox" id="q5Timer" checked> Show timer (target ~2 min/question)</label>
+          <button class="btn primary big" id="startQuick">Start Quick 5 →</button>
+        </div>
+
+        <div class="mode-panel hidden" data-panel="custom">
+          <div class="field">
+            <span class="label">Difficulty</span>
+            <div class="seg" id="diffSeg">
+              <button data-v="mixed" class="active">Mixed</button>
+              <button data-v="easy">Easy</button>
+              <button data-v="medium">Medium</button>
+              <button data-v="hard">Hard</button>
+            </div>
+          </div>
+          <div class="field">
+            <span class="label">Number of questions</span>
+            <div class="seg" id="countSeg">
+              <button data-v="10">10</button>
+              <button data-v="16" class="active">16</button>
+              <button data-v="24">24</button>
+              <button data-v="40">40</button>
+            </div>
+          </div>
+          <label class="check"><input type="checkbox" id="rcPriority" checked> RC priority (≈60% of the set is RC when RC is selected)</label>
+          <label class="check"><input type="checkbox" id="rcFull" checked> Full RC passages (all questions of a passage, like CAT)</label>
+          <label class="check"><input type="checkbox" id="unseenFirst" checked> Prefer questions I haven't seen</label>
+          <label class="check"><input type="checkbox" id="cTimer" checked> Show timer</label>
+          <p class="muted small" id="poolInfo"></p>
+          <button class="btn primary big" id="startCustom">Start set →</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="row between"><h2>Your progress by topic</h2><a href="#history" data-nav="history" class="link">All reports →</a></div>
+      <div id="progressBars" class="bars"></div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="view-quiz" class="view hidden">
+    <div class="quizbar">
+      <div class="qmeta"><span id="qCounter"></span><span id="qTags"></span></div>
+      <div class="qctl">
+        <span class="timer" id="timer" title="Time on this set">00:00</span>
+        <button class="btn ghost" id="pauseBtn">❚❚ Pause</button>
+        <button class="btn ghost" id="saveExitBtn" title="Save progress and continue later">Save &amp; exit</button>
+        <button class="btn danger" id="submitBtn">Submit</button>
+        <button class="btn ghost palette-toggle" id="paletteToggle" aria-label="Question palette">☰</button>
+      </div>
+    </div>
+    <div class="quiz-layout">
+      <div class="quiz-main" id="quizMain"></div>
+      <aside class="palette" id="palette">
+        <h3>Questions</h3>
+        <div id="paletteGrid" class="pal-grid"></div>
+        <div class="legend">
+          <span><i class="dot ans"></i>Answered</span>
+          <span><i class="dot mark"></i>Marked</span>
+          <span><i class="dot vis"></i>Not answered</span>
+          <span><i class="dot"></i>Not visited</span>
+        </div>
+      </aside>
+    </div>
+    <div class="pause-overlay hidden" id="pauseOverlay">
+      <div class="pause-card">
+        <h2>Paused</h2>
+        <p class="muted">The timer is stopped and questions are hidden.</p>
+        <button class="btn primary big" id="resumeBtn">▶ Resume</button>
+        <button class="btn ghost" id="pauseSaveExit">Save &amp; exit to home</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORT -->
+  <section id="view-report" class="view hidden"></section>
+
+  <!-- HISTORY -->
+  <section id="view-history" class="view hidden"></section>
+</main>
+
+<div class="modal hidden" id="modal"><div class="modal-card" id="modalCard"></div></div>
+
+<script src="data/questions.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

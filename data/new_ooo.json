@@ -1,0 +1,552 @@
+[
+{
+"d": "m",
+"c": [
+"Many cities are experimenting with congestion pricing, charging drivers a fee to enter busy central zones at peak hours.",
+"London introduced such a scheme in 2003, and traffic in the charging zone fell by around a fifth.",
+"Revenue from the charge was reinvested in public transport, making alternatives to driving more attractive.",
+"Critics argue that the fee falls hardest on lower-income drivers who have few alternatives."
+],
+"x": "London's black taxis are famous for their drivers' detailed knowledge of the city's streets.",
+"e": "The paragraph is about congestion pricing — its mechanism, effects and criticism. Sentence {x} is about London taxis, sharing only the city."
+},
+{
+"d": "m",
+"c": [
+"Tardigrades are microscopic animals that can survive extreme conditions.",
+"They can withstand temperatures close to absolute zero and well above boiling.",
+"They have even survived exposure to the vacuum of space.",
+"This resilience comes from their ability to enter a dehydrated state in which their metabolism almost stops."
+],
+"x": "Microscopes were first developed in the Netherlands in the late sixteenth century.",
+"e": "The paragraph describes tardigrades' resilience and its cause. {x} is about the history of microscopes, linked only by 'microscopic'."
+},
+{
+"d": "m",
+"c": [
+"The four-day work week is gaining support among employers in several countries.",
+"Trials suggest that productivity often holds steady even with fewer hours.",
+"Employees report lower stress and better work-life balance.",
+"Sceptics, however, question whether the model can work in sectors such as healthcare that require continuous staffing."
+],
+"x": "The five-day week became standard in many countries in the early twentieth century, partly due to the influence of Henry Ford.",
+"e": "The paragraph discusses the current four-day-week movement — support, results and scepticism. {x} is a historical aside about the five-day week, shifting the time frame."
+},
+{
+"d": "m",
+"c": [
+"Bilingual speakers frequently switch between languages within a single conversation.",
+"Linguists call this practice code-switching.",
+"Far from indicating confusion, it often follows systematic grammatical rules.",
+"Speakers also use it strategically, to signal identity or to express ideas that one language captures better."
+],
+"x": "Learning a second language is easier in childhood than in adulthood.",
+"e": "The paragraph is specifically about code-switching. {x} is a general claim about language acquisition, related only to bilingualism broadly."
+},
+{
+"d": "m",
+"c": [
+"Mangrove forests grow along tropical coastlines where land meets sea.",
+"Their dense roots trap sediment and break the force of waves.",
+"As a result, mangroves protect coastal communities from storm surges and erosion.",
+"Yet these forests are being cleared at an alarming rate for shrimp farms and coastal development."
+],
+"x": "Shrimp is one of the most popular seafoods in the world, especially in restaurants.",
+"e": "The paragraph concerns mangroves' protective role and their destruction. {x} shifts to shrimp's popularity as food, picking up only the word 'shrimp'."
+},
+{
+"d": "m",
+"c": [
+"The Voyager probes were launched in 1977 to study the outer planets.",
+"Having completed their planetary missions, both spacecraft continued travelling outward.",
+"Voyager 1 crossed into interstellar space in 2012, the first human-made object to do so.",
+"Their aging power sources are now steadily weakening, and contact is expected to end within a few years."
+],
+"x": "The Moon landing in 1969 remains one of the most watched television events in history.",
+"e": "The paragraph tracks the Voyager probes' journey. {x} concerns the Moon landing, sharing only the broad topic of space exploration."
+},
+{
+"d": "m",
+"c": [
+"Remote work has changed how companies think about office space.",
+"Many firms have reduced their leases, keeping smaller offices for meetings and collaboration.",
+"Some have moved to 'hot-desking', where employees no longer have assigned desks.",
+"Commercial landlords in city centres are feeling the effects, with vacancy rates at record highs."
+],
+"x": "Ergonomic chairs can reduce back pain for people who sit for long periods.",
+"e": "The paragraph is about how remote work reshapes office real estate. {x} is about ergonomic furniture — related to work, but not to the paragraph's angle."
+},
+{
+"d": "m",
+"c": [
+"Sourdough bread is leavened by a culture of wild yeast and bacteria rather than commercial yeast.",
+"The bacteria produce lactic acid, which gives the bread its characteristic tang.",
+"The long fermentation also breaks down some of the gluten and other compounds in the flour.",
+"Some people who struggle to digest ordinary bread therefore find sourdough easier to tolerate."
+],
+"x": "Bread prices have risen sharply in many countries because of rising wheat costs.",
+"e": "The paragraph explains how sourdough's fermentation works and its effects. {x} turns to bread prices — same broad subject, different angle."
+},
+{
+"d": "m",
+"c": [
+"Elephants grieve for their dead.",
+"Herds have been observed standing silently over the bodies of deceased companions for hours.",
+"They often return to the bones of relatives years later, touching them gently with their trunks.",
+"Such behaviour suggests that elephants may have a concept of death."
+],
+"x": "African elephants are larger than Asian elephants and have bigger ears.",
+"e": "The paragraph concerns elephant grief behaviour. {x} is a physical comparison between species — true but irrelevant."
+},
+{
+"d": "m",
+"c": [
+"Microplastics are fragments of plastic smaller than five millimetres.",
+"They form when larger plastic items break down, and are also released from synthetic clothing during washing.",
+"Scientists have found them in oceans, soil, drinking water and even human blood.",
+"Their long-term effects on human health are not yet well understood."
+],
+"x": "Plastic was first mass-produced in the early twentieth century and quickly replaced many traditional materials.",
+"e": "The paragraph discusses microplastics — definition, sources, spread, health uncertainty. {x} is about plastic's history, outside the specific focus."
+},
+{
+"d": "m",
+"c": [
+"Public libraries in many countries have begun lending items other than books.",
+"Patrons can now borrow tools, musical instruments, cameras and even seeds.",
+"These 'libraries of things' aim to reduce waste and make costly items accessible to everyone.",
+"They also position the library as a hub for community sharing rather than a mere repository of texts."
+],
+"x": "Ancient libraries, such as the one at Alexandria, collected scrolls from across the known world.",
+"e": "The paragraph is about modern libraries lending non-book items. {x} shifts to ancient libraries — topically adjacent but off the angle."
+},
+{
+"d": "m",
+"c": [
+"Daylight saving time was introduced to make better use of evening daylight.",
+"Its supporters argue that it reduces energy consumption and encourages outdoor activity.",
+"Yet studies have found that the energy savings are negligible or nonexistent.",
+"Researchers have also linked the spring clock change to a short-term rise in heart attacks and traffic accidents."
+],
+"x": "Clocks with pendulums were far more accurate than earlier mechanical clocks.",
+"e": "The paragraph debates daylight saving time. {x} is about the history of clock accuracy, linked only by 'clocks'."
+},
+{
+"d": "m",
+"c": [
+"Many species of birds sing more loudly in cities than in the countryside.",
+"Urban noise from traffic and construction can drown out their songs.",
+"To be heard by mates and rivals, birds raise their volume and pitch.",
+"Some even shift their singing to quieter times of day, such as before dawn."
+],
+"x": "Birdwatching has become an increasingly popular hobby in recent years.",
+"e": "The paragraph is about birds adapting their song to urban noise. {x} is about a human hobby."
+},
+{
+"d": "m",
+"c": [
+"Kintsugi is the Japanese art of repairing broken pottery with lacquer mixed with gold.",
+"Rather than hiding the cracks, it highlights them as part of the object's history.",
+"The practice reflects a philosophy that values imperfection and impermanence.",
+"Today, kintsugi is often invoked as a metaphor for resilience and healing."
+],
+"x": "Japan is one of the world's largest exporters of cars and electronics.",
+"e": "The paragraph explains kintsugi and its philosophy. {x} is about Japan's exports — sharing only the country."
+},
+{
+"d": "m",
+"c": [
+"Food deserts are areas where residents have little access to affordable, nutritious food.",
+"They are often found in low-income urban neighbourhoods and remote rural regions.",
+"Residents may rely on convenience stores stocked mainly with processed foods.",
+"Researchers have linked food deserts to higher rates of obesity and diabetes."
+],
+"x": "Desert regions such as the Sahara receive less than 250 millimetres of rain per year.",
+"e": "The paragraph defines food deserts and their effects. {x} is about literal deserts — a classic word-association trap."
+},
+{
+"d": "m",
+"c": [
+"Fingerprints form in the womb, around the tenth week of pregnancy.",
+"Their patterns are shaped by genes but also by random factors such as pressure in the womb.",
+"This is why even identical twins have different fingerprints.",
+"The uniqueness of fingerprints made them a powerful tool for criminal identification from the late nineteenth century onward."
+],
+"x": "Some smartphones use facial recognition instead of fingerprint sensors.",
+"e": "The paragraph traces how fingerprints form and why they are unique. {x} is about smartphone security features — a modern tangent."
+},
+{
+"d": "m",
+"c": [
+"The Panama Canal shortened the sea route between the Atlantic and Pacific oceans by thousands of kilometres.",
+"Its construction, completed in 1914, was one of the largest engineering projects ever undertaken.",
+"Thousands of workers died during construction, mainly from malaria and yellow fever.",
+"Today, droughts that lower the water level in the canal's lakes are restricting the number of ships that can pass."
+],
+"x": "Panama hats actually originated in Ecuador, not Panama.",
+"e": "The paragraph concerns the Panama Canal's history and current challenges. {x} is a trivia fact about hats, sharing only the name."
+},
+{
+"d": "m",
+"c": [
+"Impostor syndrome describes the persistent feeling of being a fraud despite evident success.",
+"People who experience it attribute their achievements to luck rather than ability.",
+"It is surprisingly common among high achievers, including doctors, academics and executives.",
+"Psychologists suggest that naming the feeling and discussing it openly can reduce its power."
+],
+"x": "Many famous impostors throughout history successfully posed as doctors without any training.",
+"e": "The paragraph is about the psychological syndrome. {x} is about actual impostors — a word-association trap."
+},
+{
+"d": "m",
+"c": [
+"Cities generate enormous amounts of food waste every day.",
+"Some have begun collecting it separately to turn it into compost or biogas.",
+"The compost can be returned to farms, closing the loop between city and countryside.",
+"Biogas, meanwhile, can power buses or feed into the local energy grid."
+],
+"x": "Many restaurants now offer smaller portions to appeal to health-conscious customers.",
+"e": "The paragraph concerns processing urban food waste. {x} is about restaurant portion sizes — food-related but off the angle of waste processing."
+},
+{
+"d": "m",
+"c": [
+"Hydrogen is often promoted as a clean fuel of the future.",
+"When burned or used in fuel cells, it produces only water.",
+"However, most hydrogen today is produced from natural gas, releasing carbon dioxide in the process.",
+"'Green' hydrogen made with renewable electricity remains expensive and scarce."
+],
+"x": "Hydrogen is the lightest and most abundant element in the universe.",
+"e": "The paragraph discusses hydrogen's promise and the problem of how it is produced. {x} is a true but irrelevant scientific fact."
+},
+{
+"d": "m",
+"c": [
+"Shared e-scooters have spread rapidly through cities around the world.",
+"Supporters argue that they reduce short car journeys and congestion.",
+"Critics complain that scooters clutter pavements and cause injuries to riders and pedestrians.",
+"Several cities have responded by capping fleet sizes or banning them altogether."
+],
+"x": "Bicycles were first invented in the early nineteenth century.",
+"e": "The paragraph debates e-scooters. {x} is a historical fact about bicycles — adjacent transport topic, wrong angle."
+},
+{
+"d": "m",
+"c": [
+"Language apps promise fluency through a few minutes of practice each day.",
+"Their gamified design, with streaks and rewards, keeps users returning.",
+"Research suggests, however, that apps alone rarely produce conversational ability.",
+"Learners who combine them with real conversation practice make much faster progress."
+],
+"x": "English is the most widely studied foreign language in the world.",
+"e": "The paragraph evaluates language apps. {x} is a general statistic about English, unrelated to apps' effectiveness."
+},
+{
+"d": "m",
+"c": [
+"The ozone layer protects life on Earth from harmful ultraviolet radiation.",
+"In the 1980s, scientists discovered that chemicals called CFCs were thinning it dramatically.",
+"The Montreal Protocol of 1987 phased out these chemicals worldwide.",
+"The ozone layer is now slowly recovering and is expected to heal by the middle of this century."
+],
+"x": "Ultraviolet light is also used to sterilise medical equipment.",
+"e": "The paragraph traces the ozone problem and its solution. {x} picks up 'ultraviolet' but shifts to a medical application."
+},
+{
+"d": "m",
+"c": [
+"Many people believe that cracking their knuckles causes arthritis.",
+"The popping sound comes from gas bubbles collapsing in the fluid that lubricates the joints.",
+"Studies comparing habitual knuckle-crackers with non-crackers have found no difference in arthritis rates.",
+"One doctor even cracked the knuckles of only one hand for sixty years and found no arthritis in either."
+],
+"x": "Arthritis affects millions of people worldwide and is a leading cause of disability.",
+"e": "The paragraph debunks the knuckle-cracking myth. {x} is a general statement about arthritis prevalence — off the specific angle."
+},
+{
+"d": "m",
+"c": [
+"The Great Wall of China is often said to be visible from space with the naked eye.",
+"In reality, astronauts report that it is extremely difficult to see from low Earth orbit.",
+"Though very long, the wall is narrow and built from materials similar in colour to the surrounding landscape.",
+"Highways and airports, by contrast, are far easier to spot."
+],
+"x": "The Great Wall was built over many centuries by successive dynasties.",
+"e": "The paragraph debunks the visibility myth. {x} is a historical fact about construction — true but off the angle."
+},
+{
+"d": "h",
+"c": [
+"Philosophers have long asked whether a ship whose every plank has been replaced over time remains the same ship.",
+"The puzzle, known as the Ship of Theseus, has no obvious answer.",
+"If the ship's identity lies in its material, it ceased to exist somewhere along the way; if it lies in its form or history, it persists.",
+"The question becomes pressing when applied to persons, since our own cells are continually replaced."
+],
+"x": "Ancient Greek ships were typically built from pine and fir, materials prized for their buoyancy.",
+"e": "The paragraph is about the identity puzzle and its application to persons. {x} gives a historical detail about ship materials — it shares the vocabulary ('ship', 'material') but not the philosophical angle."
+},
+{
+"d": "h",
+"c": [
+"Economists measure the 'opportunity cost' of a choice as the value of the best alternative forgone.",
+"The concept reveals hidden costs that accounting statements ignore.",
+"A student attending university, for example, pays not only tuition but also the wages she could have earned by working instead.",
+"Failing to consider such costs leads individuals and firms to systematically misjudge the true price of their decisions."
+],
+"x": "University tuition fees have risen faster than inflation in many countries over the past two decades.",
+"e": "The paragraph explains opportunity cost. {x} picks up the university example but shifts to the trend in tuition fees — a direct cost, not an opportunity cost — breaking the conceptual thread."
+},
+{
+"d": "h",
+"c": [
+"The 'tragedy of the commons' describes how shared resources are overused when each individual acts in self-interest.",
+"Every herder gains by adding another animal to a common pasture, while the cost of overgrazing is spread among all.",
+"For decades, the remedy was assumed to be either privatisation or state control.",
+"The political economist Elinor Ostrom showed, however, that many communities have sustainably managed commons through their own locally devised rules."
+],
+"x": "Ostrom was the first woman to receive the Nobel Prize in economics.",
+"e": "The paragraph is about the commons problem and Ostrom's alternative remedy. {x} is a biographical fact about Ostrom — true and adjacent, but it doesn't advance the argument."
+},
+{
+"d": "h",
+"c": [
+"Unreliable narrators force readers to become detectives.",
+"Because the narrator's account cannot be taken at face value, readers must look for inconsistencies and gaps.",
+"The pleasure of such novels lies partly in reconstructing what really happened behind the narrator's distortions.",
+"In the best examples, the reader's growing suspicion mirrors the narrator's own gradual, reluctant self-discovery."
+],
+"x": "Detective fiction became enormously popular in the late nineteenth century with the Sherlock Holmes stories.",
+"e": "The paragraph analyses the reader's role with unreliable narrators. {x} takes the 'detective' metaphor literally and shifts to the history of a genre."
+},
+{
+"d": "h",
+"c": [
+"Confirmation bias is the tendency to seek out and favour information that supports what we already believe.",
+"It operates not only in what evidence we look for but in how we interpret ambiguous evidence.",
+"Even scientists, trained to test their hypotheses, are not immune.",
+"Practices such as pre-registering studies and blind analysis were developed partly to guard against it."
+],
+"x": "Some scientists argue that intuition plays a valuable role in forming hypotheses.",
+"e": "The paragraph explains confirmation bias and safeguards against it. {x} introduces a separate claim about intuition's value in science, which doesn't address the bias."
+},
+{
+"d": "h",
+"c": [
+"Museums increasingly face demands to return artefacts taken during colonial rule.",
+"Advocates argue that these objects were acquired through conquest or coercion and belong to the communities that made them.",
+"Some museums counter that they preserve the objects and make them accessible to a global public.",
+"Critics reply that this argument presumes the originating communities cannot care for their own heritage."
+],
+"x": "Museum attendance has risen steadily as cities invest in cultural tourism.",
+"e": "The paragraph presents the repatriation debate. {x} shifts to attendance figures — museum-related but outside the argument."
+},
+{
+"d": "h",
+"c": [
+"Moore's Law, the observation that the number of transistors on a chip doubles roughly every two years, held for decades.",
+"As transistors approach the size of individual atoms, however, further shrinking becomes physically difficult and enormously expensive.",
+"Chip designers have responded by stacking components vertically and designing specialised processors for particular tasks.",
+"The industry's progress now depends less on raw miniaturisation than on architectural ingenuity."
+],
+"x": "Gordon Moore co-founded Intel, which became one of the world's largest chipmakers.",
+"e": "The paragraph traces Moore's Law and the industry's shift away from miniaturisation. {x} is a biographical/corporate fact that doesn't advance this argument."
+},
+{
+"d": "h",
+"c": [
+"The Overton window describes the range of policies considered politically acceptable at a given time.",
+"Ideas outside the window are dismissed as radical or unthinkable.",
+"Activists sometimes deliberately advocate extreme positions to make moderate versions of their goals appear reasonable.",
+"Over time, the window can shift, so that once-radical ideas become mainstream."
+],
+"x": "Opinion polls are often inaccurate because respondents give socially desirable answers.",
+"e": "The paragraph explains the Overton window and how it shifts. {x} is about polling inaccuracy — politically adjacent but off the concept."
+},
+{
+"d": "h",
+"c": [
+"Wabi-sabi, a Japanese aesthetic, finds beauty in imperfection, impermanence and incompleteness.",
+"A weathered wooden bowl or an asymmetrical tea cup embodies its values better than a flawless object.",
+"The aesthetic draws on Buddhist teachings about the transience of all things.",
+"It stands in sharp contrast to Western classical ideals that prized symmetry, permanence and perfection."
+],
+"x": "Japanese tea ceremonies can last up to four hours and follow strict rules of etiquette.",
+"e": "The paragraph defines wabi-sabi and contrasts it with Western ideals. {x} shifts to tea-ceremony etiquette — culturally adjacent, but about ritual rules rather than the aesthetic, and its emphasis on 'strict rules' even pulls against the theme."
+},
+{
+"d": "h",
+"c": [
+"The streetlight effect describes the tendency to search for answers where it is easiest to look.",
+"The name comes from a joke about a man searching for lost keys under a streetlight, not because he lost them there but because the light is better.",
+"Researchers fall prey to it when they study what is easily measured rather than what matters.",
+"Policy can be distorted in the same way, as governments target metrics that are convenient rather than meaningful."
+],
+"x": "Streetlights were first powered by gas in the early nineteenth century.",
+"e": "The paragraph explains a cognitive bias via a metaphor. {x} takes 'streetlight' literally and shifts to history."
+},
+{
+"d": "h",
+"c": [
+"Universal basic income proposes giving every citizen a regular, unconditional cash payment.",
+"Supporters argue that it would reduce poverty and provide security as automation disrupts work.",
+"Critics worry about its cost and about whether it would reduce the incentive to work.",
+"Pilot programmes have so far found little evidence of reduced work effort, though none has tested a fully universal scheme."
+],
+"x": "Means-tested welfare programmes often require applicants to prove they are actively seeking work.",
+"e": "The paragraph debates UBI and its evidence. {x} describes a feature of a different system — it can seem relevant as a contrast, but nothing in the paragraph sets up or uses that contrast, so it breaks the thread."
+},
+{
+"d": "h",
+"c": [
+"Linguistic relativity holds that the language we speak shapes how we think.",
+"Its strong form — that language determines thought — has been largely abandoned.",
+"A weaker form, that language influences habits of attention and memory, has found some experimental support.",
+"Speakers of languages that mark grammatical gender, for instance, may describe objects in ways that echo the gender assigned to them."
+],
+"x": "Mandarin Chinese has more native speakers than any other language.",
+"e": "The paragraph tracks the status of linguistic relativity. {x} is a demographic fact about a language — no bearing on the hypothesis."
+},
+{
+"d": "h",
+"c": [
+"Survivorship bias occurs when we draw conclusions from cases that passed some selection process while ignoring those that did not.",
+"During World War II, engineers studied returning bombers to decide where to add armour.",
+"The statistician Abraham Wald pointed out that the holes they saw marked where planes could be hit and still return.",
+"Armour, he argued, should go where returning planes showed no damage, since planes hit there had not come back."
+],
+"x": "Aircraft manufacturing expanded dramatically during the war, transforming the economies of several countries.",
+"e": "The paragraph explains survivorship bias through the bomber example. {x} shifts to the wartime aircraft industry's economics."
+},
+{
+"d": "h",
+"c": [
+"The 'paradox of thrift' holds that what is prudent for an individual can be harmful for an economy as a whole.",
+"If one household saves more, it becomes more secure.",
+"If all households save more at once, however, spending collapses, businesses cut jobs, and incomes fall.",
+"Ironically, total savings may end up no higher than before, since people with lower incomes can save less."
+],
+"x": "Financial advisers typically recommend saving at least ten per cent of one's income.",
+"e": "The paragraph explains a macroeconomic paradox. {x} is personal-finance advice that reads as relevant because it concerns saving, but it addresses the individual level only and doesn't engage the paradox."
+},
+{
+"d": "h",
+"c": [
+"Goodhart's law states that when a measure becomes a target, it ceases to be a good measure.",
+"Schools judged by test scores may begin teaching to the test, raising scores without improving learning.",
+"Hospitals judged by waiting times may reclassify patients to meet the target.",
+"In each case, the effort to hit the number corrupts the very thing the number was meant to reveal."
+],
+"x": "Standardised testing was first introduced in imperial China to select civil servants.",
+"e": "The paragraph explains Goodhart's law with examples. {x} gives a history of standardised testing — it shares the topic of tests but not the argument."
+},
+{
+"d": "h",
+"c": [
+"Charles Darwin delayed publishing his theory of natural selection for nearly twenty years.",
+"He feared the controversy it would provoke, particularly among religious authorities.",
+"He was finally spurred to publish when Alfred Russel Wallace independently arrived at the same idea.",
+"Their findings were presented together in 1858, and Darwin's On the Origin of Species appeared the following year."
+],
+"x": "Natural selection explains how species adapt to their environments over many generations.",
+"e": "The paragraph narrates the history of Darwin's publication. {x} explains the theory's content, shifting from biography to science — a subtle change of angle."
+},
+{
+"d": "h",
+"c": [
+"The Dunning-Kruger effect describes how people with limited competence in a domain tend to overestimate their ability.",
+"The skills needed to perform well are often the same skills needed to recognise good performance.",
+"As a result, the least competent lack the means to see their own deficiencies.",
+"Experts, by contrast, sometimes underestimate their relative standing, assuming tasks easy for them are easy for others too."
+],
+"x": "Confidence is often rated as one of the most attractive qualities in job interviews.",
+"e": "The paragraph explains the effect's mechanism. {x} shifts to how confidence is perceived by others — adjacent but outside the argument."
+},
+{
+"d": "h",
+"c": [
+"Many historians now reject the idea of a single 'Scientific Revolution' in the seventeenth century.",
+"They point out that its supposed founders drew heavily on medieval and Islamic scholarship.",
+"They also note that astrology and alchemy remained intertwined with the new science for decades.",
+"The term survives mainly as a convenient label rather than a precise description of a sharp break."
+],
+"x": "Isaac Newton served as Master of the Royal Mint, where he pursued counterfeiters vigorously.",
+"e": "The paragraph questions the notion of a 'Scientific Revolution'. {x} is a biographical anecdote about Newton, unrelated to the historiographical argument."
+},
+{
+"d": "h",
+"c": [
+"Moral hazard arises when people protected from the consequences of risk behave more recklessly.",
+"Insured drivers may drive less carefully; banks expecting bailouts may take bigger gambles.",
+"Insurers and regulators try to counter this with deductibles, co-payments and capital requirements.",
+"Such measures keep some of the risk with those who take it, preserving their incentive to be careful."
+],
+"x": "Insurance has existed in some form since ancient merchants pooled the risks of sea voyages.",
+"e": "The paragraph explains moral hazard and remedies. {x} is about insurance's origins — topically connected, but historical rather than analytical."
+},
+{
+"d": "h",
+"c": [
+"Tragedy, Aristotle argued, arouses pity and fear in its audience and brings about their catharsis.",
+"The meaning of catharsis has been debated ever since.",
+"Some interpret it as a purging of emotions, others as a purification or clarification of them.",
+"On the latter view, tragedy does not simply relieve feeling but educates it."
+],
+"x": "Greek tragedies were performed at religious festivals in honour of the god Dionysus.",
+"e": "The paragraph discusses interpretations of catharsis. {x} is about the performance context of Greek tragedy — related subject, different angle."
+},
+{
+"d": "h",
+"c": [
+"The precautionary principle holds that when an activity threatens serious harm, lack of full scientific certainty should not delay protective action.",
+"It has shaped environmental law in Europe and international treaties on climate and biodiversity.",
+"Critics argue that, applied strictly, it could block almost any innovation, since nearly every new technology carries some uncertain risk.",
+"Defenders reply that it is meant to apply only to serious and irreversible harms, not to every conceivable risk."
+],
+"x": "Genetically modified crops have increased yields in several developing countries.",
+"e": "The paragraph debates the precautionary principle in general terms. {x} is a specific empirical claim about GM crops that the paragraph never introduces — it may seem like a relevant example, but nothing frames it."
+},
+{
+"d": "h",
+"c": [
+"The 'end of history' thesis, proposed after the Cold War, claimed that liberal democracy had triumphed as the final form of human government.",
+"Its author did not mean that events would stop, but that no serious ideological rival remained.",
+"The decades since have tested the claim severely, with the rise of authoritarian capitalism and populist movements within democracies.",
+"Defenders argue that these challenges have yet to produce a coherent alternative ideology with universal appeal."
+],
+"x": "The Berlin Wall fell in 1989, and Germany was reunified the following year.",
+"e": "The paragraph debates the 'end of history' thesis. {x} is a historical fact from the same era but contributes nothing to the argument."
+},
+{
+"d": "h",
+"c": [
+"Some philosophers argue that we have obligations to future generations who do not yet exist.",
+"This raises a puzzle: our choices today determine which people will be born at all.",
+"A policy that harms the future may also change who exists, so that no particular future person is worse off than they would otherwise have been.",
+"This 'non-identity problem' complicates attempts to ground environmental ethics in harm to specific individuals."
+],
+"x": "Population growth is expected to slow and eventually reverse in most countries by the end of the century.",
+"e": "The paragraph explains the non-identity problem. {x} is a demographic forecast — about future people, but not about the philosophical puzzle."
+},
+{
+"d": "h",
+"c": [
+"The concept of 'sunk cost' refers to resources already spent that cannot be recovered.",
+"Rational decision-making, economists argue, should ignore sunk costs and consider only future costs and benefits.",
+"Yet people routinely persist with failing projects because of what they have already invested.",
+"Governments, too, continue costly programmes partly to avoid admitting that past spending was wasted."
+],
+"x": "Large infrastructure projects frequently exceed their original budgets by significant margins.",
+"e": "The paragraph is about the sunk-cost fallacy — reasoning about past investments. {x} is about cost overruns, a different phenomenon (forecasting error) that merely sounds related."
+},
+{
+"d": "h",
+"c": [
+"Ekphrasis is the literary description of a work of visual art.",
+"Homer's lengthy description of Achilles' shield in the Iliad is one of its earliest examples.",
+"Poets have since used ekphrasis not merely to describe paintings and sculptures but to reflect on the limits of language itself.",
+"By trying to capture in words what the eye takes in at once, the ekphrastic poem dramatises the gap between the two arts."
+],
+"x": "Many of the greatest Renaissance paintings depict scenes from classical mythology.",
+"e": "The paragraph defines ekphrasis and its purpose in poetry. {x} is about the subject matter of paintings — it relates to visual art and the classics, but not to the literary device."
+}
+]

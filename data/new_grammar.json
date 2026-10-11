@@ -1,0 +1,560 @@
+[
+{
+"d": "m",
+"g": [
+"One of the reasons",
+"the project failed",
+"were the lack of",
+"clear ownership."
+],
+"a": "C",
+"e": "The subject is 'One' (of the reasons), which is singular: 'One of the reasons … was the lack of clear ownership.'"
+},
+{
+"d": "m",
+"g": [
+"Had the committee",
+"acted sooner,",
+"the crisis would not escalate",
+"as quickly as it did."
+],
+"a": "C",
+"e": "A third-conditional (past unreal) requires 'would not have escalated' to match 'Had the committee acted'."
+},
+{
+"d": "m",
+"g": [
+"Each of the candidates",
+"were asked",
+"to submit",
+"a written statement."
+],
+"a": "B",
+"e": "'Each' is singular and takes a singular verb: 'Each of the candidates was asked'."
+},
+{
+"d": "m",
+"g": [
+"The new policy",
+"is more effective",
+"than any policy",
+"the government has tried."
+],
+"a": "C",
+"e": "Comparing a member of a group with the group requires 'any other': 'more effective than any other policy' — otherwise the policy is compared with itself."
+},
+{
+"d": "m",
+"g": [
+"Walking into the auditorium,",
+"the stage lights",
+"blinded the speaker",
+"for a moment."
+],
+"a": "B",
+"e": "Dangling modifier: 'Walking into the auditorium' must modify the speaker, not the stage lights. Correct: 'Walking into the auditorium, the speaker was blinded…'. The error surfaces at (B), where the wrong subject appears."
+},
+{
+"d": "m",
+"g": [
+"She is not only",
+"a gifted mathematician",
+"but also writes",
+"poetry of real distinction."
+],
+"a": "C",
+"e": "Parallelism with 'not only … but also': 'not only a gifted mathematician but also a poet of real distinction', or 'not only is a … but also writes …'. Noun phrase vs verb phrase breaks the parallel."
+},
+{
+"d": "m",
+"g": [
+"The data",
+"from the latest survey",
+"suggests",
+"a sharp shift in consumer sentiment."
+],
+"a": "E",
+"e": "No error. In modern usage 'data' is widely accepted as a mass noun with a singular verb; CAT does not treat 'data suggests' as an error. Don't over-correct."
+},
+{
+"d": "m",
+"g": [
+"Neither the CEO",
+"nor her advisers",
+"was willing",
+"to comment on the merger."
+],
+"a": "C",
+"e": "With neither…nor, the verb agrees with the nearer subject — 'advisers' (plural): 'were willing'."
+},
+{
+"d": "m",
+"g": [
+"The reason she resigned",
+"was because",
+"she disagreed",
+"with the board's strategy."
+],
+"a": "B",
+"e": "'The reason … was because' is redundant; use 'The reason … was that she disagreed'."
+},
+{
+"d": "m",
+"g": [
+"By the time the rescue team arrived,",
+"the climbers",
+"had already descended",
+"to the base camp."
+],
+"a": "E",
+"e": "No error. Past perfect 'had descended' correctly marks the action completed before the team arrived."
+},
+{
+"d": "m",
+"g": [
+"The committee",
+"has submitted",
+"their report",
+"to the director."
+],
+"a": "C",
+"e": "'The committee has submitted' treats it as a singular unit; the pronoun must agree: 'its report'."
+},
+{
+"d": "m",
+"g": [
+"Scarcely had the meeting begun",
+"than the fire alarm",
+"went off,",
+"forcing an evacuation."
+],
+"a": "B",
+"e": "'Scarcely' pairs with 'when' (or 'before'), not 'than': 'Scarcely had the meeting begun when the fire alarm went off'."
+},
+{
+"d": "m",
+"g": [
+"The museum's collection",
+"of Mughal miniatures",
+"is larger than",
+"the British Library."
+],
+"a": "D",
+"e": "Faulty comparison: a collection is compared with a library. Correct: 'larger than that of the British Library'."
+},
+{
+"d": "m",
+"g": [
+"If I was",
+"in your position,",
+"I would accept",
+"the offer immediately."
+],
+"a": "A",
+"e": "Hypothetical (contrary-to-fact) conditions take the subjunctive 'were': 'If I were in your position'."
+},
+{
+"d": "m",
+"g": [
+"Between you and I,",
+"the proposal",
+"has little chance",
+"of being approved."
+],
+"a": "A",
+"e": "Prepositions take object pronouns: 'Between you and me'."
+},
+{
+"d": "m",
+"g": [
+"The professor insisted",
+"that every student",
+"submits",
+"the assignment by Friday."
+],
+"a": "C",
+"e": "After verbs of demand/insistence, the mandative subjunctive is used: 'insisted that every student submit'."
+},
+{
+"d": "m",
+"g": [
+"Less people",
+"attended the conference",
+"this year",
+"than in any previous year."
+],
+"a": "A",
+"e": "Countable nouns take 'fewer': 'Fewer people attended'. 'Less' is for uncountable quantities."
+},
+{
+"d": "m",
+"g": [
+"The manager, along with",
+"her entire team,",
+"are expected",
+"to attend the review."
+],
+"a": "C",
+"e": "'Along with' does not create a compound subject; the subject is 'The manager' (singular): 'is expected'."
+},
+{
+"d": "m",
+"g": [
+"He is one of those writers",
+"who has never",
+"sought",
+"publicity for his work."
+],
+"a": "B",
+"e": "In 'one of those writers who …', the relative pronoun 'who' refers to 'writers' (plural), so the verb is plural: 'who have never sought'."
+},
+{
+"d": "m",
+"g": [
+"The new regulations",
+"will effect",
+"every small business",
+"in the region."
+],
+"a": "B",
+"e": "'Affect' (verb) means to influence; 'effect' as a verb means to bring about. Correct: 'will affect every small business'."
+},
+{
+"d": "m",
+"s": "Choose the grammatically correct sentence.",
+"o": [
+"Hardly anyone noticed that the clock had stopped, nor did they care.",
+"Hardly no one noticed that the clock had stopped.",
+"Hardly anyone noticed that the clock has stopped, and nor they cared.",
+"Hardly anyone didn't notice that the clock had stopped."
+],
+"a": "A",
+"e": "A is correct: 'hardly anyone' is negative in sense, and 'nor did they care' correctly inverts. B and D are double negatives; C mixes tenses ('had noticed … has stopped') and has an ungrammatical 'and nor they cared'."
+},
+{
+"d": "m",
+"s": "Choose the grammatically correct sentence.",
+"o": [
+"The proposal was accepted unanimously, which surprised everyone.",
+"The proposal being accepted unanimously surprised everyone who were present.",
+"The proposals acceptance unanimously surprised everyone.",
+"Unanimously accepting the proposal, everyone was surprised by the board."
+],
+"a": "A",
+"e": "A is correct ('which' refers to the whole preceding clause, acceptable in standard usage). B: 'everyone … were' — 'everyone' takes singular. C: missing apostrophe and misplaced adverb. D: dangling modifier — 'everyone' didn't accept the proposal."
+},
+{
+"d": "m",
+"g": [
+"Due to",
+"heavy rainfall,",
+"the match",
+"was postponed."
+],
+"a": "E",
+"e": "No error. While traditionalists prefer 'owing to' when modifying a verb, 'due to' in this position is accepted in modern standard English and is not the kind of error CAT tests. The sentence is correct."
+},
+{
+"d": "m",
+"g": [
+"The quality of",
+"the apples",
+"in this orchard",
+"are excellent."
+],
+"a": "D",
+"e": "The subject is 'quality' (singular), not 'apples': 'is excellent'."
+},
+{
+"d": "m",
+"g": [
+"Having been warned",
+"about the risks,",
+"the decision to proceed",
+"was taken by the investors anyway."
+],
+"a": "C",
+"e": "Dangling modifier: 'Having been warned' must refer to the investors, but the subject is 'the decision'. Correct: 'Having been warned …, the investors decided to proceed anyway.'"
+},
+{
+"d": "h",
+"g": [
+"Not until the final report was published",
+"did the public learn",
+"how extensively the agency had",
+"misled them."
+],
+"a": "E",
+"e": "No error. Negative opening 'Not until …' correctly triggers inversion ('did the public learn'); past perfect 'had misled' marks the earlier action; 'them' refers to the public considered as people, acceptable here."
+},
+{
+"d": "h",
+"g": [
+"The number of applicants",
+"who were rejected",
+"for reasons unrelated to merit",
+"have prompted an inquiry."
+],
+"a": "D",
+"e": "The subject is 'The number' (singular), separated from its verb by two modifiers: 'has prompted an inquiry'. The long gap is the trap."
+},
+{
+"d": "h",
+"g": [
+"Like the economists of the 1930s,",
+"today's policymakers",
+"face a crisis whose scale",
+"few of them had anticipated."
+],
+"a": "E",
+"e": "No error. 'Like the economists' correctly compares people with people (policymakers); 'whose' can refer to things; past perfect 'had anticipated' is apt."
+},
+{
+"d": "h",
+"g": [
+"Unlike in France,",
+"where the state funds most research,",
+"American universities depend",
+"heavily on private endowments."
+],
+"a": "A",
+"e": "Faulty comparison: 'Unlike in France' compares a place-context with 'American universities'. Correct: 'Unlike French universities, which depend on state funding, American universities …' or 'Unlike in France, in America universities …'."
+},
+{
+"d": "h",
+"g": [
+"So convincing was",
+"the forgery that",
+"even experts were deceived,",
+"not to mention the casual buyer."
+],
+"a": "E",
+"e": "No error. 'So convincing was the forgery that …' is a correct inversion for emphasis; 'not to mention' is idiomatic."
+},
+{
+"d": "h",
+"g": [
+"The board demanded that",
+"the CFO not only explain",
+"the discrepancies but also",
+"that she resign."
+],
+"a": "D",
+"e": "Parallelism: 'not only explain … but also resign'. Repeating 'that she' after 'but also' breaks the parallel structure set up after 'not only'."
+},
+{
+"d": "h",
+"g": [
+"The research, which",
+"was conducted over a decade",
+"and involving thousands of participants,",
+"overturned earlier findings."
+],
+"a": "C",
+"e": "Parallelism within the relative clause: 'which was conducted … and involved thousands'. 'Involving' (participle) is not parallel with 'was conducted' (finite verb)."
+},
+{
+"d": "h",
+"g": [
+"It is high time",
+"the government",
+"addresses",
+"the growing housing shortage."
+],
+"a": "C",
+"e": "'It is high time' is followed by the past subjunctive: 'It is high time the government addressed the shortage'."
+},
+{
+"d": "h",
+"g": [
+"The senator's speech",
+"was as eloquent",
+"if not more eloquent than,",
+"any she had delivered before."
+],
+"a": "C",
+"e": "Incomplete comparison: 'as eloquent as, if not more eloquent than, any …'. The second 'as' is missing, and the comma placement must enclose the parenthetical."
+},
+{
+"d": "h",
+"g": [
+"Only after the auditors",
+"had examined every ledger",
+"the firm admitted",
+"that its accounts were misstated."
+],
+"a": "C",
+"e": "A sentence opening with 'Only after …' requires subject–auxiliary inversion in the main clause: 'did the firm admit'."
+},
+{
+"d": "h",
+"g": [
+"The CEO, as well as",
+"the members of the board,",
+"were present",
+"at the shareholders' meeting."
+],
+"a": "C",
+"e": "'As well as' introduces a parenthetical, not a compound subject; the subject 'The CEO' is singular: 'was present'."
+},
+{
+"d": "h",
+"g": [
+"Each of the three proposals",
+"has its merits,",
+"but every one of them",
+"fail to address the core issue."
+],
+"a": "D",
+"e": "'Every one of them' is singular and takes a singular verb: 'fails to address'. The plural 'them' sitting next to the verb is the trap."
+},
+{
+"d": "h",
+"g": [
+"Rarely has",
+"a single invention",
+"so transformed",
+"the way people communicates."
+],
+"a": "D",
+"e": "'People' is plural: 'the way people communicate'. The opening inversion ('Rarely has … so transformed') is correct and acts as a distraction."
+},
+{
+"d": "h",
+"g": [
+"The findings were",
+"so different from",
+"what the team expected",
+"that they doubted their instruments."
+],
+"a": "E",
+"e": "No error. 'Different from' is the preferred idiom; 'so … that' correctly expresses result; 'they' clearly refers to the team members."
+},
+{
+"d": "h",
+"g": [
+"To truly understand",
+"the crisis, one must",
+"examine its origins,",
+"as well as it's consequences."
+],
+"a": "D",
+"e": "'It's' = 'it is'; the possessive is 'its consequences'. The split infinitive in (A) is accepted in modern English and is a decoy."
+},
+{
+"d": "h",
+"g": [
+"The more the regulator",
+"scrutinised the accounts,",
+"the more irregularities",
+"it was uncovering."
+],
+"a": "D",
+"e": "The correlative 'the more … the more …' needs parallel simple verbs: 'the more it scrutinised … the more irregularities it uncovered'. The progressive 'was uncovering' breaks the parallel."
+},
+{
+"d": "h",
+"s": "Choose the grammatically correct sentence.",
+"o": [
+"Were the results to be replicated, the theory would gain wide acceptance.",
+"Were the results replicated, the theory will gain wide acceptance.",
+"If the results would be replicated, the theory would gain wide acceptance.",
+"Had the results be replicated, the theory would have gained wide acceptance."
+],
+"a": "A",
+"e": "A correctly uses the inverted subjunctive 'Were … to be' with 'would'. B mixes subjunctive with future 'will'. C uses 'would' in the if-clause. D needs 'Had the results been replicated'."
+},
+{
+"d": "h",
+"s": "Choose the sentence that is grammatically correct AND unambiguous.",
+"o": [
+"When Priya met Anjali, she was nervous.",
+"Priya was nervous when she met Anjali.",
+"When she met Anjali, Priya and her sister were nervous about her.",
+"Priya told Anjali that her proposal had been rejected."
+],
+"a": "B",
+"e": "B is clear: 'she' can only refer to Priya, the subject. A and D have ambiguous pronouns (who was nervous? whose proposal?). C's 'her' could refer to Priya, Anjali or the sister."
+},
+{
+"d": "h",
+"s": "Choose the grammatically correct sentence.",
+"o": [
+"The reason for the delay, as well as the costs involved, were explained to the shareholders.",
+"Neither the director nor any of the managers was able to explain the delay.",
+"Neither of the explanations offered were convincing to the auditors.",
+"A series of errors were responsible for the delay."
+],
+"a": "B",
+"e": "B: with 'neither … nor', the verb agrees with the nearer subject 'any of the managers' — 'any' here is treated as singular, so 'was' is correct. A: subject is 'the reason' → 'was explained'. C: 'neither' (singular) → 'was convincing'. D: 'A series' → 'was responsible'."
+},
+{
+"d": "h",
+"s": "Choose the sentence with correct parallel structure.",
+"o": [
+"The programme aims to reduce costs, improving quality, and the expansion of access.",
+"The programme aims to reduce costs, improve quality, and expand access.",
+"The programme aims at reducing costs, to improve quality, and expanding access.",
+"The programme aims to reduce costs, quality improvement, and to expand access."
+],
+"a": "B",
+"e": "B keeps all three items as bare infinitives after 'to'. The other options mix infinitives, gerunds and noun phrases."
+},
+{
+"d": "h",
+"s": "Choose the sentence in which the modifier is placed correctly.",
+"o": [
+"She only ate half the cake, leaving the rest for later.",
+"Only she ate half the cake, so the rest was for later.",
+"She ate only half the cake, leaving the rest for later.",
+"She ate half the cake only, the rest for later leaving."
+],
+"a": "C",
+"e": "'Only' should sit immediately before what it limits — 'half the cake'. A implies she did nothing but eat; B means no one else ate; D is ungrammatical."
+},
+{
+"d": "h",
+"s": "Choose the grammatically correct sentence.",
+"o": [
+"Despite of the warnings, the expedition continued.",
+"In spite the warnings, the expedition continued.",
+"Despite the warnings, the expedition continued.",
+"Despite that the warnings, the expedition continued."
+],
+"a": "C",
+"e": "'Despite' takes a direct object with no 'of'; 'in spite of' needs 'of'. Only C is idiomatic."
+},
+{
+"d": "h",
+"g": [
+"Of the two candidates,",
+"Ravi is",
+"the most qualified",
+"for the position."
+],
+"a": "C",
+"e": "When comparing exactly two, use the comparative: 'the more qualified'."
+},
+{
+"d": "h",
+"g": [
+"Lying on the table",
+"was a letter",
+"addressed to",
+"whomever had rented the flat before."
+],
+"a": "D",
+"e": "Within its clause, the pronoun is the subject of 'had rented', so it must be 'whoever'. The preposition 'to' governs the whole clause, not the pronoun — a classic hard trap. The inversion 'Lying on the table was a letter' is correct."
+},
+{
+"d": "h",
+"g": [
+"The committee is considering",
+"whether the funds should be",
+"allocated to research",
+"or if they should be returned to donors."
+],
+"a": "D",
+"e": "Parallelism in a 'whether … or …' construction: 'whether the funds should be allocated … or returned to donors'. Switching to 'or if they should be' breaks the parallel."
+}
+]
