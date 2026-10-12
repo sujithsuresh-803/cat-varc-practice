@@ -71,7 +71,8 @@ a { color: var(--primary); text-decoration: none; }
 #app { max-width: 1240px; margin: 0 auto; padding: 1.25rem; }
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem 1.3rem; box-shadow: var(--shadow); margin-bottom: 1.1rem; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
-.grid-2 > .card { margin-bottom: 0; }
+.grid-2 > .card { margin-bottom: 0; min-width: 0; }
+.quiz-main, .q-split > * { min-width: 0; }
 .grid-2 { margin-bottom: 1.1rem; }
 
 /* buttons */
@@ -236,8 +237,9 @@ details.review-passage div { margin-top: .6rem; max-height: 360px; overflow: aut
 .score-pill { font-weight: 700; padding: .25rem .6rem; border-radius: 8px; background: var(--surface-2); font-variant-numeric: tabular-nums; }
 .empty { text-align: center; padding: 2rem 1rem; color: var(--muted); }
 
-.modal { position: fixed; inset: 0; background: rgba(10, 14, 25, .5); z-index: 60; display: grid; place-items: center; padding: 1rem; }
-.modal-card { background: var(--surface); border-radius: 14px; padding: 1.5rem; max-width: 420px; width: 100%; border: 1px solid var(--border); }
+.modal { position: fixed; inset: 0; background: rgba(5, 8, 15, .72); backdrop-filter: blur(3px); z-index: 60; display: grid; place-items: center; padding: 1rem; }
+.modal-card { background: var(--surface); border-radius: 14px; padding: 1.5rem; max-width: 420px; width: 100%; border: 2px solid var(--primary); box-shadow: 0 20px 60px rgba(0,0,0,.45); }
+.modal-card .btn { padding: .65rem 1.2rem; }
 .modal-card .row { justify-content: flex-end; gap: .5rem; margin-top: 1.2rem; }
 
 @media (max-width: 960px) {

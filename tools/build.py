@@ -29,6 +29,13 @@ def fill(expl, num):  # num: placeholder -> displayed sentence number
 base = json.loads((D / "base.json").read_text(encoding="utf8"))
 questions, passages = [], {p["id"]: {"title": p["title"], "paras": p["paras"]} for p in base["passages"]}
 
+# doc passages: difficulty from the average of their questions (easy=1, medium=2, hard=3)
+LV = {"easy": 1, "medium": 2, "hard": 3}
+for pid in passages:
+    lv = [LV[q["difficulty"]] for q in base["questions"] if q.get("passage") == pid]
+    avg = sum(lv) / len(lv)
+    passages[pid]["difficulty"] = "easy" if avg < 1.7 else "medium" if avg < 1.95 else "hard"
+
 for q in base["questions"]:
     if "options" in q:
         q["options"] = [{"k": k, "t": v} for k, v in q["options"].items()]
@@ -66,7 +73,7 @@ pi = 0
 for f in ("new_rc_medium.json", "new_rc_hard.json"):
     for p in json.loads((D / f).read_text(encoding="utf8")):
         pi += 1; pid = f"rc-np{pi}"
-        passages[pid] = {"title": p["title"], "paras": p["paras"]}
+        passages[pid] = {"title": p["title"], "paras": p["paras"], "difficulty": DIFF[p["d"]]}
         for j, q in enumerate(p["qs"], 1):
             opts, ans, expl = shuffled_mcq(q["o"], q["a"], q["e"])
             questions.append({"id": f"rc-n{pi}-{j}", "topic": "rc", "type": "mcq", "passage": pid,
@@ -79,7 +86,7 @@ out = {"topics": topics, "passages": passages, "questions": questions}
 (D / "questions.js").write_text("window.VARC = " + json.dumps(out, ensure_ascii=False, separators=(",", ":")) + ";\n", encoding="utf8")
 
 from collections import Counter
-print(len(questions), "questions,", len(passages), "passages")
+print(len(questions), "questions,", len(passages), "passages", dict(Counter(p["difficulty"] for p in passages.values())))
 for t, _ in topics:
     print(t, dict(Counter(q["difficulty"] for q in questions if q["topic"] == t)),
           "answers:", dict(Counter(q["answer"] for q in questions if q["topic"] == t and q["type"] == "mcq" and q["src"] == "new")))

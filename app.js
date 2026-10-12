@@ -157,27 +157,38 @@
     if (unseenFirst) sh.sort((a, b) => (S.seen[a.id] || 0) - (S.seen[b.id] || 0));
     return sh.slice(0, n);
   }
-  function passageDifficulty(pid) {
-    const qs = DATA.questions.filter(q => q.passage === pid);
-    const avg = qs.reduce((s, q) => s + DLEVEL[q.difficulty], 0) / qs.length;
-    return avg < 1.75 ? "easy" : avg < 2.35 ? "medium" : "hard";
-  }
+  const passageDifficulty = pid => DATA.passages[pid].difficulty;
+  const passageQids = pid => DATA.questions.filter(q => q.passage === pid).map(q => q.id);
 
+  // Quick 5 = five full RC passages (CAT-style) in the chosen difficulty mix,
+  // plus five single questions from any other selected topics in the same mix.
   function buildQuick5(p) {
     const plan = p.pattern === "easy" ? ["easy", "easy", "medium", "medium", "hard"] : ["easy", "medium", "medium", "hard", "hard"];
-    const weights = p.topics.map(t => [t, t === "rc" ? 3 : 1]);
-    const total = weights.reduce((s, w) => s + w[1], 0);
-    const used = new Set(), out = [];
-    for (const d of plan) {
-      let tries = 0, q = null;
-      while (!q && tries++ < 30) {
-        let r = Math.random() * total, topic = weights[0][0];
-        for (const [t, w] of weights) { if ((r -= w) < 0) { topic = t; break; } }
-        const pool = DATA.questions.filter(x => x.topic === topic && x.difficulty === d && !used.has(x.id));
-        q = pickFrom(pool, 1, true)[0];
+    const near = { easy: ["easy", "medium", "hard"], medium: ["medium", "easy", "hard"], hard: ["hard", "medium", "easy"] };
+    const out = [];
+    if (p.topics.includes("rc")) {
+      const used = new Set(), picked = [];
+      for (const d of plan) {
+        for (const alt of near[d]) {
+          const pool = shuffle(Object.keys(DATA.passages).filter(pid => passageDifficulty(pid) === alt && !used.has(pid)));
+          pool.sort((a, b) => seenCount(a) - seenCount(b));
+          if (pool.length) { used.add(pool[0]); picked.push(pool[0]); break; }
+        }
       }
-      if (!q) q = pickFrom(DATA.questions.filter(x => p.topics.includes(x.topic) && !used.has(x.id)), 1, true)[0];
-      if (q) { used.add(q.id); out.push(q.id); }
+      for (const pid of shuffle(picked)) out.push(...passageQids(pid));
+    }
+    const others = p.topics.filter(t => t !== "rc");
+    if (others.length) {
+      const used = new Set();
+      for (const d of plan) {
+        const topic = others[Math.floor(Math.random() * others.length)];
+        let q = null;
+        for (const alt of near[d]) {
+          q = pickFrom(DATA.questions.filter(x => x.topic === topic && x.difficulty === alt && !used.has(x.id)), 1, true)[0];
+          if (q) break;
+        }
+        if (q) { used.add(q.id); out.push(q.id); }
+      }
     }
     return out;
   }
@@ -227,7 +238,7 @@
     const names = p.topics.map(t => TNAME[t]);
     S.active = {
       id: "s" + Date.now().toString(36), created: Date.now(), mode,
-      title: mode === "quick5" ? `Quick 5 (${p.pattern === "easy" ? "2E·2M·1H" : "1E·2M·2H"})` : `Custom · ${p.diff[0].toUpperCase() + p.diff.slice(1)} · ${qids.length} Qs`,
+      title: mode === "quick5" ? `Quick 5${p.topics.includes("rc") ? " RC passages" : ""} (${p.pattern === "easy" ? "2E·2M·1H" : "1E·2M·2H"})` :`Custom · ${p.diff[0].toUpperCase() + p.diff.slice(1)} · ${qids.length} Qs`,
       topics: p.topics, topicNames: names, timer: p.timer, qids, idx: 0, answers: {}, marked: {}, visited: {}, time: {}, elapsed: 0,
     };
     save(); location.hash = "quiz"; openQuiz();
@@ -351,7 +362,9 @@
     });
     const rec = { id: a.id, title: a.title, mode: a.mode, topics: a.topics, created: a.created, finishedAt: Date.now(), elapsed: a.elapsed, results };
     S.history.unshift(rec); S.active = null; save();
-    location.hash = "report/" + rec.id;
+    // Render directly rather than relying on the hashchange event, then sync the URL.
+    history.replaceState(null, "", "#report/" + rec.id);
+    renderReport(rec.id);
   }
 
   // ---------- report ----------
@@ -515,9 +528,16 @@
   function confirmBox(title, text, ok, fn) {
     $("#modalCard").innerHTML = `<h2>${esc(title)}</h2><p class="muted">${esc(text)}</p><div class="row"><button class="btn" id="mNo">Cancel</button><button class="btn primary" id="mYes">${esc(ok)}</button></div>`;
     $("#modal").classList.remove("hidden");
-    $("#mNo").onclick = () => $("#modal").classList.add("hidden");
-    $("#mYes").onclick = () => { $("#modal").classList.add("hidden"); fn(); };
+    $("#mNo").onclick = closeModal;
+    $("#mYes").onclick = () => {
+      closeModal();
+      try { fn(); } catch (err) { console.error(err); alertBox("Something went wrong: " + err.message + ". Your answers are saved — reload the page and try again."); }
+    };
+    $("#mYes").focus();
   }
+  function closeModal() { $("#modal").classList.add("hidden"); }
+  $("#modal").addEventListener("click", e => { if (e.target.id === "modal") closeModal(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
   function alertBox(text) {
     $("#modalCard").innerHTML = `<p>${esc(text)}</p><div class="row"><button class="btn primary" id="mNo">OK</button></div>`;
     $("#modal").classList.remove("hidden"); $("#mNo").onclick = () => $("#modal").classList.add("hidden");

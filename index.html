@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=2">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232f5bd3'/><text x='16' y='22' font-size='15' font-family='Arial' font-weight='700' fill='white' text-anchor='middle'>V</text></svg>">
 </head>
 <body>
@@ -53,14 +53,14 @@
         </div>
 
         <div class="mode-panel" data-panel="quick5">
-          <p class="muted small">Five random questions from your topics. RC is weighted higher.</p>
+          <p class="muted small">Five full RC passages with all their questions, like CAT (about 25 questions). If you also tick other topics, 5 questions from them are added in the same mix.</p>
           <div class="pattern-grid">
             <label class="pattern"><input type="radio" name="pattern" value="hard" checked>
-              <span><b>Stretch</b><small>1 Easy · 2 Medium · 2 Hard</small></span></label>
+              <span><b>Stretch</b><small>1 Easy · 2 Medium · 2 Hard passages</small></span></label>
             <label class="pattern"><input type="radio" name="pattern" value="easy">
-              <span><b>Warm-up</b><small>2 Easy · 2 Medium · 1 Hard</small></span></label>
+              <span><b>Warm-up</b><small>2 Easy · 2 Medium · 1 Hard passages</small></span></label>
           </div>
-          <label class="check"><input type="checkbox" id="q5Timer" checked> Show timer (target ~2 min/question)</label>
+          <label class="check"><input type="checkbox" id="q5Timer" checked> Show timer (target ≈ 7–8 min per passage)</label>
           <button class="btn primary big" id="startQuick">Start Quick 5 →</button>
         </div>
 
@@ -143,7 +143,7 @@
 
 <div class="modal hidden" id="modal"><div class="modal-card" id="modalCard"></div></div>
 
-<script src="data/questions.js"></script>
-<script src="app.js"></script>
+<script src="data/questions.js?v=2"></script>
+<script src="app.js?v=2"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ A static practice site for CAT Verbal Ability & Reading Comprehension. No sign-u
 
 ## Features
 - Pick the topics you want to practise for the day; RC is the priority topic
-- **Quick 5**: random 5-question set, 1 Easy · 2 Medium · 2 Hard or 2 Easy · 2 Medium · 1 Hard
+- **Quick 5**: five full RC passages with all their questions (CAT-style), 1 Easy · 2 Medium · 2 Hard or 2 Easy · 2 Medium · 1 Hard passages; ticking other topics adds 5 questions from them in the same mix
 - **Custom set**: difficulty (mixed/easy/medium/hard), size, RC priority (~60% of the set), full RC passages
 - Timer with pause (hides questions), save & exit, resume later
 - CAT-style palette, mark for review, TITA input for Para Jumbles / Odd Sentence Out
