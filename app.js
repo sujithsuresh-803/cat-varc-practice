@@ -42,15 +42,18 @@
     $("#view-" + view).classList.remove("hidden");
     $$(".topbar nav a").forEach(a => a.classList.toggle("active", a.dataset.nav === view));
     window.scrollTo(0, 0);
+    if (view !== "cat" && window.RealCAT) window.RealCAT.leave();
   }
   function route() {
     const h = location.hash.replace("#", "") || "home";
+    if (h === "cat" || h.startsWith("cat/")) return window.RealCAT.route(h);
     if (h.startsWith("report/")) return renderReport(h.slice(7));
     if (h === "history") return renderHistory();
     if (h === "quiz" && S.active) return openQuiz();
     renderHome();
   }
   window.addEventListener("hashchange", route);
+  window.VARCApp = { show, esc, fmt, fmtShort, pct, confirm: (...a) => confirmBox(...a), alert: (t, cb) => alertBox(t, cb) };
 
   // ---------- theme ----------
   const applyTheme = t => { if (t) document.documentElement.dataset.theme = t; else delete document.documentElement.dataset.theme; };
@@ -535,12 +538,14 @@
     };
     $("#mYes").focus();
   }
-  function closeModal() { $("#modal").classList.add("hidden"); }
+  function closeModal() { const ok = !$("#mYes") && $("#mNo"); if (ok && !$("#modal").classList.contains("hidden")) return ok.click(); $("#modal").classList.add("hidden"); }
   $("#modal").addEventListener("click", e => { if (e.target.id === "modal") closeModal(); });
   document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
-  function alertBox(text) {
+  function alertBox(text, onClose) {
     $("#modalCard").innerHTML = `<p>${esc(text)}</p><div class="row"><button class="btn primary" id="mNo">OK</button></div>`;
-    $("#modal").classList.remove("hidden"); $("#mNo").onclick = () => $("#modal").classList.add("hidden");
+    $("#modal").classList.remove("hidden");
+    $("#mNo").onclick = () => { $("#modal").classList.add("hidden"); if (onClose) onClose(); };
+    $("#mNo").focus();
   }
 
   // keyboard: A–E select, ←/→ navigate, P pause
@@ -555,5 +560,5 @@
   });
   window.addEventListener("beforeunload", save);
 
-  route();
+  window.VARCApp.start = route;
 })();

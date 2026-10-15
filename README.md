@@ -18,6 +18,14 @@ A static practice site for CAT Verbal Ability & Reading Comprehension. No sign-u
 - Detailed report: CAT score (+3 / −1, no negative for TITA), accuracy and time by topic and difficulty, insights, full explanations, retry wrong questions
 - Reports page with all-time stats and a daily log; export progress as JSON
 
+## Real CAT papers (CAT 2018–2022)
+A **Real CAT** section with 13 actual papers (1,024 questions), official answer keys and solutions:
+- **Exam mode**: VARC → DILR → QA, each with its own countdown (60 min for 2018–19, 40 min from 2020); a submitted section is locked; analysis only at the end
+- **Normal mode**: answer, press *Check*, and get the verdict, the solution and the method immediately
+- Report: CAT score, section/topic/DILR-set breakdowns, negative-marking cost, unattempted TITAs, time sinks, and method playbooks for weak areas
+
+The paper content is not in this repo (the source PDFs are all-rights-reserved). It's loaded at runtime from a private repo with a read-only token, or imported from files, and cached in the browser.
+
 Keyboard: `A`–`E` select an option, `←`/`→` navigate, `P` pause.
 
 ## Rebuilding the question bank
