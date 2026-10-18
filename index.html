@@ -2,18 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CAT VARC Practice</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="CAT Prep">
+<title>CAT Practice</title>
 <meta name="description" content="CAT VARC practice: Reading Comprehension, Para Jumbles, Para Summary, Odd Sentence Out, Para Completion, Vocabulary and Grammar with timed sets and detailed reports.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232f5bd3'/><text x='16' y='22' font-size='15' font-family='Arial' font-weight='700' fill='white' text-anchor='middle'>V</text></svg>">
 </head>
 <body>
 <header class="topbar">
-  <a class="brand" href="#home" data-nav="home"><span class="logo">V</span><span>CAT VARC Practice</span></a>
+  <a class="brand" href="#home" data-nav="home"><span class="logo">V</span><span>CAT Practice</span></a>
   <nav>
     <a href="#home" data-nav="home">Practice</a>
     <a href="#cat" data-nav="cat">Real CAT</a>
@@ -29,7 +32,7 @@
 
     <div class="hero">
       <div>
-        <h1>Today's VARC practice</h1>
+        <h1>Today's CAT practice</h1>
         <p class="muted" id="heroStats"></p>
       </div>
       <div class="today-chips" id="todayChips"></div>
@@ -54,14 +57,14 @@
         </div>
 
         <div class="mode-panel" data-panel="quick5">
-          <p class="muted small">Five full RC passages with all their questions, like CAT (about 25 questions). If you also tick other topics, 5 questions from them are added in the same mix.</p>
+          <p class="muted small"><b>RC</b> → 5 full passages (about 25 questions). <b>DILR</b> → 2 full sets. <b>Other topics</b> (VA, Quant) → 5 questions. Everything follows the difficulty mix below.</p>
           <div class="pattern-grid">
             <label class="pattern"><input type="radio" name="pattern" value="hard" checked>
               <span><b>Stretch</b><small>1 Easy · 2 Medium · 2 Hard passages</small></span></label>
             <label class="pattern"><input type="radio" name="pattern" value="easy">
               <span><b>Warm-up</b><small>2 Easy · 2 Medium · 1 Hard passages</small></span></label>
           </div>
-          <label class="check"><input type="checkbox" id="q5Timer" checked> Show timer (target ≈ 7–8 min per passage)</label>
+          <label class="check"><input type="checkbox" id="q5Timer" checked> Show timer</label>
           <button class="btn primary big" id="startQuick">Start Quick 5 →</button>
         </div>
 
@@ -85,7 +88,7 @@
             </div>
           </div>
           <label class="check"><input type="checkbox" id="rcPriority" checked> RC priority (≈60% of the set is RC when RC is selected)</label>
-          <label class="check"><input type="checkbox" id="rcFull" checked> Full RC passages (all questions of a passage, like CAT)</label>
+          <label class="check"><input type="checkbox" id="rcFull" checked> Full RC passages (all questions of a passage, like CAT). DILR always comes as full sets.</label>
           <label class="check"><input type="checkbox" id="unseenFirst" checked> Prefer questions I haven't seen</label>
           <label class="check"><input type="checkbox" id="cTimer" checked> Show timer</label>
           <p class="muted small" id="poolInfo"></p>
@@ -147,8 +150,8 @@
 
 <div class="modal hidden" id="modal"><div class="modal-card" id="modalCard"></div></div>
 
-<script src="data/questions.js?v=2"></script>
-<script src="app.js?v=3"></script>
-<script src="realcat.js?v=3"></script>
+<script src="data/questions.js?v=4"></script>
+<script src="app.js?v=4"></script>
+<script src="realcat.js?v=4"></script>
 </body>
 </html>

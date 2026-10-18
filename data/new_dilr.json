@@ -1,0 +1,979 @@
+[
+{
+"title": "Quarterly sales of five products",
+"d": "e",
+"intro": [
+"The table shows the sales (in ₹ lakh) of five products of a company in the four quarters of a year.",
+{
+"table": {
+"head": [
+"Product",
+"Q1",
+"Q2",
+"Q3",
+"Q4"
+],
+"rows": [
+[
+"P",
+"120",
+"135",
+"150",
+"165"
+],
+[
+"Q",
+"200",
+"180",
+"170",
+"190"
+],
+[
+"R",
+"90",
+"110",
+"140",
+"160"
+],
+[
+"S",
+"100",
+"150",
+"160",
+"140"
+],
+[
+"T",
+"60",
+"75",
+"90",
+"120"
+]
+]
+}
+}
+],
+"qs": [
+{
+"s": "Which product recorded the highest percentage growth in sales from Q1 to Q4?",
+"o": [
+"P",
+"R",
+"S",
+"T"
+],
+"a": "T",
+"e": "Growth Q1→Q4: P 37.5%, Q -5.0%, R 77.8%, S 40.0%, T 100.0%. Highest: T."
+},
+{
+"s": "In how many quarters did the total sales of the five products exceed ₹650 lakh?",
+"o": null,
+"a": "2",
+"e": "Quarterly totals: Q1 570, Q2 650, Q3 710, Q4 775 → 2 quarters above 650."
+},
+{
+"s": "What percentage of product Q's annual sales came in Q4 (approximately)?",
+"o": [
+"22.4%",
+"25.7%",
+"27.1%",
+"24.3%"
+],
+"a": "25.7%",
+"e": "Annual sales of Q = 740. Q4 share = 190/740 = 25.7%."
+},
+{
+"s": "For how many products were Q3 sales higher than that product's average quarterly sales?",
+"o": null,
+"a": "4",
+"e": "Averages: P 142.5, Q 185, R 125, S 137.5, T 86.25. Q3 above average: P, R, S, T → 4."
+}
+]
+},
+{
+"title": "Exports and profit margins",
+"d": "m",
+"intro": [
+"A company exports to four regions. The first table gives export revenue (₹ crore); the second gives the profit margin (profit as a % of revenue) earned in each region.",
+{
+"table": {
+"head": [
+"Region",
+"2021",
+"2022",
+"2023"
+],
+"rows": [
+[
+"Europe",
+"420",
+"460",
+"510"
+],
+[
+"USA",
+"380",
+"400",
+"450"
+],
+[
+"Asia",
+"250",
+"310",
+"340"
+],
+[
+"Africa",
+"90",
+"120",
+"160"
+]
+]
+},
+"caption": "Export revenue (₹ crore)"
+},
+{
+"table": {
+"head": [
+"Region",
+"2021",
+"2022",
+"2023"
+],
+"rows": [
+[
+"Europe",
+"12%",
+"11%",
+"10%"
+],
+[
+"USA",
+"15%",
+"16%",
+"14%"
+],
+[
+"Asia",
+"8%",
+"10%",
+"12%"
+],
+[
+"Africa",
+"5%",
+"6%",
+"9%"
+]
+]
+},
+"caption": "Profit margin"
+}
+],
+"qs": [
+{
+"s": "In 2023, which region generated the highest profit?",
+"o": [
+"Europe",
+"USA",
+"Asia",
+"Africa"
+],
+"a": "USA",
+"e": "2023 profit = revenue × margin: Europe 51.0, USA 63.0, Asia 40.8, Africa 14.4 → USA."
+},
+{
+"s": "What was the company's total export profit in 2022 (in ₹ crore, to one decimal place)?",
+"o": null,
+"a": "152.8",
+"e": "2022: 460×11% + 400×16% + 310×10% + 120×6% = 50.6 + 64.0 + 31.0 + 7.2 = 152.8."
+},
+{
+"s": "Africa's share of total export revenue rose from 2021 to 2023 by approximately how many percentage points?",
+"o": [
+"3.1",
+"1.8",
+"4.0",
+"5.2"
+],
+"a": "3.1",
+"e": "Africa's share: 2021 = 90/1140 = 7.9%, 2023 = 160/1460 = 11.0% → rise of 3.1 points."
+},
+{
+"s": "In how many regions did profit grow by more than 50% from 2021 to 2023?",
+"o": null,
+"a": "2",
+"e": "Profit 2021 → 2023: Europe 50.4→51.0, USA 57.0→63.0, Asia 20.0→40.8, Africa 4.5→14.4. Above +50%: Asia, Africa."
+}
+]
+},
+{
+"title": "Monthly rainfall in two cities",
+"d": "e",
+"intro": [
+"The table gives the rainfall (in mm) recorded in Pune and Chennai from January to June.",
+{
+"table": {
+"head": [
+"City",
+"Jan",
+"Feb",
+"Mar",
+"Apr",
+"May",
+"Jun"
+],
+"rows": [
+[
+"Pune",
+"2",
+"1",
+"4",
+"12",
+"30",
+"140"
+],
+[
+"Chennai",
+"25",
+"8",
+"4",
+"15",
+"45",
+"50"
+]
+]
+}
+}
+],
+"qs": [
+{
+"s": "In how many months did Chennai receive more rainfall than Pune?",
+"o": null,
+"a": "4",
+"e": "Chennai > Pune in Jan, Feb, Apr, May."
+},
+{
+"s": "In which month was the difference in rainfall between the two cities the largest?",
+"o": [
+"Jan",
+"May",
+"Jun",
+"Apr"
+],
+"a": "Jun",
+"e": "Differences: Jan 23, Feb 7, Mar 0, Apr 3, May 15, Jun 90."
+},
+{
+"s": "What fraction of Pune's January–June rainfall fell in June? Give the answer as a percentage rounded to the nearest integer.",
+"o": null,
+"a": "74",
+"e": "Pune total = 189; June = 140 → 74.1% ≈ 74%."
+},
+{
+"s": "What was the average monthly rainfall in Chennai over these six months?",
+"o": [
+"22.5 mm",
+"24.5 mm",
+"26.0 mm",
+"21.0 mm"
+],
+"a": "24.5 mm",
+"e": "Total = 147 mm over 6 months → 24.5 mm."
+}
+]
+},
+{
+"title": "A five-team football league",
+"d": "h",
+"intro": [
+"Five teams A, B, C, D and E played a round-robin league: every team played every other team exactly once. A win earned 3 points, a draw 1 point and a loss 0.",
+{
+"table": {
+"head": [
+"Team",
+"A",
+"B",
+"C",
+"D",
+"E"
+],
+"rows": [
+[
+"Final points",
+"8",
+"8",
+"6",
+"1",
+"4"
+]
+]
+}
+},
+"It is also known that A and B did not lose any match, and D's only point came from its match against B."
+],
+"qs": [
+{
+"s": "How many matches ended in a draw?",
+"o": null,
+"a": "3",
+"e": "Total points = 8 + 8 + 6 + 1 + 4 = 27. A decisive match gives 3 points in total and a draw 2. With 10 matches: 3W + 2D = 27 and W + D = 10 → D = 3."
+},
+{
+"s": "What was the result of the match between A and E?",
+"o": [
+"A won",
+"E won",
+"Draw",
+"Cannot be determined"
+],
+"a": "Draw",
+"e": "Unbeaten with 8 points means 2 wins + 2 draws, for both A and B, and A–B must be a draw. D's only point is the draw with B, so D lost to A, C and E, and B beat C and E. A's other draw is with C or E. If A drew with C, C (beaten by B, winner over D) would need 2 more points from its match with E — impossible. So A beat C and drew with E."
+},
+{
+"s": "How many matches did C win?",
+"o": null,
+"a": "2",
+"e": "C's 6 points with no draw available against A or B (they beat C) means two wins: over D and E."
+},
+{
+"s": "Which team did E defeat?",
+"o": [
+"A",
+"C",
+"D",
+"No team"
+],
+"a": "D",
+"e": "E's 4 points = a draw with A + a win. E lost to B and C, so the win must be over D."
+}
+]
+},
+{
+"title": "Six friends in a row",
+"d": "m",
+"intro": [
+"Six friends P, Q, R, S, T and U sit in a row of six seats numbered 1 to 6 from left to right, all facing the same direction.",
+"1. P sits at one of the two ends.\n2. Q sits immediately to the right of R.\n3. S does not sit next to P.\n4. T sits in seat 3 or seat 4.\n5. U sits to the left of S with exactly one person between them.\n6. R sits to the right of T."
+],
+"qs": [
+{
+"s": "Who sits in seat 1?",
+"o": [
+"P",
+"R",
+"Q",
+"U"
+],
+"a": "P",
+"e": "T is in seat 3 or 4, and R–Q (adjacent, Q on the right) sit to the right of T. If P were in seat 6, R–Q would need seats 4–5 with T in 3, leaving seats 1–2 for U and S — but they need exactly one seat between them. So P is in seat 1. If T were in 4, R–Q take 5–6 and U, S get seats 2–3, again no gap. Hence T is in 3, R–Q in 5–6, and U, S in seats 2 and 4. Final order: P, U, T, S, R, Q."
+},
+{
+"s": "Who sits immediately to the left of S?",
+"o": [
+"T",
+"U",
+"Q",
+"R"
+],
+"a": "T",
+"e": "T is in seat 3 or 4, and R–Q (adjacent, Q on the right) sit to the right of T. If P were in seat 6, R–Q would need seats 4–5 with T in 3, leaving seats 1–2 for U and S — but they need exactly one seat between them. So P is in seat 1. If T were in 4, R–Q take 5–6 and U, S get seats 2–3, again no gap. Hence T is in 3, R–Q in 5–6, and U, S in seats 2 and 4. Final order: P, U, T, S, R, Q."
+},
+{
+"s": "In which seat does T sit?",
+"o": null,
+"a": "3",
+"e": "T is in seat 3 or 4, and R–Q (adjacent, Q on the right) sit to the right of T. If P were in seat 6, R–Q would need seats 4–5 with T in 3, leaving seats 1–2 for U and S — but they need exactly one seat between them. So P is in seat 1. If T were in 4, R–Q take 5–6 and U, S get seats 2–3, again no gap. Hence T is in 3, R–Q in 5–6, and U, S in seats 2 and 4. Final order: P, U, T, S, R, Q."
+},
+{
+"s": "How many people sit between P and U?",
+"o": [
+"0",
+"1",
+"2",
+"3"
+],
+"a": "0",
+"e": "T is in seat 3 or 4, and R–Q (adjacent, Q on the right) sit to the right of T. If P were in seat 6, R–Q would need seats 4–5 with T in 3, leaving seats 1–2 for U and S — but they need exactly one seat between them. So P is in seat 1. If T were in 4, R–Q take 5–6 and U, S get seats 2–3, again no gap. Hence T is in 3, R–Q in 5–6, and U, S in seats 2 and 4. Final order: P, U, T, S, R, Q."
+}
+]
+},
+{
+"title": "A week of guest lectures",
+"d": "m",
+"intro": [
+"Five professors — Iyer, Jain, Kapoor, Lal and Menon — each deliver one lecture, on five different subjects (Maths, Physics, Chemistry, Biology, English), one lecture per day from Monday to Friday.",
+"1. Maths is on Wednesday.\n2. Physics is on the day immediately after Chemistry.\n3. Iyer lectures on Monday, but not on English.\n4. Kapoor lectures on Biology.\n5. Lal lectures earlier in the week than Kapoor.\n6. Menon lectures on Friday.\n7. Jain does not lecture on Maths."
+],
+"qs": [
+{
+"s": "On which day is the Biology lecture?",
+"o": [
+"Monday",
+"Tuesday",
+"Thursday",
+"Friday"
+],
+"a": "Thursday",
+"e": "Wednesday is Maths, so Chemistry–Physics fall on Mon–Tue or Thu–Fri. Kapoor (Biology) cannot be on Monday (Iyer), Wednesday (Maths) or Friday (Menon). If Kapoor were on Tuesday, Lal would have to lecture on Monday — Iyer's day. So Kapoor lectures Biology on Thursday, which pushes Chemistry–Physics to Monday–Tuesday and leaves English for Friday. Iyer (Monday) takes Chemistry. Jain and Lal share Tuesday and Wednesday; Jain can't take Maths, so Jain has Tuesday (Physics) and Lal Wednesday (Maths)."
+},
+{
+"s": "Who lectures on Maths?",
+"o": [
+"Jain",
+"Lal",
+"Menon",
+"Iyer"
+],
+"a": "Lal",
+"e": "Wednesday is Maths, so Chemistry–Physics fall on Mon–Tue or Thu–Fri. Kapoor (Biology) cannot be on Monday (Iyer), Wednesday (Maths) or Friday (Menon). If Kapoor were on Tuesday, Lal would have to lecture on Monday — Iyer's day. So Kapoor lectures Biology on Thursday, which pushes Chemistry–Physics to Monday–Tuesday and leaves English for Friday. Iyer (Monday) takes Chemistry. Jain and Lal share Tuesday and Wednesday; Jain can't take Maths, so Jain has Tuesday (Physics) and Lal Wednesday (Maths)."
+},
+{
+"s": "Which subject does Iyer lecture on?",
+"o": [
+"English",
+"Chemistry",
+"Physics",
+"Biology"
+],
+"a": "Chemistry",
+"e": "Wednesday is Maths, so Chemistry–Physics fall on Mon–Tue or Thu–Fri. Kapoor (Biology) cannot be on Monday (Iyer), Wednesday (Maths) or Friday (Menon). If Kapoor were on Tuesday, Lal would have to lecture on Monday — Iyer's day. So Kapoor lectures Biology on Thursday, which pushes Chemistry–Physics to Monday–Tuesday and leaves English for Friday. Iyer (Monday) takes Chemistry. Jain and Lal share Tuesday and Wednesday; Jain can't take Maths, so Jain has Tuesday (Physics) and Lal Wednesday (Maths)."
+},
+{
+"s": "On which day does Jain lecture?",
+"o": [
+"Tuesday",
+"Wednesday",
+"Thursday",
+"Monday"
+],
+"a": "Tuesday",
+"e": "Wednesday is Maths, so Chemistry–Physics fall on Mon–Tue or Thu–Fri. Kapoor (Biology) cannot be on Monday (Iyer), Wednesday (Maths) or Friday (Menon). If Kapoor were on Tuesday, Lal would have to lecture on Monday — Iyer's day. So Kapoor lectures Biology on Thursday, which pushes Chemistry–Physics to Monday–Tuesday and leaves English for Friday. Iyer (Monday) takes Chemistry. Jain and Lal share Tuesday and Wednesday; Jain can't take Maths, so Jain has Tuesday (Physics) and Lal Wednesday (Maths)."
+}
+]
+},
+{
+"title": "Sharing 30 chocolates",
+"d": "m",
+"intro": [
+"Thirty chocolates were distributed among four children W, X, Y and Z. Each child got at least 3 chocolates and no two children got the same number.",
+"1. X got twice as many chocolates as W.\n2. Y got 4 more chocolates than Z.\n3. Z got more chocolates than W.\n4. Y got more chocolates than X."
+],
+"qs": [
+{
+"s": "How many chocolates did W get?",
+"o": null,
+"a": "4",
+"e": "Write W = w, X = 2w, Z = z, Y = z + 4. Then w + 2w + z + z + 4 = 30 → 3w + 2z = 26, so w is even. w = 4 gives z = 7 (and z > w ✓); w = 6 gives z = 4 (fails z > w); w ≥ 8 makes z too small. So W = 4, X = 8, Z = 7, Y = 11 — and Y > X holds."
+},
+{
+"s": "How many chocolates did Y get?",
+"o": null,
+"a": "11",
+"e": "Write W = w, X = 2w, Z = z, Y = z + 4. Then w + 2w + z + z + 4 = 30 → 3w + 2z = 26, so w is even. w = 4 gives z = 7 (and z > w ✓); w = 6 gives z = 4 (fails z > w); w ≥ 8 makes z too small. So W = 4, X = 8, Z = 7, Y = 11 — and Y > X holds."
+},
+{
+"s": "Who got the second-highest number of chocolates?",
+"o": [
+"W",
+"X",
+"Y",
+"Z"
+],
+"a": "X",
+"e": "Write W = w, X = 2w, Z = z, Y = z + 4. Then w + 2w + z + z + 4 = 30 → 3w + 2z = 26, so w is even. w = 4 gives z = 7 (and z > w ✓); w = 6 gives z = 4 (fails z > w); w ≥ 8 makes z too small. So W = 4, X = 8, Z = 7, Y = 11 — and Y > X holds."
+},
+{
+"s": "What is the difference between the largest and the smallest share?",
+"o": null,
+"a": "7",
+"e": "Write W = w, X = 2w, Z = z, Y = z + 4. Then w + 2w + z + z + 4 = 30 → 3w + 2z = 26, so w is even. w = 4 gives z = 7 (and z > w ✓); w = 6 gives z = 4 (fails z > w); w ≥ 8 makes z too small. So W = 4, X = 8, Z = 7, Y = 11 — and Y > X holds."
+}
+]
+},
+{
+"title": "Languages spoken by 220 employees",
+"d": "m",
+"intro": [
+"In an office of 220 employees, each employee speaks some of Hindi, English and Tamil, or none of them.",
+"• 107 speak Hindi, 88 speak English and 55 speak Tamil.\n• 25 speak both Hindi and English, 17 speak both Hindi and Tamil and 13 speak both English and Tamil (these counts include those who speak all three).\n• 20 employees speak none of the three languages."
+],
+"qs": [
+{
+"s": "How many employees speak all three languages?",
+"o": null,
+"a": "5",
+"e": "At least one language = 220 − 20 = 200. Inclusion–exclusion: 200 = 107 + 88 + 55 − 25 − 17 − 13 + x → x = 5 speak all three. Exactly two: Hindi–English only 25 − 5 = 20, Hindi–Tamil only 17 − 5 = 12, English–Tamil only 13 − 5 = 8. Only Hindi = 107 − 20 − 12 − 5 = 70, only English = 88 − 20 − 8 − 5 = 55, only Tamil = 55 − 12 − 8 − 5 = 30."
+},
+{
+"s": "How many employees speak exactly one language?",
+"o": null,
+"a": "155",
+"e": "At least one language = 220 − 20 = 200. Inclusion–exclusion: 200 = 107 + 88 + 55 − 25 − 17 − 13 + x → x = 5 speak all three. Exactly two: Hindi–English only 25 − 5 = 20, Hindi–Tamil only 17 − 5 = 12, English–Tamil only 13 − 5 = 8. Only Hindi = 107 − 20 − 12 − 5 = 70, only English = 88 − 20 − 8 − 5 = 55, only Tamil = 55 − 12 − 8 − 5 = 30."
+},
+{
+"s": "How many employees speak Hindi and English but not Tamil?",
+"o": null,
+"a": "20",
+"e": "At least one language = 220 − 20 = 200. Inclusion–exclusion: 200 = 107 + 88 + 55 − 25 − 17 − 13 + x → x = 5 speak all three. Exactly two: Hindi–English only 25 − 5 = 20, Hindi–Tamil only 17 − 5 = 12, English–Tamil only 13 − 5 = 8. Only Hindi = 107 − 20 − 12 − 5 = 70, only English = 88 − 20 − 8 − 5 = 55, only Tamil = 55 − 12 − 8 − 5 = 30."
+},
+{
+"s": "How many employees speak exactly two languages?",
+"o": null,
+"a": "40",
+"e": "At least one language = 220 − 20 = 200. Inclusion–exclusion: 200 = 107 + 88 + 55 − 25 − 17 − 13 + x → x = 5 speak all three. Exactly two: Hindi–English only 25 − 5 = 20, Hindi–Tamil only 17 − 5 = 12, English–Tamil only 13 − 5 = 8. Only Hindi = 107 − 20 − 12 − 5 = 70, only English = 88 − 20 − 8 − 5 = 55, only Tamil = 55 − 12 − 8 − 5 = 30."
+}
+]
+},
+{
+"title": "Three races, five runners",
+"d": "h",
+"intro": [
+"Five runners V, W, X, Y and Z ran three races. In each race the finishing positions 1st to 5th earned 5, 4, 3, 2 and 1 points respectively; there were no ties.",
+"1. V won the first race but finished last in the second.\n2. The three races had three different winners; Z won the third race.\n3. X finished second in both the second and the third race.\n4. Y finished last in the third race, in which W finished ahead of V.\n5. In the first race, Y finished ahead of X.\n6. The final totals were 11, 10, 9, 8 and 7 points; W scored 11 and X scored 10."
+],
+"qs": [
+{
+"s": "What was V's total score?",
+"o": null,
+"a": "8",
+"e": "X was 2nd in races 2 and 3 (4 + 4) and scored 10 in all, so X was 4th in race 1. In race 3: Z 1st, X 2nd, Y 5th, and W ahead of V → W 3rd, V 4th. W scored 11, so W got 8 from races 1 and 2. Race 2's winner is not V or Z (three different winners). If Y won race 2, W would be at most 3rd there and would need 5+ points in race 1 — impossible, as V won it. So W won race 2 and was 3rd in race 1. Race 1: V, then Y ahead of X → Y 2nd, Z 5th. V = 5 + 1 + 2 = 8. Totals 9 and 7 remain for Y and Z: Y = 4 + (race 2) + 1, Z = 1 + (race 2) + 5, with race-2 points 3 and 2 between them → Y = 7, Z = 9 (Z 3rd, Y 4th in race 2)."
+},
+{
+"s": "Who won the second race?",
+"o": [
+"W",
+"X",
+"Y",
+"Z"
+],
+"a": "W",
+"e": "X was 2nd in races 2 and 3 (4 + 4) and scored 10 in all, so X was 4th in race 1. In race 3: Z 1st, X 2nd, Y 5th, and W ahead of V → W 3rd, V 4th. W scored 11, so W got 8 from races 1 and 2. Race 2's winner is not V or Z (three different winners). If Y won race 2, W would be at most 3rd there and would need 5+ points in race 1 — impossible, as V won it. So W won race 2 and was 3rd in race 1. Race 1: V, then Y ahead of X → Y 2nd, Z 5th. V = 5 + 1 + 2 = 8. Totals 9 and 7 remain for Y and Z: Y = 4 + (race 2) + 1, Z = 1 + (race 2) + 5, with race-2 points 3 and 2 between them → Y = 7, Z = 9 (Z 3rd, Y 4th in race 2)."
+},
+{
+"s": "How many points did Z score in total?",
+"o": null,
+"a": "9",
+"e": "X was 2nd in races 2 and 3 (4 + 4) and scored 10 in all, so X was 4th in race 1. In race 3: Z 1st, X 2nd, Y 5th, and W ahead of V → W 3rd, V 4th. W scored 11, so W got 8 from races 1 and 2. Race 2's winner is not V or Z (three different winners). If Y won race 2, W would be at most 3rd there and would need 5+ points in race 1 — impossible, as V won it. So W won race 2 and was 3rd in race 1. Race 1: V, then Y ahead of X → Y 2nd, Z 5th. V = 5 + 1 + 2 = 8. Totals 9 and 7 remain for Y and Z: Y = 4 + (race 2) + 1, Z = 1 + (race 2) + 5, with race-2 points 3 and 2 between them → Y = 7, Z = 9 (Z 3rd, Y 4th in race 2)."
+},
+{
+"s": "What was Y's position in the second race?",
+"o": [
+"2nd",
+"3rd",
+"4th",
+"5th"
+],
+"a": "4th",
+"e": "X was 2nd in races 2 and 3 (4 + 4) and scored 10 in all, so X was 4th in race 1. In race 3: Z 1st, X 2nd, Y 5th, and W ahead of V → W 3rd, V 4th. W scored 11, so W got 8 from races 1 and 2. Race 2's winner is not V or Z (three different winners). If Y won race 2, W would be at most 3rd there and would need 5+ points in race 1 — impossible, as V won it. So W won race 2 and was 3rd in race 1. Race 1: V, then Y ahead of X → Y 2nd, Z 5th. V = 5 + 1 + 2 = 8. Totals 9 and 7 remain for Y and Z: Y = 4 + (race 2) + 1, Z = 1 + (race 2) + 5, with race-2 points 3 and 2 between them → Y = 7, Z = 9 (Z 3rd, Y 4th in race 2)."
+}
+]
+},
+{
+"title": "Airfares between five cities",
+"d": "m",
+"intro": [
+"The table lists the fares (in ₹ thousand) of all direct flights between five cities; fares are the same in both directions. A blank means there is no direct flight. A traveller may change flights any number of times and pays the sum of the fares.",
+{
+"table": {
+"head": [
+"From \\ To",
+"Delhi",
+"Mumbai",
+"Kolkata",
+"Chennai",
+"Bengaluru"
+],
+"rows": [
+[
+"Delhi",
+"—",
+"6",
+"7",
+"12",
+""
+],
+[
+"Mumbai",
+"6",
+"—",
+"",
+"6",
+"4"
+],
+[
+"Kolkata",
+"7",
+"",
+"—",
+"5",
+"9"
+],
+[
+"Chennai",
+"12",
+"6",
+"5",
+"—",
+"2"
+],
+[
+"Bengaluru",
+"",
+"4",
+"9",
+"2",
+"—"
+]
+]
+}
+}
+],
+"qs": [
+{
+"s": "What is the cheapest fare (₹ thousand) from Delhi to Bengaluru?",
+"o": null,
+"a": "10",
+"e": "Cheapest route: Delhi → Mumbai → Bengaluru = 10."
+},
+{
+"s": "What is the cheapest fare (₹ thousand) from Kolkata to Mumbai?",
+"o": null,
+"a": "11",
+"e": "Cheapest route: Kolkata → Chennai → Mumbai = 11."
+},
+{
+"s": "The direct Delhi–Chennai flight costs 12. How much does the cheapest Delhi–Chennai journey save compared with it?",
+"o": [
+"0",
+"1",
+"2",
+"3"
+],
+"a": "0",
+"e": "Cheapest Delhi→Chennai: Delhi → Chennai = 12 → saving 0."
+},
+{
+"s": "If Mumbai airport is closed, what is the cheapest fare (₹ thousand) from Delhi to Bengaluru?",
+"o": null,
+"a": "14",
+"e": "Avoiding Mumbai: Delhi → Chennai → Bengaluru = 14."
+}
+]
+},
+{
+"title": "Ages of six classmates",
+"d": "h",
+"intro": [
+"Six classmates — Anu, Bala, Chitra, Dev, Esha and Farhan — have six different ages, which are the integers from 21 to 26.",
+"1. Anu's age plus Bala's age equals Chitra's age plus Dev's age.\n2. Esha is exactly 3 years older than Farhan.\n3. Anu is older than Esha.\n4. Dev's age is an even number.\n5. Chitra is younger than Dev.\n6. Farhan is not the youngest."
+],
+"qs": [
+{
+"s": "What is Anu's age?",
+"o": null,
+"a": "26",
+"e": "Esha = Farhan + 3 and Anu is older than Esha, so (Farhan, Esha) is (21, 24) or (22, 25) — (23, 26) leaves no older age for Anu. Farhan is not the youngest, so Farhan = 22, Esha = 25 and Anu = 26. Bala, Chitra and Dev share 21, 23 and 24; Dev is even → 24. Clue 1: 26 + Bala = Chitra + 24 → Chitra = Bala + 2 → Bala = 21, Chitra = 23 (and Chitra < Dev ✓)."
+},
+{
+"s": "Who is the youngest?",
+"o": [
+"Farhan",
+"Dev",
+"Bala",
+"Chitra"
+],
+"a": "Bala",
+"e": "Esha = Farhan + 3 and Anu is older than Esha, so (Farhan, Esha) is (21, 24) or (22, 25) — (23, 26) leaves no older age for Anu. Farhan is not the youngest, so Farhan = 22, Esha = 25 and Anu = 26. Bala, Chitra and Dev share 21, 23 and 24; Dev is even → 24. Clue 1: 26 + Bala = Chitra + 24 → Chitra = Bala + 2 → Bala = 21, Chitra = 23 (and Chitra < Dev ✓)."
+},
+{
+"s": "What is the sum of Bala's and Chitra's ages?",
+"o": null,
+"a": "44",
+"e": "Esha = Farhan + 3 and Anu is older than Esha, so (Farhan, Esha) is (21, 24) or (22, 25) — (23, 26) leaves no older age for Anu. Farhan is not the youngest, so Farhan = 22, Esha = 25 and Anu = 26. Bala, Chitra and Dev share 21, 23 and 24; Dev is even → 24. Clue 1: 26 + Bala = Chitra + 24 → Chitra = Bala + 2 → Bala = 21, Chitra = 23 (and Chitra < Dev ✓)."
+},
+{
+"s": "How many classmates are older than Chitra?",
+"o": [
+"0",
+"1",
+"2",
+"3"
+],
+"a": "3",
+"e": "Esha = Farhan + 3 and Anu is older than Esha, so (Farhan, Esha) is (21, 24) or (22, 25) — (23, 26) leaves no older age for Anu. Farhan is not the youngest, so Farhan = 22, Esha = 25 and Anu = 26. Bala, Chitra and Dev share 21, 23 and 24; Dev is even → 24. Clue 1: 26 + Bala = Chitra + 24 → Chitra = Bala + 2 → Bala = 21, Chitra = 23 (and Chitra < Dev ✓)."
+}
+]
+},
+{
+"title": "Five IT companies",
+"d": "m",
+"intro": [
+"The table gives the revenue and total cost (₹ crore) and the number of employees of five companies in a year. Profit = revenue − cost.",
+{
+"table": {
+"head": [
+"Company",
+"Revenue",
+"Cost",
+"Employees"
+],
+"rows": [
+[
+"Alpha",
+"480",
+"420",
+"1200"
+],
+[
+"Beta",
+"650",
+"560",
+"2600"
+],
+[
+"Gamma",
+"300",
+"240",
+"600"
+],
+[
+"Delta",
+"900",
+"810",
+"4500"
+],
+[
+"Epsilon",
+"520",
+"430",
+"1300"
+]
+]
+}
+}
+],
+"qs": [
+{
+"s": "Which company has the highest profit margin (profit as a % of revenue)?",
+"o": [
+"Alpha",
+"Gamma",
+"Epsilon",
+"Beta"
+],
+"a": "Gamma",
+"e": "Margins: Alpha 12.5%, Beta 13.8%, Gamma 20.0%, Delta 10.0%, Epsilon 17.3%."
+},
+{
+"s": "Which company has the lowest revenue per employee?",
+"o": [
+"Beta",
+"Delta",
+"Alpha",
+"Gamma"
+],
+"a": "Delta",
+"e": "Revenue per employee (₹ lakh): Alpha 40.0, Beta 25.0, Gamma 50.0, Delta 20.0, Epsilon 40.0."
+},
+{
+"s": "What is the total profit of all five companies (₹ crore)?",
+"o": null,
+"a": "390",
+"e": "Profits: Alpha 60, Beta 90, Gamma 60, Delta 90, Epsilon 90 → 390."
+},
+{
+"s": "Profit per employee of Gamma is how many times that of Delta? (Answer to one decimal place.)",
+"o": null,
+"a": "5.0",
+"e": "Gamma: 60/600 = 0.1 crore; Delta: 90/4500 = 0.02 crore → 5.0 times."
+}
+]
+},
+{
+"title": "A 3 × 3 number grid",
+"d": "h",
+"intro": [
+"The digits 1 to 9 are placed in a 3 × 3 grid, one digit per cell, so that every row, every column and both main diagonals add up to the same total.",
+"Rows are numbered 1–3 from top to bottom and columns 1–3 from left to right.\n1. The digit in row 1, column 1 is 2.\n2. In row 1, the middle digit is larger than the right-hand digit.\n3. The digit in row 3, column 2 is greater than 2."
+],
+"qs": [
+{
+"s": "What digit is in the centre of the grid?",
+"o": null,
+"a": "5",
+"e": "All digits add to 45, so every line adds to 15. The four lines through the centre add to 4 × 15 = 60 = 45 + 3 × centre → centre = 5. Diagonal: 2 + 5 + (row 3, col 3) = 15 → 8. Row 1: 2 + a + b = 15 with a > b → (a, b) = (9, 4) or (7, 6). Column 2: a + 5 + c = 15 → c = 10 − a, and c > 2 → a = 7, b = 6, c = 3. The rest follows: rows (2, 7, 6), (9, 5, 1), (4, 3, 8)."
+},
+{
+"s": "What digit is in row 3, column 3?",
+"o": null,
+"a": "8",
+"e": "All digits add to 45, so every line adds to 15. The four lines through the centre add to 4 × 15 = 60 = 45 + 3 × centre → centre = 5. Diagonal: 2 + 5 + (row 3, col 3) = 15 → 8. Row 1: 2 + a + b = 15 with a > b → (a, b) = (9, 4) or (7, 6). Column 2: a + 5 + c = 15 → c = 10 − a, and c > 2 → a = 7, b = 6, c = 3. The rest follows: rows (2, 7, 6), (9, 5, 1), (4, 3, 8)."
+},
+{
+"s": "What digit is in row 1, column 2?",
+"o": [
+"7",
+"9",
+"6",
+"4"
+],
+"a": "7",
+"e": "All digits add to 45, so every line adds to 15. The four lines through the centre add to 4 × 15 = 60 = 45 + 3 × centre → centre = 5. Diagonal: 2 + 5 + (row 3, col 3) = 15 → 8. Row 1: 2 + a + b = 15 with a > b → (a, b) = (9, 4) or (7, 6). Column 2: a + 5 + c = 15 → c = 10 − a, and c > 2 → a = 7, b = 6, c = 3. The rest follows: rows (2, 7, 6), (9, 5, 1), (4, 3, 8)."
+},
+{
+"s": "What is the digit in row 2, column 1?",
+"o": null,
+"a": "9",
+"e": "All digits add to 45, so every line adds to 15. The four lines through the centre add to 4 × 15 = 60 = 45 + 3 × centre → centre = 5. Diagonal: 2 + 5 + (row 3, col 3) = 15 → 8. Row 1: 2 + a + b = 15 with a > b → (a, b) = (9, 4) or (7, 6). Column 2: a + 5 + c = 15 → c = 10 − a, and c > 2 → a = 7, b = 6, c = 3. The rest follows: rows (2, 7, 6), (9, 5, 1), (4, 3, 8)."
+}
+]
+},
+{
+"title": "Counting rounds in an election",
+"d": "h",
+"intro": [
+"Four candidates contested an election with transferable votes. After the first count the last-placed candidate is eliminated and his votes are transferred according to voters' next preferences; the process repeats until two candidates remain.",
+{
+"table": {
+"head": [
+"Candidate",
+"First-count votes"
+],
+"rows": [
+[
+"Kiran",
+"3600"
+],
+[
+"Leela",
+"3100"
+],
+[
+"Mohan",
+"2200"
+],
+[
+"Nikhil",
+"1100"
+]
+]
+}
+},
+"Nikhil's 1,100 votes were transferred as follows: Kiran 400, Leela 300, Mohan 300, and 100 exhausted (no further preference). In the next round, Mohan was eliminated; 45% of all his votes at that point went to Kiran, 40% to Leela and the rest were exhausted."
+],
+"qs": [
+{
+"s": "How many votes did Mohan have when he was eliminated?",
+"o": null,
+"a": "2500",
+"e": "2,200 + 300 = 2500."
+},
+{
+"s": "Who won, and by how many votes?",
+"o": [
+"Kiran by 725",
+"Leela by 725",
+"Kiran by 825",
+"Kiran by 625"
+],
+"a": "Kiran by 725",
+"e": "Kiran: 3,600 + 400 + 45% of 2500 = 5125. Leela: 3,100 + 300 + 40% of 2500 = 4400. Margin 725."
+},
+{
+"s": "How many votes in total were exhausted by the end?",
+"o": null,
+"a": "475",
+"e": "100 from Nikhil + 15% of 2500 = 475."
+},
+{
+"s": "Leela's final tally was what percentage of the first-count valid votes (approximately)?",
+"o": [
+"44.0%",
+"42.7%",
+"44.9%",
+"46.1%"
+],
+"a": "44.0%",
+"e": "4400/10000 = 44.0%."
+}
+]
+},
+{
+"title": "A three-fund portfolio",
+"d": "h",
+"intro": [
+"An investor put ₹6,00,000 into three funds at the start of Year 1 and did not withdraw or add money for three years. The table gives each fund's amount invested and its annual return (%).",
+{
+"table": {
+"head": [
+"Fund",
+"Invested (₹)",
+"Year 1",
+"Year 2",
+"Year 3"
+],
+"rows": [
+[
+"Equity",
+"200,000",
+"12%",
+"-8%",
+"20%"
+],
+[
+"Debt",
+"300,000",
+"7%",
+"7%",
+"6%"
+],
+[
+"Gold",
+"100,000",
+"-5%",
+"15%",
+"10%"
+]
+]
+}
+}
+],
+"qs": [
+{
+"s": "Which fund had the highest value at the end of Year 3 relative to the amount invested in it?",
+"o": [
+"Equity",
+"Debt",
+"Gold",
+"Equity and Gold equally"
+],
+"a": "Equity",
+"e": "Growth factors: Equity 1.2365, Debt 1.2136, Gold 1.2018."
+},
+{
+"s": "What was the total portfolio value at the end of Year 3, in ₹ (rounded to the nearest rupee)?",
+"o": null,
+"a": "731549",
+"e": "Equity 247,296 + Debt 364,078 + Gold 120,175 = 731,549."
+},
+{
+"s": "At the end of Year 2, what share of the portfolio was in Equity (approximately)?",
+"o": [
+"31.3%",
+"28.9%",
+"32.8%",
+"35.0%"
+],
+"a": "31.3%",
+"e": "End of Year 2: Equity 206,080, Debt 343,470, Gold 109,250 → Equity share 31.3%."
+},
+{
+"s": "What was the portfolio's overall return over the three years, in % (to one decimal place)?",
+"o": null,
+"a": "21.9",
+"e": "731,549/6,00,000 − 1 = 21.9%."
+}
+]
+}
+]

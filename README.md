@@ -1,10 +1,12 @@
-# CAT VARC Practice
+# CAT Practice
 
 A static practice site for CAT Verbal Ability & Reading Comprehension. No sign-up, no backend; progress is stored in your browser.
 
 **Live:** https://sujithsuresh-803.github.io/cat-varc-practice/
 
 ## What's inside
+- **Quant (100 original questions)** weighted like recent CATs: Arithmetic 35, Algebra 28, Geometry 15, Number System 11, Modern Math 11; ~40% TITA. Every answer is recomputed by `tools/qa_bank.py`.
+- **DILR (15 original sets, 60 questions)**: table/chart DI, tournaments, seating, scheduling, distributions, Venn, races, networks, grids. Every puzzle is brute-forced by `tools/dilr_bank.py` to prove each answer is forced.
 - **1,075 questions** across 7 topics: Reading Comprehension (35 passages, 175 Qs), Para Jumbles, Para Summary, Odd Sentence Out, Para Completion, Vocabulary, Grammar
 - Questions are tagged Easy / Medium / Hard (725 from the VARC prep docs + 350 new CAT medium/hard questions)
 
@@ -33,4 +35,4 @@ Keyboard: `A`–`E` select an option, `←`/`→` navigate, `P` pause.
 python tools/parse_docs.py <folder with VARC_0x_*.txt extracts> data/base.json
 python tools/build.py
 ```
-`build.py` merges `data/base.json` with `data/new_*.json` into `data/questions.js`.
+`build.py` merges `data/base.json` with `data/new_*.json` into `data/questions.js`. Run `python tools/qa_bank.py` and `python tools/dilr_bank.py` first after editing Quant/DILR questions — they refuse to export if any answer fails verification.

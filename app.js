@@ -5,7 +5,11 @@
   const DATA = window.VARC;
   const Q = Object.fromEntries(DATA.questions.map(q => [q.id, q]));
   const TOPICS = DATA.topics;                      // [[id, name], ...] — RC first (priority)
-  const TNAME = Object.fromEntries(TOPICS);
+  const TNAME = Object.fromEntries(TOPICS.map(([t, n]) => [t, n]));
+  const TSECTION = Object.fromEntries(TOPICS.map(([t, , g]) => [t, g]));
+  const GROUPED = ["rc", "dilr"];                  // topics practised as whole passages / sets
+  const PTOPIC = {}; for (const q of DATA.questions) if (q.passage) PTOPIC[q.passage] = q.topic;
+  const passagesOf = t => Object.keys(DATA.passages).filter(pid => PTOPIC[pid] === t);
   const DLEVEL = { easy: 1, medium: 2, hard: 3 };
   const STORE_KEY = "varc.v1";
 
@@ -30,10 +34,23 @@
 
   function grade(q, given) {
     if (!isAnswered(given)) return "skip";
+    if (q.type === "tita" && q.numeric) {
+      const g = parseFloat(String(given).replace(/−/g, "-").replace(/[^\d.\-]/g, "")), ans = parseFloat(String(q.answer).replace(/−/g, "-"));
+      return !isNaN(g) && Math.abs(g - ans) < 1e-6 ? "correct" : "wrong";
+    }
     if (q.type === "tita") return normTita(given) === q.answer ? "correct" : "wrong";
     return given === q.answer ? "correct" : "wrong";
   }
   const marks = (q, r) => r === "correct" ? 3 : r === "wrong" && q.type === "mcq" ? -1 : 0;
+
+  // Passage/set content: strings become paragraphs (newlines kept); {table} objects become tables.
+  function renderParas(paras) {
+    return paras.map(x => {
+      if (typeof x === "string") return `<p class="pl">${esc(x)}</p>`;
+      const t = x.table;
+      return `<div class="tbl-wrap data-tbl">${x.caption ? `<div class="tcap">${esc(x.caption)}</div>` : ""}<table class="tbl"><thead><tr>${t.head.map(h => `<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${t.rows.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+    }).join("");
+  }
 
   // ---------- views ----------
   function show(view) {
@@ -94,21 +111,23 @@
     const tc = todays.reduce((n, h) => n + h.results.filter(r => r.result === "correct").length, 0);
     const days = new Set(S.history.map(h => dayKey(h.finishedAt)));
     let streak = 0; for (let d = new Date(); days.has(dayKey(d)); d.setDate(d.getDate() - 1)) streak++;
-    $("#heroStats").textContent = `${DATA.questions.length} questions · ${Object.keys(DATA.passages).length} RC passages · ${Object.keys(S.seen).length} seen so far`;
+    $("#heroStats").textContent = `${DATA.questions.length} questions · ${passagesOf("rc").length} RC passages · ${passagesOf("dilr").length} DILR sets · ${Object.keys(S.seen).length} seen so far`;
     $("#todayChips").innerHTML = `<span class="chip">Today: <b>${tq}</b> attempted</span><span class="chip">Accuracy: <b>${tq ? pct(tc, tq) + "%" : "–"}</b></span><span class="chip">Streak: <b>${streak}</b> day${streak === 1 ? "" : "s"}</span>`;
 
     // topics
-    $("#topicList").innerHTML = TOPICS.map(([t, n]) => {
-      const cnt = DATA.questions.filter(q => q.topic === t).length;
-      const on = p.topics.includes(t);
-      return `<label class="topic ${on ? "checked" : ""}"><input type="checkbox" value="${t}" ${on ? "checked" : ""}>
-        <span class="tname">${n}</span>${t === "rc" ? '<span class="badge pri">Priority</span>' : ""}<span class="tcount">${cnt} Qs</span></label>`;
-    }).join("");
+    $("#topicList").innerHTML = ["VARC", "DILR", "Quant"].map(g => `<div class="topic-group"><div class="tg-head"><span>${g}</span><button class="link" data-grp="${g}">select all</button></div>${
+      TOPICS.filter(t => t[2] === g).map(([t, n]) => {
+        const cnt = DATA.questions.filter(q => q.topic === t).length, on = p.topics.includes(t);
+        const label = t === "dilr" ? `${passagesOf("dilr").length} sets · ${cnt} Qs` : t === "rc" ? `${passagesOf("rc").length} passages · ${cnt} Qs` : `${cnt} Qs`;
+        return `<label class="topic ${on ? "checked" : ""}"><input type="checkbox" value="${t}" ${on ? "checked" : ""}>
+          <span class="tname">${n}</span>${t === "rc" ? '<span class="badge pri">Priority</span>' : ""}<span class="tcount">${label}</span></label>`;
+      }).join("")}</div>`).join("");
     $$("#topicList input").forEach(i => i.onchange = () => { i.closest(".topic").classList.toggle("checked", i.checked); savePrefs(); });
     const setTopics = list => { $$("#topicList input").forEach(i => { i.checked = list.includes(i.value); i.closest(".topic").classList.toggle("checked", i.checked); }); savePrefs(); };
     $("#selAll").onclick = () => setTopics(TOPICS.map(t => t[0]));
     $("#selRC").onclick = () => setTopics(["rc"]);
     $("#selNone").onclick = () => setTopics([]);
+    $$("[data-grp]").forEach(b => b.onclick = e => { e.preventDefault(); setTopics([...new Set(readPrefs().topics.concat(TOPICS.filter(t => t[2] === b.dataset.grp).map(t => t[0])))]); });
 
     // mode tabs
     const setMode = m => { $$(".mode-tab").forEach(b => b.classList.toggle("active", b.dataset.mode === m)); $$(".mode-panel").forEach(x => x.classList.toggle("hidden", x.dataset.panel !== m)); };
@@ -129,11 +148,11 @@
 
     // progress bars
     const st = topicStats();
-    $("#progressBars").innerHTML = TOPICS.map(([t, n]) => {
+    $("#progressBars").innerHTML = TOPICS.map(([t, n], i) => (i && TOPICS[i - 1][2] !== TOPICS[i][2] ? `<div class="bar-sep">${TOPICS[i][2]}</div>` : i === 0 ? `<div class="bar-sep">${TOPICS[0][2]}</div>` : "") + (() => {
       const s = st[t], acc = pct(s.c, s.a), cls = !s.a ? "" : acc >= 70 ? "good" : acc >= 45 ? "mid" : "low";
       return `<div class="bar-row"><span>${n}</span><div class="bar"><i class="${cls}" style="width:${s.a ? acc : 0}%"></i></div>
         <span class="muted small">${s.a ? `${acc}% · ${s.a} done` : "not started"}</span></div>`;
-    }).join("");
+    })()).join("");
   }
 
   function readPrefs() {
@@ -163,30 +182,30 @@
   const passageDifficulty = pid => DATA.passages[pid].difficulty;
   const passageQids = pid => DATA.questions.filter(q => q.passage === pid).map(q => q.id);
 
-  // Quick 5 = five full RC passages (CAT-style) in the chosen difficulty mix,
-  // plus five single questions from any other selected topics in the same mix.
+  // Quick 5: RC → five full passages; DILR → two full sets; other topics → five single questions.
+  // Every part follows the chosen difficulty mix.
+  const NEAR = { easy: ["easy", "medium", "hard"], medium: ["medium", "easy", "hard"], hard: ["hard", "medium", "easy"] };
+  function pickPassages(topic, plan, used = new Set()) {
+    const picked = [];
+    for (const d of plan) for (const alt of NEAR[d]) {
+      const pool = shuffle(passagesOf(topic).filter(pid => passageDifficulty(pid) === alt && !used.has(pid)));
+      pool.sort((a, b) => seenCount(a) - seenCount(b));
+      if (pool.length) { used.add(pool[0]); picked.push(pool[0]); break; }
+    }
+    return picked;
+  }
   function buildQuick5(p) {
     const plan = p.pattern === "easy" ? ["easy", "easy", "medium", "medium", "hard"] : ["easy", "medium", "medium", "hard", "hard"];
-    const near = { easy: ["easy", "medium", "hard"], medium: ["medium", "easy", "hard"], hard: ["hard", "medium", "easy"] };
     const out = [];
-    if (p.topics.includes("rc")) {
-      const used = new Set(), picked = [];
-      for (const d of plan) {
-        for (const alt of near[d]) {
-          const pool = shuffle(Object.keys(DATA.passages).filter(pid => passageDifficulty(pid) === alt && !used.has(pid)));
-          pool.sort((a, b) => seenCount(a) - seenCount(b));
-          if (pool.length) { used.add(pool[0]); picked.push(pool[0]); break; }
-        }
-      }
-      for (const pid of shuffle(picked)) out.push(...passageQids(pid));
-    }
-    const others = p.topics.filter(t => t !== "rc");
+    if (p.topics.includes("rc")) for (const pid of shuffle(pickPassages("rc", plan))) out.push(...passageQids(pid));
+    if (p.topics.includes("dilr")) for (const pid of pickPassages("dilr", p.pattern === "easy" ? ["easy", "medium"] : ["medium", "hard"])) out.push(...passageQids(pid));
+    const others = p.topics.filter(t => !GROUPED.includes(t));
     if (others.length) {
-      const used = new Set();
-      for (const d of plan) {
-        const topic = others[Math.floor(Math.random() * others.length)];
+      const used = new Set(), order = shuffle(others);
+      for (const [k, d] of plan.entries()) {
+        const topic = order[k % order.length];          // rotate through the chosen topics
         let q = null;
-        for (const alt of near[d]) {
+        for (const alt of NEAR[d]) {
           q = pickFrom(DATA.questions.filter(x => x.topic === topic && x.difficulty === alt && !used.has(x.id)), 1, true)[0];
           if (q) break;
         }
@@ -198,34 +217,31 @@
 
   function buildCustom(p) {
     const n = p.count, matchD = q => p.diff === "mixed" || q.difficulty === p.diff;
-    const others = p.topics.filter(t => t !== "rc");
-    const hasRC = p.topics.includes("rc");
-    let rcTarget = !hasRC ? 0 : !others.length ? n : p.rcPriority ? Math.round(n * 0.6) : Math.round(n / p.topics.length);
+    // share of the set per topic: RC gets ~60% when prioritised, the rest is split evenly
+    const share = {};
+    const rest = p.topics.filter(t => t !== "rc");
+    if (p.topics.includes("rc")) share.rc = !rest.length ? n : p.rcPriority ? Math.round(n * 0.6) : Math.round(n / p.topics.length);
+    const left = n - (share.rc || 0);
+    rest.forEach((t, i) => { share[t] = Math.floor(left / rest.length) + (i < left % rest.length ? 1 : 0); });
     const ids = [];
-    if (rcTarget) {
-      if (p.rcFull) {
-        let pids = Object.keys(DATA.passages).filter(pid => p.diff === "mixed" || passageDifficulty(pid) === p.diff);
-        if (!pids.length) pids = Object.keys(DATA.passages);
+    for (const t of p.topics) {
+      const k = share[t]; if (!k) continue;
+      if (GROUPED.includes(t) && (p.rcFull || t === "dilr")) {      // whole passages / sets
+        let pids = passagesOf(t).filter(pid => p.diff === "mixed" || passageDifficulty(pid) === p.diff);
+        if (!pids.length) pids = passagesOf(t);
         pids = shuffle(pids);
         if (p.unseenFirst) pids.sort((a, b) => seenCount(a) - seenCount(b));
+        let got = 0;
         for (const pid of pids) {
-          if (ids.length >= rcTarget) break;
-          const qs = DATA.questions.filter(q => q.passage === pid);
-          if (ids.length && ids.length + qs.length > rcTarget + 2) continue;
-          ids.push(...qs.map(q => q.id));
+          if (got >= k) break;
+          const qs = passageQids(pid);
+          if (got && got + qs.length > k + 2) continue;
+          ids.push(...qs); got += qs.length;
         }
       } else {
-        const picked = pickFrom(DATA.questions.filter(q => q.topic === "rc" && matchD(q)), rcTarget, p.unseenFirst);
-        picked.sort((a, b) => a.passage.localeCompare(b.passage, undefined, { numeric: true }));
+        const picked = pickFrom(DATA.questions.filter(q => q.topic === t && matchD(q)), k, p.unseenFirst);
+        if (t === "rc") picked.sort((a, b) => a.passage.localeCompare(b.passage, undefined, { numeric: true }));
         ids.push(...picked.map(q => q.id));
-      }
-    }
-    const remaining = n - ids.length;
-    if (others.length && remaining > 0) {
-      const per = others.map((t, i) => [t, Math.floor(remaining / others.length) + (i < remaining % others.length ? 1 : 0)]);
-      for (const [t, k] of shuffle(per)) {
-        if (!k) continue;
-        ids.push(...pickFrom(DATA.questions.filter(q => q.topic === t && matchD(q)), k, p.unseenFirst).map(q => q.id));
       }
     }
     return ids;
@@ -241,7 +257,7 @@
     const names = p.topics.map(t => TNAME[t]);
     S.active = {
       id: "s" + Date.now().toString(36), created: Date.now(), mode,
-      title: mode === "quick5" ? `Quick 5${p.topics.includes("rc") ? " RC passages" : ""} (${p.pattern === "easy" ? "2E·2M·1H" : "1E·2M·2H"})` :`Custom · ${p.diff[0].toUpperCase() + p.diff.slice(1)} · ${qids.length} Qs`,
+      title: mode === "quick5" ? `Quick 5${p.topics.includes("rc") ? " · RC passages" : ""}${p.topics.includes("dilr") ? " · DILR sets" : ""} (${p.pattern === "easy" ? "2E·2M·1H" : "1E·2M·2H"})` :`Custom · ${p.diff[0].toUpperCase() + p.diff.slice(1)} · ${qids.length} Qs`,
       topics: p.topics, topicNames: names, timer: p.timer, qids, idx: 0, answers: {}, marked: {}, visited: {}, time: {}, elapsed: 0,
     };
     save(); location.hash = "quiz"; openQuiz();
@@ -287,14 +303,14 @@
     } else if (q.sentences) {
       body += `<p class="qstem">${esc(q.stem)}</p><ol class="sentences">${q.sentences.map((s, i) => `<li><b>${i + 1}.</b><span>${esc(s)}</span></li>`).join("")}</ol>`;
     } else {
-      body += `<p class="qstem ${q.topic === "rc" ? "" : "serif"}">${esc(q.stem)}</p>`;
+      body += `<p class="qstem ${["vocab", "pc", "ps"].includes(q.topic) ? "serif" : ""}">${esc(q.stem)}</p>`;
     }
     if (q.type === "mcq") {
       body += `<div class="options">${q.options.map(o => `<button class="opt ${given === o.k ? "sel" : ""}" data-k="${o.k}"><span class="k">${o.k}</span><span>${esc(o.t)}</span></button>`).join("")}</div>`;
     } else {
-      const n = q.sentences.length;
-      body += `<div class="tita"><input id="titaIn" inputmode="numeric" autocomplete="off" maxlength="${q.topic === "pj" ? n : 1}" value="${esc(given || "")}" placeholder="${q.topic === "pj" ? "e.g. " + "2413".slice(0, n) + (n > 4 ? "5" : "") : "e.g. 3"}">
-        <div class="keypad">${Array.from({ length: n }, (_, i) => `<button data-d="${i + 1}">${i + 1}</button>`).join("")}<button data-d="back" title="Backspace">⌫</button><button data-d="clr">Clear</button></div></div>
+      const n = q.sentences ? q.sentences.length : 0, keys = n ? Array.from({ length: n }, (_, i) => String(i + 1)) : "1234567890.-".split("");
+      body += `<div class="tita ${n ? "" : "num"}"><input id="titaIn" inputmode="${n ? "numeric" : "decimal"}" autocomplete="off" maxlength="${!n ? 14 : q.topic === "pj" ? n : 1}" value="${esc(given || "")}" placeholder="${!n ? "Type your answer" : q.topic === "pj" ? "e.g. " + "2413".slice(0, n) + (n > 4 ? "5" : "") : "e.g. 3"}">
+        <div class="keypad ${n ? "" : "num"}">${keys.map(d => `<button data-d="${d}">${d === "-" ? "−" : d}</button>`).join("")}<button data-d="back" title="Backspace">⌫</button><button data-d="clr">Clear</button></div></div>
         <p class="tita-note">TITA: type your answer — no negative marking for a wrong answer.</p>`;
     }
     const nav = `<div class="qnav"><div class="grp"><button class="btn" id="prevBtn" ${a.idx === 0 ? "disabled" : ""}>← Previous</button><button class="btn ghost" id="clearBtn">Clear response</button></div>
@@ -303,7 +319,7 @@
     if (q.passage) {
       const P = DATA.passages[q.passage];
       const sameP = a.qids.filter(id => Q[id].passage === q.passage);
-      $("#quizMain").innerHTML = `<div class="q-split"><article class="passage" id="passageBox"><h3>${esc(P.title)}</h3><p class="muted small">Passage · questions ${sameP.map(id => a.qids.indexOf(id) + 1).join(", ")}</p>${P.paras.map(x => `<p>${esc(x)}</p>`).join("")}</article>${card}</div>`;
+      $("#quizMain").innerHTML = `<div class="q-split ${P.kind === "set" ? "is-set" : ""}"><article class="passage" id="passageBox"><h3>${esc(P.title)}</h3><p class="muted small">${P.kind === "set" ? "DILR set" : "Passage"} · questions ${sameP.map(id => a.qids.indexOf(id) + 1).join(", ")}</p>${renderParas(P.paras)}</article>${card}</div>`;
       if (a._lastPassage === q.passage && a._pscroll != null) $("#passageBox").scrollTop = a._pscroll;
       $("#passageBox").onscroll = e => { a._pscroll = e.target.scrollTop; };
       a._lastPassage = q.passage;
@@ -314,8 +330,9 @@
     $$(".opt").forEach(b => b.onclick = () => { a.answers[qid] = a.answers[qid] === b.dataset.k ? undefined : b.dataset.k; save(); $$(".opt").forEach(x => x.classList.toggle("sel", x.dataset.k === a.answers[qid])); renderPalette(); });
     const ti = $("#titaIn");
     if (ti) {
-      const setT = v => { ti.value = v; a.answers[qid] = normTita(v) || undefined; save(); renderPalette(); };
-      ti.oninput = () => setT(normTita(ti.value).slice(0, +ti.maxLength));
+      const clean = v => q.numeric ? String(v).replace(/[^\d.\-]/g, "") : normTita(v);
+      const setT = v => { ti.value = v; a.answers[qid] = clean(v) || undefined; save(); renderPalette(); };
+      ti.oninput = () => setT(clean(ti.value).slice(0, +ti.maxLength));
       $$(".keypad button").forEach(b => b.onclick = () => {
         const d = b.dataset.d;
         if (d === "back") setT(ti.value.slice(0, -1)); else if (d === "clr") setT("");
@@ -401,10 +418,19 @@
       const avg = rcR.reduce((x, r) => x + r.time, 0) / rcR.length;
       out.push([avg > 150000 ? "warn" : "", `RC pace: ${fmtShort(avg)} per question (target ≈ 1m 30s per question including reading — about 7–8 min for a 5-question passage).`]);
     }
-    const nonRC = R.filter(r => r.topic !== "rc");
-    if (nonRC.length) {
-      const avg = nonRC.reduce((x, r) => x + r.time, 0) / nonRC.length;
-      out.push([avg > 120000 ? "warn" : "", `Verbal-ability pace: ${fmtShort(avg)} per question (aim for under 1m 30s).`]);
+    const avgT = rs => rs.reduce((x, r) => x + r.time, 0) / rs.length;
+    const va = R.filter(r => TSECTION[r.topic] === "VARC" && r.topic !== "rc");
+    if (va.length) out.push([avgT(va) > 120000 ? "warn" : "", `Verbal-ability pace: ${fmtShort(avgT(va))} per question (aim for under 1m 30s).`]);
+    const di = R.filter(r => r.topic === "dilr");
+    if (di.length) {
+      const sets = new Set(di.map(r => Q[r.id].passage)).size, per = di.reduce((x, r) => x + r.time, 0) / sets;
+      out.push([per > 12 * 60e3 ? "warn" : "", `DILR pace: ${fmtShort(per)} per set (aim for 8–10 minutes per 4-question set; leave a set that isn't opening up by then).`]);
+    }
+    const qa = R.filter(r => TSECTION[r.topic] === "Quant");
+    if (qa.length) {
+      out.push([avgT(qa) > 150000 ? "warn" : "", `Quant pace: ${fmtShort(avgT(qa))} per question (aim for about 1m 45s).`]);
+      const byQ = {}; for (const r of qa) (byQ[r.topic] = byQ[r.topic] || []).push(r);
+      for (const [t, rs] of Object.entries(byQ)) { const x = summarise(rs); if (x.att >= 2 && x.acc < 50) out.push(["warn", `<b>${TNAME[t]}</b>: ${x.c}/${x.att} correct — re-read the method lines in the solutions below, then practise this topic on its own.`]); }
     }
     const mcqW = R.filter(r => r.result === "wrong" && Q[r.id].type === "mcq").length;
     if (mcqW >= 3 && s.acc < 60) out.push(["warn", `${mcqW} wrong MCQs cost you ${mcqW} marks in negative marking. On CAT, skip MCQs you can't narrow to two options.`]);
@@ -434,7 +460,7 @@
       let pass = "";
       if (q.passage && q.passage !== lastPassage) {
         const P = DATA.passages[q.passage];
-        pass = `<details class="review-passage"><summary>Show passage: ${esc(P.title)}</summary><div>${P.paras.map(x => `<p>${esc(x)}</p>`).join("")}</div></details>`;
+        pass = `<details class="review-passage"><summary>Show ${P.kind === "set" ? "set" : "passage"}: ${esc(P.title)}</summary><div>${renderParas(P.paras)}</div></details>`;
       }
       lastPassage = q.passage || null;
       let body = "";

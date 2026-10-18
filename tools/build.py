@@ -80,13 +80,51 @@ for f in ("new_rc_medium.json", "new_rc_hard.json"):
                               "difficulty": DIFF[q.get("d", p["d"])], "stem": q["s"], "options": opts,
                               "answer": ans, "explanation": expl, "src": "new"})
 
-topics = [["rc", "Reading Comprehension"], ["pj", "Para Jumbles"], ["ps", "Para Summary"],
-          ["ooo", "Odd Sentence Out"], ["pc", "Para Completion"], ["vocab", "Vocabulary"], ["grammar", "Grammar"]]
+# ---- Quant (tools/qa_bank.py) ----
+QA_TOPIC = {"arith": "qa-arith", "alg": "qa-alg", "geo": "qa-geo", "num": "qa-num", "mod": "qa-mod"}
+def distractors(n):
+    k = max(1, round(abs(n) * 0.1)); cands = [n + k, n - k, n + 2 * k, n + 3 * k, n - 2 * k]
+    return [c for c in cands if c >= 0 and c != n][:3]
+tita_seen = 0
+for i, q in enumerate(json.loads((D / "new_qa.json").read_text(encoding="utf8")), 1):
+    opts, ans, expl = None, q["a"], q["e"]
+    if q["o"] is None and re.fullmatch(r"\d+", q["a"]):
+        tita_seen += 1
+        if tita_seen % 3 == 0:          # recent CATs have ~1/3 TITA in Quant: turn some into MCQs
+            q["o"] = [q["a"]] + [str(x) for x in distractors(int(q["a"]))]
+            q["a"] = q["a"]
+    if q["o"] is not None:
+        order = list(range(4)); rng.shuffle(order)
+        new_opts = [q["o"][j] for j in order]
+        opts = [{"k": LET[j], "t": t} for j, t in enumerate(new_opts)]
+        ans = LET[new_opts.index(q["a"])]
+        add(QA_TOPIC[q["t"]], i, q, type="mcq", stem=q["s"], options=opts, answer=ans, explanation=expl)
+    else:
+        add(QA_TOPIC[q["t"]], i, q, type="tita", stem=q["s"], answer=q["a"], explanation=expl, numeric=True)
+
+# ---- DILR sets (tools/dilr_bank.py) ----
+for si, st in enumerate(json.loads((D / "new_dilr.json").read_text(encoding="utf8")), 1):
+    pid = f"dilr-p{si}"
+    passages[pid] = {"title": st["title"], "paras": st["intro"], "difficulty": DIFF[st["d"]], "kind": "set"}
+    for j, q in enumerate(st["qs"], 1):
+        base_q = {"id": f"dilr-{si}-{j}", "topic": "dilr", "passage": pid, "difficulty": DIFF[st["d"]], "src": "new", "stem": q["s"], "explanation": q["e"]}
+        if q["o"] is None:
+            questions.append({**base_q, "type": "tita", "answer": q["a"], "numeric": True})
+        else:
+            order = list(range(4)); rng.shuffle(order)
+            new_opts = [q["o"][k] for k in order]
+            questions.append({**base_q, "type": "mcq", "options": [{"k": LET[k], "t": t} for k, t in enumerate(new_opts)], "answer": LET[new_opts.index(q["a"])]})
+
+topics = [["rc", "Reading Comprehension", "VARC"], ["pj", "Para Jumbles", "VARC"], ["ps", "Para Summary", "VARC"],
+          ["ooo", "Odd Sentence Out", "VARC"], ["pc", "Para Completion", "VARC"], ["vocab", "Vocabulary", "VARC"], ["grammar", "Grammar", "VARC"],
+          ["dilr", "DILR sets", "DILR"],
+          ["qa-arith", "Arithmetic", "Quant"], ["qa-alg", "Algebra", "Quant"], ["qa-geo", "Geometry & Mensuration", "Quant"],
+          ["qa-num", "Number System", "Quant"], ["qa-mod", "Modern Math (P&C, Probability)", "Quant"]]
 out = {"topics": topics, "passages": passages, "questions": questions}
 (D / "questions.js").write_text("window.VARC = " + json.dumps(out, ensure_ascii=False, separators=(",", ":")) + ";\n", encoding="utf8")
 
 from collections import Counter
 print(len(questions), "questions,", len(passages), "passages", dict(Counter(p["difficulty"] for p in passages.values())))
-for t, _ in topics:
+for t, *_ in topics:
     print(t, dict(Counter(q["difficulty"] for q in questions if q["topic"] == t)),
           "answers:", dict(Counter(q["answer"] for q in questions if q["topic"] == t and q["type"] == "mcq" and q["src"] == "new")))
