@@ -71,8 +71,9 @@
   function renderConnect(err) {
     view().innerHTML = `<h1>VARC PYQs · CAT 2022–2025</h1>
       <div class="card"><p>These are real CAT questions, so they stay private and load from your private repo — the <b>same connection as Real CAT</b>.</p>
+      <p class="muted small">The token is saved in each browser separately, so a new device or browser needs it pasted once. After connecting you come straight back here.</p>
       ${err ? `<p class="bad-t">${esc(err)}</p>` : ""}
-      <div class="row gap"><a class="btn primary" href="#cat/setup">Connect GitHub (one-time)</a></div>
+      <div class="row gap"><a class="btn primary" href="#cat/setup/pyq">Connect GitHub (once per browser)</a></div>
       <p class="muted small" style="margin-top:14px">Or import the file <code>${FILE}</code> from the private pack:</p>
       <input type="file" id="pyqFile" accept=".json,application/json"><p class="muted small" id="pyqMsg"></p></div>`;
     $("#pyqFile").onchange = async e => {

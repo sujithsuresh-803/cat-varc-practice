@@ -99,12 +99,12 @@
     const parts = h.split("/");
     if (parts[1] === "report") return renderReport(parts[2]);
     if (parts[1] === "attempt" && S.active) return openAttempt();
-    if (parts[1] === "setup" || !S.cfg.source) return renderSetup();
+    if (parts[1] === "setup" || !S.cfg.source) return renderSetup(parts[2]);
     return renderPapers();
   }
 
   // ---------- setup ----------
-  function renderSetup() {
+  function renderSetup(back) {
     const c = S.cfg;
     view().innerHTML = `
       <h1>Real CAT papers</h1>
@@ -133,7 +133,7 @@
       const [owner, repo] = $("#ghRepo").value.trim().split("/");
       Object.assign(S.cfg, { owner, repo, token: $("#ghToken").value.trim(), source: "github" });
       $("#ghMsg").textContent = "Connecting…";
-      try { const ix = await ghFetch("index.json"); await idb.put("__index", ix); save(); $("#ghMsg").textContent = `Connected — ${ix.papers.length} papers.`; location.hash = "cat"; route("cat"); }
+      try { const ix = await ghFetch("index.json"); await idb.put("__index", ix); save(); $("#ghMsg").textContent = `Connected — ${ix.papers.length} papers.`; if (back === "pyq") { location.hash = "pyq"; return; } location.hash = "cat"; route("cat"); }
       catch (e) { S.cfg.source = ""; $("#ghMsg").textContent = e.message; }
     };
     $("#fileIn").onchange = async e => {
