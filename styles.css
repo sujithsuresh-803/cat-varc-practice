@@ -345,3 +345,10 @@ p.pl { white-space: pre-line; }
 .tita.num { flex-direction: column; align-items: flex-start; }
 .tita.num input { letter-spacing: .04em; width: 220px; max-width: 100%; }
 .tita.num input::placeholder { letter-spacing: 0; font-weight: 400; font-size: 1rem; }
+
+/* ---------- VARC PYQ ---------- */
+.topic-pick { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: .6rem; margin: .4rem 0 1rem; }
+.topic-tile { display: flex; flex-direction: column; gap: .3rem; text-align: left; padding: .8rem .9rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text); min-height: 44px; cursor: pointer; }
+.topic-tile:hover { border-color: var(--primary); background: var(--primary-soft); }
+.topic-tile .bar { height: 6px; margin-top: .2rem; }
+.bad-t { color: var(--bad); }

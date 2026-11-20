@@ -532,6 +532,12 @@
   });
   window.addEventListener("beforeunload", save);
 
-  window.RealCAT = { route, leave };
+  // shared loader for other private datasets (e.g. VARC PYQ): cache first, then the private repo
+  async function cachedJSON(path, key) {
+    const c = await idb.get(key); if (c) return c;
+    if (S.cfg.source !== "github") return null;
+    const d = await ghFetch(path); await idb.put(key, d); return d;
+  }
+  window.RealCAT = { route, leave, cachedJSON, putCache: (k, v) => idb.put(k, v) };
   A.start();
 })();

@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232f5bd3'/><text x='16' y='22' font-size='15' font-family='Arial' font-weight='700' fill='white' text-anchor='middle'>V</text></svg>">
 </head>
 <body>
@@ -20,6 +20,7 @@
   <nav>
     <a href="#home" data-nav="home">Practice</a>
     <a href="#cat" data-nav="cat">Real CAT</a>
+    <a href="#pyq" data-nav="pyq">VARC PYQ</a>
     <a href="#history" data-nav="history">Reports</a>
     <button class="icon-btn" id="themeBtn" title="Toggle dark mode" aria-label="Toggle dark mode">◐</button>
   </nav>
@@ -143,6 +144,7 @@
 
   <!-- REAL CAT -->
   <section id="view-cat" class="view hidden"></section>
+  <section id="view-pyq" class="view hidden"></section>
 
   <!-- HISTORY -->
   <section id="view-history" class="view hidden"></section>
@@ -150,8 +152,9 @@
 
 <div class="modal hidden" id="modal"><div class="modal-card" id="modalCard"></div></div>
 
-<script src="data/questions.js?v=4"></script>
-<script src="app.js?v=4"></script>
-<script src="realcat.js?v=4"></script>
+<script src="data/questions.js?v=5"></script>
+<script src="app.js?v=5"></script>
+<script src="pyq.js?v=5"></script>
+<script src="realcat.js?v=5"></script>
 </body>
 </html>
