@@ -61,11 +61,13 @@
     window.scrollTo(0, 0);
     if (view !== "cat" && window.RealCAT) window.RealCAT.leave();
     if (view !== "pyq" && window.PYQ) window.PYQ.leave();
+    if (view !== "dpyq" && window.DPYQ) window.DPYQ.leave();
   }
   function route() {
     const h = location.hash.replace("#", "") || "home";
     if (h === "cat" || h.startsWith("cat/")) return window.RealCAT.route(h);
     if (h === "pyq" || h.startsWith("pyq/")) return window.PYQ.route(h);
+    if (h === "dpyq" || h.startsWith("dpyq/")) return window.DPYQ.route(h);
     if (h.startsWith("report/")) return renderReport(h.slice(7));
     if (h === "history") return renderHistory();
     if (h === "quiz" && S.active) return openQuiz();

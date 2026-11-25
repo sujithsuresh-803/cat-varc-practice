@@ -352,3 +352,22 @@ p.pl { white-space: pre-line; }
 .topic-tile:hover { border-color: var(--primary); background: var(--primary-soft); }
 .topic-tile .bar { height: 6px; margin-top: .2rem; }
 .bad-t { color: var(--bad); }
+
+/* ---------- DILR PYQ ---------- */
+.dp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.dp-slot-h { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: .35rem; }
+.dp-set { display: grid; grid-template-columns: auto 1fr auto; grid-template-rows: auto auto; column-gap: .5rem; align-items: center; width: 100%; text-align: left; padding: .55rem .7rem; margin-bottom: .4rem; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--text); cursor: pointer; min-height: 44px; }
+.dp-set:hover { border-color: var(--primary); background: var(--primary-soft); }
+.dp-set .badge { grid-row: 1 / span 2; align-self: start; margin-top: .15rem; }
+.dp-set .dp-name { font-weight: 600; font-size: .9rem; line-height: 1.3; }
+.dp-set .small { grid-column: 2; }
+.dp-set .dp-done { grid-column: 3; grid-row: 1 / span 2; color: var(--good); font-weight: 700; }
+.q-split.dp-split { grid-template-columns: 1.8fr 1fr; }
+.dp-set-img > p { font-family: Inter, sans-serif; font-size: .8rem; margin: 0 0 .5rem; }
+.dp-set-img { padding: .8rem; }
+.dp-set-img .qimg { padding: .2rem; }
+.dp-set-img .qimg img { max-width: none; }
+.dp-qno { margin: 0 0 .4rem; }
+.dp-pal-set { margin-bottom: .8rem; }
+.dp-pal-h { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .35rem; font-size: .88rem; }
+@media (max-width: 760px) { .q-split.dp-split { grid-template-columns: 1fr; } }
