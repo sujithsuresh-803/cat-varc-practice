@@ -371,3 +371,11 @@ p.pl { white-space: pre-line; }
 .dp-pal-set { margin-bottom: .8rem; }
 .dp-pal-h { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .35rem; font-size: .88rem; }
 @media (max-width: 760px) { .q-split.dp-split { grid-template-columns: 1fr; } }
+/* DILR PYQ worked solutions */
+.dp-expl p { margin: .45rem 0; line-height: 1.55; }
+.dp-expl-h { font-weight: 700; margin-top: 0 !important; color: var(--text); }
+.dp-knote { margin: .6rem 0 0; padding: .55rem .8rem; border-left: 3px solid var(--warn, #c98a00); background: var(--surface-2); border-radius: 6px; font-size: .88rem; }
+.dp-setsol .sol-body p { line-height: 1.55; }
+.dp-setsol .data-tbl, .dp-expl .data-tbl { overflow-x: auto; }
+.feedback .dp-expl { background: transparent; padding: .2rem 0 0; margin-top: .6rem; border-top: 1px solid var(--border); border-radius: 0; }
+.dp-set-img .dp-setsol { margin-top: 1rem; padding-top: .6rem; border-top: 1px solid var(--border); font-family: Inter, sans-serif; }

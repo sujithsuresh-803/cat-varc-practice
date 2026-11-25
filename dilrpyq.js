@@ -9,7 +9,7 @@
   const { esc, fmt, fmtShort, pct } = A;
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
-  const KEY = "varc.dpyq.v1", FILE = "dilr/pyq-2023-2025.json", CACHE = "dpyq:2023-2025";
+  const KEY = "varc.dpyq.v1", FILE = "dilr/pyq-2023-2025.json", CACHE = "dpyq:2023-2025:v2", OLD_CACHE = "dpyq:2023-2025";
   const FAM = { data: "Tables & charts (DI)", slots: "Arrangement, matching, scheduling", scores: "Scores, ratings, Venn", maps: "Routes, networks, grids", rules: "Games, rules, logic" };
   const FAM_SHORT = { data: "DI", slots: "Arrange", scores: "Scores", maps: "Routes/grid", rules: "Games/rules" };
   const METHOD = [
@@ -32,6 +32,7 @@
     if (D) return D;
     D = await window.RealCAT.cachedJSON(FILE, CACHE);
     if (!D) return null;
+    window.RealCAT.putCache(OLD_CACHE, null).catch(() => {}); // free the pre-solutions copy
     Q = Object.fromEntries(D.questions.map(q => [q.id, q]));
     return D;
   }
@@ -52,6 +53,17 @@
   const paperTitle = id => (D.papers.find(p => p.id === id) || {}).title || id;
   const setQs = sid => D.questions.filter(q => q.set === sid).sort((x, y) => x.n - y.n);
   const imgs = list => (list || []).map(u => `<img src="${u}" alt="Set write-up" loading="lazy">`).join("");
+  // worked solutions: strings are paragraphs, {table} objects are tables
+  const paras = list => (list || []).map(x => typeof x === "string" ? `<p>${esc(x)}</p>`
+    : `<div class="tbl-wrap data-tbl">${x.caption ? `<div class="tcap">${esc(x.caption)}</div>` : ""}<table class="tbl"><thead><tr>${x.table.head.map(h => `<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${x.table.rows.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`).join("");
+  const setSolution = (set, open) => set.expl ? `<details class="sol dp-setsol"${open ? " open" : ""}><summary>How to crack the whole set</summary><div class="sol-body">${paras(set.expl)}</div></details>` : "";
+  function solution(q, withSet) {
+    let h = "";
+    if (q.expl) h += `<div class="expl dp-expl"><p class="dp-expl-h">Solution</p>${paras(q.expl)}</div>`;
+    if (q.keyNote) h += `<p class="dp-knote">Note: ${esc(q.keyNote)}</p>`;
+    if (withSet) h += setSolution(D.sets[q.set], false);
+    return h;
+  }
   const setSeen = sid => setQs(sid).filter(q => S.seen[q.id]).length;
   function setStat(sid) {
     const qs = setQs(sid), done = qs.filter(q => S.seen[q.id]);
@@ -102,7 +114,7 @@
     }).join("");
     view().innerHTML = `
       <div class="report-head"><div><h1>DILR PYQs · CAT 2023–2025</h1>
-        <p class="muted">${D.papers.length} slots · ${nSets} sets · ${D.questions.length} questions · official/source answer keys · set write-ups shown exactly as printed (tables and charts included)</p></div></div>
+        <p class="muted">${D.papers.length} slots · ${nSets} sets · ${D.questions.length} questions · official/source answer keys · worked solutions for every set · set write-ups shown exactly as printed (tables and charts included)</p></div></div>
       ${a ? `<div class="resume"><div><b>Unfinished: ${esc(a.title)}</b><div class="muted small">${a.mode === "timed" ? "Timed · " + fmt(a.remaining) + " left" : "Practice · " + Object.keys(a.checked).length + " of " + a.qids.length + " checked"}</div></div>
         <div class="row gap"><button class="btn" id="dDiscard">Discard</button><button class="btn primary" id="dResume">Resume ▶</button></div></div>` : ""}
       <div class="grid-2">
@@ -133,7 +145,7 @@
       </div>
       <div class="card"><div class="dp-grid">${bySlot}</div></div>
       ${S.attempts.length ? `<div class="card"><h2>Your DILR sessions</h2>${S.attempts.slice(0, 30).map(at => `<a class="hist-item" href="#dpyq/report/${at.id}"><div><div class="t">${esc(at.title)}</div><div class="muted small">${new Date(at.finishedAt).toLocaleString()} · ${at.mode === "practice" ? "Practice" : "Timed"} · ${fmtShort(at.used)}</div></div><span class="score-pill">${at.score}/${at.max}</span></a>`).join("")}</div>` : ""}
-      <p class="muted small">Sources: 2023 — candidate response sheets (provisional official key); 2024–25 — memory-based papers with the publisher's key, so an odd option or figure can differ slightly from the real paper (e.g. 2024 Slot 2 Q30 lists 3000 twice, as printed). No worked solutions yet — answer keys only.</p>`;
+      <p class="muted small">Sources: 2023 — candidate response sheets (provisional official key); 2024–25 — memory-based papers with the publisher's key, so an odd option or figure can differ slightly from the real paper (e.g. 2024 Slot 2 Q30 lists 3000 twice, as printed). Every set has a worked solution (shown after you check an answer in practice, and in the report review); each one was checked against the key by brute force, and notes flag the few places where the source or key is shaky.</p>`;
     const tot = () => { $("#dTot").textContent = `= ${S.pref.n * S.pref.per} minutes`; };
     tot();
     $$("#dN button").forEach(b => b.onclick = () => { $$("#dN button").forEach(x => x.classList.toggle("active", x === b)); S.pref.n = +b.dataset.v; save(); tot(); });
@@ -262,10 +274,11 @@
       <div class="grp">${a.mode === "practice"
         ? (checked ? "" : `<button class="btn primary" id="dCheck">Check answer</button>`) + `<button class="btn ${checked ? "primary" : ""}" id="dNext">${lastQ ? "Finish" : "Next →"}</button>`
         : `<button class="btn ghost" id="dMark">${a.marked[id] ? "★ Unmark" : "☆ Mark for review"}</button><button class="btn primary" id="dNext">${lastQ ? "Save" : "Save & next →"}</button>`}</div></div>`;
-    $("#dMain").innerHTML = `<div class="q-split dp-split"><article class="passage dp-set-img" id="dSet"><p class="muted small">Set ${si + 1}${a.mode === "practice" ? ` · ${esc(set.name)} · ${esc(paperTitle(set.paper))}` : ""} · questions ${a.qids.indexOf(sqs[0]) + 1}–${a.qids.indexOf(sqs[sqs.length - 1]) + 1} · <span class="muted">tap to zoom</span></p><div class="qimg">${imgs(set.img)}</div></article><div class="qcard">${body}${nav}</div></div>`;
+    $("#dMain").innerHTML = `<div class="q-split dp-split"><article class="passage dp-set-img" id="dSet"><p class="muted small">Set ${si + 1}${a.mode === "practice" ? ` · ${esc(set.name)} · ${esc(paperTitle(set.paper))}` : ""} · questions ${a.qids.indexOf(sqs[0]) + 1}–${a.qids.indexOf(sqs[sqs.length - 1]) + 1} · <span class="muted">tap to zoom</span></p><div class="qimg">${imgs(set.img)}</div>${checked ? setSolution(set, a._solOpen === q.set) : ""}</article><div class="qcard">${body}${nav}</div></div>`;
     const box = $("#dSet");
     if (a._lastSet === q.set && a._ps != null) box.scrollTop = a._ps; else a._ps = 0;
     box.onscroll = e => { a._ps = e.target.scrollTop; };
+    const ss = $(".dp-setsol", box); if (ss) ss.addEventListener("toggle", () => { a._solOpen = ss.open ? q.set : null; });
     if (a._lastSet !== q.set && window.innerWidth < 761) window.scrollTo({ top: 0 });
     a._lastSet = q.set;
 
@@ -291,7 +304,8 @@
     const tag = res === "correct" ? `<span class="verdict c">✓ Correct · +3</span>` : res === "wrong" ? `<span class="verdict w">✗ Wrong · ${q.type === "mcq" ? "−1" : "0 (TITA)"}</span>` : `<span class="verdict s">Not answered</span>`;
     return `<div class="feedback ${res === "correct" ? "fb-ok" : "fb-no"}" id="dFeedback">
       <div class="row between">${tag}<span>Answer: <b>${esc(ansLabel(q))}</b>${res !== "correct" && isAns(given) ? ` · yours: <b>${esc(given)}</b>` : ""}</span></div>
-      <p class="muted small">${esc(paperTitle(q.paper))} · Q${q.n} · answer key only for 2023–25.</p></div>`;
+      ${solution(q, false)}
+      <p class="muted small">Full walkthrough: “How to crack the whole set”, under the set. · ${esc(paperTitle(q.paper))} · Q${q.n}</p></div>`;
   }
   const ansLabel = q => { if (q.type !== "mcq") return q.ans; const o = q.opts.find(x => x.k === q.ans); return o ? `${q.ans} · ${o.t.length > 40 ? o.t.slice(0, 40) + "…" : o.t}` : q.ans; };
   function go(i) {
@@ -394,6 +408,7 @@
       let h = `<details class="sol"><summary>Show the set</summary><div class="qimg">${imgs(set.img)}</div></details>`;
       h += q.stem_img ? `<div class="qimg">${imgs(q.stem_img)}</div>` : `<p class="qstem">${esc(q.stem)}</p>`;
       if (q.type === "mcq") h += `<div class="options">${q.opts.map(o => `<div class="opt ${o.k === q.ans ? "correct" : o.k === r.given ? "wrong" : ""}"><span class="k">${o.k}</span><span>${esc(o.t)}</span></div>`).join("")}</div>`;
+      h += `<p class="muted small">Key: <b>${esc(ansLabel(q))}</b></p>` + solution(q, true);
       body.innerHTML = h; body.dataset.done = 1;
     }));
   }
