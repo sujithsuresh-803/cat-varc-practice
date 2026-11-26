@@ -3,10 +3,14 @@
   "use strict";
 
   const DATA = window.VARC;
-  const Q = Object.fromEntries(DATA.questions.map(q => [q.id, q]));
+  // Final Stretch mock papers (data/final.js) are kept out of the practice pools; they are only reachable by paper.
+  const FIN = window.VARC_FINAL || { questions: [], passages: {}, topics: [] };
+  const Q = Object.fromEntries(DATA.questions.concat(FIN.questions).map(q => [q.id, q]));
+  Object.assign(DATA.passages, FIN.passages);
   const TOPICS = DATA.topics;                      // [[id, name], ...] — RC first (priority)
-  const TNAME = Object.fromEntries(TOPICS.map(([t, n]) => [t, n]));
-  const TSECTION = Object.fromEntries(TOPICS.map(([t, , g]) => [t, g]));
+  const RTOPICS = TOPICS.concat((FIN.topics || []).filter(t => !TOPICS.some(x => x[0] === t[0])));
+  const TNAME = Object.fromEntries(RTOPICS.map(([t, n]) => [t, n]));
+  const TSECTION = Object.fromEntries(RTOPICS.map(([t, , g]) => [t, g]));
   const GROUPED = ["rc", "dilr"];                  // topics practised as whole passages / sets
   const PTOPIC = {}; for (const q of DATA.questions) if (q.passage) PTOPIC[q.passage] = q.topic;
   const passagesOf = t => Object.keys(DATA.passages).filter(pid => PTOPIC[pid] === t);
@@ -68,6 +72,7 @@
     if (h === "cat" || h.startsWith("cat/")) return window.RealCAT.route(h);
     if (h === "pyq" || h.startsWith("pyq/")) return window.PYQ.route(h);
     if (h === "dpyq" || h.startsWith("dpyq/")) return window.DPYQ.route(h);
+    if ((h === "final" || h.startsWith("final/")) && window.FINAL) return window.FINAL.route(h);
     if (h.startsWith("report/")) return renderReport(h.slice(7));
     if (h === "history") return renderHistory();
     if (h === "quiz" && S.active) return openQuiz();
@@ -282,10 +287,12 @@
       const a = S.active; if (!a || paused) return;
       const now = Date.now(), d = Math.min(now - lastTick, 5000); lastTick = now;  // cap gaps (sleep / hidden tab)
       a.elapsed += d; const qid = a.qids[a.idx]; a.time[qid] = (a.time[qid] || 0) + d;
-      $("#timer").textContent = fmt(a.elapsed);
+      $("#timer").textContent = clockText(a);
+      if (a.limit && a.elapsed >= a.limit) { finish(); alertBox("Time's up. The paper was submitted automatically."); return; }
       if (Math.round(a.elapsed / 1000) % 5 === 0) save();
     }, 1000);
   }
+  const clockText = a => a.limit ? "⏳ " + fmt(Math.max(0, a.limit - a.elapsed)) : fmt(a.elapsed);
   function stopClock() { if (tick) clearInterval(tick); tick = null; }
   function setPaused(v) {
     paused = v; lastTick = Date.now();
@@ -298,8 +305,8 @@
     const a = S.active, qid = a.qids[a.idx], q = Q[qid];
     a.visited[qid] = true;
     $("#qCounter").textContent = `Question ${a.idx + 1} of ${a.qids.length}`;
-    $("#qTags").innerHTML = `<span class="badge topic-b">${TNAME[q.topic]}</span><span class="badge ${q.difficulty}">${q.difficulty}</span>`;
-    $("#timer").textContent = fmt(a.elapsed);
+    $("#qTags").innerHTML = `<span class="badge topic-b">${TNAME[q.topic]}</span>${a.paper ? "" : `<span class="badge ${q.difficulty}">${q.difficulty}</span>`}`;
+    $("#timer").textContent = clockText(a);
     const given = a.answers[qid];
     let body = "";
     if (q.segments) {
@@ -307,7 +314,7 @@
     } else if (q.sentences) {
       body += `<p class="qstem">${esc(q.stem)}</p><ol class="sentences">${q.sentences.map((s, i) => `<li><b>${i + 1}.</b><span>${esc(s)}</span></li>`).join("")}</ol>`;
     } else {
-      body += `<p class="qstem ${["vocab", "pc", "ps"].includes(q.topic) ? "serif" : ""}">${esc(q.stem)}</p>`;
+      body += `<p class="qstem ${["vocab", "pc", "ps", "sp"].includes(q.topic) ? "serif" : ""}">${esc(q.stem)}</p>`;
     }
     if (q.type === "mcq") {
       body += `<div class="options">${q.options.map(o => `<button class="opt ${given === o.k ? "sel" : ""}" data-k="${o.k}"><span class="k">${o.k}</span><span>${esc(o.t)}</span></button>`).join("")}</div>`;
@@ -385,6 +392,7 @@
       return { id, topic: q.topic, difficulty: q.difficulty, given: isAnswered(given) ? given : null, result, time: a.time[id] || 0, marks: marks(q, result), marked: !!a.marked[id] };
     });
     const rec = { id: a.id, title: a.title, mode: a.mode, topics: a.topics, created: a.created, finishedAt: Date.now(), elapsed: a.elapsed, results };
+    if (a.paper) rec.paper = a.paper;
     S.history.unshift(rec); S.active = null; save();
     // Render directly rather than relying on the hashchange event, then sync the URL.
     history.replaceState(null, "", "#report/" + rec.id);
@@ -457,7 +465,7 @@
     const el = $("#view-report");
     if (!rec) { el.innerHTML = `<div class="card empty">Report not found. <a href="#history">See all reports</a></div>`; return; }
     const s = summarise(rec.results);
-    const tLabels = TOPICS, dLabels = [["easy", "Easy"], ["medium", "Medium"], ["hard", "Hard"]];
+    const tLabels = RTOPICS, dLabels = [["easy", "Easy"], ["medium", "Medium"], ["hard", "Hard"]];
     let lastPassage = null;
     const reviews = rec.results.map((r, i) => {
       const q = Q[r.id]; if (!q) return "";
@@ -486,7 +494,7 @@
     const wrongIds = rec.results.filter(r => r.result !== "correct").map(r => r.id);
     el.innerHTML = `
       <div class="report-head"><div><h1>Report · ${esc(rec.title)}</h1><p class="muted">${new Date(rec.finishedAt).toLocaleString()} · ${rec.topics.map(t => TNAME[t]).join(", ")}</p></div>
-        <div class="report-actions">${wrongIds.length ? `<button class="btn" id="retryWrong">Retry ${wrongIds.length} wrong/skipped</button>` : ""}<a class="btn primary" href="#home">New set</a></div></div>
+        <div class="report-actions">${wrongIds.length ? `<button class="btn" id="retryWrong">Retry ${wrongIds.length} wrong/skipped</button>` : ""}<a class="btn primary" href="${rec.paper ? "#final" : "#home"}">${rec.paper ? "Back to Final Stretch" : "New set"}</a></div></div>
       <div class="kpis">
         <div class="kpi"><div class="v">${s.score}<span class="muted" style="font-size:1rem"> / ${s.max}</span></div><div class="l">CAT score</div></div>
         <div class="kpi ${s.acc >= 70 ? "good" : s.att && s.acc < 45 ? "bad" : ""}"><div class="v">${s.att ? s.acc + "%" : "–"}</div><div class="l">Accuracy</div></div>
@@ -590,5 +598,18 @@
   });
   window.addEventListener("beforeunload", save);
 
+  // Start a fixed paper (Final Stretch). limitMin = 0 means untimed.
+  window.VARCApp.startPaper = (paper, limitMin) => {
+    const go2 = () => {
+      S.active = { id: "s" + Date.now().toString(36), created: Date.now(), mode: "paper", paper: paper.id, title: paper.title,
+        topics: [...new Set(paper.qids.map(x => Q[x].topic))], timer: true, limit: limitMin ? limitMin * 60000 : 0,
+        qids: paper.qids.slice(), idx: 0, answers: {}, marked: {}, visited: {}, time: {}, elapsed: 0 };
+      save(); location.hash = "quiz"; openQuiz();
+    };
+    S.active ? confirmBox("Replace your unfinished set?", "Starting this paper discards the set in progress.", "Start paper", () => { S.active = null; go2(); }) : go2();
+  };
+  window.VARCApp.history = () => S.history;
+  window.VARCApp.active = () => S.active;
+  window.VARCApp.renderParas = renderParas;
   window.VARCApp.start = route;
 })();

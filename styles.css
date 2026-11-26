@@ -222,7 +222,7 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: .9rem; }
 .review-head .tags { display: flex; gap: .35rem; flex-wrap: wrap; align-items: center; }
 .verdict { font-weight: 700; }
 .verdict.c { color: var(--good); } .verdict.w { color: var(--bad); } .verdict.s { color: var(--muted); }
-.expl { margin-top: .8rem; background: var(--surface-2); border-radius: 10px; padding: .8rem .95rem; font-size: .93rem; }
+.expl { white-space: pre-line; margin-top: .8rem; background: var(--surface-2); border-radius: 10px; padding: .8rem .95rem; font-size: .93rem; }
 .expl b { color: var(--text); }
 .ans-line { margin-top: .7rem; font-size: .92rem; display: flex; gap: 1.2rem; flex-wrap: wrap; }
 .ans-line .ok { color: var(--good); font-weight: 700; } .ans-line .no { color: var(--bad); font-weight: 700; }
@@ -379,3 +379,19 @@ p.pl { white-space: pre-line; }
 .dp-setsol .data-tbl, .dp-expl .data-tbl { overflow-x: auto; }
 .feedback .dp-expl { background: transparent; padding: .2rem 0 0; margin-top: .6rem; border-top: 1px solid var(--border); border-radius: 0; }
 .dp-set-img .dp-setsol { margin-top: 1rem; padding-top: .6rem; border-top: 1px solid var(--border); font-family: Inter, sans-serif; }
+
+/* ---------- Final Stretch ---------- */
+.fs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: .9rem; margin-top: .8rem; }
+.fs-paper { border: 1px solid var(--border); border-radius: 10px; padding: .9rem 1rem; background: var(--surface-2); display: flex; flex-direction: column; gap: .45rem; }
+.fs-paper p { margin: 0; }
+.fs-ph { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; flex-wrap: wrap; }
+.fs-shape { min-height: 2.4em; }
+.fs-dmix { display: flex; gap: .35rem; flex-wrap: wrap; }
+.fs-ok { color: var(--good); font-weight: 600; } .fs-mid { color: var(--warn); font-weight: 600; } .fs-low { color: var(--bad); font-weight: 600; }
+.fs-how ol { padding-left: 1.2rem; margin: .4rem 0 .8rem; } .fs-how li { margin-bottom: .3rem; }
+.row.wrap { flex-wrap: wrap; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+.grid-3 h3, .fs-two h3 { margin: .2rem 0 .4rem; font-size: 1rem; }
+.grid-3 ul, .fs-two ul { padding-left: 1.1rem; margin: 0; } .grid-3 li, .fs-two li { margin-bottom: .35rem; }
+#view-final .tbl td { vertical-align: top; }
+@media (max-width: 860px) { .grid-3 { grid-template-columns: 1fr; } }
