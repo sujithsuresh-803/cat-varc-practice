@@ -124,7 +124,7 @@
     }).join("");
     view().innerHTML = `
       <div class="report-head"><div><h1>Quant PYQs · CAT 2022–2025</h1>
-        <p class="muted">${D.papers.length} slots · ${D.questions.length} questions · every question shown exactly as printed · official/publisher answer keys · solutions for 2022 (more coming)</p></div></div>
+        <p class="muted">${D.papers.length} slots · ${D.questions.length} questions · every question shown exactly as printed · official/publisher answer keys · worked solution for every question</p></div></div>
       ${a ? `<div class="resume"><div><b>Unfinished: ${esc(a.title)}</b><div class="muted small">${a.mode === "timed" ? "Timed · " + fmt(a.remaining) + " left" : "Practice · " + Object.keys(a.checked).length + " of " + a.qids.length + " checked"}</div></div>
         <div class="row gap"><button class="btn" id="qpDiscard">Discard</button><button class="btn primary" id="qpResume">Resume ▶</button></div></div>` : ""}
       <div class="grid-2">
