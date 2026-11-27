@@ -9,7 +9,7 @@
   const { esc, fmt, fmtShort, pct } = A;
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
-  const KEY = "varc.qpyq.v1", FILE = "qa/pyq-2022-2025.json", CACHE = "qpyq:2022-2025:v1";
+  const KEY = "varc.qpyq.v1", FILE = "qa/pyq-2022-2025.json", CACHE = "qpyq:2022-2025:v2";
   const TOP = { arith: "Arithmetic", alg: "Algebra", geo: "Geometry & mensuration", num: "Number system", mod: "Modern maths" };
   const TOP_SHORT = { arith: "Arith", alg: "Algebra", geo: "Geometry", num: "Numbers", mod: "Modern" };
   const METHOD = [
