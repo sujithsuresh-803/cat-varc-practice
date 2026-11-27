@@ -395,3 +395,23 @@ p.pl { white-space: pre-line; }
 .grid-3 ul, .fs-two ul { padding-left: 1.1rem; margin: 0; } .grid-3 li, .fs-two li { margin-bottom: .35rem; }
 #view-final .tbl td { vertical-align: top; }
 @media (max-width: 860px) { .grid-3 { grid-template-columns: 1fr; } }
+
+/* ---------- Quant PYQ ---------- */
+.qp-card { max-width: 860px; margin: 0 auto; }
+.qp-stem { background: #fff; border-radius: 10px; padding: .6rem; margin-bottom: .8rem; }
+.qp-stem img { max-width: 100%; height: auto; display: block; margin: 0 auto .3rem; }
+.qp-opt img { max-height: 64px; max-width: 100%; background: #fff; border-radius: 4px; }
+.qp-keys { display: grid; grid-template-columns: repeat(4, 1fr); gap: .5rem; }
+.qp-keys .opt { justify-content: center; }
+.qp-keys .opt .muted { display: none; }
+.qp-hint { margin: 0 0 .4rem; }
+.qp-sub .badge { min-width: 2.1em; text-align: center; }
+#qpPalGrid button.qp-tita { border-style: dashed; }
+@media (max-width: 760px) { .qp-keys { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 760px) {
+  .topbar { gap: .6rem; }
+  .topbar .brand { flex: none; }
+  .topbar nav { flex: 1; min-width: 0; overflow-x: auto; gap: .9rem; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .topbar nav::-webkit-scrollbar { display: none; }
+  .topbar nav a { white-space: nowrap; flex: none; }
+}

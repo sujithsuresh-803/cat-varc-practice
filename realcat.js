@@ -133,7 +133,7 @@
       const [owner, repo] = $("#ghRepo").value.trim().split("/");
       Object.assign(S.cfg, { owner, repo, token: $("#ghToken").value.trim(), source: "github" });
       $("#ghMsg").textContent = "Connecting…";
-      try { const ix = await ghFetch("index.json"); await idb.put("__index", ix); save(); $("#ghMsg").textContent = `Connected — ${ix.papers.length} papers.`; if (back === "pyq" || back === "dpyq") { location.hash = back; return; } location.hash = "cat"; route("cat"); }
+      try { const ix = await ghFetch("index.json"); await idb.put("__index", ix); save(); $("#ghMsg").textContent = `Connected — ${ix.papers.length} papers.`; if (back === "pyq" || back === "dpyq" || back === "qpyq") { location.hash = back; return; } location.hash = "cat"; route("cat"); }
       catch (e) { S.cfg.source = ""; $("#ghMsg").textContent = e.message; }
     };
     $("#fileIn").onchange = async e => {
