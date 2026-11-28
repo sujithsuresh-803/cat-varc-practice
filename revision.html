@@ -1,0 +1,1180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>CAT Final Revision</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: sticky section bar on top, sidebar contents on wide screens, one reading column (~70ch). */
+:root{
+  --bg:#f7f8fb; --paper:#ffffff; --ink:#18202e; --muted:#5b6578; --line:#e1e5ee;
+  --qa:#2453c7; --qa-soft:#e8eefc; --va:#13795b; --va-soft:#e3f4ec; --di:#a35a00; --di-soft:#fbf0e0;
+  --ans:#7a1fa2; --warn:#b42318; --warn-soft:#fdecea; --code:#f1f3f8;
+  --f-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-head:"Space Grotesk","Inter",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10141c; --paper:#171c26; --ink:#e6e9f0; --muted:#9aa3b5; --line:#2a3242;
+  --qa:#86a6ff; --qa-soft:#1c2744; --va:#5fd3a6; --va-soft:#14302a; --di:#f0b25e; --di-soft:#33260f;
+  --ans:#d49cf0; --warn:#ff8a80; --warn-soft:#3a1d1b; --code:#202737; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10141c; --paper:#171c26; --ink:#e6e9f0; --muted:#9aa3b5; --line:#2a3242;
+  --qa:#86a6ff; --qa-soft:#1c2744; --va:#5fd3a6; --va-soft:#14302a; --di:#f0b25e; --di-soft:#33260f;
+  --ans:#d49cf0; --warn:#ff8a80; --warn-soft:#3a1d1b; --code:#202737; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line);
+  padding-block:.55rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.bar b{font-family:var(--f-head);margin-right:.4rem}
+.bar a{text-decoration:none;font-weight:600;font-size:.9rem;padding:.25rem .65rem;border-radius:999px}
+.bar a.qa{color:var(--qa);background:var(--qa-soft)} .bar a.va{color:var(--va);background:var(--va-soft)} .bar a.di{color:var(--di);background:var(--di-soft)}
+.bar a.ck{color:var(--warn);background:var(--warn-soft)}
+.bar button{margin-left:auto;font:600 .85rem var(--f-body);border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:.35rem .7rem;cursor:pointer}
+.bar button[aria-pressed="true"]{background:var(--ans);color:var(--paper);border-color:var(--ans)}
+.wrap{display:grid;grid-template-columns:250px minmax(0,1fr);gap:2rem;max-width:1180px;margin:0 auto;
+  padding-block:1.5rem 4rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+nav.toc{position:sticky;top:4rem;align-self:start;max-height:calc(100vh - 5rem);overflow:auto;font-size:.85rem;padding-right:.5rem}
+nav.toc p{font:600 .72rem var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:1rem 0 .3rem}
+nav.toc a{display:block;color:var(--ink);text-decoration:none;padding:.12rem 0;opacity:.85}
+nav.toc a:hover{opacity:1;text-decoration:underline}
+nav.toc a.done{color:var(--muted);text-decoration:line-through}
+main{min-width:0;max-width:76ch}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr)} nav.toc{display:none}}
+h1,h2,h3,h4{font-family:var(--f-head);line-height:1.2;text-wrap:balance}
+h1{font-size:2.1rem;margin:.2rem 0 .4rem}
+h2{font-size:1.65rem;margin:3rem 0 .6rem;padding-top:.6rem;border-top:3px solid currentColor}
+h2.qa{color:var(--qa)} h2.va{color:var(--va)} h2.di{color:var(--di)} h2.ck{color:var(--warn)}
+h3{font-size:1.25rem;margin:2.2rem 0 .3rem;display:flex;gap:.6rem;align-items:baseline;flex-wrap:wrap}
+h4{font-size:1rem;margin:1.4rem 0 .4rem}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem;margin:.2rem 0 .8rem}
+.pill{font:600 .72rem var(--f-body);letter-spacing:.04em;padding:.12rem .5rem;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:var(--paper)}
+.pill.t1{color:var(--paper);background:var(--qa);border-color:var(--qa)}
+.pill.wk{color:var(--warn);background:var(--warn-soft);border-color:transparent}
+.pill.t2{color:var(--qa);background:var(--qa-soft);border-color:transparent}
+.done-box{margin-left:auto;font:500 .8rem var(--f-body);color:var(--muted);display:flex;gap:.3rem;align-items:center;cursor:pointer}
+.lead{color:var(--muted);font-size:1.05rem}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:.8rem 1rem;margin:.8rem 0}
+.box.f{border-left:4px solid var(--qa)}
+.box.v{border-left:4px solid var(--va)}
+.box.d{border-left:4px solid var(--di)}
+.box.w{border-left:4px solid var(--warn);background:var(--warn-soft)}
+.box h4{margin:.1rem 0 .4rem}
+.box ul,.box ol{margin:.2rem 0;padding-left:1.2rem}
+.box li{margin:.15rem 0}
+code,.m{font-family:var(--f-mono);font-size:.9em;background:var(--code);padding:.05rem .3rem;border-radius:4px}
+.ex{border-top:1px dashed var(--line);padding:.7rem 0 .4rem}
+.ex .q{margin:0 0 .35rem}
+.ex .q .src{font:600 .7rem var(--f-body);letter-spacing:.05em;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:.05rem .35rem;margin-right:.4rem;white-space:nowrap}
+.ex .ty{font-weight:600}
+.a{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:.5rem .8rem;font-size:.95rem;transition:filter .15s}
+.a .k{color:var(--ans);font-weight:700}
+body.st .a:not(.show){filter:blur(6px);cursor:pointer;user-select:none}
+.tbl{overflow-x:auto;margin:.6rem 0}
+table{border-collapse:collapse;font-size:.9rem;font-variant-numeric:tabular-nums;min-width:100%}
+th,td{border:1px solid var(--line);padding:.3rem .55rem;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600}
+.sent{margin:.2rem 0;padding-left:1.7rem;text-indent:-1.7rem}
+.sent b{display:inline-block;width:1.7rem;text-indent:0;color:var(--muted)}
+.opt{margin:.15rem 0}
+a{color:var(--qa)}
+:focus-visible{outline:2px solid var(--ans);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.a{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <b>CAT Final Revision</b>
+  <a class="ck" href="#exam-day">Exam day</a>
+  <a class="qa" href="#quant">Quant</a>
+  <a class="va" href="#varc">VARC</a>
+  <a class="di" href="#dilr">DILR</a>
+  <button id="stBtn" type="button" aria-pressed="false" title="Blur every solution until you tap it">Self-test: off</button>
+</div>
+
+<div class="wrap">
+<nav class="toc" id="toc" aria-label="Contents"></nav>
+<main>
+
+<h1>CAT Final Revision</h1>
+<p class="lead">Everything for the last six hours, in the order it pays. Quant is ranked by how often each topic appeared in the twelve CAT 2022–25 slots (264 questions), and every question type has a real CAT example, retold in short, with the fast method. VARC has the method for each question type plus original solved drills. DILR has the set types and how to attack each.</p>
+
+<div class="box w">
+<h4>Your six hours</h4>
+<div class="tbl"><table>
+<tr><th>Time</th><th>What</th><th>Why</th></tr>
+<tr><td>0:00–0:15</td><td>Exam day checklist</td><td>Get the logistics out of your head first.</td></tr>
+<tr><td>0:15–1:30</td><td>Quant: Arithmetic (all 8 topics)</td><td>39% of Quant, and the easiest marks for you.</td></tr>
+<tr><td>1:30–2:30</td><td>Quant: Algebra (7 topics)</td><td>34% of Quant. Equations, quadratics and logs are formula-driven.</td></tr>
+<tr><td>2:30–3:05</td><td>Quant: Geometry, Number system, P&amp;C</td><td>Learn the formula boxes; skim the examples.</td></tr>
+<tr><td>3:05–3:15</td><td>Break</td><td>Walk, water, no screen.</td></tr>
+<tr><td>3:15–4:30</td><td>VARC: traps + all drills</td><td>Turn on Self-test and do the drills before reading answers.</td></tr>
+<tr><td>4:30–5:15</td><td>DILR: set types + selection rules</td><td>The section is decided by which sets you pick.</td></tr>
+<tr><td>5:15–6:00</td><td>Quant formula boxes once more</td><td>Only the boxes, not the examples. Then stop.</td></tr>
+</table></div>
+<p style="margin:.3rem 0 0">Tick <b>Revised</b> next to each topic as you finish it; the contents list strikes it through. Turn on <b>Self-test</b> (top right) to blur every solution until you tap it.</p>
+</div>
+
+<h2 class="ck" id="exam-day">Exam day checklist</h2>
+<div class="box w">
+<h4>The things people forget</h4>
+<ul>
+<li><b>Admit card</b>, printed, with your photo pasted if it asks. Keep a second print in your bag.</li>
+<li><b>Original photo ID</b> (Aadhaar, PAN, passport, driving licence or voter ID). A photocopy or phone photo is not accepted.</li>
+<li>Check the <b>reporting time and gate-closing time</b> on the admit card tonight, not tomorrow. Plan to reach 45 minutes before reporting. Check the route and traffic now.</li>
+<li>Only what the admit card allows: usually admit card, ID, a transparent water bottle and any declared medical item. No watch, calculator, phone or wallet inside; know where you will leave them.</li>
+<li>Dress light and comfortable; the centre may be cold. Eat a normal meal, nothing new.</li>
+<li>Sleep at a fixed time tonight. One more mock tonight is worth less than one more hour of sleep.</li>
+</ul>
+</div>
+<div class="box">
+<h4>Inside the hall</h4>
+<ul>
+<li><b>Order is fixed:</b> VARC → DILR → Quant, 40 minutes each. You cannot go back to a section.</li>
+<li><b>Marking:</b> +3 correct. Wrong MCQ −1. Wrong or blank TITA (type-in) 0. <b>Never leave a TITA blank.</b></li>
+<li>An <b>on-screen calculator</b> is available. Use it for ugly arithmetic in DILR and Quant, not for things you can do mentally.</li>
+<li>A <b>scribble pad</b> is given. Write question numbers next to rough work so you can return to them.</li>
+<li>"Answered and marked for review" counts as answered. "Marked for review" with no answer counts for nothing.</li>
+<li>If a section goes badly, it is over when the timer ends. Start the next section fresh; percentiles are relative and everyone found something hard.</li>
+</ul>
+</div>
+
+<h2 class="qa" id="quant">Quant</h2>
+<p class="lead">22 questions, about 8 TITA, 40 minutes. In 2022–25 the split was Arithmetic 39%, Algebra 34%, Geometry 14%, Number system 9%, Modern maths 4%. A score of 25–30 here is a strong result for you. That means 9–11 correct with few wrong.</p>
+
+<div class="box w" id="qa-plan">
+<h4>How to play the Quant section tomorrow</h4>
+<ol>
+<li><b>Pass 1 (first 20–22 minutes):</b> go Q1 to Q22. Read each question once. Solve it only if you recognise the type from this page and can see the method within 30 seconds. Otherwise skip without guilt.</li>
+<li><b>Pass 2 (next 15 minutes):</b> return to the skipped ones that looked possible. Cap: 3 minutes per question. At 3 minutes, guess only if it is a TITA, otherwise leave it.</li>
+<li><b>Last 3 minutes:</b> put a sensible number in every blank TITA (no penalty).</li>
+<li><b>Back-solve MCQs.</b> When the options are numbers, plug them in, starting from the middle value. Many arithmetic questions take 40 seconds this way.</li>
+<li><b>Use 100 or easy numbers</b> for percentage, profit and ratio questions. Take the cost as 100, the salary as 100, the tank as the LCM of the times.</li>
+<li><b>Geometry:</b> draw the figure every time. If no standard result comes to mind within a minute, skip.</li>
+</ol>
+</div>
+
+<div class="box w" id="qa-weak">
+<h4>Your weak spots, from your own attempts</h4>
+<p style="margin:.2rem 0 .4rem">From your CAT 2022 Slot 1 attempt and your 22-question timed Quant mix this week. Questions you got wrong or skipped after spending time on them: <b>Averages 3, Profit &amp; loss 3, Progressions 2</b>, then one each in Ratio, TSD, Time &amp; work, Equations, Quadratics, Functions, Inequalities, P&amp;C and Sets. You got most Geometry right.</p>
+<p style="margin:0">These topics are tagged <span class="pill wk">YOUR WEAK SPOT</span>, and each has an <b>Extra practice</b> block of simpler, CAT-style questions I wrote, so you can practise the basic method before the real CAT examples. Do them with Self-test on: write your answer on paper, then tap to check.</p>
+</div>
+
+<div class="box f" id="qa-cheat">
+<h4>Numbers to know by heart</h4>
+<div class="tbl"><table>
+<tr><th>Fraction</th><th>%</th><th>Fraction</th><th>%</th><th>Fraction</th><th>%</th></tr>
+<tr><td>1/2</td><td>50</td><td>1/7</td><td>14.28</td><td>1/12</td><td>8.33</td></tr>
+<tr><td>1/3</td><td>33.33</td><td>1/8</td><td>12.5</td><td>1/15</td><td>6.67</td></tr>
+<tr><td>1/4</td><td>25</td><td>1/9</td><td>11.11</td><td>1/16</td><td>6.25</td></tr>
+<tr><td>1/5</td><td>20</td><td>1/10</td><td>10</td><td>1/20</td><td>5</td></tr>
+<tr><td>1/6</td><td>16.67</td><td>1/11</td><td>9.09</td><td>1/25</td><td>4</td></tr>
+</table></div>
+<ul>
+<li>Squares: 11²=121, 12²=144, 13²=169, 14²=196, 15²=225, 16²=256, 17²=289, 18²=324, 19²=361, 21²=441, 22²=484, 23²=529, 24²=576, 25²=625.</li>
+<li>Cubes: 2³=8, 3³=27, 4³=64, 5³=125, 6³=216, 7³=343, 8³=512, 9³=729, 10³=1000, 11³=1331, 12³=1728.</li>
+<li>Powers of 2: 2¹⁰=1024, 2¹²=4096, 2¹⁵=32768. Powers of 3: 3⁵=243, 3⁶=729, 3⁸=6561.</li>
+<li>Pythagorean triples: 3-4-5, 5-12-13, 8-15-17, 7-24-25, 20-21-29, 9-40-41, 28-45-53 (and their multiples, e.g. 6-8-10).</li>
+<li>√2 ≈ 1.414, √3 ≈ 1.732, √5 ≈ 2.236, π ≈ 3.1416 (22/7).</li>
+<li>1.1² = 1.21, 1.2² = 1.44, 1.02² = 1.0404, 1.04² = 1.0816, 1.05² = 1.1025, 1.075² ≈ 1.1556, 1.2⁹ ≈ 5.16.</li>
+</ul>
+</div>
+
+<h3 id="q-pct">1. Percentages <span class="pill t1">ARITHMETIC</span><span class="pill">10 Qs in 2022–25</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>Two successive changes a% and b%: net = <span class="m">a + b + ab/100</span>. (+20 then −20 = −4%.)</li>
+<li>If A is r% more than B, then B is <span class="m">r/(100+r) × 100%</span> less than A. (25% more → 20% less.)</li>
+<li>Price up r% → to keep spending the same, cut quantity by <span class="m">r/(100+r)</span>.</li>
+<li>Growth over n periods: <span class="m">P(1 + r/100)ⁿ</span>; overall from a% then b%: multiply factors (1.2 × 1.25 = 1.5).</li>
+<li>"x% of y" = "y% of x" (8% of 50 = 50% of 8 = 4).</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S3</span><span class="ty">Successive increase.</span> After two raises, a salary is 187.5% of the original. The second raise (%) was twice the first. Find the first raise.</p>
+<div class="a">(1 + r)(1 + 2r) = 1.875. Try options: r = 0.25 → 1.25 × 1.5 = 1.875 ✓. <span class="k">25%</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Share of total.</span> Incomes 8 : 6 : 5. They pay 15%, 12%, 18% of income as rent. Next month the rent is the same and incomes rise 10%, 12%, 15%. What % of total income is rent now?</p>
+<div class="a">Take incomes 800, 600, 500. Rent = 120 + 72 + 90 = 282. New incomes = 880 + 672 + 575 = 2127. 282/2127 = <span class="k">13.26%</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S3, 2024 S2</span><span class="ty">Selling parts of a stock.</span> Mangoes are 40% of the stock. He sells half the mangoes, 96 bananas and 40% of the apples, which is 50% of all fruit. Smallest possible stock?</p>
+<div class="a">Stock T, apples a: 0.2T + 96 + 0.4a = 0.5T → a = 0.75T − 240, bananas = 240 − 0.15T. Need a ≥ 1 (T > 320), all counts whole (T a multiple of 20). <span class="k">T = 340</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S3</span><span class="ty">Overlap range (min/max).</span> 250 students, girls 44%–60%. 50% of boys and 80% of girls swim; 70% of boys and 60% of girls run; everyone does at least one. Min and max doing both?</p>
+<div class="a">Both = swimmers + runners − total = 1.2(250 − g) + 1.4g − 250 = 50 + 0.2g. g from 110 to 150 → <span class="k">72 and 80</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S3</span><span class="ty">Down then up.</span> Population 1,00,000 falls y% then rises x%, with x − y = 10 and the final above 1,00,000 (x, y whole). Lowest middle-year population?</p>
+<div class="a">(100 − y)(110 + y) > 10000 → y² + 10y − 1000 < 0 → y ≤ 27. Middle year = <span class="k">73,000</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S1</span><span class="ty">People leaving.</span> More than 10 boys. 40% of girls and 60% of boys leave; the girls left are 8 more than the boys left. Minimum class size?</p>
+<div class="a">0.6g = 0.4b + 8 → 3g = 2b + 40, and b, g must be multiples of 5. b = 25, g = 30 → <span class="k">55</span></div></div>
+
+<h3 id="q-pl">2. Profit, loss and discount <span class="pill t1">ARITHMETIC</span><span class="pill">12 Qs</span><span class="pill wk">YOUR WEAK SPOT</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>Profit % is on <b>cost</b>; discount % is on <b>marked price</b>. SP = CP(1 + p) = MP(1 − d).</li>
+<li>MP/CP = (1 + p)/(1 − d). Example: 20% discount and 20% profit → MP = 1.5 × CP.</li>
+<li>Same SP, one at +x% and one at −x% → overall a loss of <span class="m">x²/100 %</span>.</li>
+<li>"Buy n, get m free" → discount = m/(n + m). Giving 13 for the price of 12 → price per item × 12/13.</li>
+<li>Cheating on weight: profit factor = (what you charge for)/(what you give). Combine factors by multiplying.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Cost and price both change.</span> Price set for 40% profit. Had cost been 40% less and price ₹5 less, profit would be 50%. Original price?</p>
+<div class="a">CP = c, SP = 1.4c. New: 1.4c − 5 = 1.5 × 0.6c = 0.9c → c = 10. SP = <span class="k">₹14</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1</span><span class="ty">Equal selling prices.</span> A and B sold at the same price: A at 20% profit, B at 10% loss. Both prices are raised (still equal) so B makes 10% profit. Profit on A now?</p>
+<div class="a">Price 1: CP_A = 1/1.2, CP_B = 1/0.9. New price = 1.1/0.9. Profit on A = (1.1/0.9) × 1.2 − 1 = 46.7% → <span class="k">≈ 47%</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S3</span><span class="ty">Discount saves an amount.</span> Marked for 20% profit. A 10% discount saves the buyer ₹15. Seller's profit?</p>
+<div class="a">MP = 150, cost = 150/1.2 = 125, sold at 135 → <span class="k">₹10</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Double the discount.</span> Cost ₹1650, 20% profit after a discount. Doubling the discount leaves ₹110 profit. At what discount rate does profit % equal discount %?</p>
+<div class="a">SP 1980 and 1760 → M·d = 220, M = 2200. 2200(1 − x) = 1650(1 + x) → x ≈ 14.3% → <span class="k">14</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S1</span><span class="ty">Free items.</span> 22% discount on MP and 13 chairs for the price of 12 still gives 26% profit. Cost ₹100 each. MP?</p>
+<div class="a">12 × 0.78M = 1.26 × 1300 → 9.36M = 1638 → <span class="k">M = 175</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S3</span><span class="ty">Cheating on length.</span> Buys at ₹100/m but gets 105 cm per metre. Sells at ₹110/m with a 5% discount, giving only 95 cm per metre. Profit?</p>
+<div class="a">Cost per real metre = 100/1.05. Revenue per real metre = 110 × 0.95/0.95 = 110. 110 × 1.05/100 − 1 = <span class="k">15.5%</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Chain of sales.</span> Bina loses 19% selling to Shyam at ₹4860. Selling at Hari's purchase price would have given her 17% profit. Shyam's profit?</p>
+<div class="a">Bina's cost = 4860/0.81 = 6000. Hari paid 6000 × 1.17 = 7020. Profit = 7020 − 4860 = <span class="k">₹2160</span></div></div>
+
+<h4>Extra practice for your weak spot</h4>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>An item is marked 40% above cost and sold at a 20% discount. Profit %?</p>
+<div class="a">Multiply factors: 1.4 × 0.8 = 1.12. <span class="k">12% profit</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>Two items are sold for ₹1200 each, one at 20% profit and the other at 20% loss. Overall result?</p>
+<div class="a">Same SP, same % gain and loss → always a loss of x²/100 = 400/100. (Costs 1000 + 1500 = 2500 vs SP 2400.) <span class="k">4% loss</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>A shopkeeper sells at cost price but uses a 900 g weight for 1 kg. Profit %?</p>
+<div class="a">Profit = (true − false)/false = 100/900. <span class="k">11.11%</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>Successive discounts of 20% and 10% equal what single discount?</p>
+<div class="a">1 − 0.8 × 0.9 = 0.28. Shortcut: a + b − ab/100 = 30 − 2. <span class="k">28%</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>Selling at ₹840 gives a 16% loss. At what price should it be sold for a 10% profit?</p>
+<div class="a">CP = 840/0.84 = 1000 → 1000 × 1.1. <span class="k">₹1100</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>A sells to B at 10% profit, B sells to C at 20% profit, and C pays ₹1320. What did A pay?</p>
+<div class="a">Chain of factors: 1320/(1.1 × 1.2) = 1320/1.32. <span class="k">₹1000</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>After a 25% discount a seller still makes 5% profit. By what % above cost was it marked?</p>
+<div class="a">Let cost = 1: M × 0.75 = 1.05 → M = 1.4. <span class="k">40%</span></div></div>
+
+<h3 id="q-int">3. Simple and compound interest <span class="pill t1">ARITHMETIC</span><span class="pill">11 Qs</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>SI = <span class="m">P·r·t/100</span>. Amount grows by the same amount each year.</li>
+<li>CI amount = <span class="m">P(1 + r/100)ⁿ</span>. Half-yearly: rate r/2, periods 2n. Quarterly: r/4, 4n.</li>
+<li>Value(year 5)/Value(year 3) = (1 + r)². Successive CI amounts form a GP.</li>
+<li>CI − SI for 2 years = <span class="m">P(r/100)²</span>.</li>
+<li>Instalments: loan × (1+r)ⁿ = sum of each instalment grown to the end.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1, 2024 S2</span><span class="ty">Compare two plans.</span> Anil: ₹22,000 for 6 years at 4% p.a. compounded half-yearly. Sunil: same scheme for 5 years, then 10% simple interest for 1 year. Equal final amounts. Sunil's investment?</p>
+<div class="a">22000 × 1.02¹² = P × 1.02¹⁰ × 1.1 → P = 20000 × 1.02² = <span class="k">₹20,808</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S1</span><span class="ty">Find P and r from two SI amounts.</span> ₹13,920 after 3 years and ₹18,960 after 6.5 years at SI. Interest if invested for 2 years compounded half-yearly?</p>
+<div class="a">3.5 years of interest = 5040 → 1440/year. P = 13920 − 4320 = 9600, r = 15%. 9600 × (1.075⁴ − 1) ≈ <span class="k">₹3221</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S3</span><span class="ty">Ratio of values.</span> ₹4000 at CI. Value after 3 years : after 5 years = 25 : 36. Minimum years to exceed ₹20,000?</p>
+<div class="a">(1 + r)² = 36/25 → 1.2. Need 1.2ⁿ > 5: 1.2⁸ ≈ 4.30, 1.2⁹ ≈ 5.16 → <span class="k">9</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Instalments.</span> ₹1000 loan repaid by ₹530 after year 1 and ₹594 after year 2, CI. Rate?</p>
+<div class="a">Try 8%: 1000 → 1080 − 530 = 550 → 550 × 1.08 = 594 ✓ → <span class="k">8%</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S2</span><span class="ty">Part repayment.</span> ₹2 lakh at 8% compounded half-yearly. Repays ₹10,320 after year 1 and clears the rest after year 3. Total interest?</p>
+<div class="a">200000 × 1.04² = 216320 − 10320 = 206000. × 1.04⁴ ≈ 240991. Paid 251311 → interest <span class="k">≈ ₹51,311</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">SI chain.</span> ₹10,000 at 5% SI for t years, then the whole amount at 6% SI for 5 years. Interests in ratio 10 : 13. Find t.</p>
+<div class="a">500t : 0.3(10000 + 500t) = 10 : 13 → 6500t = 30000 + 1500t → <span class="k">t = 6</span></div></div>
+
+<h3 id="q-ratio">4. Ratio, proportion and variation <span class="pill t1">ARITHMETIC</span><span class="pill">10 Qs</span><span class="pill wk">YOUR WEAK SPOT</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>Write a ratio a : b as <span class="m">ak, bk</span>; then use the second condition to find k.</li>
+<li>Moving x from A to B keeps the total fixed. Use the total as the anchor.</li>
+<li>Combine A:B and B:C by making B equal (LCM).</li>
+<li>Direct variation y = kx; with a square, y = kx². Find k from one data point.</li>
+<li>Savings = income − expenditure. Write incomes and expenditures with separate multipliers if needed.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S3</span><span class="ty">Shift between two boxes.</span> Coins in A : B = 17 : 7. After 108 move from A to B, 37 : 20. How many more must move to make it 1 : 1?</p>
+<div class="a">(17k − 108)/(7k + 108) = 37/20 → k = 76. Total 1824, A now 1184 → move 1184 − 912 = <span class="k">272</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Two-stage change.</span> Shifts 13 : 9. After 21 move morning → afternoon, 19 : 14. New students join in 3 : 8 and the ratio becomes 5 : 4. New students?</p>
+<div class="a">k = 63 → 798 and 588. (798 + 3t)/(588 + 8t) = 5/4 → t = 9 → 11t = <span class="k">99</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S2</span><span class="ty">Variation.</span> Price ∝ (weight)². A stone of 18 units breaks into 4 pieces with distinct whole weights. The gap between the highest and lowest possible total price is ₹2,88,000. Original price?</p>
+<div class="a">Max Σw² = 1+4+9+144 = 158 (1,2,3,12). Min = 9+16+25+36 = 86 (3,4,5,6). 72k = 288000 → k = 4000. Price = 4000 × 324 = <span class="k">₹12,96,000</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Income, expense, savings.</span> Expenditures L : M = 2 : 3. L's income : M's expenditure = 6 : 7. Savings 4 : 9. Incomes?</p>
+<div class="a">Expenses 2k, 3k. L's income 18k/7 → saves 4k/7. M saves 9k/7 → income 30k/7. Ratio <span class="k">3 : 5</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Ratio after selling.</span> 187 fruits; apples : mangoes = 5 : 2. Sells 75 apples, 26 mangoes, half the oranges; unsold apples : oranges = 3 : 2. Unsold total?</p>
+<div class="a">Apples 5k, mangoes 2k, oranges 187 − 7k. 4(5k − 75) = 3(187 − 7k) → k = 21. Unsold 30 + 16 + 20 = <span class="k">66</span></div></div>
+
+<h4>Extra practice for your weak spot</h4>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>a : b = 2 : 3 and b : c = 4 : 5. Find a : b : c.</p>
+<div class="a">Make b the same: multiply the first by 4 and the second by 3 → 8 : 12 and 12 : 15. <span class="k">8 : 12 : 15</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>₹7800 is shared among A, B, C so that 2A = 3B = 4C. What is A's share?</p>
+<div class="a">Set 2A = 3B = 4C = 12k → A = 6k, B = 4k, C = 3k. 13k = 7800 → k = 600. <span class="k">₹3600</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>Incomes are in the ratio 5 : 4 and expenses 3 : 2. Each saves ₹2000. Find the incomes.</p>
+<div class="a">5x − 3y = 2000 and 4x − 2y = 2000 → x = y = 1000. <span class="k">₹5000 and ₹4000</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>What number added to each of 6, 14, 18 and 38 makes them proportional?</p>
+<div class="a">(6 + x)(38 + x) = (14 + x)(18 + x) → 228 + 44x = 252 + 32x. Check: 8 : 16 = 20 : 40. Or test the options. <span class="k">2</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>A bag has ₹1, 50 p and 25 p coins in the ratio 2 : 3 : 4, worth ₹180 in all. How many 25 p coins?</p>
+<div class="a">One 'set' (2 + 3 + 4 coins) is worth 2 + 1.5 + 1 = ₹4.5. 180/4.5 = 40 sets → 4 × 40. <span class="k">160</span></div></div>
+
+<h3 id="q-mix">5. Mixtures and alligation <span class="pill t1">ARITHMETIC</span><span class="pill">12 Qs</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li><b>Alligation:</b> mixing a cheaper c and a dearer d to get mean m: quantity ratio = <span class="m">(d − m) : (m − c)</span>.</li>
+<li><b>Replacement:</b> remove x from V and refill with the other liquid, n times. What remains of the original = <span class="m">V(1 − x/V)ⁿ</span>.</li>
+<li>Track the <b>pure</b> component (acid, milk). Adding water changes only the total.</li>
+<li>Price of a mixture is a weighted average of the prices of its parts.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Repeated replacement.</span> A glass of milk; two-thirds poured out and replaced with water, four times in all. Milk : water?</p>
+<div class="a">Milk left = (1/3)⁴ = 1/81 → <span class="k">1 : 80</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S2</span><span class="ty">How many replacements.</span> 40 L milk; replace 4 L with water each time. Smallest number of times until milk < water?</p>
+<div class="a">40 × 0.9ⁿ < 20 → 0.9ⁿ < 0.5. 0.9⁶ ≈ 0.53, 0.9⁷ ≈ 0.48 → <span class="k">7</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1</span><span class="ty">Two replacements, ratio given.</span> Coffee replaced twice by cocoa; final coffee : cocoa = 16 : 9. Cocoa in first mix : second mix?</p>
+<div class="a">(1 − f)² = 16/25 → f = 1/5. Cocoa 1/5 then 9/25 → <span class="k">5 : 9</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Add water, then acid.</span> Add 2 L water → 50% acid. Then add 15 L acid → 80% acid. Original water : acid?</p>
+<div class="a">a = w + 2 and a + 15 = 0.8(a + w + 17) → a + 7 = 4w. w = 3, a = 5 → <span class="k">3 : 5</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Prices of two mixtures.</span> Mixture with 16% coffee costs ₹240/kg; with 36% coffee ₹320/kg. A new mix costs ₹376/kg. Coffee in 10 kg?</p>
+<div class="a">20% more coffee adds ₹80 → coffee − cocoa = ₹400/kg. Cocoa = 240 − 0.16 × 400 = 176. 176 + 400f = 376 → f = 0.5 → <span class="k">5 kg</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S3</span><span class="ty">Two-vessel transfer.</span> A: 60 L alcohol, B: 60 L water. V litres A → B, stir, V litres back. A now has alcohol : water = 15 : 4. Find V.</p>
+<div class="a">A ends with alcohol 3600/(60 + V) and water 60V/(60 + V) → ratio 60 : V = 15 : 4 → <span class="k">V = 16</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S1</span><span class="ty">Three-step replacement.</span> 200 L, 30% acid. Replace 20% with water, then 10% with acid, then 15% with water. Final acid %?</p>
+<div class="a">60 → 48 → 48 × 0.9 + 20 = 63.2 → 63.2 × 0.85 = 53.72 L → <span class="k">≈ 27%</span></div></div>
+
+<h3 id="q-avg">6. Averages <span class="pill t1">ARITHMETIC</span><span class="pill">17 Qs: the most common arithmetic topic</span><span class="pill wk">YOUR WEAK SPOT</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>Sum = average × count. Work with <b>sums</b>, not averages.</li>
+<li>A newcomer changes the average by (newcomer − old average)/(new count).</li>
+<li>Weighted average of groups = Σ(count × avg)/Σcount. Overlapping groups: add the sums and subtract the overlap.</li>
+<li>Average of an AP = (first + last)/2.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Chain of averages.</span> Avg of first 2 is 1 more than the 1st; avg of first 3 is 2 more than avg of first 2; avg of 4 is 3 more than avg of 3. Largest − smallest?</p>
+<div class="a">b = a + 2; first-3 avg = a + 3 → c = a + 7; first-4 avg = a + 6 → d = a + 15 → <span class="k">15</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Overlapping groups.</span> 40 employees. Avg of first 30 = 40k, last 30 = 60k, first 10 + last 10 = 50k. Next year the first 10 go up 100%, the last 10 up 200%. New overall avg?</p>
+<div class="a">F + M = 12L, M + L = 18L, F + L = 10L → F = 2L, M = 10L, L = 8L. New: 4 + 10 + 24 = 38L ÷ 40 = <span class="k">₹95,000</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S3</span><span class="ty">Newcomer.</span> D joins A, B, C and the avg drops by x. If E joins instead, it rises by 2x. E is 12 kg heavier than D. Find x.</p>
+<div class="a">(E − D)/4 = 3x → 3 = 3x → <span class="k">x = 1</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1</span><span class="ty">Range of totals.</span> 4 girls + 6 boys average 24; all girls equal, all boys equal; boy ≤ girl ≤ 2 × boy. How many integer values can the total of 2 girls and 6 boys take?</p>
+<div class="a">2g + 3b = 120 → b from 120/7 to 24. Total = 120 + 3b from 171.4 to 192 → integers 172–192 = <span class="k">21</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Day-wise averages.</span> Avg 60 for the first 7 days, 63 for 8 days. Day 9 sells 11 less than day 8, and days 2–9 average 66. Day 1?</p>
+<div class="a">Day 8 = 504 − 420 = 84, day 9 = 73. Days 1–9 = 577; days 2–9 = 528 → <span class="k">49</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S3</span><span class="ty">Group raise.</span> 5 managers + 25 engineers average ₹60,000. A 20% raise for managers only lifts the overall average by 5%. Engineers' average?</p>
+<div class="a">5% of 18L = 90,000 = 20% of managers' total → 4.5L. Engineers 13.5L ÷ 25 = <span class="k">₹54,000</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S3</span><span class="ty">Change some numbers.</span> Three numbers average 28. Smallest +7, largest −10: the new mean is 2 more than the middle, and largest − smallest = 64. Original largest?</p>
+<div class="a">New mean 27 = middle + 2 → b = 25. c − a = 81 and a + c = 59 → <span class="k">c = 70</span></div></div>
+
+<h4>Extra practice for your weak spot</h4>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>The average of 5 numbers is 24. After one number is removed, the average of the rest is 22. What number was removed?</p>
+<div class="a">Work with totals, never averages: 5 × 24 − 4 × 22 = 120 − 88. <span class="k">32</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>A batsman's average after 20 innings is 42. He scores 84 in the 21st innings. What is his new average?</p>
+<div class="a">Shortcut: the new score is 42 above the average, spread over 21 innings → rise of 42/21 = 2. <span class="k">44</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>A class of 40 students has an average weight of 50 kg. When the teacher is included, the average rises by 0.5 kg. What does the teacher weigh?</p>
+<div class="a">Teacher = old average + (new count × rise) = 50 + 41 × 0.5. <span class="k">70.5 kg</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>The average of 11 results is 50. The first 6 average 49 and the last 6 average 52. What is the 6th result?</p>
+<div class="a">The 6th is counted twice: 6 × 49 + 6 × 52 − 11 × 50 = 294 + 312 − 550. <span class="k">56</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>Section A (30 students) averages 60 and section B (20 students) averages 75. What is the combined average?</p>
+<div class="a">Weighted average = (30 × 60 + 20 × 75)/50 = 3300/50. Check: it lies nearer 60 because A is bigger. <span class="k">66</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>The average of 7 consecutive odd numbers is 33. What is the largest?</p>
+<div class="a">For an evenly spaced list the average is the middle term. Middle = 33, three steps of 2 above it: 33 + 6. <span class="k">39</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>The average age of 8 men rises by 2 years when two of them, aged 21 and 23, are replaced by two women. What is the average age of the women?</p>
+<div class="a">Total rises by 8 × 2 = 16. Women's total = 21 + 23 + 16 = 60, so each averages 30. <span class="k">30</span></div></div>
+
+<h3 id="q-work">7. Time and work, pipes <span class="pill t1">ARITHMETIC</span><span class="pill">14 Qs</span><span class="pill wk">YOUR WEAK SPOT</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>Take the total work as the LCM of the times. Rate = work/time. Rates add; a drain pipe is negative.</li>
+<li>Efficiency ratio a : b means time ratio b : a.</li>
+<li>Man-hours: <span class="m">M₁D₁H₁/W₁ = M₂D₂H₂/W₂</span>.</li>
+<li>Alternating days: work out one full cycle, then the remainder day by day.</li>
+<li>Work rates in HP ⇔ times in AP.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1</span><span class="ty">HP / AP rates.</span> Daily work of Amal, Sunil, Kamal in HP; Kamal takes twice Amal's time. Amal 4 days + Sunil 9 days + Kamal 16 days = job. Sunil alone?</p>
+<div class="a">Times in AP: T, 1.5T, 2T. 4/T + 9/1.5T + 16/2T = 18/T = 1 → T = 18 → Sunil <span class="k">27 days</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Hours × days.</span> Renu: 15 days × 4 h. Seema: 8 days × 5 h. Seema works twice Renu's hours/day; Renu works twice Seema's days. Renu works 2 h/day. Seema's days?</p>
+<div class="a">Work = 60 Renu-hours = 40 Seema-hours. 4d/60 + 4d/40 = 1 → <span class="k">d = 6</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Regroup to find rates.</span> A + V = 150 days, V + S = 100 days. A 75 days, then V 135 days, then S 45 days finishes it. If A works daily, V every 2nd day, S every 3rd day, how many days?</p>
+<div class="a">75(A + V) + 15V + 45(V + S) = 1 → V = 1/300, A = 1/300, S = 2/300. Per 6 days: 6 + 3 + 4 = 13 units. 23 cycles = 299 units in 138 days, +1 day → <span class="k">139</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S3</span><span class="ty">"Cannot be" from inequalities.</span> All three together take more than 7 days; R + G take less than 15 days. All work 6 days, then Rakshita alone 3 days. Her time alone cannot be?</p>
+<div class="a">6(r₁ + r₃) + 9r₂ = 1. r₁ + r₃ > 1/15 → T > 15. R < 1/7 → T < 21. Options 16, 21, 20, 17 → <span class="k">21</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Efficiency multiples.</span> Ankita = 2 × Bipin = 4 × Chandan. All start; Bipin leaves after 20 days; done in 60 days. Chandan alone?</p>
+<div class="a">Rates 4c, 2c, c. 20 × 7c + 40 × 5c = 340c = 1 → <span class="k">340 days</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S3</span><span class="ty">Rotation.</span> Sam 20 days; Mohit 2× Sam and 3× Ayna. Days rotate S+M, S+A, M+A. Sam's share of the work?</p>
+<div class="a">Per 60 units: S 3, M 6, A 2. Cycle = 22. After 6 days 44; day 7 (+9) 53; day 8 (+5) 58; day 9 finishes. Sam worked 6 days × 3 = 18/60 = <span class="k">3/10</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S1</span><span class="ty">Cheapest within a deadline.</span> A, V, T take 24, 21, 15 days and charge ₹2160, 2400, 2160 per day. Done in ≤ 10 days, minimum cost?</p>
+<div class="a">Whole-task cost: A 51840, V 50400, T 32400. T for 10 days does 2/3 (₹21,600); V does 1/3 in 7 days (₹16,800) → <span class="k">₹38,400</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S3</span><span class="ty">Pipe ratios.</span> Pipe flow rates 4 : 9 : 36; A alone fills in 15 h. All three together, in minutes?</p>
+<div class="a">Time = 15 × 4/49 h = 3600/49 min ≈ <span class="k">73</span></div></div>
+
+<h4>Extra practice for your weak spot</h4>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>A can finish a job in 12 days and B in 18. How long together?</p>
+<div class="a">Use LCM = 36 units: A does 3/day, B 2/day → 36/5. <span class="k">7.2 days</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>A and B together take 10 days; A alone takes 15. How long does B take alone?</p>
+<div class="a">LCM 30: together 3/day, A 2/day → B 1/day. <span class="k">30 days</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>Pipe A fills a tank in 20 min, pipe B in 30 min, and pipe C empties it in 15 min. All three are opened. Time to fill?</p>
+<div class="a">LCM 60 units: +3 +2 −4 = 1 unit/min. <span class="k">60 min</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>12 men can finish a job in 20 days. They work for 5 days and then 3 men leave. Total days taken?</p>
+<div class="a">Work = 240 man-days. Done 60, left 180 with 9 men = 20 more days → 5 + 20. <span class="k">25 days</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>A is twice as efficient as B. Together they finish in 14 days. How long would A take alone?</p>
+<div class="a">Rates 2 : 1, total 3 units/day × 14 = 42 units → A: 42/2. <span class="k">21 days</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>A alone takes 10 days and B 15. Working together they earn ₹5000. What is A's share?</p>
+<div class="a">Wages split in the ratio of work done = ratio of rates = 3 : 2 (LCM 30). <span class="k">₹3000</span></div></div>
+
+<h3 id="q-tsd">8. Time, speed and distance <span class="pill t1">ARITHMETIC</span><span class="pill">15 Qs</span><span class="pill wk">YOUR WEAK SPOT</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>D = S × T. km/h → m/s multiply by 5/18.</li>
+<li>Same distance: speed ratio = inverse of time ratio. Average speed for equal distances = <span class="m">2xy/(x + y)</span>.</li>
+<li>Relative speed: opposite directions add, same direction subtract.</li>
+<li><b>After meeting</b>, if they take t₁ and t₂ to finish: <span class="m">S₁/S₂ = √(t₂/t₁)</span> and time to meet = <span class="m">√(t₁t₂)</span>.</li>
+<li>Boats: downstream b + r, upstream b − r. b = (down + up)/2, r = (down − up)/2.</li>
+<li>"Speed +6 saves 4 h, −6 costs 6 h" type: write (v + a)(t − b) = vt and solve two linear equations.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1</span><span class="ty">After meeting.</span> After meeting, Arvind takes 6 h to reach B and Surbhi 24 h to reach A. Arvind's speed 54 km/h. Distance AB?</p>
+<div class="a">Speed ratio √(24/6) = 2 → Surbhi 27. Meet time √(6 × 24) = 12 h. (54 + 27) × 12 = <span class="k">972 km</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Cross, then a time gap.</span> 45 km apart; they cross after 1.5 h; Anil reaches 1 h 15 min after Sunil. Anil's speed?</p>
+<div class="a">Speeds sum to 30. Test options: 12 → 45/12 − 45/18 = 3.75 − 2.5 = 1.25 ✓ → <span class="k">12 km/h</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S3</span><span class="ty">Faster/slower.</span> +6 km/h saves 4 h; −6 km/h costs 6 h. Distance?</p>
+<div class="a">6t − 4v = 24 and v − t = 6 → t = 24, v = 30 → <span class="k">720 km</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Schedule.</span> Leaves 9 am. At 60 km/h it is 3.5 h late. Next day it covers 2/3 of the route in 1/3 of the scheduled time and the rest at 40 km/h, on time. Scheduled arrival?</p>
+<div class="a">D/120 = 2T/3 → D = 80T. 80T/60 = T + 3.5 → T = 10.5 h → <span class="k">7:30 pm</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Boats.</span> Sneha rows at 6 km/h; 14 km upstream takes 48 min more than downstream. Rita rows at 5 km/h and makes a 100-minute round trip. Total distance?</p>
+<div class="a">14/(6 − r) − 14/(6 + r) = 0.8 → r = 1. Rita: d/4 + d/6 = 5/3 → d = 4 → <span class="k">8 km</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S2</span><span class="ty">Three people meet.</span> Ravi at 40 km/h; Vijay 54 m behind; Ashok 225 m ahead, coming the other way at 50 km/h. Vijay's speed so all three meet together?</p>
+<div class="a">Ravi and Ashok meet in 225/25 = 9 s. Vijay must gain 54 m in 9 s = 6 m/s = 21.6 km/h → <span class="k">61.6 km/h</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S3</span><span class="ty">Stop and speed up.</span> 5 pm to 11 pm. After a 20-min stop he must go 3 km/h faster to be on time; a 30-min stop would need 5 km/h faster. Speed?</p>
+<div class="a">Remaining time T: 3T = v/3 + 1 and 5T = v/2 + 2.5 → <span class="k">v = 15</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1</span><span class="ty">Odometer puzzle.</span> 8-hour trip, ≤ 110 km/h. Odometer palindromic before and after, ending at 26862. Max average speed?</p>
+<div class="a">Start ≥ 25982. Palindromes 26762, 26662, …, 26062 (25952 too far). 800 km/8 h = <span class="k">100 km/h</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S3</span><span class="ty">Walk and run.</span> Running is 40% faster than walking. Walk B→C = 3.5 h = run B→A. Walk A→B plus run B→C, in minutes?</p>
+<div class="a">BC = 210w, AB = 294w. Walk AB 294 min + run BC 150 min = <span class="k">444</span></div></div>
+
+<h4>Extra practice for your weak spot</h4>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>A car goes from P to Q at 60 km/h and returns at 40 km/h. Average speed?</p>
+<div class="a">Equal distances → 2ab/(a + b) = 4800/100. Never (60 + 40)/2. <span class="k">48 km/h</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>A 240 m train passes a pole in 12 s. How long does it take to cross a 360 m platform?</p>
+<div class="a">Speed = 20 m/s. Distance = train + platform = 600 m. <span class="k">30 s</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>Trains of 150 m and 100 m run towards each other at 54 and 36 km/h. Time to cross each other?</p>
+<div class="a">Opposite → add: 90 km/h = 25 m/s (× 5/18). Distance = 250 m. <span class="k">10 s</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>A boat goes 30 km downstream in 2 h and 18 km upstream in 2 h. Speed of the stream?</p>
+<div class="a">Down 15, up 9. Boat = (15 + 9)/2 = 12, stream = (15 − 9)/2. <span class="k">3 km/h</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>Walking at 4/5 of his usual speed, a man is 15 minutes late. What is his usual time?</p>
+<div class="a">Speed × 4/5 → time × 5/4, so the extra quarter of the usual time is 15 min. <span class="k">60 min</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>A and B are 300 km apart and drive towards each other at 40 and 60 km/h. Where do they meet?</p>
+<div class="a">Time = 300/100 = 3 h. A covers 40 × 3. Distances split in the ratio of speeds, 2 : 3. <span class="k">120 km from A's start</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>Two runners on a 600 m circular track run at 5 and 7 m/s. When do they first meet if they run in the same direction, and if they run in opposite directions?</p>
+<div class="a">Same direction: track/difference = 600/2. Opposite: track/sum = 600/12. <span class="k">300 s and 50 s</span></div></div>
+
+<h3 id="q-eq">9. Equations (linear, integer, perfect squares) <span class="pill t1">ALGEBRA</span><span class="pill">23 Qs: the most common topic overall</span><span class="pill wk">YOUR WEAK SPOT</span></h3>
+<div class="box f"><h4>Formulas and tricks</h4><ul>
+<li><b>Sum of squares = 0</b> → each square = 0. When you see x², y² and xy terms with a "= 0" or "= negative", try completing squares.</li>
+<li>Two equations, three unknowns, asked for one expression: write it as p(eq 1) + q(eq 2) and match coefficients.</li>
+<li>a₁x + b₁y = c₁, a₂x + b₂y = c₂: <b>infinite</b> solutions if a₁/a₂ = b₁/b₂ = c₁/c₂; <b>none</b> if a₁/a₂ = b₁/b₂ ≠ c₁/c₂.</li>
+<li>Modulus systems: try the sign cases (x ≥ 0 / x < 0) and throw out contradictions.</li>
+<li>Natural-number equations: isolate one variable, use divisibility, test small values.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1</span><span class="ty">Complete the square.</span> x² + (x − 2y − 1)² = −4y(x + y). Find x − 2y.</p>
+<div class="a">(x + 2y)² + (x − 2y − 1)² = 0 → x − 2y = <span class="k">1</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Complete the square.</span> 4x² + 4y² − 4xy − 6y + 3 = 0. Find 4x + 5y.</p>
+<div class="a">(2x − y)² + 3(y − 1)² = 0 → y = 1, x = 1/2 → <span class="k">7</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Two equations → squares.</span> 4(x² + y² + z²) = a and 4(x − y − z) = 3 + a. Find a.</p>
+<div class="a">Subtract: (2x − 1)² + (2y + 1)² + (2z + 1)² = 0 → x = ½, y = z = −½ → a = <span class="k">3</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S1</span><span class="ty">Linear combination.</span> a − 6b + 6c = 4 and 6a + 3b − 3c = 50. Find 2a + 3b − 3c.</p>
+<div class="a">p(eq 1) + q(eq 2): p + 6q = 2, −6p + 3q = 3 → p = −4/13, q = 5/13. Value = (−16 + 250)/13 = <span class="k">18</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Modulus system.</span> |x| + x + y = 15 and x + |y| − y = 20. Find x − y.</p>
+<div class="a">x < 0 and y ≥ 0 both lead to contradictions. So 2x + y = 15, x − 2y = 20 → x = 10, y = −5 → <span class="k">15</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S3</span><span class="ty">Infinitely many solutions.</span> x + y = 4 and (a + 5)x + (b² − 15)y = 8b. Max ab?</p>
+<div class="a">a + 5 = b² − 15 = 2b → b = 5 or −3, a = 5 or −11 → ab = 25 or 33 → <span class="k">33</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Natural numbers.</span> Distinct natural a, b, c with 3ac = 8(a + b). Smallest 3a + 2b + c?</p>
+<div class="a">b = a(3c − 8)/8. a = 2, c = 4 → b = 1. 6 + 2 + 4 = <span class="k">12</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Factor pairs.</span> Integers m, n with (m + 2n)(2m + n) = 27. Max 2m − 3n?</p>
+<div class="a">Try factor pairs of 27 (including negatives) that give integer m, n: (−9, −3) → m = 1, n = −5 → 2 + 15 = <span class="k">17</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S3</span><span class="ty">Digits as unknowns.</span> 4-digit abcd: a + b + c = 15, b + c + d = 16, c = d + 6. Largest − smallest?</p>
+<div class="a">d = a + 1, d ∈ {2, 3} → 1682 and 2493 → <span class="k">811</span></div></div>
+
+<h4>Extra practice for your weak spot</h4>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>3 pens and 5 notebooks cost ₹89; 5 pens and 3 notebooks cost ₹79. Price of a pen?</p>
+<div class="a">Add: 8(p + n) = 168 → p + n = 21. Subtract: 2(n − p) = 10 → n − p = 5. <span class="k">₹8</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>A two-digit number has digit sum 9. Reversing it increases the number by 27. Find it.</p>
+<div class="a">Reversal changes the number by 9 × (difference of digits) → b − a = 3, a + b = 9. <span class="k">36</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>A father is 3 times his son's age. In 10 years he will be twice the son's age. Son's age now?</p>
+<div class="a">3s + 10 = 2(s + 10) → s = 10. Or test options: 10 and 30 → 20 and 40 ✓. <span class="k">10</span></div></div>
+
+<h3 id="q-quad">10. Quadratic equations <span class="pill t1">ALGEBRA</span><span class="pill">14 Qs</span><span class="pill wk">YOUR WEAK SPOT</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>ax² + bx + c = 0: sum α + β = <span class="m">−b/a</span>, product αβ = <span class="m">c/a</span>.</li>
+<li>Real roots: D = b² − 4ac ≥ 0; no real roots: D < 0; equal roots: D = 0.</li>
+<li>α² + β² = (α + β)² − 2αβ. 1/α + 1/β = (α + β)/αβ. α³ + β³ = (α + β)³ − 3αβ(α + β). (α − β)² = (α + β)² − 4αβ.</li>
+<li>If r is a known root of a cubic, divide by (x − r) to get the quadratic.</li>
+<li><b>Common root</b> of two quadratics: eliminate x² (multiply and subtract) to get the root directly.</li>
+<li>Integer roots: list factor pairs of the product that add up to the sum.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1</span><span class="ty">Known root of a cubic.</span> x³ + (2r + 1)x² + (4r − 1)x + 2 = 0 has root −2; the other roots are real. Min non-negative integer r?</p>
+<div class="a">= (x + 2)(x² + (2r − 1)x + 1). D ≥ 0: (2r − 1)² ≥ 4 → r ≥ 1.5 → <span class="k">2</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1</span><span class="ty">Roots become roots of another equation.</span> 2x² − 6x + k = 0 has roots α, β; α + β and αβ are roots of x² + px + p = 0. Find 8(k − p).</p>
+<div class="a">3 + k/2 = −p and 3k/2 = p → k = −3/2, p = −9/4 → 8 × 3/4 = <span class="k">6</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S3</span><span class="ty">Reciprocals of roots.</span> x² + bx + c = 0; difference of reciprocals of roots = 1/3, sum of squares of reciprocals = 5/9. Max b + c?</p>
+<div class="a">u, v reciprocals: uv = 2/9, u + v = ±1 → c = 9/2, b = ∓9/2 → max <span class="k">9</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Symmetric expression.</span> 3x² + λx − 1 = 0, 1/α² + 1/β² = 15. Find (α³ + β³)².</p>
+<div class="a">λ² + 6 = 15 → (α + β)² = 1. α³ + β³ = s(s² + 1) = 2s → squared = <span class="k">4</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Common root.</span> x² + mx + 9, x² + nx + 17, x² + (m + n)x + 35 share a negative root. 2m + 3n?</p>
+<div class="a">(1st + 2nd) − 3rd: α² − 9 = 0 → α = −3. m = 6, n = 26/3 → 12 + 26 = <span class="k">38</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S1</span><span class="ty">Integer roots.</span> Non-negative k for which x² − 5x + k = 0 has only integer roots?</p>
+<div class="a">Roots add to 5 with product ≥ 0: (0,5), (1,4), (2,3) → k = 0, 4, 6 → <span class="k">3</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S2</span><span class="ty">No real roots, then minimise.</span> Largest integer k with (x − 1)² + 2kx + 11 = 0 having no real roots; min of k/(4y) + 9y for y > 0?</p>
+<div class="a">(k − 1)² < 12 → k = 4. 1/y + 9y ≥ 2√9 = <span class="k">6</span></div></div>
+
+<h4>Extra practice for your weak spot</h4>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>The roots of x² − 7x + k = 0 differ by 3. Find k.</p>
+<div class="a">(α − β)² = (α + β)² − 4αβ → 9 = 49 − 4k. Roots 5 and 2. <span class="k">10</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>α and β are roots of x² − 5x + 3 = 0. Find α² + β².</p>
+<div class="a">(α + β)² − 2αβ = 25 − 6. <span class="k">19</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>For which k does x² + kx + 16 = 0 have equal roots?</p>
+<div class="a">Discriminant = 0 → k² = 64. <span class="k">k = ±8</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>How many integer values of k make both roots of x² − 6x + k = 0 real and positive?</p>
+<div class="a">Real: 36 − 4k ≥ 0 → k ≤ 9. Both positive: sum 6 > 0 and product k > 0 → k = 1 to 9. <span class="k">9</span></div></div>
+
+<h3 id="q-log">11. Logs, surds and indices <span class="pill t1">ALGEBRA</span><span class="pill">14 Qs</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>log(ab) = log a + log b; log(aⁿ) = n log a; <span class="m">log_{aᵐ} b = (1/m) log_a b</span>; log_a b = 1/log_b a.</li>
+<li>Chain: <span class="m">log_a b · log_b c · log_c d = log_a d</span>.</li>
+<li>log_a x defined only for x > 0, base > 0 and ≠ 1. log of base <1 (like ¼) is positive only when 0 < x < 1.</li>
+<li>Exponent equations: put t = a^(something) to get a quadratic in t. Remember t > 0.</li>
+<li>Surds: <span class="m">√(a + 2√b) = √x + √y</span> where x + y = a, xy = b. For √a ± √b with a − b known: (√a + √b)(√a − √b) = a − b.</li>
+<li>x + 1/x = t → x² + 1/x² = t² − 2, x³ + 1/x³ = t³ − 3t.</li>
+<li>Match powers: write every base as primes (12 = 2²·3, 20 = 2²·5, 243 = 3⁵) and equate the exponents of each prime.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S3</span><span class="ty">Chain of logs.</span> 3ᵃ = 4, 4ᵇ = 5, 5ᶜ = 6, 6ᵈ = 7, 7ᵉ = 8, 8ᶠ = 9. abcdef?</p>
+<div class="a">log₃4 · log₄5 · … · log₈9 = log₃9 = <span class="k">2</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Change of base.</span> 4log₁₀x + 4log₁₀₀x + 8log₁₀₀₀x = 13. ⌊x⌋?</p>
+<div class="a">L(4 + 2 + 8/3) = 13 → L = 1.5 → x = 10^1.5 ≈ 31.6 → <span class="k">31</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S2</span><span class="ty">Change of base.</span> log_√3(x) + log_x25/log_x0.008 = 16/3. log₃(3x²)?</p>
+<div class="a">2log₃x − 2/3 = 16/3 → log₃x = 3 → 1 + 6 = <span class="k">7</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S2</span><span class="ty">Exponent → perfect square.</span> 2^(4x²) − 2^(2x²+x+16) + 2^(2x+30) = 0. Sum of x?</p>
+<div class="a">a = 2^(2x²), c = 2^(x+15): (a − c)² = 0 → 2x² = x + 15 → sum = <span class="k">1/2</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Substitution.</span> 9^(x²+2x−3) − 4·3^(x²+2x−2) + 27 = 0. Product of all x?</p>
+<div class="a">t² − 12t + 27 = 0 → t = 3 or 9 → x² + 2x − 4 = 0 or x² + 2x − 5 = 0 → (−4)(−5) = <span class="k">20</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S3</span><span class="ty">Sum of x from 10ˣ.</span> 10ˣ + 4/10ˣ = 91/2. Sum of x?</p>
+<div class="a">Product of the t-roots = 4 → x₁ + x₂ = log 4 = <span class="k">2 log₁₀2</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1</span><span class="ty">Pair of surds.</span> √(5x + 9) + √(5x − 9) = 3(2 + √2). √(10x + 9)?</p>
+<div class="a">Difference of squares 18 → a − b = 18/(sum) = 3(2 − √2). a = 6 → x = 27/5 → √63 = <span class="k">3√7</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Same idea.</span> √(x + 6√2) − √(x − 6√2) = 2√2. x?</p>
+<div class="a">Sum = 12√2/(2√2) = 6 → first root = 3 + √2 → x + 6√2 = 11 + 6√2 → <span class="k">11</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Square root of a surd.</span> a + b√n is the positive root of 29 − 12√5. Max a + b + n?</p>
+<div class="a">(2√5 − 3)² = 29 − 12√5. Write 2√5 = 1·√20 → −3 + 1 + 20 = <span class="k">18</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S3</span><span class="ty">x + 1/x powers.</span> x⁸ + x⁻⁸ = 47. x⁹ + x⁻⁹?</p>
+<div class="a">Step down: 7 → 3 → x + 1/x = √5. Cube rule twice: 2√5, then (2√5)³ − 3(2√5) = <span class="k">34√5</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S3</span><span class="ty">Match prime powers.</span> 12^(12x)·4^(24x+12)·5^(2y) = 8^(4z)·20^(12x)·243^(3x−6). x + y + z?</p>
+<div class="a">3s: 12x = 15x − 30 → x = 10. 5s: 2y = 120 → y = 60. 2s: 744 = 12z + 240 → z = 42 → <span class="k">112</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S3</span><span class="ty">Variable base.</span> log_(x−3)(x² − 9) = log_(x−3)(x + 1) + 2. Sum of valid x?</p>
+<div class="a">x + 3 = (x − 3)(x + 1) → x² − 3x − 6 = 0. Base needs x > 3, x ≠ 4 → only <span class="k">(3 + √33)/2</span></div></div>
+
+<h3 id="q-prog">12. Progressions and series <span class="pill t1">ALGEBRA</span><span class="pill">15 Qs</span><span class="pill wk">YOUR WEAK SPOT</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>AP: aₙ = a + (n − 1)d; Sₙ = n/2 (2a + (n − 1)d) = n × (first + last)/2. Middle-term trick: a₄ + a₇ + a₁₀ = 3a₇.</li>
+<li>GP: aₙ = arⁿ⁻¹; Sₙ = a(rⁿ − 1)/(r − 1); infinite sum (|r| < 1) = <span class="m">a/(1 − r)</span>. Three GP terms: a/r, a, ar.</li>
+<li>Common terms of two APs form an AP with difference = LCM of the two differences.</li>
+<li>1 + 3 + 5 + … (n terms) = n². 1 + 2 + … + n = n(n + 1)/2. Σn² = n(n + 1)(2n + 1)/6.</li>
+<li>Recurrence aₙ = 2aₙ₋₁ + 3 → add 3 to both sides: aₙ + 3 doubles each time.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">AP condition.</span> x₅ = −4 and 2x₆ + 2x₉ = x₁₁ + x₁₃. x₁₀₀?</p>
+<div class="a">4a + 26d = 2a + 22d → a = −2d. x₅ = 2d = −4 → d = −2, a = 4 → 4 − 198 = <span class="k">−194</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S3</span><span class="ty">AP sums.</span> 4th + 7th + 10th = 99; sum of 14 terms = 497. Sum of first 5?</p>
+<div class="a">a₇ = 33; 7(a₇ + a₈) = 497 → a₈ = 38, d = 5, a = 3 → S₅ = <span class="k">65</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S2</span><span class="ty">Common terms.</span> aₙ = 13 + 6(n − 1), bₙ = 15 + 7(n − 1). Largest 3-digit common term?</p>
+<div class="a">≡ 1 mod 6 and ≡ 1 mod 7 → ≡ 1 mod 42: 42 × 23 + 1 = <span class="k">967</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S3</span><span class="ty">Sum of common terms.</span> aₙ = 46 + 8n, bₙ = 98 + 4n, n ≤ 100. Sum of common terms?</p>
+<div class="a">Common: 102, 110, …, 494 (50 terms) → 50 × 596/2 = <span class="k">14,900</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">GP from sums.</span> Decreasing GP: a₁ + a₂ + a₃ = 52, a₁a₂ + a₂a₃ + a₃a₁ = 624. Infinite sum?</p>
+<div class="a">The pair-product sum = a₂ × 52 → a₂ = 12. 12/r + 12 + 12r = 52 → r = 1/3, a₁ = 36 → 36/(2/3) = <span class="k">54</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Split into two GPs.</span> Σ (1/5)ⁿ[(1/5)ⁿ − (1/7)ⁿ].</p>
+<div class="a">Σ(1/25)ⁿ − Σ(1/35)ⁿ = 1/24 − 1/34 = <span class="k">5/408</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1</span><span class="ty">Recurrence.</span> a₁ = 2, aₙ = 2aₙ₋₁ + 3. First n with aₙ > 10⁶?</p>
+<div class="a">aₙ + 3 = 5·2ⁿ⁻¹ → 2ⁿ⁻¹ > 200000 → n − 1 = 18 → <span class="k">19</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S1</span><span class="ty">Balance point.</span> In {1, 3, …, 57}, the sum below k equals the sum above k. k?</p>
+<div class="a">Total 29² = 841. (j − 1)² = 841 − j² → j = 21 → k = <span class="k">41</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Floor of roots.</span> Σ⌊√n⌋ for n = 1 to 50.</p>
+<div class="a">Value k appears 2k + 1 times: 3 + 10 + 21 + 36 + 55 + 78 + 7×2 = <span class="k">217</span></div></div>
+
+<h4>Extra practice for your weak spot</h4>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>In an AP the 5th term is 17 and the 12th is 45. Sum of the first 20 terms?</p>
+<div class="a">7d = 28 → d = 4, a = 1. S = 20/2 × (2 + 19 × 4) = 10 × 78. <span class="k">780</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>The sum of the first n terms of an AP is 3n² + 2n. Find the 10th term.</p>
+<div class="a">Tₙ = Sₙ − Sₙ₋₁ = 320 − 261. Shortcut: Tₙ = 6n − 1 (coefficient of n² doubled). <span class="k">59</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>A GP has 3rd term 12 and 6th term 96. Sum of the first 8 terms?</p>
+<div class="a">r³ = 8 → r = 2, a = 3. S = 3(2⁸ − 1). <span class="k">765</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>An infinite GP has first term 5 and sum 20. Find r.</p>
+<div class="a">S = a/(1 − r) → 1 − r = 1/4. <span class="k">3/4</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>How many multiples of 7 lie between 100 and 500?</p>
+<div class="a">First 105, last 497: (497 − 105)/7 + 1. <span class="k">57</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>Three numbers in AP have sum 27 and product 504. The largest?</p>
+<div class="a">Take a − d, a, a + d: a = 9, 9(81 − d²) = 504 → d² = 25 → 4, 9, 14. <span class="k">14</span></div></div>
+<div class="ex"><p class="q"><span class="src">PRACTICE</span>Sum of the first 15 odd numbers? Sum of the squares 1² to 10²?</p>
+<div class="a">1 + 3 + … (n terms) = n². Σn² = n(n + 1)(2n + 1)/6 = 10 × 11 × 21/6. <span class="k">225 and 385</span></div></div>
+
+<h3 id="q-ineq">13. Inequalities and modulus <span class="pill t2">ALGEBRA</span><span class="pill">8 Qs</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>Bring everything to one side as a single fraction, find critical points, test signs in each interval (sign chart). Never cross-multiply by something that can be negative.</li>
+<li>|x| = x if x ≥ 0, −x if x < 0. Split into cases at every point where a modulus is zero.</li>
+<li>|x + y| + |x − y| = 2·max(|x|, |y|).</li>
+<li>max(a, b) − min(a, b) = |a − b|.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Rational inequality.</span> 1/(x + 5) ≤ 1/(2x − 3).</p>
+<div class="a">(x − 8)/[(x + 5)(2x − 3)] ≤ 0 → <span class="k">x < −5 or 3/2 < x ≤ 8</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Modulus inequality.</span> x² − |x + 9| + x > 0.</p>
+<div class="a">x ≥ −9: x² > 9. x < −9: always true → <span class="k">(−∞, −3) ∪ (3, ∞)</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1</span><span class="ty">Modulus equation.</span> Integer solutions of 2|x|(x² + 1) = 5x².</p>
+<div class="a">x = 0, or 2|x|² − 5|x| + 2 = 0 → |x| = 2 → {0, 2, −2} → <span class="k">3</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S3</span><span class="ty">Lattice points.</span> Integer (x, y) with |x + y| + |x − y| = 2.</p>
+<div class="a">max(|x|, |y|) = 1 → the 8 points around the origin → <span class="k">8</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S3</span><span class="ty">max − min.</span> Real x with max{x, 2} − min{x, 2} = |x + 2| − |x − 2|.</p>
+<div class="a">|x − 2| = |x + 2| − |x − 2| → |x + 2| = 2|x − 2| → x = 6 or 2/3 → <span class="k">2</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S1</span><span class="ty">Log with base below 1.</span> Integers n with log_(1/4)(n² − 7n + 11) > 0.</p>
+<div class="a">Needs 0 < n² − 7n + 11 < 1, but an integer can't lie strictly between 0 and 1 → <span class="k">0</span></div></div>
+
+<h3 id="q-fn">14. Functions <span class="pill t2">ALGEBRA</span><span class="pill">10 Qs</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>f(x) + k·f(1/x) = g(x): replace x by 1/x to get a second equation, then solve the pair for f(x).</li>
+<li>f(xy) = f(x)f(y) + f(x) + f(y): put g = f + 1 → g(xy) = g(x)g(y).</li>
+<li>Range of y = (linear)/(quadratic): write as a quadratic in x and need discriminant ≥ 0.</li>
+<li>Domain of f(g(x)): x must be in the domain of g, and g(x) in the domain of f.</li>
+<li>Rewrite f(3x + 2y, 2x − 5y) as f(u, v) by solving for x in terms of u and v.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S3</span><span class="ty">f(x) and f(1/x).</span> f(x) + 2f(1/x) = 3x. Sum of x with f(x) = 3.</p>
+<div class="a">f(x) = 2/x − x. 2/x − x = 3 → x² + 3x − 2 = 0 → sum <span class="k">−3</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Multiplicative.</span> f(xy) = f(x)f(y) + f(x) + f(y), f(prime) = 1. f(160000)?</p>
+<div class="a">g = f + 1 multiplies, g(prime) = 2. 160000 = 2⁸·5⁴ → 12 primes → 2¹² − 1 = <span class="k">4095</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S3</span><span class="ty">Change variables.</span> f(3x + 2y, 2x − 5y) = 19x. x with f(x, 2x) = 27?</p>
+<div class="a">5u + 2v = 19x → f(u, v) = 5u + 2v. f(x, 2x) = 9x = 27 → <span class="k">3</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S3</span><span class="ty">Range.</span> f(x) = (2x − 3)/(2x² + 4x − 6).</p>
+<div class="a">2yx² + (4y − 2)x + (3 − 6y) = 0, D ≥ 0 → (8y − 1)(2y − 1) ≥ 0 → <span class="k">(−∞, 1/8] ∪ [1/2, ∞)</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Domain of a composition.</span> f = x/(2x − 1), g = x/(x − 1). Domain of f(g(x)) + g(f(x)) excludes?</p>
+<div class="a">x ≠ 1, g(x) ≠ ½ → x ≠ −1; x ≠ ½, f(x) ≠ 1 → x ≠ 1 → <span class="k">−1, ½, 1</span></div></div>
+
+<h3 id="q-max">15. Maxima and minima <span class="pill t2">ALGEBRA</span><span class="pill">7 Qs</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li><b>AM ≥ GM:</b> (a + b)/2 ≥ √(ab), equal when a = b. So ax + b/x ≥ 2√(ab).</li>
+<li>For a fixed product, a sum is smallest when the parts are equal; for a fixed sum, a product is largest when the parts are equal.</li>
+<li>Quadratic ax² + bx + c has its min (a > 0) or max (a < 0) at x = −b/2a.</li>
+<li>Integers: if the ideal equal split isn't an integer, use the nearest integers.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Integers near equal.</span> Integers a + b + c + d = 46. Min (a − b)² + (a − c)² + (a − d)²?</p>
+<div class="a">46/4 = 11.5 isn't whole; 0 and 1 are impossible. a = 12, b = c = 11, d = 12 → <span class="k">2</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Bound from a condition.</span> a > 10 ≥ b ≥ c > 0 and log₈(a + b)/log₂c + log₂₇(a − b)/log₃c = 2/3. Greatest integer a?</p>
+<div class="a">(1/3)log_c(a² − b²) = 2/3 → a² = b² + c² ≤ 200 → <span class="k">14</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S1</span><span class="ty">Min of one vs max of other.</span> c with min of x² − 4cx + 8c above max of −x² + 3cx − 2c?</p>
+<div class="a">−4c² + 8c > 9c²/4 − 2c → 0 < c < 1.6 → <span class="k">½</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S2</span><span class="ty">Max − min of an expression.</span> p² + q² − 29 = 2pq − 20 = 52 − 2pq. Max − min of p³ − q³?</p>
+<div class="a">(p − q)² = 9, pq = 18 → p³ − q³ = ±3(9 + 54) = ±189 → <span class="k">378</span></div></div>
+
+<h3 id="q-tri">16. Triangles <span class="pill t2">GEOMETRY</span><span class="pill">11 Qs</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>Area = ½·base·height = ½ab·sin C = <span class="m">√(s(s−a)(s−b)(s−c))</span>, s = (a + b + c)/2.</li>
+<li>Inradius <span class="m">r = Area/s</span>; in a right triangle <span class="m">r = (a + b − c)/2</span>. Circumradius <span class="m">R = abc/(4·Area)</span>; right triangle R = hypotenuse/2.</li>
+<li>Equilateral side a: height (√3/2)a, area (√3/4)a², r = a/(2√3), R = a/√3.</li>
+<li>Similar triangles: sides in ratio k → areas in ratio k². Same height → areas ∝ bases.</li>
+<li>Midpoint triangle has 1/4 of the area. Centroid splits each median 2 : 1; the three medians make 6 equal small triangles.</li>
+<li>Angle bisector from A divides BC in the ratio AB : AC.</li>
+<li>Mass points (cevians AD, BE meet at T): give masses so each segment ratio balances; BD : DC = mass C : mass B.</li>
+<li>Isosceles with equal sides b and base a: height = √(b² − a²/4).</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Inradius, right triangle.</span> Rectangle 56 × 45, E is the midpoint of CD. Inradius of △ADE?</p>
+<div class="a">Legs 45 and 28 → hypotenuse 53 (28-45-53). r = (45 + 28 − 53)/2 = <span class="k">10</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S3</span><span class="ty">All altitudes.</span> AB = AC = 50, BC = 80. Sum of the three altitudes?</p>
+<div class="a">Height to BC = 30, area 1200. Other two = 2400/50 = 48 each → <span class="k">126</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S3</span><span class="ty">Midpoints and medians.</span> Area of ABC = 1440. Medians cut the midline segments at X, Y, Z. Area of XYZ?</p>
+<div class="a">X, Y, Z are midpoints of the medial triangle's sides → 1440/4/4 = <span class="k">90</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1</span><span class="ty">Areas with a common height.</span> Right △ABC, AB = 5, BC = 12. P, Q on BC with areas ABP, ABQ, ABC in AP and [ABC] = 1.5[ABP]. PQ?</p>
+<div class="a">Areas ∝ bases: BP = 8, BQ = 10 → <span class="k">2</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S3</span><span class="ty">Similar triangles.</span> AB = AC = 12, AD = 8 with D on BC; E on AD extended with ∠AEB = ∠ACB. AE?</p>
+<div class="a">△ABD ~ △AEB → AE = AB²/AD = 144/8 = <span class="k">18</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Mass points.</span> AD : AT = 4 : 3, BE : BT = 5 : 4. BD : CD?</p>
+<div class="a">AT : TD = 3 : 1 → b + c = 3a. BT : TE = 4 : 1 → a + c = 4b. b = 4a/5, c = 11a/5 → BD : DC = c : b = <span class="k">11 : 4</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S3</span><span class="ty">Angles in an isosceles triangle.</span> AB = AC, altitudes AD and BE meet at O, ∠AOB = 105°. AD/BE?</p>
+<div class="a">∠OAE = 15° → ∠A = 30°. AD = AB cos 15°, BE = AB sin 30° → <span class="k">2 cos 15°</span></div></div>
+
+<h3 id="q-circ">17. Circles <span class="pill t2">GEOMETRY</span><span class="pill">9 Qs</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>Chord subtending θ at the centre: length <span class="m">2r sin(θ/2)</span>; distance from centre <span class="m">r cos(θ/2)</span>.</li>
+<li>Minor segment area = <span class="m">(θ/360)πr² − ½r² sin θ</span>.</li>
+<li>The angle in a semicircle is 90°. Tangent ⟂ radius. Two tangents from a point are equal.</li>
+<li>Cyclic quadrilateral: opposite angles sum to 180°; diagonals AC, BD meeting at E give △AEB ~ △DEC and △AED ~ △BEC.</li>
+<li>Intersecting chords: AE·EC = BE·ED. Tangent–secant: PT² = PA·PB.</li>
+<li>Angle between two tangents from P is θ → distance OP = r/sin(θ/2).</li>
+<li>Circle touching PQ, PR and a third tangent AB: ∠AOB = 90° − ∠P/2.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S3</span><span class="ty">Segment area.</span> Chord 10√3 subtends 120° at the centre. Smaller region?</p>
+<div class="a">2r sin 60° = 10√3 → r = 10. 100π/3 − 25√3 = <span class="k">25(4π/3 − √3)</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S1</span><span class="ty">Parallel chords.</span> r = 6√2, ∠PQC = 45°, distances of PQ and SR from the centre 3 : 2 (opposite sides). Area of PQRS?</p>
+<div class="a">PQ = 12 at distance 6; SR at distance 4 → half-chord √56 → SR = 4√14. ½(12 + 4√14) × 10 = <span class="k">20(3 + √14)</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1</span><span class="ty">Cyclic quadrilateral.</span> AB : CD = 2 : 1, BC : AD = 5 : 4. AE : CE?</p>
+<div class="a">AE/DE = 2, DE/CE = 4/5 → <span class="k">8 : 5</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Three equal touching circles.</span> Ratio of the outer and inner circles touching all three?</p>
+<div class="a">Centre-to-centre circumradius 2r/√3. (2/√3 + 1) : (2/√3 − 1) = <span class="k">7 + 4√3 : 1</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1</span><span class="ty">Locus.</span> Circle x² + y² + 4x − 6y − 3 = 0. Points from which the tangents meet at 60°. Where does this locus touch x = 6?</p>
+<div class="a">Centre (−2, 3), r = 4. OP = 4/sin 30° = 8 → circle of radius 8 → <span class="k">(6, 3)</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S3</span><span class="ty">Rectangle in a semicircle.</span> Largest rectangle in a semicircle of radius 2: longer side : shorter side?</p>
+<div class="a">Half-width = height = r/√2 → sides 2x and x → <span class="k">2 : 1</span></div></div>
+
+<h3 id="q-poly">18. Polygons and quadrilaterals <span class="pill t2">GEOMETRY</span><span class="pill">10 Qs</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>Interior angle sum (n − 2)180°; each exterior angle of a regular polygon = 360°/n; diagonals = <span class="m">n(n − 3)/2</span>.</li>
+<li>Regular hexagon side a: area <span class="m">(3√3/2)a²</span> = 6 equilateral triangles; long diagonal 2a.</li>
+<li>Regular octagon: interior angle 135°; a diagonal skipping one vertex² = 2a² + √2·a².</li>
+<li>Trapezium area = ½(sum of parallel sides) × height. A circle fits inside a quadrilateral only if the opposite sides add up equal.</li>
+<li>Rhombus: d₁² + d₂² = 4a², area = d₁d₂/2. Parallelogram: diagonals bisect each other; 4th vertex S = P + R − Q.</li>
+<li>Trapezium with sides AD, BC extended to meet at E: △EDC ~ △EAB with ratio CD/AB.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S3</span><span class="ty">Angles.</span> Interior angle exceeds exterior by 120°. Diagonals?</p>
+<div class="a">Exterior 30° → n = 12 → 12 × 9/2 = <span class="k">54</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Hexagon pieces.</span> P, Q midpoints of AB and CD. Area of PBCQ : hexagon?</p>
+<div class="a">Side 2: PQ = 3, BC = 2, height √3/2 → 5√3/4. Hexagon 6√3 → <span class="k">5 : 24</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S3</span><span class="ty">Octagon.</span> Regular octagon side 6. Area of square ACEG?</p>
+<div class="a">AC² = 36 + 36 − 72 cos 135° = 72 + 36√2 → <span class="k">36(2 + √2)</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S3</span><span class="ty">Trapezium with an incircle.</span> AB ∥ DC, AD ⟂ AB, AB = 3DC, incircle radius 3. Area?</p>
+<div class="a">Height 6. BC = 4x − 6 and BC² = 36 + 4x² → x = 4 → ½(12 + 4) × 6 = <span class="k">48</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S1</span><span class="ty">Rhombus.</span> Side 36, area 396. |d₁ − d₂|?</p>
+<div class="a">d₁d₂ = 792, d₁² + d₂² = 5184 → (d₁ − d₂)² = 3600 → <span class="k">60</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Extended sides.</span> AB = 2, CD = 1, perimeter of ABCD = 6. Perimeter of △AEB?</p>
+<div class="a">D, C are midpoints of EA, EB. AD + BC = 3 → 2 + 2 × 3 = <span class="k">8</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S2</span><span class="ty">Areas in GP.</span> Rectangle 9 × 6; P, Q on BC; areas ABP, APQ, AQCD in GP with AQCD = 4·ABP. BP : PQ : QC?</p>
+<div class="a">Ratio 2 → total = 7·ABP = 54. BP = 12/7, PQ = 24/7, QC = 6/7 → <span class="k">2 : 4 : 1</span></div></div>
+
+<h3 id="q-coord">19. Coordinate geometry and mensuration <span class="pill t2">GEOMETRY</span><span class="pill">7 Qs</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>Distance √((x₂ − x₁)² + (y₂ − y₁)²). Midpoint average. Slope (y₂ − y₁)/(x₂ − x₁).</li>
+<li>Circle x² + y² + 2gx + 2fy + c = 0: centre (−g, −f), radius √(g² + f² − c).</li>
+<li>Distance from (x₀, y₀) to ax + by + c = 0: |ax₀ + by₀ + c|/√(a² + b²).</li>
+<li>Regions with |x − y|, |x − 5| etc.: remove the modulus for the strip you are in, then draw the lines and find the shape.</li>
+<li>Box a × b × c: surface 2(ab + bc + ca), edges 4(a + b + c), space diagonal √(a² + b² + c²) = diameter of the sphere around it. Sphere volume (4/3)πr³.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S1</span><span class="ty">Parallelogram vertex.</span> P(−3, −2), Q(1, −5), R(9, 1). Where does SQ cut the x-axis?</p>
+<div class="a">S = P + R − Q = (5, 4). From S, y falls 9 while x falls 4; y = 0 after a 16/9 fall in x → <span class="k">29/9</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Inradius from coordinates.</span> (1, 2), (7, 2), (1, 10).</p>
+<div class="a">Right triangle 6-8-10 → (6 + 8 − 10)/2 = <span class="k">2</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S2</span><span class="ty">Region area.</span> Bounded by the y-axis, x = 5 and |x − y| − |x − 5| = 2.</p>
+<div class="a">For 0 ≤ x ≤ 5: y = 7 or y = 2x − 7. Trapezium with sides 14 and 4, width 5 → <span class="k">45</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Annulus cut by a line.</span> y ≥ x + 4 and −4 ≤ x² + y² + 4(x − y) ≤ 0.</p>
+<div class="a">Centre (−2, 2), radii 2 and 2√2 → annulus 4π. The line passes through the centre → half = <span class="k">2π</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Box in a sphere.</span> Surface 846, edge total 144. Sphere volume?</p>
+<div class="a">a + b + c = 36, a² + b² + c² = 1296 − 846 = 450 → diameter 15√2 → <span class="k">1125√2 π</span></div></div>
+
+<h3 id="q-fact">20. Factors, divisibility, HCF and LCM <span class="pill t2">NUMBER SYSTEM</span><span class="pill">8 Qs</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>N = pᵃqᵇrᶜ has <span class="m">(a + 1)(b + 1)(c + 1)</span> factors. Odd number of factors ⇔ perfect square.</li>
+<li>Exactly 4 factors: p·q or p³. Exactly 15 factors: p¹⁴ or p⁴q². Exactly 3 factors: p².</li>
+<li>Factors of a particular form: restrict the exponents (no 3s for "not divisible by 3"; even exponents for squares).</li>
+<li>Mod 3: 2 ≡ −1, 5 ≡ −1, 7 ≡ 1. Useful for "factors of the form 3r + 1".</li>
+<li>If k divides two expressions, it divides any combination of them.</li>
+<li>mⁿ = 2ᵃ3ᵇ: n must divide both a and b.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S2</span><span class="ty">Exactly 4 factors.</span> Positive integers below 50 with exactly two factors besides 1 and itself?</p>
+<div class="a">p³: 8, 27. pq: 2×(3,5,7,11,13,17,19,23), 3×(5,7,11,13), 5×7 → 2 + 8 + 4 + 1 = <span class="k">15</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S3</span><span class="ty">Exactly 15 factors.</span> Sum of the two smallest numbers with 15 factors.</p>
+<div class="a">p⁴q²: 2⁴·3² = 144, 2²·3⁴ = 324 → <span class="k">468</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1</span><span class="ty">Divides a power.</span> Least n with 168 | 1134ⁿ; least m with 1134ⁿ | 168ᵐ. m + n?</p>
+<div class="a">168 = 2³·3·7, 1134 = 2·3⁴·7 → n = 3. 1134³ has 3¹² → m = 12 → <span class="k">15</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Factors of a form.</span> Divisors of 2⁶·3⁵·5³·7² of the form 3r + 1?</p>
+<div class="a">No 3s; need a + c even (2 and 5 are −1 mod 3): 4·2 + 3·2 = 14 pairs × 3 choices for 7 → <span class="k">42</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S3</span><span class="ty">LCM conditions.</span> Weekly coins A : B = 3 : 4; A's 5 weeks a multiple of 7; B's 3 weeks a multiple of 24. Min for A per week?</p>
+<div class="a">15k multiple of 7 → 7 | k; 12k multiple of 24 → k even → k = 14 → <span class="k">42</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S1</span><span class="ty">Digit rules + factors.</span> 3-digit N, non-zero distinct digits, none a perfect square, exactly one prime. Factors of the smallest N?</p>
+<div class="a">Allowed 2, 3, 5, 6, 7, 8 → the two non-primes must be 6 and 8 → 268 = 2²·67 → <span class="k">6</span></div></div>
+
+<h3 id="q-rem">21. Remainders, powers and digits <span class="pill t2">NUMBER SYSTEM</span><span class="pill">15 Qs</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li><b>Fermat:</b> for prime p not dividing a, <span class="m">a^(p−1) ≡ 1 (mod p)</span>. So reduce the power mod (p − 1).</li>
+<li>1001 = 7 × 11 × 13, so <span class="m">10³ ≡ −1</span> mod 7, 11 and 13, and 10⁶ ≡ 1.</li>
+<li>Look for a power that gives ±1: 3⁵ = 243 ≡ 1 (mod 11); 2¹⁰ = 1024 ≡ 1 (mod 11).</li>
+<li>Negative remainders are allowed in working: 10 ≡ −1 (mod 11).</li>
+<li>2ᵃ × 5ᵇ: pair them into 10s; whatever is left over gives the leading digits.</li>
+<li>10ⁿ − k: write it as a block of 9s with the last digits changed (10²⁵ − 123 = 99…9877).</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Fermat.</span> 10¹⁰⁰ mod 7.</p>
+<div class="a">10 ≡ 3, 3⁶ ≡ 1, 100 = 96 + 4 → 3⁴ = 81 ≡ <span class="k">4</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Small cycle.</span> 3³³³ mod 11.</p>
+<div class="a">3⁵ ≡ 1, 333 = 330 + 3 → 27 ≡ <span class="k">5</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S3</span><span class="ty">1001 trick.</span> 10⁶⁸ mod 13.</p>
+<div class="a">10⁶ ≡ 1, 68 = 66 + 2 → 100 ≡ <span class="k">9</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S2</span><span class="ty">Exponents.</span> aᵐbⁿ = 144¹⁴⁵ with a, b > 1. Max n − m?</p>
+<div class="a">2⁵⁸⁰·3²⁹⁰: b = 2, n = 580; a = 3²⁹⁰, m = 1 → <span class="k">579</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Perfect power.</span> mⁿ = 2²⁵·3⁴⁰, n > 1. m − n?</p>
+<div class="a">n | gcd(25, 40) → n = 5, m = 2⁵·3⁸ = 209952 → <span class="k">209947</span> (printed as option B, 109947, a typo)</div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S2</span><span class="ty">Digit sum.</span> Digits of 625⁶⁵ × 128³⁶.</p>
+<div class="a">5²⁶⁰ × 2²⁵² = 5⁸ × 10²⁵² = 390625 × 10²⁵² → <span class="k">25</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S3</span><span class="ty">Digit sum.</span> 10⁵⁰ + 10²⁵ − 123.</p>
+<div class="a">1 followed by …, then twenty-two 9s and 877: 1 + 198 + 22 = <span class="k">221</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S3</span><span class="ty">Counting powers.</span> Exactly 41 powers of 2 lie strictly between 8ᵐ and 8ⁿ. Min m + n?</p>
+<div class="a">3n − 3m − 1 = 41 → n − m = 14 → m = 1, n = 15 → <span class="k">16</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S1</span><span class="ty">Compare exponents.</span> aₖ = 3ᵏ. Smallest m with a₁¹a₂²…a₂₀²⁰ < a₂₁a₂₂…a₂₀₊ₘ.</p>
+<div class="a">Σk² to 20 = 2870. (20 + m)(21 + m)/2 − 210 > 2870 → <span class="k">m = 58</span></div></div>
+
+<h3 id="q-pc">22. Permutations, combinations and sets <span class="pill t2">MODERN MATHS</span><span class="pill">10 Qs</span></h3>
+<div class="box f"><h4>Formulas</h4><ul>
+<li>nPr = n!/(n − r)! (order matters), nCr = n!/(r!(n − r)!) (order doesn't).</li>
+<li>Independent choices multiply (and); separate cases add (or).</li>
+<li>Numbers with distinct digits: first digit 9 choices (no 0), then 9, 8, 7, …</li>
+<li>Sum of all numbers made from k distinct digits used once = (k − 1)! × (sum of digits) × 111…1 (k ones).</li>
+<li>Onto functions from n to 3 elements: 3ⁿ − 3·2ⁿ + 3.</li>
+<li>Three sets: total = A + B + C − (pairs) + (all three) + none. "Pairs" counted with the triple inside.</li>
+<li>Integer pairs with conditions: fix one variable, count the other, add.</li>
+</ul></div>
+<div class="ex"><p class="q"><span class="src">CAT 2023 S1</span><span class="ty">Distinct digits.</span> Natural numbers up to 1000 with non-repeating digits.</p>
+<div class="a">9 + 81 + 648 = <span class="k">738</span> (1000 repeats)</div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S3</span><span class="ty">Distinct digits, upper limit.</span> Up to 500.</p>
+<div class="a">9 + 81 + 4 × 9 × 8 = <span class="k">378</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Sum of arrangements.</span> All 4-digit numbers from distinct non-zero a, b, c, d add to 153310 + n (n a digit). a + b + c + d + n?</p>
+<div class="a">6 × 1111 × S = 6666S. 6666 × 23 = 153318 → n = 8 → <span class="k">31</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S1</span><span class="ty">Onto functions.</span> From a 6-element set onto {1, 8, 27}.</p>
+<div class="a">3⁶ − 3·2⁶ + 3 = <span class="k">540</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2024 S2</span><span class="ty">Paths.</span> PQ 3, QS 4, PR 4 paths; P→S via Q, R or Q-then-R = 62 ways; Q→R directly, via P or via S = 27. Direct Q–R paths?</p>
+<div class="a">12 + 4y + 3xy = 62 and x + 12 + 4y = 27 → y = 2, x = <span class="k">7</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S1</span><span class="ty">Choices with "up to".</span> 5 sandwiches × 4 breads × 2 sizes, plus up to 2 of 6 sauces.</p>
+<div class="a">40 × (1 + 6 + 15) = <span class="k">880</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S1</span><span class="ty">Counting pairs.</span> Integer pairs with x > y ≥ 3 and x + y < 14.</p>
+<div class="a">y = 3: 7, y = 4: 5, y = 5: 3, y = 6: 1 → <span class="k">16</span></div></div>
+<div class="ex"><p class="q"><span class="src">CAT 2025 S3</span><span class="ty">Three-set Venn.</span> 150 students: Physics 75, Maths 111, Chemistry 40, all ≥ 1 subject, at least 1 takes all three. P∩C = C∩M = half of P∩M. Max physics-but-not-maths?</p>
+<div class="a">226 − 4x + t = 150 → t = 4x − 76, 1 ≤ t ≤ x → x ≥ 20. 75 − 2x is largest at x = 20 → <span class="k">35</span></div></div>
+<p class="lead" style="margin-top:1.5rem">That is all of Quant. Practise any topic from the real papers on your site: <a href="https://sujithsuresh-803.github.io/cat-varc-practice/#qpyq" target="_blank" rel="noopener">Quant PYQ → Practice by sub-topic</a> (every question now has a worked solution).</p>
+
+<h2 class="va" id="varc">VARC</h2>
+<p class="lead">24 questions in 40 minutes: 4 passages × 4 questions (16 RC) plus 8 verbal questions, usually 2 para-jumbles (TITA), 2 odd-one-outs (TITA), 2 summaries and 2 sentence placements. Your mocks this week: 31 and 28. The four TITAs cost nothing when wrong, so they are free marks to attempt.</p>
+
+<div class="box w" id="v-plan">
+<h4>Section plan for tomorrow</h4>
+<ol>
+<li>Do the <b>verbal questions first or last</b>, whichever you practised. Either way, give them at most 12 minutes in total. Every TITA gets an answer.</li>
+<li>RC gets the other 28 minutes: <b>about 7 minutes per passage</b>. If the first two questions of a passage take more than 5 minutes together, answer only what you are sure of and leave.</li>
+<li>Pick passages: start with the topic you find easiest to read (often a narrative, society, or science piece), not the one that appears first.</li>
+<li>Your rule from the last two mocks: <b>NOT / EXCEPT / "if true" questions get 90 seconds</b>. If unresolved, skip. They caused most of your negatives.</li>
+</ol>
+</div>
+
+<h3 id="v-rc">RC: how to read <span class="pill">16 Qs</span></h3>
+<div class="box v"><h4>Reading method (about 3 minutes for a 450-word passage)</h4><ol>
+<li>Read the first paragraph slowly. It usually sets up the topic and the debate.</li>
+<li>After each paragraph, say its job in 3–5 words in your head: "problem", "old view", "author disagrees", "example", "solution".</li>
+<li>Mark signal words: <i>however, yet, but</i> (turn), <i>therefore, thus</i> (conclusion), <i>for instance</i> (example), <i>some argue</i> (a view the author may reject).</li>
+<li>Before the questions, answer two things: <b>What is the author's main point?</b> and <b>What is the author's attitude?</b> (critical, supportive, balanced, sceptical).</li>
+<li>For every question, go back to the line. Never answer from memory of the passage.</li>
+</ol></div>
+
+<h3 id="v-rctypes">RC question types</h3>
+<div class="tbl"><table>
+<tr><th>Type</th><th>How it is asked</th><th>How to answer</th></tr>
+<tr><td>Main idea / purpose / title</td><td>"The passage is primarily concerned with", "best title"</td><td>The answer covers the whole passage, including the turn. Reject options that cover one paragraph (too narrow) or the whole field (too broad).</td></tr>
+<tr><td>Specific detail</td><td>"According to the passage"</td><td>Find the line. The right option is a paraphrase, rarely the same words. Same words in a wrong option are a common trap.</td></tr>
+<tr><td>Inference</td><td>"It can be inferred", "the author would most likely agree"</td><td>One small step from the text, never two. If you need an assumption the passage doesn't give, it's wrong.</td></tr>
+<tr><td>EXCEPT / NOT</td><td>"All of the following EXCEPT", "which is NOT a reason"</td><td>Check each option against the passage and tick the three that fit. The odd one is often <b>mentioned in the passage but in a different role</b> (a victim instead of a cause, an example instead of a claim).</td></tr>
+<tr><td>Strengthen / weaken / "if true"</td><td>"Which, if true, would undermine…"</td><td>First state the author's <b>reason</b> in one line. The answer attacks or supports that reason directly. Options that are true in general but don't touch the reason are wrong.</td></tr>
+<tr><td>Paraphrase a quoted line</td><td>"Which best expresses the claim made in this statement"</td><td>Read two lines before and after the quote. Pick the plainest restatement. Reject anything with stronger words than the original.</td></tr>
+<tr><td>Function / structure</td><td>"The author mentions X in order to"</td><td>Ask what the paragraph is doing. An example usually supports the claim just before it.</td></tr>
+<tr><td>Tone / attitude</td><td>"The author's attitude is"</td><td>CAT authors are rarely extreme. Prefer measured words (cautious, critical, appreciative) over "scathing" or "euphoric".</td></tr>
+<tr><td>Application / analogy</td><td>"Which is most similar to…"</td><td>Write the structure in abstract form ("a small change in the cause creates a large effect"), then match the structure, not the topic.</td></tr>
+<tr><td>Assumption</td><td>"The argument assumes"</td><td>The unstated link between the evidence and the conclusion. Negate the option: if the argument falls apart, it is the assumption.</td></tr>
+</table></div>
+
+<div class="box w" id="v-traps"><h4>The six traps that took your marks this week</h4><ol>
+<li><b>Mentioned, wrong role.</b> Solar power appeared in the passage as something the oil lobby sabotages, so it was not a reason policies fail.</li>
+<li><b>True in the world, not in the passage.</b> If the passage doesn't say it, don't pick it, however sensible.</li>
+<li><b>Extreme words:</b> always, never, all, only, entirely, deified, proves. Rarely right.</li>
+<li><b>Half right.</b> The first half matches the passage, the second half adds something new. One wrong part makes the option wrong.</li>
+<li><b>Reversed cause and effect.</b> "A causes B" turned into "B causes A".</li>
+<li><b>Familiar words, different meaning.</b> An option that copies phrases from the passage but rearranges them into a claim the author didn't make.</li>
+</ol></div>
+
+<h3 id="v-pj">Para-jumbles (TITA, no negative)</h3>
+<div class="box v"><h4>Method: lock pairs first, then the opener</h4><ol>
+<li><b>Find mandatory pairs.</b> A sentence that starts with <i>This, These, Such, It, They, However, But, Yet, Also, For example, As a result, Instead</i> must follow something specific. Find that something.</li>
+<li><b>Full name before short name.</b> "The Unified Payments Interface" comes before "UPI" or "the system".</li>
+<li><b>Opener:</b> introduces the subject by full name or makes a general statement, and has no unresolved pronoun or connector.</li>
+<li><b>Closer:</b> a conclusion (<i>thus, therefore, in this sense</i>) or a forward-looking line.</li>
+<li><b>Chronology:</b> older before newer (<i>in the 1960s… today</i>).</li>
+<li>Write the chain, then read it once in order. If any link jars, swap the doubtful sentence and re-read.</li>
+<li>Always enter an answer. Even a partly right order scores nothing extra, but a blank is the same zero.</li>
+</ol></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 1</span>Arrange into a paragraph.</p>
+<p class="sent"><b>1.</b> These models, however, still struggle to predict when the rain will fall within the season.</p>
+<p class="sent"><b>2.</b> For decades, forecasting the Indian monsoon meant applying statistical rules to past rainfall records.</p>
+<p class="sent"><b>3.</b> Today, supercomputers run physical models of the ocean and atmosphere instead.</p>
+<p class="sent"><b>4.</b> A farmer, after all, needs to know not just how much rain will come but when to sow.</p>
+<div class="a"><span class="k">2314.</span> 2 is the opener: a general statement about the past with no pronoun. 3 starts with "Today… instead", a contrast with 2's "for decades". 1 says "These models", and the only models are in 3. 4's "after all" explains why timing (from 1) matters, so it closes.</div></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 2</span>Arrange into a paragraph.</p>
+<p class="sent"><b>1.</b> Yet visits to public libraries in many cities have risen, not fallen.</p>
+<p class="sent"><b>2.</b> The reason lies less in books than in space: a quiet, free, warm room is hard to find in a city.</p>
+<p class="sent"><b>3.</b> When e-books arrived, many predicted the end of the public library.</p>
+<p class="sent"><b>4.</b> Libraries that understood this have added study desks, Wi-Fi and longer opening hours.</p>
+<div class="a"><span class="k">3124.</span> 3 sets up the prediction. 1's "Yet" contradicts it. 2 gives "the reason" for the rise in 1. 4's "understood this" points back to the idea of space in 2.</div></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 3</span>Arrange into a paragraph.</p>
+<p class="sent"><b>1.</b> Keynes made the idea famous, though versions of it are much older.</p>
+<p class="sent"><b>2.</b> Economists call this the paradox of thrift.</p>
+<p class="sent"><b>3.</b> When every household saves more during a recession, total spending falls, and so do incomes.</p>
+<p class="sent"><b>4.</b> With lower incomes, households end up saving less than they had planned.</p>
+<div class="a"><span class="k">3421.</span> 3 states the cause. 4 continues it ("With lower incomes"). 2 names the whole pattern with "this", so it needs 3 and 4 before it. 1's "the idea" refers to the named paradox in 2. Trap: starting with 2 because it names the topic, but "this" makes it impossible as an opener.</div></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 4</span>Arrange into a paragraph.</p>
+<p class="sent"><b>1.</b> In 1854, John Snow plotted cholera deaths in London and found that they clustered around a single water pump.</p>
+<p class="sent"><b>2.</b> Maps have long been used not only to find places but to find causes.</p>
+<p class="sent"><b>3.</b> Removing the pump's handle helped end the outbreak, and his method spread.</p>
+<p class="sent"><b>4.</b> Today, health agencies map disease cases as a matter of routine.</p>
+<div class="a"><span class="k">2134.</span> 2 is the general claim. 1 is the first example and gives the date. 3 needs "the pump" and "his" from 1. 4's "Today" is the latest point in time.</div></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 5</span>Arrange into a paragraph.</p>
+<p class="sent"><b>1.</b> They found that students who wrote about their worries for ten minutes before a test scored higher.</p>
+<p class="sent"><b>2.</b> Exam anxiety is usually treated as something to be pushed down.</p>
+<p class="sent"><b>3.</b> The writing seemed to free up working memory that worry would otherwise occupy.</p>
+<p class="sent"><b>4.</b> But a group of researchers tried the opposite approach.</p>
+<div class="a"><span class="k">2413.</span> 2 is the usual view. 4's "But… the opposite" turns against it. 1's "They" needs the researchers in 4. 3 explains the result in 1 ("The writing").</div></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 6</span>Arrange into a paragraph.</p>
+<p class="sent"><b>1.</b> The UPI system now handles more transactions each month than all the country's card networks.</p>
+<p class="sent"><b>2.</b> Its success rests on a simple design choice: any bank's app can pay any other bank's customer.</p>
+<p class="sent"><b>3.</b> The Unified Payments Interface, launched in India in 2016, links bank accounts to phone numbers and payment IDs.</p>
+<p class="sent"><b>4.</b> That openness is also why regulators now worry about a few apps holding most of the market.</p>
+<div class="a"><span class="k">3124.</span> 3 uses the full name, so it opens. 1 uses the short name. 2's "Its success" refers to the success described in 1. 4's "That openness" refers to the design choice in 2.</div></div>
+
+<h3 id="v-ooo">Odd sentence out (TITA, no negative)</h3>
+<div class="box v"><h4>Method: build the four-sentence paragraph</h4><ol>
+<li>Don't hunt for the "strange" sentence first. <b>Build the chain of four</b> that link up (pronouns, connectors, cause → effect, claim → example).</li>
+<li>The odd one is usually <b>on the same topic</b> but on a different thread: a different time, a different aspect, or a fact that nothing else refers to.</li>
+<li>Check: can any of the four sentences refer to it, or can it refer to any of them? If neither, it is the odd one.</li>
+<li>A sentence that opens the topic well is not odd just because it sounds general.</li>
+</ol></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 1</span>Four of these form a paragraph. Find the odd one.</p>
+<p class="sent"><b>1.</b> Coral reefs cover less than one percent of the ocean floor.</p>
+<p class="sent"><b>2.</b> Yet they shelter roughly a quarter of all marine species.</p>
+<p class="sent"><b>3.</b> Rising sea temperatures make corals expel the algae that feed them, a process called bleaching.</p>
+<p class="sent"><b>4.</b> Reefs in Australia and the Maldives draw large numbers of tourists every year.</p>
+<p class="sent"><b>5.</b> Repeated bleaching kills reefs and leaves the species that depend on them without a home.</p>
+<div class="a"><span class="k">4.</span> The chain is 1 → 2 (small area, huge diversity) → 3 (the threat) → 5 (the result, "the species" pointing back to 2). Tourism is on the topic of reefs, but nothing links to it.</div></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 2</span>Find the odd one.</p>
+<p class="sent"><b>1.</b> The printing press made books cheaper, so far more people learned to read.</p>
+<p class="sent"><b>2.</b> Gutenberg's press used movable metal type, an idea that had appeared earlier in Korea.</p>
+<p class="sent"><b>3.</b> Wider literacy in turn let new ideas spread faster than authorities could control them.</p>
+<p class="sent"><b>4.</b> Luther's pamphlets during the Reformation, which reached thousands within weeks, are the usual example.</p>
+<p class="sent"><b>5.</b> In this sense, a technical invention reshaped religion and politics.</p>
+<div class="a"><span class="k">2.</span> The paragraph is a chain of effects: cheaper books → literacy → fast-spreading ideas → example → conclusion. Sentence 2 is about the history of the technology. It is on-topic, which is why it tempts, but no sentence connects to it.</div></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 3</span>Find the odd one.</p>
+<p class="sent"><b>1.</b> Lack of sleep damages judgment in ways that are hard to notice from the inside.</p>
+<p class="sent"><b>2.</b> In studies, tired participants rated their own performance as normal even as their errors climbed.</p>
+<p class="sent"><b>3.</b> Doctors on long shifts are a particular concern for this reason.</p>
+<p class="sent"><b>4.</b> Many hospitals have since capped the number of hours a trainee can work in a row.</p>
+<p class="sent"><b>5.</b> Caffeine works by blocking adenosine, a chemical that builds up while we are awake.</p>
+<div class="a"><span class="k">5.</span> The thread is "tired people can't see their own errors" → the risk for doctors → hospital limits. The chemistry of caffeine is about sleepiness, not about judgment, and nothing refers to it.</div></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 4</span>Find the odd one.</p>
+<p class="sent"><b>1.</b> Cities once built highways through their centres, believing faster traffic meant a stronger economy.</p>
+<p class="sent"><b>2.</b> Traffic engineers later found that new roads soon filled up again, a pattern called induced demand.</p>
+<p class="sent"><b>3.</b> Some cities have since removed central highways and replaced them with boulevards or parks.</p>
+<p class="sent"><b>4.</b> Highways also made it easier for families to move out to the suburbs.</p>
+<p class="sent"><b>5.</b> Seoul's Cheonggyecheon stream, uncovered after an elevated road was torn down, is the best-known case.</p>
+<div class="a"><span class="k">4.</span> 1 → 2 → 3 → 5 is "build roads, they fill up, remove roads, famous example". Sentence 4 is another effect of highways (suburbs), a different thread. The word "also" makes it look connected, but it adds a new subject that nothing follows up.</div></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 5</span>Find the odd one.</p>
+<p class="sent"><b>1.</b> Honeybees tell each other where food is through a "waggle dance".</p>
+<p class="sent"><b>2.</b> The angle of the dance gives the direction of the flowers relative to the sun.</p>
+<p class="sent"><b>3.</b> Its length signals how far away they are.</p>
+<p class="sent"><b>4.</b> Honey found in ancient Egyptian tombs was still edible thousands of years later.</p>
+<p class="sent"><b>5.</b> Using this code, a hive can send its foragers to a field kilometres away.</p>
+<div class="a"><span class="k">4.</span> 1 introduces the dance; 2 and 3 explain its parts ("Its" = the dance's); 5 sums up ("this code"). Sentence 4 shares only the word "honey".</div></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 6</span>Find the odd one.</p>
+<p class="sent"><b>1.</b> Behavioural economists argue that defaults have a large effect on people's choices.</p>
+<p class="sent"><b>2.</b> When workers are enrolled in a pension plan automatically, participation jumps from about half to over ninety percent.</p>
+<p class="sent"><b>3.</b> They can still opt out; most simply never do.</p>
+<p class="sent"><b>4.</b> Organ donation rates show the same pattern across countries with opt-in and opt-out rules.</p>
+<p class="sent"><b>5.</b> Pension savings are also taxed less than ordinary income in many countries.</p>
+<div class="a"><span class="k">5.</span> The thread is the power of defaults: claim (1) → pension example (2, 3) → second example (4, "the same pattern"). Sentence 5 mentions pensions, the keyword trap, but is about tax, not defaults.</div></div>
+
+<h3 id="v-sum">Para summary (MCQ, −1 if wrong)</h3>
+<div class="box v"><h4>Method: main point + its limit</h4><ol>
+<li>Read the paragraph and find the <b>last claim</b>; that is usually the point. Earlier sentences are evidence or background.</li>
+<li>Write your own one-line summary before reading the options. Include any condition the author attaches ("depends on", "only when", "in part").</li>
+<li>Eliminate: <b>too narrow</b> (one detail), <b>too broad</b> (a bigger claim), <b>extreme</b> (stronger than the text), <b>new information or advice</b> the author never gave, <b>distortion</b> (cause turned around).</li>
+<li>Between two close options, pick the one that keeps the author's contrast or condition.</li>
+</ol></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 1</span>Early studies of remote work reported large productivity gains, but most measured output in jobs that are easy to count, such as call-centre work. In jobs that depend on collaboration and learning, the evidence is weaker and sometimes negative: junior staff in particular get less feedback when they rarely sit near experienced colleagues. The real question, then, is not whether remote work raises productivity in general, but for which tasks and which workers it does.</p>
+<p class="opt">A. Remote work raises productivity, as early call-centre studies show.</p>
+<p class="opt">B. Remote work harms junior staff and should be limited.</p>
+<p class="opt">C. Whether remote work helps productivity depends on the task and the worker; early positive results came from easily measured jobs.</p>
+<p class="opt">D. Collaboration matters more than output in modern firms.</p>
+<div class="a"><span class="k">C.</span> The last sentence is the point: "it depends". A repeats only the early claim the author questions. B adds a recommendation the author never makes. D is a broader claim than the text.</div></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 2</span>In many countries most antibiotics are given not to people but to farm animals, often to make them grow faster rather than to treat disease. Bacteria exposed to these low, constant doses evolve resistance, and resistant strains reach humans through food, water and farm workers. Limiting routine use on farms is therefore as much a public-health measure as an agricultural one.</p>
+<p class="opt">A. Farm animals receive antibiotics mainly to cure disease.</p>
+<p class="opt">B. Routine antibiotic use in livestock breeds resistant bacteria that reach people, so limiting it protects public health.</p>
+<p class="opt">C. Resistant bacteria spread through water.</p>
+<p class="opt">D. Farmers should immediately stop using all antibiotics.</p>
+<div class="a"><span class="k">B.</span> It carries the cause (routine use), the mechanism (resistance reaches people) and the conclusion (public health). A contradicts the text. C is one detail. D is extreme: "routine use" and "limiting" became "all" and "immediately".</div></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 3</span>Museums in Europe hold many objects taken during colonial rule. Their directors often argue that these objects are safer, and seen by more people, where they are now. Critics reply that this argument assumes the original owners cannot care for their own heritage, and that how an object was acquired matters as much as where it is best displayed. Several museums have begun returning items, which suggests the critics' view is gaining ground.</p>
+<p class="opt">A. European museums keep colonial-era objects safe and display them to many visitors.</p>
+<p class="opt">B. The debate over colonial-era objects sets the history of their acquisition against claims of better care, and the case for return is gaining ground.</p>
+<p class="opt">C. All colonial-era objects should be returned to their countries of origin.</p>
+<p class="opt">D. Museums return objects mainly because of public pressure.</p>
+<div class="a"><span class="k">B.</span> It holds both sides and the trend. A states only the directors' side as fact. C is advice the author doesn't give. D gives a cause the text never mentions.</div></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 4</span>When a country taxes sugary drinks, manufacturers often cut the sugar in their recipes to stay below the tax threshold. As a result, people may consume less sugar even if they keep buying the same drinks. Judging such a tax only by the revenue it raises therefore misses its main effect, which works through producers rather than consumers.</p>
+<p class="opt">A. Sugar taxes raise little revenue and should be abolished.</p>
+<p class="opt">B. People buy fewer sugary drinks after a sugar tax.</p>
+<p class="opt">C. A sugar tax works mainly by pushing producers to change recipes, so revenue is a poor measure of its success.</p>
+<p class="opt">D. Manufacturers oppose sugar taxes.</p>
+<div class="a"><span class="k">C.</span> The last sentence is the point, and C keeps its contrast (producers vs revenue). B contradicts "even if they keep buying the same drinks". A and D add claims that aren't there.</div></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 5</span>Students often reread their notes because it feels productive: the material becomes familiar, and familiarity feels like knowing. Experiments show, however, that trying to recall material without looking, even unsuccessfully, builds memory far better than rereading. The feeling of fluency is a poor guide to what has actually been learned.</p>
+<p class="opt">A. Rereading notes is useless.</p>
+<p class="opt">B. Trying to recall builds memory better than rereading, and the ease of rereading misleads students about what they know.</p>
+<p class="opt">C. Students fail exams because they don't study enough.</p>
+<p class="opt">D. Familiar material is always remembered better.</p>
+<div class="a"><span class="k">B.</span> Both halves of the paragraph: the finding and the misleading feeling. A is extreme ("far better" doesn't mean the other is useless). D reverses the point. C is outside the text.</div></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 6</span>Electric cars are often called zero-emission, but their emissions depend on how the electricity that charges them is produced. On a grid run mostly on coal, an electric car can emit nearly as much carbon over its life as an efficient petrol car; on a grid run on hydro or solar power, far less. The climate benefit of electric cars therefore grows as the grid gets cleaner.</p>
+<p class="opt">A. Electric cars are no better than petrol cars.</p>
+<p class="opt">B. Electric cars produce zero emissions.</p>
+<p class="opt">C. How much electric cars help the climate depends on how clean the electricity grid is.</p>
+<p class="opt">D. Countries should stop using coal.</p>
+<div class="a"><span class="k">C.</span> It keeps the condition. A takes the coal case as the whole truth. B is the claim the author rejects. D is advice not given.</div></div>
+
+<h3 id="v-pc">Sentence placement (MCQ, −1 if wrong)</h3>
+<div class="box v"><h4>Method</h4><ol>
+<li>Read the given sentence and list what it <b>needs before it</b> (a word like "this", "the picture", "such cases") and what it <b>gives after it</b>.</li>
+<li><b>Pronoun lock:</b> if the sentence after a blank starts with <i>they, them, it, this, these</i>, that pronoun must point to the sentence just before the blank. Nothing can be inserted there unless the new sentence carries the same thing. This is the rule you missed in the napalm-photo question (the next sentence said "behind <i>them</i>", which needed the children described just before).</li>
+<li>Don't break a running description or a cause and its effect.</li>
+<li>Put the sentence in each candidate slot and read the three sentences together. Choose the slot where both joins are smooth.</li>
+</ol></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 1</span>Sentence: <i>"This is why the same dose can help one patient and harm another."</i></p>
+<p>Doctors have long known that people respond differently to the same drug. ___(1)___ Part of the reason is genetic: some people carry gene variants that make their liver break down certain drugs much faster or slower than average. ___(2)___ A slow metaboliser may build up toxic levels of a drug, while a fast one may clear it before it works. ___(3)___ Testing for these variants before prescribing is now routine for a few medicines. ___(4)___</p>
+<div class="a"><span class="k">3.</span> "This is why" needs the reason just before it: slow metabolisers get toxic levels and fast ones get no effect. That is slot 3. After that the paragraph moves on to testing.</div></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 2</span>Sentence: <i>"Within a few years, wheat output in these states rose sharply."</i></p>
+<p>In the mid-1960s, India faced repeated food shortages. ___(1)___ New high-yielding wheat varieties, along with irrigation and fertiliser, were introduced in Punjab and Haryana. ___(2)___ The gains came at a cost that became clear only later: falling water tables and soils worn out by heavy chemical use. ___(3)___ Today, scientists argue for a second revolution that raises output without draining the land. ___(4)___</p>
+<div class="a"><span class="k">2.</span> "These states" needs Punjab and Haryana before it, which rules out slot 1. The next sentence says "The gains", which needs a gain to have been stated. Slot 2 sits between the two.</div></div>
+
+<div class="ex"><p class="q"><span class="src">Drill 3</span>Sentence: <i>"Because no bank account was needed, it reached millions whom banks had ignored."</i></p>
+<p>Mobile money took off in Kenya in 2007 with M-Pesa, launched by a telecom company. ___(1)___ Customers could deposit cash at a corner shop and send it to anyone by text message. ___(2)___ Within a few years, most Kenyan adults were using it, and studies linked it to lower poverty. ___(3)___ Similar services soon appeared across Africa and Asia. ___(4)___</p>
+<div class="a"><span class="k">2.</span> The sentence explains <i>why</i> it spread, so it follows the description of how it works (cash at a corner shop, text messages) and comes before "Within a few years, most adults were using it", the result. At slot 1, "no bank account was needed" would come before the reader knows how the service works.</div></div>
+
+<h2 class="di" id="dilr">DILR</h2>
+<p class="lead">About 22 questions in 4–5 sets, 40 minutes. Sets have 4–6 questions each, and several are TITA. Your score depends far more on <b>which sets you pick</b> than on speed. Two sets fully solved (8–10 correct, roughly 24–30 marks) is a strong DILR score in recent years.</p>
+
+<h3 id="d-plan">Section plan: pick, then commit</h3>
+<div class="box d"><h4>The first 4 minutes decide the section</h4><ol>
+<li><b>Scan every set for 40–50 seconds.</b> Read only the first paragraph and the questions. Don't solve anything yet.</li>
+<li>Rank them using the table below. Prefer sets with <b>fixed numbers and few variables</b>, questions that look direct ("how many", "who"), and a clear table you can draw.</li>
+<li>Avoid first: long rule lists with many "if" conditions, sets whose questions each add a new condition, and sets with two or three overlapping variables you can't see how to tabulate.</li>
+<li><b>Commit to your best set for up to 12 minutes.</b> If after 6 minutes you have no fixed starting point, leave it and go to set 2.</li>
+<li>Answer every TITA you have a reasonable guess for (no negative). For MCQs, guess only if you've eliminated two options.</li>
+<li>Draw the grid before reading the conditions in detail. Fill the <b>direct facts</b> first (numbers, fixed positions), then the <b>negatives</b> (X is not in Y, shown as ✗), then the <b>conditional</b> ones.</li>
+</ol></div>
+
+<div class="tbl"><table>
+<tr><th>Quick-pick signal</th><th>Usually easier</th><th>Usually harder</th></tr>
+<tr><td>Data</td><td>A table with a few cells missing</td><td>Only rules, no numbers</td></tr>
+<tr><td>Variables</td><td>2 (person + position)</td><td>4 or more (person, day, colour, city)</td></tr>
+<tr><td>Questions</td><td>Same setup, direct asks</td><td>"If additionally…", each adds a condition</td></tr>
+<tr><td>Numbers</td><td>Totals and averages you can back-calculate</td><td>Ranges, "at least / at most" for every cell</td></tr>
+</table></div>
+
+<h3 id="d-types">Set types, how to spot them, how to set up</h3>
+<p>The types below come from CAT papers 2017–2025. Each row: what it looks like, the grid to draw, and the trick that usually unlocks it.</p>
+
+<div class="box d"><h4>1. Linear and circular arrangement</h4>
+<p><b>Signal:</b> people in a row, around a table, on floors of a building, in a queue.<br>
+<b>Setup:</b> draw the slots (numbered positions or a circle). Place the person with the most fixed condition first.<br>
+<b>Trick:</b> for a circle, fix one person's seat; everything else is relative. "Opposite" only works with an even number of seats. Write two or three cases side by side when one condition splits; most cases die after one or two more rules.</p></div>
+
+<div class="box d"><h4>2. Distribution and matching (grid)</h4>
+<p><b>Signal:</b> each person has one item from each of several categories (city, job, colour).<br>
+<b>Setup:</b> a person × attribute table. Use ✓ and ✗ in a person × option grid when there are many negative clues.<br>
+<b>Trick:</b> a row or column with all ✗ except one forces that cell. Re-scan the clues after each new ✓.</p></div>
+
+<div class="box d"><h4>3. Scheduling and calendars</h4>
+<p><b>Signal:</b> meetings, exams, shifts, slots across days or hours.<br>
+<b>Setup:</b> a day × slot grid. Mark blocked slots first.<br>
+<b>Trick:</b> look for an event with the fewest possible slots. "No two consecutive days" and "before/after" rules drastically cut the options.</p></div>
+
+<div class="box d"><h4>4. Tournaments</h4>
+<p><b>Signal:</b> round-robin (everyone plays everyone) or knockout.<br>
+<b>Formulas:</b> round-robin with n teams: <span class="m">n(n−1)/2</span> matches. Knockout: <span class="m">n−1</span> matches to find a winner. With 3 points for a win and 1 each for a draw, a decisive match adds 3 points and a draw adds 2, so <span class="m">total points = 3 × matches − draws</span>.<br>
+<b>Trick:</b> use the total points to find the number of draws. A results matrix (team × team) shows W/L/D at a glance.</p></div>
+
+<div class="box d"><h4>5. Games, scoring and rounds</h4>
+<p><b>Signal:</b> players earn points across rounds, with rules for passing, elimination or bonuses.<br>
+<b>Setup:</b> player × round table, with a running total column.<br>
+<b>Trick:</b> work backwards from the final scores; the possible combinations of round scores are usually very few.</p></div>
+
+<div class="box d"><h4>6. Venn diagrams and sets</h4>
+<p><b>Signal:</b> people who like A, B, C; "only", "exactly two", "at least one".<br>
+<b>Formula:</b> <span class="m">n(A∪B∪C) = A + B + C − (AB + BC + CA) + ABC</span>. "Exactly two" = sum of pair overlaps − 3·ABC.<br>
+<b>Trick:</b> label all 7 regions with variables (a–g), write the given equations, and solve from the centre (ABC) outwards. For max/min questions, push the free variable to its limit.</p></div>
+
+<div class="box d"><h4>7. Tables with missing data</h4>
+<p><b>Signal:</b> a table with some cells blank, plus row/column totals or averages.<br>
+<b>Trick:</b> fill the row or column with only one blank first. Totals = average × count. Usually the most scoring set type in the paper; pick it if you see it.</p></div>
+
+<div class="box d"><h4>8. Charts and data interpretation</h4>
+<p><b>Signal:</b> bar, line, pie or scatter charts, often with percentages.<br>
+<b>Trick:</b> read the axis labels and units first. Approximate (percentages to the nearest 5%) unless options are close. Use the calculator only for the final step. Watch for "percentage points" vs "percent" and for questions asking about a change versus a level.</p></div>
+
+<div class="box d"><h4>9. Ranking, order and comparison</h4>
+<p><b>Signal:</b> who is taller, faster, ranked higher; positions in several lists.<br>
+<b>Setup:</b> a vertical chain with &gt; signs. Branches show uncertainty.<br>
+<b>Trick:</b> count how many people are definitely above or below someone to answer "how many possible ranks".</p></div>
+
+<div class="box d"><h4>10. Routes, networks and flows</h4>
+<p><b>Signal:</b> cities connected by roads, pipes, flights, a maze; costs or capacities on edges.<br>
+<b>Setup:</b> draw the network with weights.<br>
+<b>Trick:</b> in a flow, what goes into a node equals what goes out. For shortest path, list paths from the start in order of cost. Very few nodes ever matter.</p></div>
+
+<div class="box d"><h4>11. Quant-based LR (ratings, averages, investments)</h4>
+<p><b>Signal:</b> scores given by judges, averages after removing the highest and lowest, money invested in projects, shares or auctions.<br>
+<b>Trick:</b> translate each rule into an equation or an inequality. These are arithmetic in disguise, so your Quant formulas (averages, percentages, ratios) do the work. Integers and "distinct values" are strong constraints.</p></div>
+
+<div class="box d"><h4>12. Selection and committees with constraints</h4>
+<p><b>Signal:</b> choose k people from a group; "if A is chosen, B must be", "C and D can't be together".<br>
+<b>Trick:</b> write each rule as an arrow (A → B, C ✗ D). Use the contrapositive (not B → not A). Start from the most restrictive person.</p></div>
+
+<div class="box d"><h4>13. Truth-tellers and liars, claims</h4>
+<p><b>Signal:</b> people always tell the truth, always lie, or alternate; statements about each other.<br>
+<b>Trick:</b> assume one person is truthful and follow the chain. A contradiction kills the case. Two statements that contradict each other mean exactly one of the speakers is lying.</p></div>
+
+<div class="box d"><h4>14. Grids, maps, coordinates and processes</h4>
+<p><b>Signal:</b> a city grid, a board, a robot moving step by step, a queue or a machine process.<br>
+<b>Trick:</b> simulate the first few steps on paper and look for a cycle or pattern. Use coordinates for grids; distances are often |Δx| + |Δy| (Manhattan distance).</p></div>
+
+<h3 id="d-rules">General rules</h3>
+<div class="box w"><ol>
+<li><b>Never read the whole set twice.</b> Read once while drawing the grid. Then go clue by clue.</li>
+<li>Write <b>cases</b> openly (Case 1, Case 2). Don't hold them in your head.</li>
+<li>Questions often <b>give you extra information</b>. Use it only for that question, then go back to the base grid.</li>
+<li>A question you can answer from a partly solved grid: answer it now. Many sets have 2 easy questions even if you can't finish.</li>
+<li>"Which of these <b>must</b> be true" = true in every case. "<b>Can</b> be true" = true in at least one case.</li>
+<li>Check your units and totals once before typing a TITA.</li>
+<li>If you've spent 15 minutes with fewer than 2 correct answers in a set, leave it.</li>
+</ol></div>
+
+<p class="lead" style="margin-top:2.5rem">That's everything. Close this, sleep on time, and walk in with the plan: TITAs always answered, NOT/EXCEPT capped at 90 seconds, two DILR sets solved well, Arithmetic first in Quant.</p>
+
+</main></div>
+
+<script>
+(function(){
+  var KEY='cat-final-revision.done.v1', done={};
+  try{done=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){done={}}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(done))}catch(e){}}
+  var toc=document.getElementById('toc'), links={};
+  document.querySelectorAll('main h2, main h3').forEach(function(h){
+    if(!h.id) return;
+    if(h.tagName==='H2'){var p=document.createElement('p');p.textContent=h.textContent;toc.appendChild(p);return;}
+    var a=document.createElement('a');a.href='#'+h.id;
+    a.textContent=(h.childNodes[0]&&h.childNodes[0].textContent||h.textContent).trim();
+    toc.appendChild(a);links[h.id]=a;
+    var lab=document.createElement('label');lab.className='done-box';
+    var cb=document.createElement('input');cb.type='checkbox';cb.checked=!!done[h.id];
+    lab.appendChild(cb);lab.appendChild(document.createTextNode('Revised'));h.appendChild(lab);
+    if(done[h.id]) a.classList.add('done');
+    cb.addEventListener('change',function(){
+      if(cb.checked) done[h.id]=1; else delete done[h.id];
+      a.classList.toggle('done',cb.checked);save();
+    });
+  });
+  var btn=document.getElementById('stBtn');
+  btn.addEventListener('click',function(){
+    var on=document.body.classList.toggle('st');
+    btn.setAttribute('aria-pressed',on?'true':'false');
+    btn.textContent='Self-test: '+(on?'on':'off');
+    if(!on) document.querySelectorAll('.a.show').forEach(function(x){x.classList.remove('show')});
+  });
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('.a');
+    if(a && document.body.classList.contains('st')) a.classList.toggle('show');
+  });
+})();
+</script>
+
+</body>
+</html>
